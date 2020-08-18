@@ -137,7 +137,9 @@ class BoardController extends EventEmitter {
     });
 
     _model.on("addToDoNote", (List<dynamic> args) {
-      updateView();
+      if (_columnControllers.containsKey(Status.ToDo)) {
+        _columnControllers[Status.ToDo].updateView();
+      }
     });
 
     _model.on("updateNoteStatus", (List<dynamic> args) {

@@ -18445,8 +18445,11 @@
   };
   D.BoardController_closure0.prototype = {
     call$1: function(args) {
+      var t1;
       H.listTypeCheck(args);
-      this.$this.updateView$0();
+      t1 = this.$this._columnControllers;
+      if (H.boolConversionCheck(t1.containsKey$1(C.Status_0)))
+        J.$index$asx(t1, C.Status_0).updateView$0();
     },
     $signature: 0
   };
