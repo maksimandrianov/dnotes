@@ -7263,11 +7263,6 @@
     },
     BoardController___closure: function BoardController___closure() {
     },
-    BoardController__closure2: function BoardController__closure2() {
-    },
-    BoardController__closure3: function BoardController__closure3(t0) {
-      this.$this = t0;
-    },
     BoardController_closure0: function BoardController_closure0(t0) {
       this.$this = t0;
     },
@@ -7357,7 +7352,7 @@
       if (typeof t1 !== "number")
         return t1.$add();
       $._id = t1 + 1;
-      return new F.NoteModel(t1, header, body, $status, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
+      return new F.NoteModel(t1, header, body, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
     },
     NoteView$: function(_note, _parentSelector) {
       return new F.NoteView(_note, _parentSelector);
@@ -7365,13 +7360,12 @@
     NoteController$: function(_model, parentSelector) {
       return new F.NoteController(_model, F.NoteView$(_model, parentSelector), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
     },
-    NoteModel: function NoteModel(t0, t1, t2, t3, t4) {
+    NoteModel: function NoteModel(t0, t1, t2, t3) {
       var _ = this;
       _.id = t0;
       _.header = t1;
       _.body = t2;
-      _.status = t3;
-      _._events = t4;
+      _._events = t3;
     },
     NoteView: function NoteView(t0, t1) {
       this._note = t0;
@@ -9316,7 +9310,7 @@
     $requiredArgCount: 1,
     $defaultValues: null
   };
-  H.Closure_fromTearOff_closure.prototype = {$signature: 1};
+  H.Closure_fromTearOff_closure.prototype = {$signature: 0};
   H.TearOffClosure.prototype = {};
   H.StaticClosure.prototype = {
     toString$0: function(_) {
@@ -10370,13 +10364,13 @@
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 1
+    $signature: 0
   };
   P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback.prototype = {
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 1
+    $signature: 0
   };
   P._TimerImpl.prototype = {
     _TimerImpl$2: function(milliseconds, callback) {
@@ -10724,13 +10718,13 @@
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this.listener);
     },
-    $signature: 1
+    $signature: 0
   };
   P._Future__prependListeners_closure.prototype = {
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this._box_0.listeners);
     },
-    $signature: 1
+    $signature: 0
   };
   P._Future__chainForeignFuture_closure.prototype = {
     call$1: function(value) {
@@ -10754,7 +10748,7 @@
     call$0: function() {
       this.target._completeError$2(this.e, this.s);
     },
-    $signature: 1
+    $signature: 0
   };
   P._Future__propagateToListeners_handleWhenCompleteCallback.prototype = {
     call$0: function() {
@@ -10873,7 +10867,7 @@
     call$0: function() {
       this.future._complete$1(this._box_0.count);
     },
-    $signature: 1
+    $signature: 0
   };
   P.StreamSubscription.prototype = {};
   P.EventSink.prototype = {$isSink: 1};
@@ -11059,7 +11053,7 @@
         throw H.wrapException(t1);
       P._rethrow(t1, t2);
     },
-    $signature: 1
+    $signature: 0
   };
   P._RootZone.prototype = {
     get$_scheduleMicrotask: function() {
@@ -18309,7 +18303,6 @@
         oldColumnModel = t2.$index(t1, oldStatus);
         note = oldColumnModel.getNoteById$1(noteId);
         oldColumnModel.removeNoteById$1(noteId);
-        note.status = newStatus;
         t2.$index(t1, newStatus).addNote$1(note);
         this.emit$2("updateNoteStatus", [oldStatus, newStatus, note]);
       }
@@ -18380,8 +18373,6 @@
         columnController.on$2(0, "dragStart", new D.BoardController__closure(t1));
         columnController.on$2(0, "dragStop", new D.BoardController__closure0(t1));
         columnController.on$2(0, "dragEnd", new D.BoardController__closure1(t1));
-        columnController.on$2(0, "dragEnd", new D.BoardController__closure2());
-        columnController.on$2(0, "removeNoteById", new D.BoardController__closure3(t1));
         J.$indexSet$ax(t1._columnControllers, s, columnController);
       }
     },
@@ -18398,7 +18389,7 @@
       t2.dragNoteFrom = H.interceptedTypeCast(t3.$index(args, 1), "$isStatus");
       J.forEach$1$ax(J.get$values$z(t1._columnControllers), new D.BoardController___closure0());
     },
-    $signature: 0
+    $signature: 1
   };
   D.BoardController___closure0.prototype = {
     call$1: function(ctrl) {
@@ -18415,33 +18406,20 @@
       t1.dragNoteTo = t2;
       t1.updateNoteStatus$3(t1.dragNoteId, t1.dragNoteFrom, t2);
     },
-    $signature: 0
+    $signature: 1
   };
   D.BoardController__closure1.prototype = {
     call$1: function(args) {
       H.listTypeCheck(args);
       J.forEach$1$ax(J.get$values$z(this.$this._columnControllers), new D.BoardController___closure());
     },
-    $signature: 0
+    $signature: 1
   };
   D.BoardController___closure.prototype = {
     call$1: function(ctrl) {
       return H.interceptedTypeCheck(ctrl, "$isColumnController").deselect$0();
     },
     $signature: 7
-  };
-  D.BoardController__closure2.prototype = {
-    call$1: function(args) {
-      H.listTypeCheck(args);
-    },
-    $signature: 0
-  };
-  D.BoardController__closure3.prototype = {
-    call$1: function(args) {
-      var noteModel = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel");
-      J.$index$asx(this.$this._columnControllers, noteModel.status).updateView$0();
-    },
-    $signature: 0
   };
   D.BoardController_closure0.prototype = {
     call$1: function(args) {
@@ -18451,7 +18429,7 @@
       if (H.boolConversionCheck(t1.containsKey$1(C.Status_0)))
         J.$index$asx(t1, C.Status_0).updateView$0();
     },
-    $signature: 0
+    $signature: 1
   };
   D.BoardController_closure1.prototype = {
     call$1: function(args) {
@@ -18461,7 +18439,7 @@
         J.$index$asx(t2._columnControllers, p).updateView$0();
       }
     },
-    $signature: 0
+    $signature: 1
   };
   D.BoardController_updateView_closure.prototype = {
     call$1: function(ctrl) {
@@ -18571,7 +18549,7 @@
       noteController.on$2(0, "pressDeleteControl", new M.ColumnController__closure0(t1));
       J.add$1$ax(t1._notesControllers, noteController);
     },
-    $signature: 0
+    $signature: 1
   };
   M.ColumnController__closure0.prototype = {
     call$1: function(args) {
@@ -18587,7 +18565,7 @@
       J.removeWhere$1$ax(t1._notesControllers, new M.ColumnController__closure(note));
       t1.updateView$0();
     },
-    $signature: 0
+    $signature: 1
   };
   M.ColumnController__closure.prototype = {
     call$1: function(ctrl) {
@@ -18783,7 +18761,7 @@
     _inherit(P.UnmodifiableMapView, P._UnmodifiableMapView_MapView__UnmodifiableMapMixin);
     _inherit(H.ConstantMapView, P.UnmodifiableMapView);
     _inheritMany(H.ConstantMap, [H.ConstantStringMap, H.GeneralConstantMap]);
-    _inheritMany(H.Closure, [H.ConstantStringMap_values_closure, H.Instantiation, H.unwrapException_saveStackTrace, H.Closure_fromTearOff_closure, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P._LinkedCustomHashSet_closure, P.MapBase_mapToString_closure, P.MapMixin_entries_closure, P.Duration_toString_sixDigits, P.Duration_toString_twoDigits, W._ChildrenElementList__filter_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, P.CssClassSetImpl_add_closure, P.CssClassSetImpl_addAll_closure, P.FilteredElementList__iterable_closure, P.FilteredElementList__iterable_closure0, P.FilteredElementList_removeRange_closure, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController__closure2, D.BoardController__closure3, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
+    _inheritMany(H.Closure, [H.ConstantStringMap_values_closure, H.Instantiation, H.unwrapException_saveStackTrace, H.Closure_fromTearOff_closure, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P._LinkedCustomHashSet_closure, P.MapBase_mapToString_closure, P.MapMixin_entries_closure, P.Duration_toString_sixDigits, P.Duration_toString_twoDigits, W._ChildrenElementList__filter_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, P.CssClassSetImpl_add_closure, P.CssClassSetImpl_addAll_closure, P.FilteredElementList__iterable_closure, P.FilteredElementList__iterable_closure0, P.FilteredElementList_removeRange_closure, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
     _inherit(H.ConstantProtoMap, H.ConstantStringMap);
     _inheritMany(H.Instantiation, [H.Instantiation1, H.Instantiation2, H.Instantiation3, H.Instantiation4, H.Instantiation5, H.Instantiation6, H.Instantiation7, H.Instantiation8, H.Instantiation9, H.Instantiation10, H.Instantiation11, H.Instantiation12, H.Instantiation13, H.Instantiation14, H.Instantiation15, H.Instantiation16, H.Instantiation17, H.Instantiation18, H.Instantiation19, H.Instantiation20]);
     _inheritMany(P.Error, [H.NullError, H.JsNoSuchMethodError, H.UnknownJsTypeError, H.TypeErrorImplementation, H.CastErrorImplementation, P.FallThroughError, H.RuntimeError, H.DeferredNotLoadedError, H.UnimplementedNoSuchMethodError, H.MainError, P.AssertionError, H._Error, P.JsonUnsupportedObjectError, P._CompileTimeError, P._DuplicatedFieldInitializerError, P.CastError, P.NullThrownError, P.ArgumentError, P.AbstractClassInstantiationError, P.NoSuchMethodError, P.UnsupportedError, P.UnimplementedError, P.StateError, P.ConcurrentModificationError, P.CyclicInitializationError, P.LateInitializationError]);
@@ -19036,7 +19014,7 @@
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin, P.ListMixin);
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin, W.ImmutableListMixin);
   })();
-  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: P.Null}, {func: 1, ret: -1}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, args: [,]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.String, args: [P.int]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: P.bool, args: [,]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: P.bool, args: [[P.Set, P.String]]}, {func: 1, ret: -1, args: [[P.Set, P.String]]}, {func: 1, args: [, P.String]}, {func: 1, ret: -1, args: [P.Object], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}, {func: 1, ret: W.Element, args: [W.Node]}], interceptorsByTag: null, leafTags: null};
+  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null}, {func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: -1}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, args: [,]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.String, args: [P.int]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: P.bool, args: [,]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: P.bool, args: [[P.Set, P.String]]}, {func: 1, ret: -1, args: [[P.Set, P.String]]}, {func: 1, args: [, P.String]}, {func: 1, ret: -1, args: [P.Object], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}, {func: 1, ret: W.Element, args: [W.Node]}], interceptorsByTag: null, leafTags: null};
   (function constants() {
     var makeConstList = hunkHelpers.makeConstList;
     C.BodyElement_methods = W.BodyElement.prototype;

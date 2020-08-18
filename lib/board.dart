@@ -125,13 +125,6 @@ class BoardController extends EventEmitter {
               .forEach((ColumnController ctrl) => ctrl.deselect());
         });
 
-        columnController.on("dragEnd", (List<dynamic> args) {});
-
-        columnController.on("removeNoteById", (List<dynamic> args) {
-          final NoteModel noteModel = args[0] as NoteModel;
-          _columnControllers[noteModel.status].updateView();
-        });
-
         _columnControllers[s] = columnController;
       }
     });
