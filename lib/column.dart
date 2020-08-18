@@ -114,10 +114,8 @@ class ColumnController extends EventEmitter {
       NoteModel note = args[0] as NoteModel;
       NoteController noteController = NoteController(
           note, "#${statusToClass[_model.status]} .column__notes");
-      noteController.on(
-          "pressDeleteControl",
-          (List<dynamic> args) =>
-              _model.removeNoteById((args[0] as NoteModel).id));
+      noteController.on("pressDeleteControl",
+          (List<dynamic> args) => _model.removeNoteById(note.id));
 
       _notesControllers.add(noteController);
     });
