@@ -77,6 +77,12 @@ class ColumnView {
   ColumnModel _column;
   String _parentSelector;
 
+  static const Map<Status, String> statusToSelectClass = const <Status, String>{
+    Status.ToDo: "column-select-lightpink",
+    Status.Doing: "column-select-lightblue",
+    Status.Done: "column-select-lightgreen",
+  };
+
   ColumnView(this._column, this._parentSelector);
 
   String html() {
@@ -92,14 +98,20 @@ class ColumnView {
     column.setInnerHtml(html());
   }
 
-  void select() {
+  void select({Status status = null}) {
+    deselectAll();
     DivElement column = querySelector("#${statusToClass[_column.status]}");
-    column.classes.add("column-select");
+    if (status == null) {
+      column.classes.add("column-select-yellow");
+      return;
+    }
+
+    column.classes.add(statusToSelectClass[status]);
   }
 
-  void deselect() {
+  void deselectAll() {
     DivElement column = querySelector("#${statusToClass[_column.status]}");
-    column.classes.remove("column-select");
+    column.classes.removeWhere((String cls) => cls.startsWith("column-select"));
   }
 }
 
@@ -134,12 +146,12 @@ class ColumnController extends EventEmitter {
     initColumns();
   }
 
-  void select() {
-    _view.select();
+  void select({Status status = null}) {
+    _view.select(status: status);
   }
 
   void deselect() {
-    _view.deselect();
+    _view.deselectAll();
   }
 
   void initColumns() {
@@ -157,6 +169,23 @@ class ColumnController extends EventEmitter {
 
     statDiv.onDragEnd.listen((MouseEvent e) {
       emit("dragEnd", []);
+    });
+
+    int dragEnterLeaveCounter = 0;
+    statDiv.onDragEnter.listen((MouseEvent e) {
+      ++dragEnterLeaveCounter;
+      emit("dragEnter", [
+        _model.status,
+      ]);
+    });
+
+    statDiv.onDragLeave.listen((MouseEvent e) {
+      --dragEnterLeaveCounter;
+      if (dragEnterLeaveCounter == 0) {
+        emit("dragLeave", [
+          _model.status,
+        ]);
+      }
     });
 
     statDiv.onDragOver.listen((MouseEvent e) {

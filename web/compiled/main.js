@@ -2949,6 +2949,9 @@
     createFragment$3$treeSanitizer$validator$x: function(receiver, a0, a1, a2) {
       return J.getInterceptor$x(receiver).createFragment$3$treeSanitizer$validator(receiver, a0, a1, a2);
     },
+    deselectAll$0$z: function(receiver) {
+      return J.getInterceptor$z(receiver).deselectAll$0(receiver);
+    },
     elementAt$1$ax: function(receiver, a0) {
       return J.getInterceptor$ax(receiver).elementAt$1(receiver, a0);
     },
@@ -2985,9 +2988,6 @@
     remove$0$x: function(receiver) {
       return J.getInterceptor$x(receiver).remove$0(receiver);
     },
-    remove$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).remove$1(receiver, a0);
-    },
     removeLast$0$ax: function(receiver) {
       return J.getInterceptor$ax(receiver).removeLast$0(receiver);
     },
@@ -2999,6 +2999,9 @@
     },
     select$0$z: function(receiver) {
       return J.getInterceptor$z(receiver).select$0(receiver);
+    },
+    select$1$status$z: function(receiver, a0) {
+      return J.getInterceptor$z(receiver).select$1$status(receiver, a0);
     },
     selectNodeContents$1$x: function(receiver, a0) {
       return J.getInterceptor$x(receiver).selectNodeContents$1(receiver, a0);
@@ -4616,6 +4619,10 @@
       this.$this = t0;
       this.iterable = t1;
     },
+    CssClassSetImpl_removeAll_closure: function CssClassSetImpl_removeAll_closure() {
+    },
+    CssClassSetImpl_removeWhere_closure: function CssClassSetImpl_removeWhere_closure() {
+    },
     Device: function Device() {
     },
     FilteredElementList: function FilteredElementList(t0, t1) {
@@ -5600,17 +5607,30 @@
       W._ElementCssClassSet__classListAdd(list, value);
       return !t1;
     },
-    _ElementCssClassSet__remove: function(_element, value) {
-      var list = W._ElementCssClassSet__classListOf(_element),
-        removed = W._ElementCssClassSet__classListContainsBeforeAddOrRemove(list, value);
-      W._ElementCssClassSet__classListRemove(list, value);
-      return removed;
-    },
     _ElementCssClassSet__addAll: function(_element, iterable) {
       var t1,
         list = W._ElementCssClassSet__classListOf(_element);
       for (t1 = J.get$iterator$ax(iterable); H.boolConversionCheck(t1.moveNext$0());)
         W._ElementCssClassSet__classListAdd(list, t1.get$current());
+    },
+    _ElementCssClassSet__removeWhere: function(_element, test, doRemove) {
+      var t2, item,
+        list = W._ElementCssClassSet__classListOf(_element),
+        t1 = list && C.DomTokenList_methods,
+        i = 0;
+      while (true) {
+        t2 = W._ElementCssClassSet__classListLength(list);
+        if (typeof t2 !== "number")
+          return H.iae(t2);
+        if (!(i < t2))
+          break;
+        item = t1.item$1(list, i);
+        t2 = test.call$1(item);
+        if (doRemove == null ? t2 == null : doRemove === t2)
+          W._ElementCssClassSet__classListRemove(list, item);
+        else
+          ++i;
+      }
     },
     _ElementCssClassSet__classListOf: function(e) {
       return e.classList;
@@ -7263,6 +7283,12 @@
     },
     BoardController___closure: function BoardController___closure() {
     },
+    BoardController__closure2: function BoardController__closure2(t0) {
+      this.$this = t0;
+    },
+    BoardController__closure3: function BoardController__closure3(t0) {
+      this.$this = t0;
+    },
     BoardController_closure0: function BoardController_closure0(t0) {
       this.$this = t0;
     },
@@ -7307,6 +7333,8 @@
       this._column = t0;
       this._column$_parentSelector = t1;
     },
+    ColumnView_deselectAll_closure: function ColumnView_deselectAll_closure() {
+    },
     ColumnController: function ColumnController(t0, t1, t2, t3) {
       var _ = this;
       _._column$_model = t0;
@@ -7317,8 +7345,9 @@
     ColumnController_closure: function ColumnController_closure(t0) {
       this.$this = t0;
     },
-    ColumnController__closure0: function ColumnController__closure0(t0) {
+    ColumnController__closure0: function ColumnController__closure0(t0, t1) {
       this.$this = t0;
+      this.note = t1;
     },
     ColumnController_closure0: function ColumnController_closure0(t0) {
       this.$this = t0;
@@ -7334,9 +7363,17 @@
     ColumnController_initColumns_closure0: function ColumnController_initColumns_closure0(t0) {
       this.$this = t0;
     },
-    ColumnController_initColumns_closure1: function ColumnController_initColumns_closure1() {
+    ColumnController_initColumns_closure1: function ColumnController_initColumns_closure1(t0, t1) {
+      this._box_0 = t0;
+      this.$this = t1;
     },
-    ColumnController_initColumns_closure2: function ColumnController_initColumns_closure2(t0) {
+    ColumnController_initColumns_closure2: function ColumnController_initColumns_closure2(t0, t1) {
+      this._box_0 = t0;
+      this.$this = t1;
+    },
+    ColumnController_initColumns_closure3: function ColumnController_initColumns_closure3() {
+    },
+    ColumnController_initColumns_closure4: function ColumnController_initColumns_closure4(t0) {
       this.$this = t0;
     }
   },
@@ -9282,7 +9319,7 @@
           error.$thrownJsError = this.ex;
       return error;
     },
-    $signature: 5
+    $signature: 6
   };
   H._StackTrace.prototype = {
     toString$0: function(_) {
@@ -9310,7 +9347,7 @@
     $requiredArgCount: 1,
     $defaultValues: null
   };
-  H.Closure_fromTearOff_closure.prototype = {$signature: 0};
+  H.Closure_fromTearOff_closure.prototype = {$signature: 1};
   H.TearOffClosure.prototype = {};
   H.StaticClosure.prototype = {
     toString$0: function(_) {
@@ -9724,19 +9761,19 @@
     call$1: function(o) {
       return this.getTag(o);
     },
-    $signature: 5
+    $signature: 6
   };
   H.initHooks_closure0.prototype = {
     call$2: function(o, tag) {
       return this.getUnknownTag(o, H.stringTypeCheck(tag));
     },
-    $signature: 26
+    $signature: 23
   };
   H.initHooks_closure1.prototype = {
     call$1: function(tag) {
       return this.prototypeForTag(H.stringTypeCheck(tag));
     },
-    $signature: 19
+    $signature: 24
   };
   H.JSSyntaxRegExp.prototype = {
     toString$0: function(_) {
@@ -10348,7 +10385,7 @@
       t1.storedCallback = null;
       f.call$0();
     },
-    $signature: 13
+    $signature: 11
   };
   P._AsyncRun__initializeScheduleImmediate_closure.prototype = {
     call$1: function(callback) {
@@ -10358,19 +10395,19 @@
       t2 = this.span;
       t1.firstChild ? t1.removeChild(t2) : t1.appendChild(t2);
     },
-    $signature: 22
+    $signature: 20
   };
   P._AsyncRun__scheduleImmediateJsOverride_internalCallback.prototype = {
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 0
+    $signature: 1
   };
   P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback.prototype = {
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 0
+    $signature: 1
   };
   P._TimerImpl.prototype = {
     _TimerImpl$2: function(milliseconds, callback) {
@@ -10385,7 +10422,7 @@
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 2
+    $signature: 3
   };
   P._AsyncAwaitCompleter.prototype = {$isCompleter: 1};
   P._AsyncStarStreamController.prototype = {};
@@ -10718,13 +10755,13 @@
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this.listener);
     },
-    $signature: 0
+    $signature: 1
   };
   P._Future__prependListeners_closure.prototype = {
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this._box_0.listeners);
     },
-    $signature: 0
+    $signature: 1
   };
   P._Future__chainForeignFuture_closure.prototype = {
     call$1: function(value) {
@@ -10732,7 +10769,7 @@
       t1._clearPendingComplete$0();
       t1._complete$1(value);
     },
-    $signature: 13
+    $signature: 11
   };
   P._Future__chainForeignFuture_closure0.prototype = {
     call$2: function(error, stackTrace) {
@@ -10742,13 +10779,13 @@
     call$1: function(error) {
       return this.call$2(error, null);
     },
-    $signature: 32
+    $signature: 26
   };
   P._Future__chainForeignFuture_closure1.prototype = {
     call$0: function() {
       this.target._completeError$2(this.e, this.s);
     },
-    $signature: 0
+    $signature: 1
   };
   P._Future__propagateToListeners_handleWhenCompleteCallback.prototype = {
     call$0: function() {
@@ -10788,13 +10825,13 @@
         t1.listenerHasError = false;
       }
     },
-    $signature: 2
+    $signature: 3
   };
   P._Future__propagateToListeners_handleWhenCompleteCallback_closure.prototype = {
     call$1: function(_) {
       return this.originalSource;
     },
-    $signature: 16
+    $signature: 27
   };
   P._Future__propagateToListeners_handleValueCallback.prototype = {
     call$0: function() {
@@ -10809,7 +10846,7 @@
         t1.listenerHasError = true;
       }
     },
-    $signature: 2
+    $signature: 3
   };
   P._Future__propagateToListeners_handleError.prototype = {
     call$0: function() {
@@ -10836,7 +10873,7 @@
         t4.listenerHasError = true;
       }
     },
-    $signature: 2
+    $signature: 3
   };
   P._AsyncCallbackEntry.prototype = {};
   P._AsyncRun.prototype = {};
@@ -10867,7 +10904,7 @@
     call$0: function() {
       this.future._complete$1(this._box_0.count);
     },
-    $signature: 0
+    $signature: 1
   };
   P.StreamSubscription.prototype = {};
   P.EventSink.prototype = {$isSink: 1};
@@ -11053,7 +11090,7 @@
         throw H.wrapException(t1);
       P._rethrow(t1, t2);
     },
-    $signature: 0
+    $signature: 1
   };
   P._RootZone.prototype = {
     get$_scheduleMicrotask: function() {
@@ -11154,7 +11191,7 @@
     call$0: function() {
       return this.$this.runGuarded$1(this.f);
     },
-    $signature: 2
+    $signature: 3
   };
   P._RootZone_bindUnaryCallbackGuarded_closure.prototype = {
     call$1: function(arg) {
@@ -11322,7 +11359,7 @@
   };
   P._LinkedIdentityHashSet.prototype = {};
   P._LinkedCustomHashSet.prototype = {};
-  P._LinkedCustomHashSet_closure.prototype = {$signature: 17};
+  P._LinkedCustomHashSet_closure.prototype = {$signature: 32};
   P._LinkedHashSetCell.prototype = {};
   P._LinkedHashSetIterator.prototype = {
     _LinkedHashSetIterator$2: function(_set, _modifications, $E) {
@@ -11630,7 +11667,7 @@
       t1.write$1(": ");
       t1.write$1(v);
     },
-    $signature: 18
+    $signature: 17
   };
   P.MapMixin.prototype = {
     forEach$1: function(_, action) {
@@ -12469,7 +12506,7 @@
         return "0000" + n;
       return "00000" + n;
     },
-    $signature: 14
+    $signature: 10
   };
   P.Duration_toString_twoDigits.prototype = {
     call$1: function(n) {
@@ -12480,7 +12517,7 @@
         return "" + n;
       return "0" + n;
     },
-    $signature: 14
+    $signature: 10
   };
   P.Error.prototype = {};
   P.AssertionError.prototype = {
@@ -13098,7 +13135,11 @@
     }
   };
   W.DomStringMap.prototype = {$isDomStringMap: 1};
-  W.DomTokenList.prototype = {$isDomTokenList: 1,
+  W.DomTokenList.prototype = {
+    item$1: function(receiver, index) {
+      return receiver.item(H.intTypeCheck(index));
+    },
+    $isDomTokenList: 1,
     get$length: function(receiver) {
       return receiver.length;
     }
@@ -13206,7 +13247,7 @@
     call$1: function(e) {
       return !H.boolConversionCheck(this.test.call$1(H.interceptedTypeCheck(e, "$isElement")));
     },
-    $signature: 20
+    $signature: 18
   };
   W.ElementList.prototype = {};
   W._FrozenElementList.prototype = {$isElementList: 1, $isNodeListWrapper: 1};
@@ -13324,6 +13365,12 @@
     get$onDragEnd: function(receiver) {
       return C.EventStreamProvider_dragend.forElement$1(receiver);
     },
+    get$onDragEnter: function(receiver) {
+      return C.EventStreamProvider_dragenter.forElement$1(receiver);
+    },
+    get$onDragLeave: function(receiver) {
+      return C.EventStreamProvider_dragleave.forElement$1(receiver);
+    },
     get$onDragOver: function(receiver) {
       return C.EventStreamProvider_dragover.forElement$1(receiver);
     },
@@ -13349,7 +13396,7 @@
     call$1: function(e) {
       return !!J.getInterceptor$(H.interceptedTypeCheck(e, "$isNode")).$isElement;
     },
-    $signature: 9
+    $signature: 12
   };
   W._ElementFactoryProvider.prototype = {};
   W.ScrollAlignment.prototype = {};
@@ -14839,11 +14886,11 @@
     add$1: function(_, value) {
       return W._ElementCssClassSet__add(this._html$_element, H.stringTypeCheck(value));
     },
-    remove$1: function(_, value) {
-      return typeof value === "string" && H.boolConversionCheck(W._ElementCssClassSet__remove(this._html$_element, value));
-    },
     addAll$1: function(_, iterable) {
       W._ElementCssClassSet__addAll(this._html$_element, H.assertSubtype(iterable, "$isIterable", [P.String], "$asIterable"));
+    },
+    removeWhere$1: function(_, test) {
+      W._ElementCssClassSet__removeWhere(this._html$_element, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [P.String]}), true);
     }
   };
   W.Dimension.prototype = {};
@@ -14887,7 +14934,7 @@
     call$1: function(e) {
       return this.onData.call$1(H.interceptedTypeCheck(e, "$isEvent"));
     },
-    $signature: 21
+    $signature: 19
   };
   W.CustomStream.prototype = {$isStream: 1};
   W._CustomEventStreamImpl.prototype = {$isCustomStream: 1};
@@ -15001,13 +15048,13 @@
     call$1: function(v) {
       return H.interceptedTypeCheck(v, "$isNodeValidator").allowsElement$1(this.element);
     },
-    $signature: 10
+    $signature: 13
   };
   W.NodeValidatorBuilder_allowsAttribute_closure.prototype = {
     call$1: function(v) {
       return H.interceptedTypeCheck(v, "$isNodeValidator").allowsAttribute$3(this.element, this.attributeName, this.value);
     },
-    $signature: 10
+    $signature: 13
   };
   W._SimpleNodeValidator.prototype = {
     _SimpleNodeValidator$4$allowedAttributes$allowedElements$allowedUriAttributes: function(uriPolicy, allowedAttributes, allowedElements, allowedUriAttributes) {
@@ -15062,13 +15109,13 @@
     call$1: function(x) {
       return !H.boolConversionCheck(C.JSArray_methods.contains$1(C.List_yrN, H.stringTypeCheck(x)));
     },
-    $signature: 8
+    $signature: 5
   };
   W._SimpleNodeValidator_closure0.prototype = {
     call$1: function(x) {
       return C.JSArray_methods.contains$1(C.List_yrN, H.stringTypeCheck(x));
     },
-    $signature: 8
+    $signature: 5
   };
   W._CustomElementNodeValidator.prototype = {};
   W._TemplatingNodeValidator.prototype = {
@@ -15089,7 +15136,7 @@
     call$1: function(attr) {
       return "TEMPLATE::" + H.S(H.stringTypeCheck(attr));
     },
-    $signature: 11
+    $signature: 14
   };
   W._SvgNodeValidator.prototype = {
     allowsElement$1: function(element) {
@@ -15340,7 +15387,7 @@
         child = H.interceptedTypeCheck(nextChild, "$isNode");
       }
     },
-    $signature: 23
+    $signature: 21
   };
   W._CssStyleDeclaration_Interceptor_CssStyleDeclarationBase.prototype = {$isCssStyleDeclarationBase: 1};
   W._DomRectList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
@@ -16129,14 +16176,16 @@
       return [P.String];
     }
   };
-  P.CssClassSetImpl_add_closure.prototype = {$signature: 24};
+  P.CssClassSetImpl_add_closure.prototype = {$signature: 22};
   P.CssClassSetImpl_addAll_closure.prototype = {
     call$1: function(s) {
       var t1 = P.String;
       return H.assertSubtype(s, "$isSet", [t1], "$asSet").addAll$1(0, J.map$1$1$ax(this.iterable, this.$this.get$_validateToken(), t1));
     },
-    $signature: 25
+    $signature: 7
   };
+  P.CssClassSetImpl_removeAll_closure.prototype = {$signature: 7};
+  P.CssClassSetImpl_removeWhere_closure.prototype = {$signature: 7};
   P.Device.prototype = {};
   P.FilteredElementList.prototype = {
     get$_html_common$_iterable: function() {
@@ -16241,7 +16290,7 @@
     call$1: function(n) {
       return !!J.getInterceptor$(H.interceptedTypeCheck(n, "$isNode")).$isElement;
     },
-    $signature: 9
+    $signature: 12
   };
   P.FilteredElementList__iterable_closure0.prototype = {
     call$1: function(n) {
@@ -16253,7 +16302,7 @@
     call$1: function(el) {
       return J.remove$0$x(el);
     },
-    $signature: 5
+    $signature: 6
   };
   P.Lists.prototype = {};
   P.NodeListWrapper.prototype = {};
@@ -18313,7 +18362,7 @@
       H.interceptedTypeCheck(s, "$isStatus");
       J.$indexSet$ax(this.$this.board, s, M.ColumnModel$(s));
     },
-    $signature: 6
+    $signature: 8
   };
   D.BoardView.prototype = {
     html$0: function() {
@@ -18335,7 +18384,7 @@
       t1 = this._box_0;
       t1.innerHtml = J.$add$ansx(t1.innerHtml, '      <div class="column-wrapper">\n        <div class="' + H.S(C.Map_TKr5a.$index(0, s)) + '-box"></div>\n        ' + optionalHtml + "\n      </div>");
     },
-    $signature: 6
+    $signature: 8
   };
   D.BoardController.prototype = {
     BoardController$2: function(_model, parentSelector) {
@@ -18373,10 +18422,12 @@
         columnController.on$2(0, "dragStart", new D.BoardController__closure(t1));
         columnController.on$2(0, "dragStop", new D.BoardController__closure0(t1));
         columnController.on$2(0, "dragEnd", new D.BoardController__closure1(t1));
+        columnController.on$2(0, "dragEnter", new D.BoardController__closure2(t1));
+        columnController.on$2(0, "dragLeave", new D.BoardController__closure3(t1));
         J.$indexSet$ax(t1._columnControllers, s, columnController);
       }
     },
-    $signature: 6
+    $signature: 8
   };
   D.BoardController__closure.prototype = {
     call$1: function(args) {
@@ -18389,13 +18440,13 @@
       t2.dragNoteFrom = H.interceptedTypeCast(t3.$index(args, 1), "$isStatus");
       J.forEach$1$ax(J.get$values$z(t1._columnControllers), new D.BoardController___closure0());
     },
-    $signature: 1
+    $signature: 0
   };
   D.BoardController___closure0.prototype = {
     call$1: function(ctrl) {
       return H.interceptedTypeCheck(ctrl, "$isColumnController").select$0(0);
     },
-    $signature: 7
+    $signature: 9
   };
   D.BoardController__closure0.prototype = {
     call$1: function(args) {
@@ -18406,20 +18457,34 @@
       t1.dragNoteTo = t2;
       t1.updateNoteStatus$3(t1.dragNoteId, t1.dragNoteFrom, t2);
     },
-    $signature: 1
+    $signature: 0
   };
   D.BoardController__closure1.prototype = {
     call$1: function(args) {
       H.listTypeCheck(args);
       J.forEach$1$ax(J.get$values$z(this.$this._columnControllers), new D.BoardController___closure());
     },
-    $signature: 1
+    $signature: 0
   };
   D.BoardController___closure.prototype = {
     call$1: function(ctrl) {
       return H.interceptedTypeCheck(ctrl, "$isColumnController").deselect$0();
     },
-    $signature: 7
+    $signature: 9
+  };
+  D.BoardController__closure2.prototype = {
+    call$1: function(args) {
+      var s = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus");
+      J.select$1$status$z(J.$index$asx(this.$this._columnControllers, s), s);
+    },
+    $signature: 0
+  };
+  D.BoardController__closure3.prototype = {
+    call$1: function(args) {
+      var s = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus");
+      J.select$0$z(J.$index$asx(this.$this._columnControllers, s));
+    },
+    $signature: 0
   };
   D.BoardController_closure0.prototype = {
     call$1: function(args) {
@@ -18429,7 +18494,7 @@
       if (H.boolConversionCheck(t1.containsKey$1(C.Status_0)))
         J.$index$asx(t1, C.Status_0).updateView$0();
     },
-    $signature: 1
+    $signature: 0
   };
   D.BoardController_closure1.prototype = {
     call$1: function(args) {
@@ -18439,13 +18504,13 @@
         J.$index$asx(t2._columnControllers, p).updateView$0();
       }
     },
-    $signature: 1
+    $signature: 0
   };
   D.BoardController_updateView_closure.prototype = {
     call$1: function(ctrl) {
       return H.interceptedTypeCheck(ctrl, "$isColumnController").updateView$0();
     },
-    $signature: 7
+    $signature: 9
   };
   D.BoardController_initButton_closure.prototype = {
     call$1: function(e) {
@@ -18462,7 +18527,7 @@
       _this.$this.addToDoNote$2(t2.value, t1.value);
       t1.value = t2.value = "";
     },
-    $signature: 3
+    $signature: 2
   };
   M.ColumnModel.prototype = {
     get$status: function(_) {
@@ -18488,13 +18553,13 @@
     call$1: function(n) {
       return J.$eq$(H.interceptedTypeCheck(n, "$isNoteModel").id, this.id);
     },
-    $signature: 15
+    $signature: 16
   };
   M.ColumnModel_removeNoteById_closure.prototype = {
     call$1: function(n) {
       return J.$eq$(H.interceptedTypeCheck(n, "$isNoteModel").id, this.id);
     },
-    $signature: 15
+    $signature: 16
   };
   M.ColumnView.prototype = {
     html$0: function() {
@@ -18506,14 +18571,27 @@
       var column = H.interceptedTypeCheck(W.querySelector(this._column$_parentSelector), "$isDivElement");
       (column && C.DivElement_methods).setInnerHtml$1(column, this.html$0());
     },
-    select$0: function(_) {
-      var column = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(this._column)))), "$isDivElement");
-      J.add$1$ax((column && C.DivElement_methods).get$classes(column), "column-select");
+    select$1$status: function(_, $status) {
+      var column;
+      H.interceptedTypeCheck($status, "$isStatus");
+      this.deselectAll$0(0);
+      column = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(this._column)))), "$isDivElement");
+      if ($status == null) {
+        J.add$1$ax((column && C.DivElement_methods).get$classes(column), "column-select-yellow");
+        return;
+      }
+      J.add$1$ax((column && C.DivElement_methods).get$classes(column), C.Map_TKRZY.$index(0, $status));
     },
-    deselect$0: function() {
+    deselectAll$0: function(_) {
       var column = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(this._column)))), "$isDivElement");
-      J.remove$1$x((column && C.DivElement_methods).get$classes(column), "column-select");
+      J.removeWhere$1$ax((column && C.DivElement_methods).get$classes(column), new M.ColumnView_deselectAll_closure());
     }
+  };
+  M.ColumnView_deselectAll_closure.prototype = {
+    call$1: function(cls) {
+      return J.startsWith$1$s(H.stringTypeCheck(cls), "column-select");
+    },
+    $signature: 5
   };
   M.ColumnController.prototype = {
     ColumnController$2: function(_model, parentSelector) {
@@ -18527,34 +18605,41 @@
       J.forEach$1$ax(this._notesControllers, new M.ColumnController_updateView_closure());
       this.initColumns$0();
     },
-    select$0: function(_) {
-      J.select$0$z(this._column$_view);
+    select$1$status: function(_, $status) {
+      J.select$1$status$z(this._column$_view, H.interceptedTypeCheck($status, "$isStatus"));
+    },
+    select$0: function($receiver) {
+      return this.select$1$status($receiver, null);
     },
     deselect$0: function() {
-      this._column$_view.deselect$0();
+      J.deselectAll$0$z(this._column$_view);
     },
     initColumns$0: function() {
-      var _this = this,
+      var _this = this, t1 = {},
         statDiv = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(_this._column$_model)))), "$isDivElement");
       (statDiv && C.DivElement_methods).get$onDragStart(statDiv).listen$1(new M.ColumnController_initColumns_closure(_this));
       C.DivElement_methods.get$onDragEnd(statDiv).listen$1(new M.ColumnController_initColumns_closure0(_this));
-      C.DivElement_methods.get$onDragOver(statDiv).listen$1(new M.ColumnController_initColumns_closure1());
-      C.DivElement_methods.get$onDrop(statDiv).listen$1(new M.ColumnController_initColumns_closure2(_this));
+      t1.dragEnterLeaveCounter = 0;
+      C.DivElement_methods.get$onDragEnter(statDiv).listen$1(new M.ColumnController_initColumns_closure1(t1, _this));
+      C.DivElement_methods.get$onDragLeave(statDiv).listen$1(new M.ColumnController_initColumns_closure2(t1, _this));
+      C.DivElement_methods.get$onDragOver(statDiv).listen$1(new M.ColumnController_initColumns_closure3());
+      C.DivElement_methods.get$onDrop(statDiv).listen$1(new M.ColumnController_initColumns_closure4(_this));
     }
   };
   M.ColumnController_closure.prototype = {
     call$1: function(args) {
-      var t1 = this.$this,
-        noteController = F.NoteController$(H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel"), "#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(t1._column$_model))) + " .column__notes");
-      noteController.on$2(0, "pressDeleteControl", new M.ColumnController__closure0(t1));
+      var note = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel"),
+        t1 = this.$this,
+        noteController = F.NoteController$(note, "#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(t1._column$_model))) + " .column__notes");
+      noteController.on$2(0, "pressDeleteControl", new M.ColumnController__closure0(t1, note));
       J.add$1$ax(t1._notesControllers, noteController);
     },
-    $signature: 1
+    $signature: 0
   };
   M.ColumnController__closure0.prototype = {
     call$1: function(args) {
       H.listTypeCheck(args);
-      return this.$this._column$_model.removeNoteById$1(H.interceptedTypeCast(J.$index$asx(args, 0), "$isNoteModel").id);
+      return this.$this._column$_model.removeNoteById$1(this.note.id);
     },
     $signature: 28
   };
@@ -18565,7 +18650,7 @@
       J.removeWhere$1$ax(t1._notesControllers, new M.ColumnController__closure(note));
       t1.updateView$0();
     },
-    $signature: 1
+    $signature: 0
   };
   M.ColumnController__closure.prototype = {
     call$1: function(ctrl) {
@@ -18591,28 +18676,59 @@
       columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
       this.$this.emit$2("dragStart", [id, J.$index$asx($.$get$classToStatus(), columnId)]);
     },
-    $signature: 3
+    $signature: 2
   };
   M.ColumnController_initColumns_closure0.prototype = {
     call$1: function(e) {
       H.interceptedTypeCheck(e, "$isMouseEvent");
       this.$this.emit$2("dragEnd", []);
     },
-    $signature: 3
+    $signature: 2
   };
   M.ColumnController_initColumns_closure1.prototype = {
     call$1: function(e) {
-      J.preventDefault$0$x(H.interceptedTypeCheck(e, "$isMouseEvent"));
+      var t1, t2;
+      H.interceptedTypeCheck(e, "$isMouseEvent");
+      t1 = this.$this;
+      t1.emit$2("dragEnter", [J.get$status$z(t1._column$_model)]);
+      t1 = this._box_0;
+      t2 = t1.dragEnterLeaveCounter;
+      if (typeof t2 !== "number")
+        return t2.$add();
+      t1.dragEnterLeaveCounter = t2 + 1;
     },
-    $signature: 3
+    $signature: 2
   };
   M.ColumnController_initColumns_closure2.prototype = {
+    call$1: function(e) {
+      var t1, t2, dragEnterLeaveCounter;
+      H.interceptedTypeCheck(e, "$isMouseEvent");
+      t1 = this._box_0;
+      t2 = t1.dragEnterLeaveCounter;
+      if (typeof t2 !== "number")
+        return t2.$sub();
+      dragEnterLeaveCounter = t2 - 1;
+      t1.dragEnterLeaveCounter = dragEnterLeaveCounter;
+      if (dragEnterLeaveCounter === 0) {
+        t1 = this.$this;
+        t1.emit$2("dragLeave", [J.get$status$z(t1._column$_model)]);
+      }
+    },
+    $signature: 2
+  };
+  M.ColumnController_initColumns_closure3.prototype = {
+    call$1: function(e) {
+      J.preventDefault$0$x(H.interceptedTypeCheck(e, "$isMouseEvent"));
+    },
+    $signature: 2
+  };
+  M.ColumnController_initColumns_closure4.prototype = {
     call$1: function(e) {
       var column = H.interceptedTypeCheck(J.get$currentTarget$x(H.interceptedTypeCheck(e, "$isMouseEvent")), "$isDivElement"),
         columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
       this.$this.emit$2("dragStop", [J.$index$asx($.$get$classToStatus(), columnId)]);
     },
-    $signature: 3
+    $signature: 2
   };
   E.EventEmitter.prototype = {
     on$2: function(_, evt, listener) {
@@ -18672,7 +18788,7 @@
       t1 = this.$this;
       t1.emit$2("pressDeleteControl", [t1._note$_model]);
     },
-    $signature: 3
+    $signature: 2
   };
   E.Status.prototype = {
     toString$0: function(_) {
@@ -18700,12 +18816,12 @@
     _static_1(P, "async__AsyncRun__scheduleImmediateJsOverride$closure", "_AsyncRun__scheduleImmediateJsOverride", 4);
     _static_1(P, "async__AsyncRun__scheduleImmediateWithSetImmediate$closure", "_AsyncRun__scheduleImmediateWithSetImmediate", 4);
     _static_1(P, "async__AsyncRun__scheduleImmediateWithTimer$closure", "_AsyncRun__scheduleImmediateWithTimer", 4);
-    _static_0(P, "async___startMicrotaskLoop$closure", "_startMicrotaskLoop", 2);
+    _static_0(P, "async___startMicrotaskLoop$closure", "_startMicrotaskLoop", 3);
     _static(P, "async___rootScheduleMicrotask$closure", 4, null, ["call$4"], ["_rootScheduleMicrotask"], 33, 0);
-    _instance(P._Future.prototype, "get$_completeError", 0, 1, null, ["call$2", "call$1"], ["_completeError$2", "_completeError$1"], 27, 0);
-    _static(W, "html__Html5NodeValidator__standardAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__standardAttributeValidator"], 12, 0);
-    _static(W, "html__Html5NodeValidator__uriAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__uriAttributeValidator"], 12, 0);
-    _instance_1_u(P.CssClassSetImpl.prototype, "get$_validateToken", "_validateToken$1", 11);
+    _instance(P._Future.prototype, "get$_completeError", 0, 1, null, ["call$2", "call$1"], ["_completeError$2", "_completeError$1"], 25, 0);
+    _static(W, "html__Html5NodeValidator__standardAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__standardAttributeValidator"], 15, 0);
+    _static(W, "html__Html5NodeValidator__uriAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__uriAttributeValidator"], 15, 0);
+    _instance_1_u(P.CssClassSetImpl.prototype, "get$_validateToken", "_validateToken$1", 14);
   })();
   (function inheritance() {
     var _mixin = hunkHelpers.mixin,
@@ -18761,7 +18877,7 @@
     _inherit(P.UnmodifiableMapView, P._UnmodifiableMapView_MapView__UnmodifiableMapMixin);
     _inherit(H.ConstantMapView, P.UnmodifiableMapView);
     _inheritMany(H.ConstantMap, [H.ConstantStringMap, H.GeneralConstantMap]);
-    _inheritMany(H.Closure, [H.ConstantStringMap_values_closure, H.Instantiation, H.unwrapException_saveStackTrace, H.Closure_fromTearOff_closure, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P._LinkedCustomHashSet_closure, P.MapBase_mapToString_closure, P.MapMixin_entries_closure, P.Duration_toString_sixDigits, P.Duration_toString_twoDigits, W._ChildrenElementList__filter_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, P.CssClassSetImpl_add_closure, P.CssClassSetImpl_addAll_closure, P.FilteredElementList__iterable_closure, P.FilteredElementList__iterable_closure0, P.FilteredElementList_removeRange_closure, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
+    _inheritMany(H.Closure, [H.ConstantStringMap_values_closure, H.Instantiation, H.unwrapException_saveStackTrace, H.Closure_fromTearOff_closure, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P._LinkedCustomHashSet_closure, P.MapBase_mapToString_closure, P.MapMixin_entries_closure, P.Duration_toString_sixDigits, P.Duration_toString_twoDigits, W._ChildrenElementList__filter_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, P.CssClassSetImpl_add_closure, P.CssClassSetImpl_addAll_closure, P.CssClassSetImpl_removeAll_closure, P.CssClassSetImpl_removeWhere_closure, P.FilteredElementList__iterable_closure, P.FilteredElementList__iterable_closure0, P.FilteredElementList_removeRange_closure, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController__closure2, D.BoardController__closure3, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnView_deselectAll_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, M.ColumnController_initColumns_closure3, M.ColumnController_initColumns_closure4, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
     _inherit(H.ConstantProtoMap, H.ConstantStringMap);
     _inheritMany(H.Instantiation, [H.Instantiation1, H.Instantiation2, H.Instantiation3, H.Instantiation4, H.Instantiation5, H.Instantiation6, H.Instantiation7, H.Instantiation8, H.Instantiation9, H.Instantiation10, H.Instantiation11, H.Instantiation12, H.Instantiation13, H.Instantiation14, H.Instantiation15, H.Instantiation16, H.Instantiation17, H.Instantiation18, H.Instantiation19, H.Instantiation20]);
     _inheritMany(P.Error, [H.NullError, H.JsNoSuchMethodError, H.UnknownJsTypeError, H.TypeErrorImplementation, H.CastErrorImplementation, P.FallThroughError, H.RuntimeError, H.DeferredNotLoadedError, H.UnimplementedNoSuchMethodError, H.MainError, P.AssertionError, H._Error, P.JsonUnsupportedObjectError, P._CompileTimeError, P._DuplicatedFieldInitializerError, P.CastError, P.NullThrownError, P.ArgumentError, P.AbstractClassInstantiationError, P.NoSuchMethodError, P.UnsupportedError, P.UnimplementedError, P.StateError, P.ConcurrentModificationError, P.CyclicInitializationError, P.LateInitializationError]);
@@ -19014,13 +19130,14 @@
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin, P.ListMixin);
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin, W.ImmutableListMixin);
   })();
-  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null}, {func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: -1}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, args: [,]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.String, args: [P.int]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: P.bool, args: [,]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: P.bool, args: [[P.Set, P.String]]}, {func: 1, ret: -1, args: [[P.Set, P.String]]}, {func: 1, args: [, P.String]}, {func: 1, ret: -1, args: [P.Object], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}, {func: 1, ret: W.Element, args: [W.Node]}], interceptorsByTag: null, leafTags: null};
+  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: P.Null}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: -1}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, args: [,]}, {func: 1, ret: -1, args: [[P.Set, P.String]]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: P.String, args: [P.int]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, ret: P.bool, args: [W.Element]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: P.bool, args: [[P.Set, P.String]]}, {func: 1, args: [, P.String]}, {func: 1, args: [P.String]}, {func: 1, ret: -1, args: [P.Object], opt: [P.StackTrace]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}, {func: 1, ret: P.bool, args: [,]}, {func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}, {func: 1, ret: W.Element, args: [W.Node]}], interceptorsByTag: null, leafTags: null};
   (function constants() {
     var makeConstList = hunkHelpers.makeConstList;
     C.BodyElement_methods = W.BodyElement.prototype;
     C.ButtonElement_methods = W.ButtonElement.prototype;
     C.DivElement_methods = W.DivElement.prototype;
     C.DomImplementation_methods = W.DomImplementation.prototype;
+    C.DomTokenList_methods = W.DomTokenList.prototype;
     C.HtmlDocument_methods = W.HtmlDocument.prototype;
     C.Interceptor_methods = J.Interceptor.prototype;
     C.JSArray_methods = J.JSArray.prototype;
@@ -19159,6 +19276,8 @@
     C.Duration_0 = new P.Duration(0);
     C.EventStreamProvider_click = new W.EventStreamProvider("click", [W.MouseEvent]);
     C.EventStreamProvider_dragend = new W.EventStreamProvider("dragend", [W.MouseEvent]);
+    C.EventStreamProvider_dragenter = new W.EventStreamProvider("dragenter", [W.MouseEvent]);
+    C.EventStreamProvider_dragleave = new W.EventStreamProvider("dragleave", [W.MouseEvent]);
     C.EventStreamProvider_dragover = new W.EventStreamProvider("dragover", [W.MouseEvent]);
     C.EventStreamProvider_dragstart = new W.EventStreamProvider("dragstart", [W.MouseEvent]);
     C.EventStreamProvider_drop = new W.EventStreamProvider("drop", [W.MouseEvent]);
@@ -19171,6 +19290,7 @@
     C.List_empty = H.setRuntimeTypeInfo(makeConstList([]), [P.String]);
     C.List_wSV = H.setRuntimeTypeInfo(makeConstList(["bind", "if", "ref", "repeat", "syntax"]), [P.String]);
     C.List_yrN = H.setRuntimeTypeInfo(makeConstList(["A::href", "AREA::href", "BLOCKQUOTE::cite", "BODY::background", "COMMAND::icon", "DEL::cite", "FORM::action", "IMG::src", "INPUT::src", "INS::cite", "Q::cite", "VIDEO::poster"]), [P.String]);
+    C.Map_TKRZY = new H.GeneralConstantMap([C.Status_0, "column-select-lightpink", C.Status_1, "column-select-lightblue", C.Status_2, "column-select-lightgreen"], [E.Status, P.String]);
     C.Map_TKr5a = new H.GeneralConstantMap([C.Status_0, "todo", C.Status_1, "doing", C.Status_2, "done"], [E.Status, P.String]);
     C._IterationMarker_null_2 = new P._IterationMarker(null, 2);
   })();

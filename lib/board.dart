@@ -125,6 +125,16 @@ class BoardController extends EventEmitter {
               .forEach((ColumnController ctrl) => ctrl.deselect());
         });
 
+        columnController.on("dragEnter", (List<dynamic> args) {
+          final Status s = args[0] as Status;
+          _columnControllers[s].select(status: s);
+        });
+
+        columnController.on("dragLeave", (List<dynamic> args) {
+          final Status s = args[0] as Status;
+          _columnControllers[s].select();
+        });
+
         _columnControllers[s] = columnController;
       }
     });
