@@ -221,225 +221,26 @@
   }
   var C = {},
   H = {JS_CONST: function JS_CONST() {
-    }, _CryptoUtils: function _CryptoUtils() {
-    }, _HashBase: function _HashBase() {
-    }, _MD5: function _MD5() {
-    }, _SHA1: function _SHA1() {
-    }, HttpServer: function HttpServer() {
-    }, HttpConnectionsInfo: function HttpConnectionsInfo() {
-    }, HttpHeaders: function HttpHeaders() {
-    }, HeaderValue: function HeaderValue() {
-    }, HttpSession: function HttpSession() {
-    }, ContentType: function ContentType() {
-    }, Cookie: function Cookie() {
-    }, HttpRequest: function HttpRequest() {
-    }, HttpResponse: function HttpResponse() {
-    }, HttpClient: function HttpClient() {
-    }, HttpClientRequest: function HttpClientRequest() {
-    }, HttpClientResponse: function HttpClientResponse() {
-    }, HttpClientResponseCompressionState: function HttpClientResponseCompressionState() {
-    }, HttpClientCredentials: function HttpClientCredentials() {
-    }, HttpClientBasicCredentials: function HttpClientBasicCredentials() {
-    }, HttpClientDigestCredentials: function HttpClientDigestCredentials() {
-    }, HttpConnectionInfo: function HttpConnectionInfo() {
-    }, RedirectInfo: function RedirectInfo() {
-    }, DetachedSocket: function DetachedSocket() {
-    }, HttpException: function HttpException() {
-    }, RedirectException: function RedirectException() {
-    }, HttpDate: function HttpDate() {
-    }, _HttpHeaders: function _HttpHeaders() {
-    }, _HeaderValue: function _HeaderValue() {
-    }, _ContentType: function _ContentType() {
-    }, _Cookie: function _Cookie() {
-    }, _ServiceObject: function _ServiceObject() {
-    }, _CopyingBytesBuilder: function _CopyingBytesBuilder() {
-    }, _HttpIncoming: function _HttpIncoming() {
-    }, _HttpInboundMessageListInt: function _HttpInboundMessageListInt() {
-    }, _HttpInboundMessage: function _HttpInboundMessage() {
-    }, _HttpRequest: function _HttpRequest() {
-    }, _HttpClientResponse: function _HttpClientResponse() {
-    }, _ToUint8List: function _ToUint8List() {
-    }, _Uint8ListConversionSink: function _Uint8ListConversionSink() {
-    }, _StreamSinkImpl: function _StreamSinkImpl() {
-    }, _IOSinkImpl: function _IOSinkImpl() {
-    }, _HttpOutboundMessage: function _HttpOutboundMessage() {
-    }, _HttpResponse: function _HttpResponse() {
-    }, _HttpClientRequest: function _HttpClientRequest() {
-    }, _HttpGZipSink: function _HttpGZipSink() {
-    }, _HttpOutgoing: function _HttpOutgoing() {
-    }, _HttpClientConnection: function _HttpClientConnection() {
-    }, _ConnectionInfo: function _ConnectionInfo() {
-    }, _ConnectionTarget: function _ConnectionTarget() {
-    }, _HttpClient: function _HttpClient() {
-    }, _HttpConnection: function _HttpConnection() {
-    }, _HttpServer: function _HttpServer() {
-    }, _ProxyConfiguration: function _ProxyConfiguration() {
-    }, _Proxy: function _Proxy() {
-    }, _HttpConnectionInfo: function _HttpConnectionInfo() {
-    }, _DetachedSocket: function _DetachedSocket() {
-    }, _AuthenticationScheme: function _AuthenticationScheme() {
-    }, _Credentials: function _Credentials() {
-    }, _SiteCredentials: function _SiteCredentials() {
-    }, _ProxyCredentials: function _ProxyCredentials() {
-    }, _HttpClientCredentials: function _HttpClientCredentials() {
-    }, _HttpClientBasicCredentials: function _HttpClientBasicCredentials() {
-    }, _HttpClientDigestCredentials: function _HttpClientDigestCredentials() {
-    }, _RedirectInfo: function _RedirectInfo() {
-    }, _Const: function _Const() {
-    }, _CharCode: function _CharCode() {
-    }, _State: function _State() {
-    }, _HttpVersion: function _HttpVersion() {
-    }, _MessageType: function _MessageType() {
-    }, _HttpDetachedStreamSubscription: function _HttpDetachedStreamSubscription() {
-    }, _HttpDetachedIncoming: function _HttpDetachedIncoming() {
-    }, _HttpParser: function _HttpParser() {
-    }, _HttpSession: function _HttpSession() {
-    }, _HttpSessionManager: function _HttpSessionManager() {
-    }, HttpOverrides: function HttpOverrides() {
-    }, _HttpOverridesScope: function _HttpOverridesScope() {
-    }, WebSocketStatus: function WebSocketStatus() {
-    }, CompressionOptions: function CompressionOptions() {
-    }, WebSocketTransformer: function WebSocketTransformer() {
-    }, WebSocket: function WebSocket() {
-    }, WebSocketException: function WebSocketException() {
-    }, _WebSocketMessageType: function _WebSocketMessageType() {
-    }, _WebSocketOpcode: function _WebSocketOpcode() {
-    }, _EncodedString: function _EncodedString() {
-    }, _CompressionMaxWindowBits: function _CompressionMaxWindowBits() {
-    }, _WebSocketProtocolTransformer: function _WebSocketProtocolTransformer() {
-    }, _WebSocketPing: function _WebSocketPing() {
-    }, _WebSocketPong: function _WebSocketPong() {
-    }, _WebSocketTransformerImpl: function _WebSocketTransformerImpl() {
-    }, _WebSocketPerMessageDeflate: function _WebSocketPerMessageDeflate() {
-    }, _WebSocketOutgoingTransformer: function _WebSocketOutgoingTransformer() {
-    }, _WebSocketConsumer: function _WebSocketConsumer() {
-    }, _WebSocketImpl: function _WebSocketImpl() {
-    }, __HttpConnection_LinkedListEntry__ServiceObject: function __HttpConnection_LinkedListEntry__ServiceObject() {
-    }, __HttpServer_Stream__ServiceObject: function __HttpServer_Stream__ServiceObject() {
-    }, __WebSocketImpl_Stream__ServiceObject: function __WebSocketImpl_Stream__ServiceObject() {
-    },
-    makeListFixedLength: function(growableList, $T) {
-      return H.assertSubtype(J.JSArray_markFixedList(growableList), "$isList", [$T], "$asList");
     },
     SubListIterable$: function(_iterable, _start, _endOrLength, $E) {
-      var t1 = new H.SubListIterable(_iterable, _start, _endOrLength, [$E]);
-      t1.SubListIterable$3(_iterable, _start, _endOrLength, $E);
-      return t1;
-    },
-    ListIterator$: function(iterable, $E) {
-      return new H.ListIterator(iterable, J.get$length$asx(iterable), [$E]);
+      P.RangeError_checkNotNegative(_start, "start");
+      if (_endOrLength != null) {
+        P.RangeError_checkNotNegative(_endOrLength, "end");
+        if (_start > _endOrLength)
+          H.throwExpression(P.RangeError$range(_start, 0, _endOrLength, "start", null));
+      }
+      return new H.SubListIterable(_iterable, _start, _endOrLength, [$E]);
     },
     MappedIterable_MappedIterable: function(iterable, $function, $S, $T) {
       if (!!J.getInterceptor$(iterable).$isEfficientLengthIterable)
-        return H.EfficientLengthMappedIterable$(iterable, $function, $S, $T);
-      return H.MappedIterable$_(iterable, $function, $S, $T);
-    },
-    MappedIterable$_: function(_iterable, _f, $S, $T) {
-      return new H.MappedIterable(_iterable, _f, [$S, $T]);
-    },
-    EfficientLengthMappedIterable$: function(iterable, $function, $S, $T) {
-      return new H.EfficientLengthMappedIterable(iterable, $function, [$S, $T]);
-    },
-    MappedIterator$: function(_iterator, _f, $S, $T) {
-      return new H.MappedIterator(_iterator, _f, [$S, $T]);
-    },
-    MappedListIterable$: function(_source, _f, $S, $T) {
-      return new H.MappedListIterable(_source, _f, [$S, $T]);
-    },
-    WhereIterable$: function(_iterable, _f, $E) {
-      return new H.WhereIterable(_iterable, _f, [$E]);
-    },
-    WhereIterator$: function(_iterator, _f, $E) {
-      return new H.WhereIterator(_iterator, _f, [$E]);
-    },
-    TakeIterable_TakeIterable: function(iterable, takeCount, $E) {
-      var _s9_ = "takeCount";
-      P.ArgumentError_checkNotNull(takeCount, _s9_);
-      P.RangeError_checkNotNegative(takeCount, _s9_);
-      if (!!J.getInterceptor$(iterable).$isEfficientLengthIterable)
-        return H.EfficientLengthTakeIterable$(iterable, takeCount, $E);
-      return H.TakeIterable$_(iterable, takeCount, $E);
-    },
-    TakeIterable$_: function(_iterable, _takeCount, $E) {
-      return new H.TakeIterable(_iterable, _takeCount, [$E]);
-    },
-    EfficientLengthTakeIterable$: function(iterable, takeCount, $E) {
-      return new H.EfficientLengthTakeIterable(iterable, takeCount, [$E]);
-    },
-    TakeIterator$: function(_iterator, _remaining, $E) {
-      var t1 = new H.TakeIterator(_iterator, _remaining, [$E]);
-      t1.TakeIterator$2(_iterator, _remaining, $E);
-      return t1;
-    },
-    SkipIterable_SkipIterable: function(iterable, count, $E) {
-      if (!!J.getInterceptor$(iterable).$isEfficientLengthIterable)
-        return H.EfficientLengthSkipIterable_EfficientLengthSkipIterable(iterable, count, $E);
-      return H.SkipIterable$_(iterable, H._checkCount(count), $E);
-    },
-    SkipIterable$_: function(_iterable, _skipCount, $E) {
-      return new H.SkipIterable(_iterable, _skipCount, [$E]);
-    },
-    EfficientLengthSkipIterable_EfficientLengthSkipIterable: function(iterable, count, $E) {
-      return H.EfficientLengthSkipIterable$_(iterable, H._checkCount(count), $E);
-    },
-    EfficientLengthSkipIterable$_: function(iterable, count, $E) {
-      return new H.EfficientLengthSkipIterable(iterable, count, [$E]);
-    },
-    _checkCount: function(count) {
-      P.ArgumentError_checkNotNull(count, "count");
-      P.RangeError_checkNotNegative(count, "count");
-      return count;
-    },
-    SkipIterator$: function(_iterator, _skipCount, $E) {
-      var t1 = new H.SkipIterator(_iterator, _skipCount, [$E]);
-      t1.SkipIterator$2(_iterator, _skipCount, $E);
-      return t1;
-    },
-    EmptyIterable$: function($E) {
-      return new H.EmptyIterable([$E]);
+        return new H.EfficientLengthMappedIterable(iterable, $function, [$S, $T]);
+      return new H.MappedIterable(iterable, $function, [$S, $T]);
     },
     IterableElementError_noElement: function() {
-      return P.StateError$("No element");
+      return new P.StateError("No element");
     },
     IterableElementError_tooMany: function() {
-      return P.StateError$("Too many elements");
-    },
-    IterableElementError_tooFew: function() {
-      return P.StateError$("Too few elements");
-    },
-    CastStream: function CastStream() {
-    },
-    CastStreamSubscription: function CastStreamSubscription() {
-    },
-    CastStreamTransformer: function CastStreamTransformer() {
-    },
-    CastConverter: function CastConverter() {
-    },
-    _CastIterableBase: function _CastIterableBase() {
-    },
-    CastIterator: function CastIterator() {
-    },
-    CastIterable: function CastIterable() {
-    },
-    _EfficientLengthCastIterable: function _EfficientLengthCastIterable() {
-    },
-    _CastListBase: function _CastListBase() {
-    },
-    CastList: function CastList() {
-    },
-    CastSet: function CastSet() {
-    },
-    CastMap: function CastMap() {
-    },
-    CastQueue: function CastQueue() {
-    },
-    CodeUnits: function CodeUnits() {
-    },
-    ExternalName: function ExternalName() {
-    },
-    Since: function Since() {
-    },
-    HttpStatus: function HttpStatus() {
+      return new P.StateError("Too many elements");
     },
     EfficientLengthIterable: function EfficientLengthIterable() {
     },
@@ -447,32 +248,32 @@
     },
     SubListIterable: function SubListIterable(t0, t1, t2, t3) {
       var _ = this;
-      _._iterable = t0;
+      _.__internal$_iterable = t0;
       _._start = t1;
       _._endOrLength = t2;
       _.$ti = t3;
     },
     ListIterator: function ListIterator(t0, t1, t2) {
       var _ = this;
-      _._iterable = t0;
-      _._length = t1;
-      _._index = 0;
-      _._current = null;
+      _.__internal$_iterable = t0;
+      _.__internal$_length = t1;
+      _.__internal$_index = 0;
+      _.__internal$_current = null;
       _.$ti = t2;
     },
     MappedIterable: function MappedIterable(t0, t1, t2) {
-      this._iterable = t0;
+      this.__internal$_iterable = t0;
       this._f = t1;
       this.$ti = t2;
     },
     EfficientLengthMappedIterable: function EfficientLengthMappedIterable(t0, t1, t2) {
-      this._iterable = t0;
+      this.__internal$_iterable = t0;
       this._f = t1;
       this.$ti = t2;
     },
     MappedIterator: function MappedIterator(t0, t1, t2) {
       var _ = this;
-      _._current = null;
+      _.__internal$_current = null;
       _._iterator = t0;
       _._f = t1;
       _.$ti = t2;
@@ -483,7 +284,7 @@
       this.$ti = t2;
     },
     WhereIterable: function WhereIterable(t0, t1, t2) {
-      this._iterable = t0;
+      this.__internal$_iterable = t0;
       this._f = t1;
       this.$ti = t2;
     },
@@ -492,161 +293,21 @@
       this._f = t1;
       this.$ti = t2;
     },
-    ExpandIterable: function ExpandIterable() {
-    },
-    ExpandIterator: function ExpandIterator() {
-    },
-    TakeIterable: function TakeIterable(t0, t1, t2) {
-      this._iterable = t0;
-      this._takeCount = t1;
-      this.$ti = t2;
-    },
-    EfficientLengthTakeIterable: function EfficientLengthTakeIterable(t0, t1, t2) {
-      this._iterable = t0;
-      this._takeCount = t1;
-      this.$ti = t2;
-    },
-    TakeIterator: function TakeIterator(t0, t1, t2) {
-      this._iterator = t0;
-      this._remaining = t1;
-      this.$ti = t2;
-    },
-    TakeWhileIterable: function TakeWhileIterable() {
-    },
-    TakeWhileIterator: function TakeWhileIterator() {
-    },
-    SkipIterable: function SkipIterable(t0, t1, t2) {
-      this._iterable = t0;
-      this._skipCount = t1;
-      this.$ti = t2;
-    },
-    EfficientLengthSkipIterable: function EfficientLengthSkipIterable(t0, t1, t2) {
-      this._iterable = t0;
-      this._skipCount = t1;
-      this.$ti = t2;
-    },
-    SkipIterator: function SkipIterator(t0, t1, t2) {
-      this._iterator = t0;
-      this._skipCount = t1;
-      this.$ti = t2;
-    },
-    SkipWhileIterable: function SkipWhileIterable() {
-    },
-    SkipWhileIterator: function SkipWhileIterator() {
-    },
-    EmptyIterable: function EmptyIterable(t0) {
-      this.$ti = t0;
-    },
-    EmptyIterator: function EmptyIterator(t0) {
-      this.$ti = t0;
-    },
-    FollowedByIterable: function FollowedByIterable() {
-    },
-    EfficientLengthFollowedByIterable: function EfficientLengthFollowedByIterable() {
-    },
-    FollowedByIterator: function FollowedByIterator() {
-    },
-    WhereTypeIterable: function WhereTypeIterable() {
-    },
-    WhereTypeIterator: function WhereTypeIterator() {
-    },
-    IterableElementError: function IterableElementError() {
-    },
-    LinkedList: function LinkedList() {
-    },
-    LinkedListEntry0: function LinkedListEntry0() {
-    },
-    _LinkedListIterator: function _LinkedListIterator() {
-    },
-    FixedLengthListMixin: function FixedLengthListMixin() {
-    },
-    UnmodifiableListMixin: function UnmodifiableListMixin() {
-    },
-    FixedLengthListBase: function FixedLengthListBase() {
-    },
-    UnmodifiableListBase: function UnmodifiableListBase() {
-    },
-    _ListIndicesIterable: function _ListIndicesIterable() {
-    },
-    ListMapView: function ListMapView() {
-    },
-    ReversedListIterable: function ReversedListIterable() {
-    },
-    UnmodifiableListError: function UnmodifiableListError() {
-    },
-    NonGrowableListError: function NonGrowableListError() {
-    },
-    Sort: function Sort() {
-    },
-    Symbol0: function Symbol0() {
-    },
-    __CastListBase__CastIterableBase_ListMixin: function __CastListBase__CastIterableBase_ListMixin() {
-    },
-    JsGetName: function JsGetName() {
-    },
-    JsBuiltin: function JsBuiltin() {
-    },
-    RtiUniverseFieldNames: function RtiUniverseFieldNames() {
-    },
-    ConstantMap__throwUnmodifiable: function() {
-      throw H.wrapException(P.UnsupportedError$("Cannot modify unmodifiable Map"));
-    },
-    isCheckPropertyToJsConstructorName: function(isCheckProperty) {
-      return isCheckProperty.substring(3);
-    },
-    isDartFunctionType: function(type) {
-      return 'func' in type;
-    },
-    isDartFutureOrType: function(type) {
-      return 'futureOr' in type;
-    },
-    isDartVoidTypeRti: function(type) {
-      return type === -1;
-    },
-    rawRtiToJsConstructorName: function(rti) {
-      return rti.name;
-    },
     unminifyOrTag: function(rawClassName) {
       var preserved = H.unmangleGlobalNameIfPreservedAnyways(rawClassName);
       if (typeof preserved === "string")
         return preserved;
       return rawClassName;
     },
-    getRawRuntimeType: function(o) {
-      return o.constructor;
-    },
-    builtinIsSubtype: function(type, other) {
-      return '$is' + other in type.prototype;
-    },
-    isDartFunctionTypeRti: function(type) {
-      return type.name === "Function";
-    },
-    isNullType: function(type) {
-      return type.name === "Null";
-    },
-    isDartDynamicTypeRti: function(type) {
-      return type == null;
-    },
-    isDartJsInteropTypeArgumentRti: function(type) {
-      return type === -2;
-    },
-    isDartObjectTypeRti: function(type) {
-      return type.name === "Object";
-    },
-    isNullTypeRti: function(type) {
-      return type.name === "Null";
-    },
     getType: function(index) {
       return init.types[H.intTypeCheck(index)];
-    },
-    requiresPreamble: function() {
     },
     isJsIndexable: function(object, record) {
       var result;
       if (record != null) {
-        result = J.dispatchRecordIndexability(record);
+        result = record.x;
         if (result != null)
-          return H.boolTypeCheck(result);
+          return result;
       }
       return !!J.getInterceptor$(object).$isJavaScriptIndexingBehavior;
     },
@@ -677,45 +338,23 @@
       return hash;
     },
     Primitives_parseInt: function(source, radix) {
-      var match, decimalMatch, maxCharCode, digitsPart, t1, i, t2;
-      H.checkString(source);
+      var match, decimalMatch;
+      if (typeof source !== "string")
+        H.throwExpression(H.argumentErrorValue(source));
       match = /^\s*[+-]?((0x[a-f0-9]+)|(\d+)|([a-z0-9]+))\s*$/i.exec(source);
       if (match == null)
         return;
       if (3 >= match.length)
         return H.ioore(match, 3);
       decimalMatch = H.stringTypeCheck(match[3]);
-      if (radix == null) {
-        if (decimalMatch != null)
-          return parseInt(source, 10);
-        if (match[2] != null)
-          return parseInt(source, 16);
-        return;
-      }
-      if (radix < 2 || radix > 36)
-        throw H.wrapException(P.RangeError$range(radix, 2, 36, "radix", null));
-      if (radix === 10 && decimalMatch != null)
+      if (decimalMatch != null)
         return parseInt(source, 10);
-      if (radix < 10 || decimalMatch == null) {
-        maxCharCode = radix <= 10 ? 47 + radix : 86 + radix;
-        digitsPart = match[1];
-        for (t1 = digitsPart.length, i = 0; i < t1; ++i) {
-          t2 = C.JSString_methods._codeUnitAt$1(digitsPart, i);
-          if (typeof t2 !== "number")
-            return t2.$or();
-          if ((t2 | 32) >>> 0 > maxCharCode)
-            return;
-        }
-      }
-      return parseInt(source, radix);
-    },
-    Primitives_formatType: function(className, typeArguments) {
-      return H.unmangleAllIdentifiersIfPreservedAnyways(H.S(className) + H.S(H.joinArguments(typeArguments, 0)));
+      if (match[2] != null)
+        return parseInt(source, 16);
+      return;
     },
     Primitives_objectTypeName: function(object) {
-      var className = H.Primitives__objectClassName(object),
-        $arguments = H.joinArguments(H.getRuntimeTypeInfo(object), 0);
-      return H.S(className) + H.S($arguments);
+      return H.Primitives__objectClassName(object) + H._joinArguments(H.getRuntimeTypeInfo(object), 0, null);
     },
     Primitives__objectClassName: function(object) {
       var interceptorConstructorName, $name, t1, dispatchName, objectConstructor, match, decompiledName,
@@ -728,7 +367,7 @@
         $name = null;
       t1 = $name == null;
       if (t1 || interceptor === C.Interceptor_methods || !!interceptor.$isUnknownJavaScriptObject) {
-        dispatchName = H.constructorNameFallback(object);
+        dispatchName = C.C_JS_CONST(object);
         if (t1)
           $name = dispatchName;
         if (dispatchName === "Object") {
@@ -745,18 +384,6 @@
       $name = $name;
       return H.unminifyOrTag($name.length > 1 && C.JSString_methods._codeUnitAt$1($name, 0) === 36 ? C.JSString_methods.substring$1($name, 1) : $name);
     },
-    Primitives_objectToHumanReadableString: function(object) {
-      return "Instance of '" + H.S(H.Primitives_objectTypeName(object)) + "'";
-    },
-    Primitives_stringConcatUnchecked: function(string1, string2) {
-      return string1 + string2;
-    },
-    Primitives_flattenString: function(str) {
-      return str.charCodeAt(0) == 0 ? str : str;
-    },
-    JsCache_fetch: function(cache, key) {
-      return cache[key];
-    },
     iae: function(argument) {
       throw H.wrapException(H.argumentErrorValue(argument));
     },
@@ -768,7 +395,7 @@
     diagnoseIndexError: function(indexable, index) {
       var $length, t1, _s5_ = "index";
       if (typeof index !== "number" || Math.floor(index) !== index)
-        return P.ArgumentError$value(index, _s5_, null);
+        return new P.ArgumentError(true, index, _s5_, null);
       $length = H.intTypeCheck(J.get$length$asx(indexable));
       if (!(index < 0)) {
         if (typeof $length !== "number")
@@ -781,27 +408,12 @@
       return P.RangeError$value(index, _s5_);
     },
     argumentErrorValue: function(object) {
-      return P.ArgumentError$value(object, null, null);
-    },
-    checkNull: function(object) {
-      if (object == null)
-        throw H.wrapException(H.argumentErrorValue(object));
-      return object;
-    },
-    checkInt: function(value) {
-      if (typeof value !== "number" || Math.floor(value) !== value)
-        throw H.wrapException(H.argumentErrorValue(value));
-      return value;
-    },
-    checkString: function(value) {
-      if (typeof value !== "string")
-        throw H.wrapException(H.argumentErrorValue(value));
-      return value;
+      return new P.ArgumentError(true, object, null, null);
     },
     wrapException: function(ex) {
       var wrapper;
       if (ex == null)
-        ex = P.NullThrownError$();
+        ex = new P.NullThrownError();
       wrapper = new Error();
       wrapper.dartException = ex;
       if ("defineProperty" in Object) {
@@ -820,30 +432,18 @@
     throwConcurrentModificationError: function(collection) {
       throw H.wrapException(P.ConcurrentModificationError$(collection));
     },
-    TypeErrorDecoder$: function(_arguments, _argumentsExpr, _expr, _method, _receiver, _pattern) {
-      return new H.TypeErrorDecoder(_pattern, _arguments, _argumentsExpr, _expr, _method, _receiver);
-    },
-    TypeErrorDecoder_buildJavaScriptObject: function() {
-      return {
-        toString: function() {
-          return "$receiver$";
-        }
-      };
-    },
-    TypeErrorDecoder_buildJavaScriptObjectWithNonClosure: function() {
-      return {$method$: null,
-        toString: function() {
-          return "$receiver$";
-        }
-      };
-    },
     TypeErrorDecoder_extractPattern: function(message) {
-      var match;
-      message = H.stringTypeCheck(H.quoteStringForRegExp(message.replace(String({}), '$receiver$')));
+      var match, $arguments, argumentsExpr, expr, method, receiver;
+      message = H.quoteStringForRegExp(message.replace(String({}), '$receiver$'));
       match = message.match(/\\\$[a-zA-Z]+\\\$/g);
       if (match == null)
         match = H.setRuntimeTypeInfo([], [P.String]);
-      return H.TypeErrorDecoder$(match.indexOf("\\$arguments\\$"), match.indexOf("\\$argumentsExpr\\$"), match.indexOf("\\$expr\\$"), match.indexOf("\\$method\\$"), match.indexOf("\\$receiver\\$"), message.replace(new RegExp('\\\\\\$arguments\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$argumentsExpr\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$expr\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$method\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$receiver\\\\\\$', 'g'), '((?:x|[^x])*)'));
+      $arguments = match.indexOf("\\$arguments\\$");
+      argumentsExpr = match.indexOf("\\$argumentsExpr\\$");
+      expr = match.indexOf("\\$expr\\$");
+      method = match.indexOf("\\$method\\$");
+      receiver = match.indexOf("\\$receiver\\$");
+      return new H.TypeErrorDecoder(message.replace(new RegExp('\\\\\\$arguments\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$argumentsExpr\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$expr\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$method\\\\\\$', 'g'), '((?:x|[^x])*)').replace(new RegExp('\\\\\\$receiver\\\\\\$', 'g'), '((?:x|[^x])*)'), $arguments, argumentsExpr, expr, method, receiver);
     },
     TypeErrorDecoder_provokeCallErrorOn: function(expression) {
       return function($expr$) {
@@ -855,26 +455,6 @@
         }
       }(expression);
     },
-    TypeErrorDecoder_provokeCallErrorOnNull: function() {
-      return function() {
-        var $argumentsExpr$ = '$arguments$';
-        try {
-          null.$method$($argumentsExpr$);
-        } catch (e) {
-          return e.message;
-        }
-      }();
-    },
-    TypeErrorDecoder_provokeCallErrorOnUndefined: function() {
-      return function() {
-        var $argumentsExpr$ = '$arguments$';
-        try {
-          (void 0).$method$($argumentsExpr$);
-        } catch (e) {
-          return e.message;
-        }
-      }();
-    },
     TypeErrorDecoder_provokePropertyErrorOn: function(expression) {
       return function($expr$) {
         try {
@@ -884,24 +464,6 @@
         }
       }(expression);
     },
-    TypeErrorDecoder_provokePropertyErrorOnNull: function() {
-      return function() {
-        try {
-          null.$method$;
-        } catch (e) {
-          return e.message;
-        }
-      }();
-    },
-    TypeErrorDecoder_provokePropertyErrorOnUndefined: function() {
-      return function() {
-        try {
-          (void 0).$method$;
-        } catch (e) {
-          return e.message;
-        }
-      }();
-    },
     NullError$: function(_message, match) {
       return new H.NullError(_message, match == null ? null : match.method);
     },
@@ -910,11 +472,8 @@
         t2 = t1 ? null : match.method;
       return new H.JsNoSuchMethodError(_message, t2, t1 ? null : match.receiver);
     },
-    UnknownJsTypeError$: function(_message) {
-      return new H.UnknownJsTypeError(_message);
-    },
     unwrapException: function(ex) {
-      var message, number, ieErrorCode, nsme, notClosure, nullCall, nullLiteralCall, undefCall, undefLiteralCall, nullProperty, undefProperty, undefLiteralProperty, match, t2,
+      var message, number, ieErrorCode, nsme, notClosure, nullCall, nullLiteralCall, undefCall, undefLiteralCall, nullProperty, undefProperty, undefLiteralProperty, match, t2, _null = null,
         t1 = new H.unwrapException_saveStackTrace(ex);
       if (ex == null)
         return;
@@ -931,10 +490,10 @@
         if ((C.JSInt_methods._shrOtherPositive$1(number, 16) & 8191) === 10)
           switch (ieErrorCode) {
             case 438:
-              return t1.call$1(H.JsNoSuchMethodError$(H.S(message) + " (Error " + ieErrorCode + ")", null));
+              return t1.call$1(H.JsNoSuchMethodError$(H.S(message) + " (Error " + ieErrorCode + ")", _null));
             case 445:
             case 5007:
-              return t1.call$1(H.NullError$(H.S(message) + " (Error " + ieErrorCode + ")", null));
+              return t1.call$1(H.NullError$(H.S(message) + " (Error " + ieErrorCode + ")", _null));
           }
       }
       if (ex instanceof TypeError) {
@@ -991,50 +550,41 @@
               return t1.call$1(H.NullError$(H.stringTypeCheck(message), match));
           }
         }
-        return t1.call$1(H.UnknownJsTypeError$(typeof message === "string" ? message : ""));
+        return t1.call$1(new H.UnknownJsTypeError(typeof message === "string" ? message : ""));
       }
       if (ex instanceof RangeError) {
-        if (typeof message === "string" && H.boolConversionCheck(H.contains(message, "call stack")))
-          return P.StackOverflowError$();
-        message = H.tryStringifyException(ex);
-        return t1.call$1(P.ArgumentError$(typeof message === "string" ? message.replace(/^RangeError:\s*/, "") : message));
+        if (typeof message === "string" && message.indexOf("call stack") !== -1)
+          return new P.StackOverflowError();
+        message = function(ex) {
+          try {
+            return String(ex);
+          } catch (e) {
+          }
+          return null;
+        }(ex);
+        return t1.call$1(new P.ArgumentError(false, _null, _null, typeof message === "string" ? message.replace(/^RangeError:\s*/, "") : message));
       }
       if (typeof InternalError == "function" && ex instanceof InternalError)
         if (typeof message === "string" && message === "too much recursion")
-          return P.StackOverflowError$();
+          return new P.StackOverflowError();
       return ex;
-    },
-    tryStringifyException: function(ex) {
-      return function(ex) {
-        try {
-          return String(ex);
-        } catch (e) {
-        }
-        return null;
-      }(ex);
     },
     getTraceFromException: function(exception) {
       var trace;
       if (exception == null)
-        return H._StackTrace$(exception);
+        return new H._StackTrace(exception);
       trace = exception.$cachedTrace;
       if (trace != null)
         return trace;
-      return exception.$cachedTrace = H._StackTrace$(exception);
-    },
-    _StackTrace$: function(_exception) {
-      return new H._StackTrace(_exception);
+      return exception.$cachedTrace = new H._StackTrace(exception);
     },
     fillLiteralMap: function(keyValuePairs, result) {
       var index, index0, index1,
-        $length = H.getLength(keyValuePairs);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      index = 0;
-      for (; index < $length; index = index1) {
+        $length = keyValuePairs.length;
+      for (index = 0; index < $length; index = index1) {
         index0 = index + 1;
         index1 = index0 + 1;
-        result.$indexSet(0, H.getIndex(keyValuePairs, index), H.getIndex(keyValuePairs, index0));
+        result.$indexSet(0, keyValuePairs[index], keyValuePairs[index0]);
       }
       return result;
     },
@@ -1052,7 +602,7 @@
         case 4:
           return closure.call$4(arg1, arg2, arg3, arg4);
       }
-      throw H.wrapException(P.Exception_Exception("Unsupported number of arguments for wrapped closure"));
+      throw H.wrapException(new P._Exception("Unsupported number of arguments for wrapped closure"));
     },
     convertDartClosureToJS: function(closure, arity) {
       var $function;
@@ -1070,22 +620,16 @@
       return $function;
     },
     Closure_fromTearOff: function(receiver, functions, applyTrampolineIndex, reflectionInfo, isStatic, isIntercepted, propertyName) {
-      var $prototype, $constructor, t1, trampoline, signatureFunction, applyTrampoline, i, t2, stub, stubCallName, _null = null,
+      var $constructor, t1, trampoline, signatureFunction, applyTrampoline, i, stub, stubCallName, _null = null,
         $function = functions[0],
-        callName = $function.$callName;
-      H.boolConversionCheck(isStatic);
-      $prototype = isStatic ? Object.create(H.StaticClosure$().constructor.prototype) : Object.create(H.BoundClosure$(_null, _null, _null, _null).constructor.prototype);
+        callName = $function.$callName,
+        $prototype = isStatic ? Object.create(new H.StaticClosure().constructor.prototype) : Object.create(new H.BoundClosure(_null, _null, _null, _null).constructor.prototype);
       $prototype.$initialize = $prototype.constructor;
       if (isStatic)
         $constructor = function static_tear_off() {
           this.$initialize();
         };
-      else if (H.boolConversionCheck(H.Closure_isCsp())) {
-        t1 = function tear_off(a, b, c, d) {
-          this.$initialize(a, b, c, d);
-        };
-        $constructor = t1;
-      } else {
+      else {
         t1 = $.Closure_functionCounter;
         if (typeof t1 !== "number")
           return t1.$add();
@@ -1105,16 +649,8 @@
       signatureFunction = H.Closure__computeSignatureFunctionLegacy(reflectionInfo, isStatic, isIntercepted);
       $prototype.$signature = signatureFunction;
       $prototype[callName] = trampoline;
-      t1 = J.getInterceptor$asx(functions);
-      applyTrampoline = trampoline;
-      i = 1;
-      while (true) {
-        t2 = t1.get$length(functions);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (!(i < t2))
-          break;
-        stub = t1.$index(functions, i);
+      for (applyTrampoline = trampoline, i = 1; i < functions.length; ++i) {
+        stub = functions[i];
         stubCallName = stub.$callName;
         if (stubCallName != null) {
           stub = isStatic ? stub : H.Closure_forwardCallTo(receiver, stub, isIntercepted);
@@ -1124,7 +660,6 @@
           stub.$reflectionInfo = reflectionInfo;
           applyTrampoline = stub;
         }
-        ++i;
       }
       $prototype["call*"] = applyTrampoline;
       $prototype.$requiredArgCount = $function.$requiredArgCount;
@@ -1140,10 +675,10 @@
           };
         }(H.getType, functionType);
       if (typeof functionType == "function")
-        if (H.boolConversionCheck(isStatic))
+        if (isStatic)
           return functionType;
         else {
-          getReceiver = H.boolConversionCheck(isIntercepted) ? H.BoundClosure_receiverOf : H.BoundClosure_selfOf;
+          getReceiver = isIntercepted ? H.BoundClosure_receiverOf : H.BoundClosure_selfOf;
           return function(f, r) {
             return function() {
               return f.apply({$receiver: r(this)}, arguments);
@@ -1154,7 +689,7 @@
     },
     Closure_cspForwardCall: function(arity, isSuperCall, stubName, $function) {
       var getSelf = H.BoundClosure_selfOf;
-      switch (H.boolConversionCheck(isSuperCall) ? -1 : arity) {
+      switch (isSuperCall ? -1 : arity) {
         case 0:
           return function(n, S) {
             return function() {
@@ -1199,39 +734,41 @@
           }($function, getSelf);
       }
     },
-    Closure_isCsp: function() {
-      return false;
-    },
     Closure_forwardCallTo: function(receiver, $function, isIntercepted) {
-      var stubName, arity, lookedUpFunction, t1, selfName, $arguments;
-      if (H.boolConversionCheck(isIntercepted))
+      var stubName, arity, lookedUpFunction, t1, t2, selfName, $arguments;
+      if (isIntercepted)
         return H.Closure_forwardInterceptedCallTo(receiver, $function);
       stubName = $function.$stubName;
       arity = $function.length;
       lookedUpFunction = receiver[stubName];
       t1 = $function == null ? lookedUpFunction == null : $function === lookedUpFunction;
-      if (H.boolConversionCheck(H.Closure_isCsp()) || !t1 || arity >= 27)
+      t2 = !t1 || arity >= 27;
+      if (t2)
         return H.Closure_cspForwardCall(arity, !t1, stubName, $function);
       if (arity === 0) {
         t1 = $.Closure_functionCounter;
         if (typeof t1 !== "number")
           return t1.$add();
         $.Closure_functionCounter = t1 + 1;
-        selfName = "self" + H.S(t1);
-        return new Function("return function(){var " + selfName + " = this." + H.S(H.BoundClosure_selfFieldName()) + ";return " + selfName + "." + H.S(stubName) + "();}")();
+        selfName = "self" + t1;
+        t1 = "return function(){var " + selfName + " = this.";
+        t2 = $.BoundClosure_selfFieldNameCache;
+        return new Function(t1 + H.S(t2 == null ? $.BoundClosure_selfFieldNameCache = H.BoundClosure_computeFieldNamed("self") : t2) + ";return " + selfName + "." + H.S(stubName) + "();}")();
       }
       $arguments = "abcdefghijklmnopqrstuvwxyz".split("").splice(0, arity).join(",");
       t1 = $.Closure_functionCounter;
       if (typeof t1 !== "number")
         return t1.$add();
       $.Closure_functionCounter = t1 + 1;
-      $arguments += H.S(t1);
-      return new Function("return function(" + H.S($arguments) + "){return this." + H.S(H.BoundClosure_selfFieldName()) + "." + H.S(stubName) + "(" + H.S($arguments) + ");}")();
+      $arguments += t1;
+      t1 = "return function(" + $arguments + "){return this.";
+      t2 = $.BoundClosure_selfFieldNameCache;
+      return new Function(t1 + H.S(t2 == null ? $.BoundClosure_selfFieldNameCache = H.BoundClosure_computeFieldNamed("self") : t2) + "." + H.S(stubName) + "(" + $arguments + ");}")();
     },
     Closure_cspForwardInterceptedCall: function(arity, isSuperCall, $name, $function) {
       var getSelf = H.BoundClosure_selfOf,
         getReceiver = H.BoundClosure_receiverOf;
-      switch (H.boolConversionCheck(isSuperCall) ? -1 : arity) {
+      switch (isSuperCall ? -1 : arity) {
         case 0:
           throw H.wrapException(H.RuntimeError$("Intercepted function with no arguments."));
         case 1:
@@ -1281,71 +818,53 @@
       }
     },
     Closure_forwardInterceptedCallTo: function(receiver, $function) {
-      var $arguments,
-        selfField = H.BoundClosure_selfFieldName(),
-        receiverField = H.BoundClosure_receiverFieldName(),
-        stubName = $function.$stubName,
-        arity = $function.length,
-        lookedUpFunction = receiver[stubName],
-        t1 = $function == null ? lookedUpFunction == null : $function === lookedUpFunction,
-        t2 = !t1 || arity >= 28;
-      if (t2)
-        return H.Closure_cspForwardInterceptedCall(arity, !t1, stubName, $function);
+      var t2, stubName, arity, lookedUpFunction, t3, t4, $arguments,
+        t1 = $.BoundClosure_selfFieldNameCache;
+      if (t1 == null)
+        t1 = $.BoundClosure_selfFieldNameCache = H.BoundClosure_computeFieldNamed("self");
+      t2 = $.BoundClosure_receiverFieldNameCache;
+      if (t2 == null)
+        t2 = $.BoundClosure_receiverFieldNameCache = H.BoundClosure_computeFieldNamed("receiver");
+      stubName = $function.$stubName;
+      arity = $function.length;
+      lookedUpFunction = receiver[stubName];
+      t3 = $function == null ? lookedUpFunction == null : $function === lookedUpFunction;
+      t4 = !t3 || arity >= 28;
+      if (t4)
+        return H.Closure_cspForwardInterceptedCall(arity, !t3, stubName, $function);
       if (arity === 1) {
-        t1 = "return function(){return this." + H.S(selfField) + "." + H.S(stubName) + "(this." + H.S(receiverField) + ");";
+        t1 = "return function(){return this." + H.S(t1) + "." + H.S(stubName) + "(this." + H.S(t2) + ");";
         t2 = $.Closure_functionCounter;
         if (typeof t2 !== "number")
           return t2.$add();
         $.Closure_functionCounter = t2 + 1;
-        return new Function(t1 + H.S(t2) + "}")();
+        return new Function(t1 + t2 + "}")();
       }
       $arguments = "abcdefghijklmnopqrstuvwxyz".split("").splice(0, arity - 1).join(",");
-      t1 = "return function(" + $arguments + "){return this." + H.S(selfField) + "." + H.S(stubName) + "(this." + H.S(receiverField) + ", " + $arguments + ");";
+      t1 = "return function(" + $arguments + "){return this." + H.S(t1) + "." + H.S(stubName) + "(this." + H.S(t2) + ", " + $arguments + ");";
       t2 = $.Closure_functionCounter;
       if (typeof t2 !== "number")
         return t2.$add();
       $.Closure_functionCounter = t2 + 1;
-      return new Function(t1 + H.S(t2) + "}")();
+      return new Function(t1 + t2 + "}")();
     },
     closureFromTearOff: function(receiver, functions, applyTrampolineIndex, reflectionInfo, isStatic, isIntercepted, $name) {
       return H.Closure_fromTearOff(receiver, functions, applyTrampolineIndex, reflectionInfo, !!isStatic, !!isIntercepted, $name);
     },
-    StaticClosure$: function() {
-      return new H.StaticClosure();
-    },
-    BoundClosure$: function(_self, _target, _receiver, _name) {
-      return new H.BoundClosure(_self, _target, _receiver, _name);
-    },
     BoundClosure_selfOf: function(closure) {
-      return H.interceptedTypeCheck(closure, "$isBoundClosure")._self;
+      return closure._self;
     },
     BoundClosure_receiverOf: function(closure) {
-      return H.interceptedTypeCheck(closure, "$isBoundClosure")._receiver;
-    },
-    BoundClosure_selfFieldName: function() {
-      var t1 = $.BoundClosure_selfFieldNameCache;
-      return t1 == null ? $.BoundClosure_selfFieldNameCache = H.BoundClosure_computeFieldNamed("self") : t1;
-    },
-    BoundClosure_receiverFieldName: function() {
-      var t1 = $.BoundClosure_receiverFieldNameCache;
-      return t1 == null ? $.BoundClosure_receiverFieldNameCache = H.BoundClosure_computeFieldNamed("receiver") : t1;
+      return closure._receiver;
     },
     BoundClosure_computeFieldNamed: function(fieldName) {
-      var t2, $name,
-        template = H.BoundClosure$("self", "target", "receiver", "name"),
-        names = J.JSArray_markFixedList(Object.getOwnPropertyNames(template)),
-        t1 = J.getInterceptor$asx(names),
-        i = 0;
-      while (true) {
-        t2 = t1.get$length(names);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (!(i < t2))
-          break;
-        $name = t1.$index(names, i);
+      var t1, i, $name,
+        template = new H.BoundClosure("self", "target", "receiver", "name"),
+        names = J.JSArray_markFixedList(Object.getOwnPropertyNames(template));
+      for (t1 = names.length, i = 0; i < t1; ++i) {
+        $name = names[i];
         if (template[$name] === fieldName)
           return $name;
-        ++i;
       }
     },
     boolConversionCheck: function(value) {
@@ -1387,10 +906,10 @@
       throw H.wrapException(H.CastErrorImplementation$(value, "int"));
     },
     propertyTypeError: function(value, property) {
-      throw H.wrapException(H.TypeErrorImplementation$(value, H.unminifyOrTag(H.isCheckPropertyToJsConstructorName(H.stringTypeCheck(property)))));
+      throw H.wrapException(H.TypeErrorImplementation$(value, H.unminifyOrTag(H.stringTypeCheck(property).substring(3))));
     },
     propertyTypeCastError: function(value, property) {
-      throw H.wrapException(H.CastErrorImplementation$(value, H.unminifyOrTag(H.isCheckPropertyToJsConstructorName(H.stringTypeCheck(property)))));
+      throw H.wrapException(H.CastErrorImplementation$(value, H.unminifyOrTag(H.stringTypeCheck(property).substring(3))));
     },
     interceptedTypeCheck: function(value, property) {
       if (value == null)
@@ -1408,15 +927,6 @@
       if (t1)
         return value;
       H.propertyTypeCastError(value, property);
-    },
-    stringSuperNativeTypeCheck: function(value, property) {
-      if (value == null)
-        return value;
-      if (typeof value === "string")
-        return value;
-      if (J.getInterceptor$(value)[property])
-        return value;
-      H.propertyTypeError(value, property);
     },
     listTypeCheck: function(value) {
       if (value == null)
@@ -1436,15 +946,12 @@
         return value;
       H.propertyTypeError(value, property);
     },
-    extractFunctionTypeObjectFrom: function(o) {
-      return H.extractFunctionTypeObjectFromInternal(J.getInterceptor$(o));
-    },
     extractFunctionTypeObjectFromInternal: function(o) {
       var signature;
       if ("$signature" in o) {
         signature = o.$signature;
         if (typeof signature == "number")
-          return H.getType(H.intTypeCheck(signature));
+          return init.types[H.intTypeCheck(signature)];
         else
           return o.$signature();
       }
@@ -1452,24 +959,22 @@
     },
     functionTypeTest: function(value, functionTypeRti) {
       var functionTypeObject;
-      if (value == null)
-        return false;
       if (typeof value == "function")
         return true;
-      functionTypeObject = H.extractFunctionTypeObjectFrom(value);
+      functionTypeObject = H.extractFunctionTypeObjectFromInternal(J.getInterceptor$(value));
       if (functionTypeObject == null)
         return false;
-      return H.isFunctionSubtype(functionTypeObject, functionTypeRti);
+      return H._isFunctionSubtype(functionTypeObject, null, functionTypeRti, null);
     },
     functionTypeCheck: function(value, functionTypeRti) {
       var $self, t1;
       if (value == null)
         return value;
-      if (true === $._inTypeAssertion)
+      if ($._inTypeAssertion)
         return value;
       $._inTypeAssertion = true;
       try {
-        if (H.boolConversionCheck(H.boolTypeCheck(H.functionTypeTest(value, functionTypeRti))))
+        if (H.functionTypeTest(value, functionTypeRti))
           return value;
         $self = H.runtimeTypeToString(functionTypeRti);
         t1 = H.TypeErrorImplementation$(value, $self);
@@ -1479,18 +984,21 @@
       }
     },
     futureOrCheck: function(o, futureOrRti) {
-      return H.assertSubtypeOfRuntimeType(o, futureOrRti);
+      if (o != null && !H.checkSubtypeOfRuntimeType(o, futureOrRti))
+        H.throwExpression(H.TypeErrorImplementation$(o, H.runtimeTypeToString(futureOrRti)));
+      return o;
     },
     TypeErrorImplementation$: function(value, type) {
-      return new H.TypeErrorImplementation("TypeError: " + H.S(P.Error_safeToString(value)) + ": type '" + H.S(H._typeDescription(value)) + "' is not a subtype of type '" + H.S(type) + "'");
+      return new H.TypeErrorImplementation("TypeError: " + P.Error_safeToString(value) + ": type '" + H.S(H._typeDescription(value)) + "' is not a subtype of type '" + type + "'");
     },
     CastErrorImplementation$: function(value, type) {
-      return new H.CastErrorImplementation("CastError: " + H.S(P.Error_safeToString(value)) + ": type '" + H.S(H._typeDescription(value)) + "' is not a subtype of type '" + H.S(type) + "'");
+      return new H.CastErrorImplementation("CastError: " + P.Error_safeToString(value) + ": type '" + H.S(H._typeDescription(value)) + "' is not a subtype of type '" + type + "'");
     },
     _typeDescription: function(value) {
-      var functionTypeObject;
-      if (value instanceof H.Closure) {
-        functionTypeObject = H.extractFunctionTypeObjectFrom(value);
+      var functionTypeObject,
+        t1 = J.getInterceptor$(value);
+      if (!!t1.$isClosure) {
+        functionTypeObject = H.extractFunctionTypeObjectFromInternal(t1);
         if (functionTypeObject != null)
           return H.runtimeTypeToString(functionTypeObject);
         return "Closure";
@@ -1498,24 +1006,16 @@
       return H.Primitives_objectTypeName(value);
     },
     assertThrow: function(message) {
-      throw H.wrapException(H._AssertionError$(message));
+      throw H.wrapException(new H._AssertionError(message));
     },
     throwCyclicInit: function(staticName) {
-      throw H.wrapException(P.CyclicInitializationError$(staticName));
+      throw H.wrapException(new P.CyclicInitializationError(staticName));
     },
     RuntimeError$: function(message) {
       return new H.RuntimeError(message);
     },
-    jsonEncodeNative: function(string) {
-      return JSON.stringify(string);
-    },
     getIsolateAffinityTag: function($name) {
       return init.getIsolateTag($name);
-    },
-    _AssertionError$: function(message) {
-      return new H._AssertionError(message);
-    },
-    registerGlobalObject: function(object) {
     },
     setRuntimeTypeInfo: function(target, rti) {
       target.$ti = rti;
@@ -1527,170 +1027,136 @@
       return target.$ti;
     },
     getRuntimeTypeArguments: function(interceptor, object, substitutionName) {
-      return H.substitute(H.getField(interceptor, "$as" + H.S(substitutionName)), H.getRuntimeTypeInfo(object));
+      return H.substitute(interceptor["$as" + H.S(substitutionName)], H.getRuntimeTypeInfo(object));
     },
     getRuntimeTypeArgumentIntercepted: function(interceptor, target, substitutionName, index) {
-      var $arguments = H.getRuntimeTypeArguments(interceptor, target, substitutionName);
-      return $arguments == null ? null : H.getIndex($arguments, index);
+      var $arguments = H.substitute(interceptor["$as" + H.S(substitutionName)], H.getRuntimeTypeInfo(target));
+      return $arguments == null ? null : $arguments[index];
     },
     getRuntimeTypeArgument: function(target, substitutionName, index) {
-      var $arguments = H.getRuntimeTypeArguments(target, target, substitutionName);
-      return $arguments == null ? null : H.getIndex($arguments, index);
+      var $arguments = H.substitute(target["$as" + H.S(substitutionName)], H.getRuntimeTypeInfo(target));
+      return $arguments == null ? null : $arguments[index];
     },
     getTypeArgumentByIndex: function(target, index) {
       var rti = H.getRuntimeTypeInfo(target);
-      return rti == null ? null : H.getIndex(rti, index);
-    },
-    _getRuntimeTypeAsString: function(rti, genericContext) {
-      return H.S(H.unminifyOrTag(H.rawRtiToJsConstructorName(H.getIndex(rti, 0)))) + H.S(H._joinArguments(rti, 1, genericContext));
+      return rti == null ? null : rti[index];
     },
     runtimeTypeToString: function(rti) {
       return H._runtimeTypeToString(rti, null);
     },
     _runtimeTypeToString: function(rti, genericContext) {
       var t1, t2;
-      if (H.boolConversionCheck(H.isDartDynamicTypeRti(rti)))
+      if (rti == null)
         return "dynamic";
-      if (H.boolConversionCheck(H.isDartVoidTypeRti(rti)))
+      if (rti === -1)
         return "void";
-      if (H.boolConversionCheck(H.isJsArray(rti)))
-        return H._getRuntimeTypeAsString(rti, genericContext);
-      if (H.boolConversionCheck(H.isJsFunction(rti)))
-        return H.unminifyOrTag(H.rawRtiToJsConstructorName(rti));
-      if (H.boolConversionCheck(H.isDartJsInteropTypeArgumentRti(rti)))
+      if (typeof rti === "object" && rti !== null && rti.constructor === Array)
+        return H.unminifyOrTag(rti[0].name) + H._joinArguments(rti, 1, genericContext);
+      if (typeof rti == "function")
+        return H.unminifyOrTag(rti.name);
+      if (rti === -2)
         return "dynamic";
-      if (H.boolConversionCheck(H.isGenericFunctionTypeParameter(rti))) {
+      if (typeof rti === "number") {
         H.intTypeCheck(rti);
-        if (genericContext != null) {
-          if (typeof rti !== "number")
-            return rti.$lt();
-          if (rti >= 0) {
-            t1 = J.get$length$asx(genericContext);
-            if (typeof t1 !== "number")
-              return H.iae(t1);
-            t1 = rti >= t1;
-          } else
-            t1 = true;
-        } else
-          t1 = true;
-        if (t1)
-          return "unexpected-generic-index:" + H.S(rti);
-        t1 = J.getInterceptor$asx(genericContext);
-        t2 = t1.get$length(genericContext);
-        if (typeof t2 !== "number")
-          return t2.$sub();
-        if (typeof rti !== "number")
-          return H.iae(rti);
-        return H.S(t1.$index(genericContext, t2 - rti - 1));
+        if (genericContext == null || rti < 0 || rti >= genericContext.length)
+          return "unexpected-generic-index:" + rti;
+        t1 = genericContext.length;
+        t2 = t1 - rti - 1;
+        if (t2 < 0 || t2 >= t1)
+          return H.ioore(genericContext, t2);
+        return H.S(genericContext[t2]);
       }
-      if (H.boolConversionCheck(H.isDartFunctionType(rti)))
+      if ('func' in rti)
         return H._functionRtiToString(rti, genericContext);
-      if (H.boolConversionCheck(H.isDartFutureOrType(rti)))
-        return "FutureOr<" + H.S(H._runtimeTypeToString(H.getFutureOrArgument(rti), genericContext)) + ">";
+      if ('futureOr' in rti)
+        return "FutureOr<" + H._runtimeTypeToString("type" in rti ? rti.type : null, genericContext) + ">";
       return "unknown-reified-type";
     },
     _functionRtiToString: function(rti, genericContext) {
-      var boundsRti, outerContextLength, t1, offset, i, i0, typeParameters, typeSep, t2, boundRti, returnTypeText, argumentsText, sep, argument, optionalArguments, namedArguments, _s2_ = ", ";
-      if (H.boolConversionCheck(H.boolTypeCheck(H.hasField(rti, "bounds")))) {
+      var boundsRti, outerContextLength, offset, i, i0, typeParameters, typeSep, t1, t2, boundRti, returnTypeText, $arguments, argumentsText, sep, _i, argument, optionalArguments, namedArguments, t3, _s2_ = ", ";
+      if ("bounds" in rti) {
         boundsRti = rti.bounds;
         if (genericContext == null) {
           genericContext = H.setRuntimeTypeInfo([], [P.String]);
           outerContextLength = null;
         } else
-          outerContextLength = J.get$length$asx(genericContext);
-        t1 = J.getInterceptor$asx(genericContext);
-        offset = t1.get$length(genericContext);
-        for (i = boundsRti.length, i0 = i; i0 > 0; --i0) {
-          if (typeof offset !== "number")
-            return offset.$add();
-          t1.add$1(genericContext, "T" + (offset + i0));
-        }
+          outerContextLength = genericContext.length;
+        offset = genericContext.length;
+        for (i = boundsRti.length, i0 = i; i0 > 0; --i0)
+          C.JSArray_methods.add$1(genericContext, "T" + (offset + i0));
         for (typeParameters = "<", typeSep = "", i0 = 0; i0 < i; ++i0, typeSep = _s2_) {
-          typeParameters = J.$add$ansx(typeParameters, typeSep);
-          t2 = t1.get$length(genericContext);
-          if (typeof t2 !== "number")
-            return t2.$sub();
-          typeParameters = J.$add$ansx(typeParameters, t1.$index(genericContext, t2 - i0 - 1));
+          typeParameters += typeSep;
+          t1 = genericContext.length;
+          t2 = t1 - i0 - 1;
+          if (t2 < 0)
+            return H.ioore(genericContext, t2);
+          typeParameters = C.JSString_methods.$add(typeParameters, genericContext[t2]);
           boundRti = boundsRti[i0];
-          if (H.boolConversionCheck(H.isInterestingBound(boundRti)))
-            typeParameters = J.$add$ansx(typeParameters, C.JSString_methods.$add(" extends ", H._runtimeTypeToString(boundRti, genericContext)));
+          if (boundRti != null && boundRti !== P.Object)
+            typeParameters += " extends " + H._runtimeTypeToString(boundRti, genericContext);
         }
-        typeParameters = J.$add$ansx(typeParameters, ">");
+        typeParameters += ">";
       } else {
         typeParameters = "";
         outerContextLength = null;
       }
       returnTypeText = !!rti.v ? "void" : H._runtimeTypeToString(rti.ret, genericContext);
-      if (H.boolConversionCheck(H.boolTypeCheck(H.hasField(rti, "args"))))
-        for (t1 = C.JSArray_methods.get$iterator(rti.args), argumentsText = "", sep = ""; H.boolConversionCheck(t1.moveNext$0()); sep = _s2_) {
-          argument = t1.get$current();
-          argumentsText = J.$add$ansx(J.$add$ansx(argumentsText, sep), H._runtimeTypeToString(argument, genericContext));
+      if ("args" in rti) {
+        $arguments = rti.args;
+        for (t1 = $arguments.length, argumentsText = "", sep = "", _i = 0; _i < t1; ++_i, sep = _s2_) {
+          argument = $arguments[_i];
+          argumentsText = argumentsText + sep + H._runtimeTypeToString(argument, genericContext);
         }
-      else {
+      } else {
         argumentsText = "";
         sep = "";
       }
       if ("opt" in rti) {
         optionalArguments = rti.opt;
-        argumentsText = J.$add$ansx(argumentsText, sep + "[");
-        for (t1 = C.JSArray_methods.get$iterator(optionalArguments), sep = ""; H.boolConversionCheck(t1.moveNext$0()); sep = _s2_) {
-          argument = t1.get$current();
-          argumentsText = J.$add$ansx(J.$add$ansx(argumentsText, sep), H._runtimeTypeToString(argument, genericContext));
+        argumentsText += sep + "[";
+        for (t1 = optionalArguments.length, sep = "", _i = 0; _i < t1; ++_i, sep = _s2_) {
+          argument = optionalArguments[_i];
+          argumentsText = argumentsText + sep + H._runtimeTypeToString(argument, genericContext);
         }
-        argumentsText = J.$add$ansx(argumentsText, "]");
+        argumentsText += "]";
       }
       if ("named" in rti) {
         namedArguments = rti.named;
-        argumentsText = J.$add$ansx(argumentsText, sep + "{");
-        for (t1 = J.get$iterator$ax(H.extractKeys(namedArguments)), sep = ""; H.boolConversionCheck(t1.moveNext$0()); sep = _s2_) {
-          t2 = H.stringTypeCheck(t1.get$current());
-          argumentsText = J.$add$ansx(J.$add$ansx(J.$add$ansx(argumentsText, sep), H._runtimeTypeToString(namedArguments[t2], genericContext)), " " + H.S(t2));
+        argumentsText += sep + "{";
+        for (t1 = H.extractKeys(namedArguments), t2 = t1.length, sep = "", _i = 0; _i < t2; ++_i, sep = _s2_) {
+          t3 = H.stringTypeCheck(t1[_i]);
+          argumentsText = argumentsText + sep + H._runtimeTypeToString(namedArguments[t3], genericContext) + (" " + H.S(t3));
         }
-        argumentsText = J.$add$ansx(argumentsText, "}");
+        argumentsText += "}";
       }
       if (outerContextLength != null)
         genericContext.length = outerContextLength;
-      return H.S(typeParameters) + "(" + H.S(argumentsText) + ") => " + H.S(returnTypeText);
-    },
-    joinArguments: function(types, startIndex) {
-      return H._joinArguments(types, startIndex, null);
+      return typeParameters + "(" + argumentsText + ") => " + returnTypeText;
     },
     _joinArguments: function(types, startIndex, genericContext) {
       var buffer, index, separator, allDynamic, t1, argument;
       if (types == null)
         return "";
-      buffer = P.StringBuffer$("");
-      index = startIndex;
-      separator = "";
-      allDynamic = true;
-      while (true) {
-        t1 = H.getLength(types);
-        if (typeof index !== "number")
-          return index.$lt();
-        if (typeof t1 !== "number")
-          return H.iae(t1);
-        if (!(index < t1))
-          break;
-        buffer.write$1(separator);
-        argument = H.getIndex(types, index);
+      buffer = new P.StringBuffer("");
+      for (index = startIndex, separator = "", allDynamic = true, t1 = ""; index < types.length; ++index, separator = ", ") {
+        buffer._contents = t1 + separator;
+        argument = types[index];
         if (argument != null)
           allDynamic = false;
-        buffer.write$1(H._runtimeTypeToString(argument, genericContext));
-        ++index;
-        separator = ", ";
+        t1 = buffer._contents += H._runtimeTypeToString(argument, genericContext);
       }
-      return "<" + H.S(buffer) + ">";
+      return "<" + buffer.toString$0(0) + ">";
     },
     substitute: function(substitution, $arguments) {
       if (substitution == null)
         return $arguments;
-      substitution = H.invoke(substitution, $arguments);
+      substitution = substitution.apply(null, $arguments);
       if (substitution == null)
         return;
-      if (H.boolConversionCheck(H.isJsArray(substitution)))
+      if (typeof substitution === "object" && substitution !== null && substitution.constructor === Array)
         return substitution;
-      if (H.boolConversionCheck(H.isJsFunction(substitution)))
-        return H.invoke(substitution, $arguments);
+      if (typeof substitution == "function")
+        return substitution.apply(null, $arguments);
       return $arguments;
     },
     checkSubtype: function(object, isField, checks, asField) {
@@ -1699,206 +1165,174 @@
         return false;
       $arguments = H.getRuntimeTypeInfo(object);
       interceptor = J.getInterceptor$(object);
-      if (H.getField(interceptor, isField) == null)
+      if (interceptor[isField] == null)
         return false;
-      return H.checkArguments(H.getField(interceptor, asField), $arguments, null, checks, null);
-    },
-    computeTypeName: function(isField, $arguments) {
-      return H.Primitives_formatType(H.unminifyOrTag(H.isCheckPropertyToJsConstructorName(isField)), $arguments);
+      return H.areSubtypes(H.substitute(interceptor[asField], $arguments), null, checks, null);
     },
     assertSubtype: function(object, isField, checks, asField) {
       if (object == null)
         return object;
-      if (H.boolConversionCheck(H.checkSubtype(object, isField, checks, asField)))
+      if (H.checkSubtype(object, isField, checks, asField))
         return object;
-      throw H.wrapException(H.TypeErrorImplementation$(object, H.computeTypeName(isField, checks)));
-    },
-    checkArguments: function(substitution, $arguments, sEnv, checks, tEnv) {
-      return H.areSubtypes(H.substitute(substitution, $arguments), sEnv, checks, tEnv);
+      throw H.wrapException(H.TypeErrorImplementation$(object, function(str, names) {
+        return str.replace(/[^<,> ]+/g, function(m) {
+          return names[m] || m;
+        });
+      }(H.unminifyOrTag(isField.substring(3)) + H._joinArguments(checks, 0, null), init.mangledGlobalNames)));
     },
     areSubtypes: function(s, sEnv, t, tEnv) {
       var len, i;
       if (t == null)
         return true;
       if (s == null) {
-        len = H.getLength(t);
-        if (typeof len !== "number")
-          return H.iae(len);
-        i = 0;
-        for (; i < len; ++i)
-          if (!H.boolConversionCheck(H._isSubtype(null, null, H.getIndex(t, i), tEnv)))
+        len = t.length;
+        for (i = 0; i < len; ++i)
+          if (!H._isSubtype(null, null, t[i], tEnv))
             return false;
         return true;
       }
-      len = H.getLength(s);
-      if (typeof len !== "number")
-        return H.iae(len);
-      i = 0;
-      for (; i < len; ++i)
-        if (!H.boolConversionCheck(H._isSubtype(H.getIndex(s, i), sEnv, H.getIndex(t, i), tEnv)))
+      len = s.length;
+      for (i = 0; i < len; ++i)
+        if (!H._isSubtype(s[i], sEnv, t[i], tEnv))
           return false;
       return true;
     },
     computeSignature: function(signature, context, contextName) {
-      return H.invokeOn(signature, context, H.getRuntimeTypeArguments(J.getInterceptor$(context), context, contextName));
-    },
-    isTopType: function(type) {
-      return H.boolConversionCheck(H.isDartDynamicTypeRti(type)) || H.boolConversionCheck(H.isDartVoidTypeRti(type)) || H.boolConversionCheck(H.isDartObjectTypeRti(type)) || H.boolConversionCheck(H.isDartJsInteropTypeArgumentRti(type));
-    },
-    isSupertypeOfNull: function(type) {
-      return H.boolConversionCheck(H.isSupertypeOfNullBase(type)) || H.boolConversionCheck(H.isSupertypeOfNullRecursive(type));
-    },
-    isSupertypeOfNullBase: function(type) {
-      return H.boolConversionCheck(H.isDartDynamicTypeRti(type)) || H.boolConversionCheck(H.isDartObjectTypeRti(type)) || H.boolConversionCheck(H.isNullTypeRti(type)) || H.boolConversionCheck(H.isDartVoidTypeRti(type)) || H.boolConversionCheck(H.isDartJsInteropTypeArgumentRti(type));
+      return signature.apply(context, H.substitute(J.getInterceptor$(context)["$as" + H.S(contextName)], H.getRuntimeTypeInfo(context)));
     },
     isSupertypeOfNullRecursive: function(type) {
       var typeArgument;
-      if (H.boolConversionCheck(H.isGenericFunctionTypeParameter(type)))
+      if (typeof type === "number")
         return false;
-      if (H.boolConversionCheck(H.isDartFutureOrType(type))) {
-        typeArgument = H.getFutureOrArgument(type);
-        return H.boolConversionCheck(H.isSupertypeOfNullBase(type)) || H.boolConversionCheck(H.isSupertypeOfNullRecursive(typeArgument));
+      if ('futureOr' in type) {
+        typeArgument = "type" in type ? type.type : null;
+        return type == null || type.name === "Object" || type.name === "Null" || type === -1 || type === -2 || H.isSupertypeOfNullRecursive(typeArgument);
       }
       return false;
-    },
-    getFutureOrArgument: function(type) {
-      return H.boolConversionCheck(H.boolTypeCheck(H.hasField(type, "type"))) ? H.getField(type, "type") : null;
     },
     checkSubtypeOfRuntimeType: function(o, t) {
       var type, rti;
       if (o == null)
-        return H.isSupertypeOfNull(t);
-      if (H.boolConversionCheck(H.isTopType(t)))
+        return t == null || t.name === "Object" || t.name === "Null" || t === -1 || t === -2 || H.isSupertypeOfNullRecursive(t);
+      if (t == null || t === -1 || t.name === "Object" || t === -2)
         return true;
       if (typeof t == "object") {
-        if (H.boolConversionCheck(H.isDartFutureOrType(t)))
-          if (H.boolConversionCheck(H.checkSubtypeOfRuntimeType(o, H.getFutureOrArgument(t))))
+        if ('futureOr' in t)
+          if (H.checkSubtypeOfRuntimeType(o, "type" in t ? t.type : null))
             return true;
-        if (H.boolConversionCheck(H.isDartFunctionType(t)))
-          return H.boolTypeCheck(H.functionTypeTest(o, t));
+        if ('func' in t)
+          return H.functionTypeTest(o, t);
       }
-      type = H.getRawRuntimeType(J.getInterceptor$(o));
+      type = J.getInterceptor$(o).constructor;
       rti = H.getRuntimeTypeInfo(o);
       if (rti != null) {
         rti = rti.slice();
         rti.splice(0, 0, type);
         type = rti;
       }
-      return H.isSubtype(type, t);
+      return H._isSubtype(type, null, t, null);
     },
     assertSubtypeOfRuntimeType: function(object, type) {
-      if (object != null && !H.boolConversionCheck(H.checkSubtypeOfRuntimeType(object, type)))
+      if (object != null && !H.checkSubtypeOfRuntimeType(object, type))
         throw H.wrapException(H.TypeErrorImplementation$(object, H.runtimeTypeToString(type)));
       return object;
     },
-    getArguments: function(type) {
-      return H.boolConversionCheck(H.isJsArray(type)) ? type.slice(1) : null;
-    },
-    isSubtype: function(s, t) {
-      return H._isSubtype(s, null, t, null);
-    },
     _isSubtype: function(s, sEnv, t, tEnv) {
-      var typeOfS, tTypeArgument, futureArguments, typeOfT, typeOfTString, substitution;
-      if (H.boolConversionCheck(H.isIdentical(s, t)))
+      var t1, typeOfS, tTypeArgument, futureSubstitution, futureArguments, t2, typeOfT, typeOfTString, substitution, _null = null;
+      if (s === t)
         return true;
-      if (H.boolConversionCheck(H.isTopType(t)))
+      if (t == null || t === -1 || t.name === "Object" || t === -2)
         return true;
-      if (H.boolConversionCheck(H.isDartJsInteropTypeArgumentRti(s)))
+      if (s === -2)
         return true;
-      if (H.boolConversionCheck(H.isTopType(s))) {
-        if (H.boolConversionCheck(H.isGenericFunctionTypeParameter(t)))
+      if (s == null || s === -1 || s.name === "Object" || s === -2) {
+        if (typeof t === "number")
           return false;
-        if (H.boolConversionCheck(H.isDartFutureOrType(t)))
-          return H._isSubtype(s, sEnv, H.getFutureOrArgument(t), tEnv);
+        if ('futureOr' in t)
+          return H._isSubtype(s, sEnv, "type" in t ? t.type : _null, tEnv);
         return false;
       }
-      if (H.boolConversionCheck(H.isGenericFunctionTypeParameter(s)))
-        return H._isSubtype(H.getIndex(sEnv, H.intTypeCheck(s)), sEnv, t, tEnv);
-      if (H.boolConversionCheck(H.isGenericFunctionTypeParameter(t)))
+      if (typeof s === "number")
+        return H._isSubtype(sEnv[H.intTypeCheck(s)], sEnv, t, tEnv);
+      if (typeof t === "number")
         return false;
-      if (H.boolConversionCheck(H.isNullType(s)))
+      if (s.name === "Null")
         return true;
-      typeOfS = H.boolConversionCheck(H.isJsArray(s)) ? H.getIndex(s, 0) : s;
-      if (H.boolConversionCheck(H.isDartFutureOrType(t))) {
-        tTypeArgument = H.getFutureOrArgument(t);
-        if (H.boolConversionCheck(H.isDartFutureOrType(s)))
-          return H._isSubtype(H.getFutureOrArgument(s), sEnv, tTypeArgument, tEnv);
-        else if (H.boolConversionCheck(H._isSubtype(s, sEnv, tTypeArgument, tEnv)))
+      t1 = typeof s === "object" && s !== null && s.constructor === Array;
+      typeOfS = t1 ? s[0] : s;
+      if ('futureOr' in t) {
+        tTypeArgument = "type" in t ? t.type : _null;
+        if ('futureOr' in s)
+          return H._isSubtype("type" in s ? s.type : _null, sEnv, tTypeArgument, tEnv);
+        else if (H._isSubtype(s, sEnv, tTypeArgument, tEnv))
           return true;
         else {
-          if (!H.boolConversionCheck(H.builtinIsSubtype(typeOfS, "Future")))
+          if (!('$is' + "Future" in typeOfS.prototype))
             return false;
-          futureArguments = H.substitute(H.getField(typeOfS.prototype, "$as" + "Future"), H.getArguments(s));
-          return H._isSubtype(H.boolConversionCheck(H.isJsArray(futureArguments)) ? H.getIndex(futureArguments, 0) : null, sEnv, tTypeArgument, tEnv);
+          futureSubstitution = typeOfS.prototype["$as" + "Future"];
+          futureArguments = H.substitute(futureSubstitution, t1 ? s.slice(1) : _null);
+          return H._isSubtype(typeof futureArguments === "object" && futureArguments !== null && futureArguments.constructor === Array ? futureArguments[0] : _null, sEnv, tTypeArgument, tEnv);
         }
       }
-      if (H.boolConversionCheck(H.isDartFunctionType(t)))
+      if ('func' in t)
         return H._isFunctionSubtype(s, sEnv, t, tEnv);
-      if (H.boolConversionCheck(H.isDartFunctionType(s)))
-        return H.isDartFunctionTypeRti(t);
-      typeOfT = H.boolConversionCheck(H.isJsArray(t)) ? H.getIndex(t, 0) : t;
-      if (H.boolConversionCheck(H.isNotIdentical(typeOfT, typeOfS))) {
-        typeOfTString = H.rawRtiToJsConstructorName(typeOfT);
-        if (!H.boolConversionCheck(H.builtinIsSubtype(typeOfS, typeOfTString)))
+      if ('func' in s)
+        return t.name === "Function";
+      t2 = typeof t === "object" && t !== null && t.constructor === Array;
+      typeOfT = t2 ? t[0] : t;
+      if (typeOfT !== typeOfS) {
+        typeOfTString = typeOfT.name;
+        if (!('$is' + typeOfTString in typeOfS.prototype))
           return false;
-        substitution = H.getField(typeOfS.prototype, "$as" + H.S(typeOfTString));
+        substitution = typeOfS.prototype["$as" + typeOfTString];
       } else
-        substitution = null;
-      if (!H.boolConversionCheck(H.isJsArray(t)))
+        substitution = _null;
+      if (!t2)
         return true;
-      return H.checkArguments(substitution, H.getArguments(s), sEnv, H.getArguments(t), tEnv);
-    },
-    isFunctionSubtype: function(s, t) {
-      return H._isFunctionSubtype(s, null, t, null);
+      t1 = t1 ? s.slice(1) : _null;
+      t2 = t.slice(1);
+      return H.areSubtypes(H.substitute(substitution, t1), sEnv, t2, tEnv);
     },
     _isFunctionSubtype: function(s, sEnv, t, tEnv) {
       var sBounds, tBounds, sParameterTypes, tParameterTypes, sOptionalParameterTypes, tOptionalParameterTypes, sParametersLen, tParametersLen, sOptionalParametersLen, tOptionalParametersLen, pos, tPos, sPos, sNamedParameters, tNamedParameters;
-      if (!H.boolConversionCheck(H.isDartFunctionType(s)))
+      if (!('func' in s))
         return false;
-      if (H.boolConversionCheck(H.boolTypeCheck(H.hasField(s, "bounds")))) {
-        if (H.boolConversionCheck(H.boolTypeCheck(H.hasNoField(t, "bounds"))))
+      if ("bounds" in s) {
+        if (!("bounds" in t))
           return false;
-        sBounds = H.getField(s, "bounds");
-        tBounds = H.getField(t, "bounds");
-        if (H.getLength(sBounds) != H.getLength(tBounds))
+        sBounds = s.bounds;
+        tBounds = t.bounds;
+        if (sBounds.length !== tBounds.length)
           return false;
-        sEnv = sEnv == null ? sBounds : H.concat(sBounds, sEnv);
-        tEnv = tEnv == null ? tBounds : H.concat(tBounds, tEnv);
-      } else if (H.boolConversionCheck(H.boolTypeCheck(H.hasField(t, "bounds"))))
+        sEnv = sEnv == null ? sBounds : sBounds.concat(sEnv);
+        tEnv = tEnv == null ? tBounds : tBounds.concat(tEnv);
+      } else if ("bounds" in t)
         return false;
-      if (!H.boolConversionCheck(H._isSubtype(H.getField(s, "ret"), sEnv, H.getField(t, "ret"), tEnv)))
+      if (!H._isSubtype(s.ret, sEnv, t.ret, tEnv))
         return false;
-      sParameterTypes = H.getField(s, "args");
-      tParameterTypes = H.getField(t, "args");
-      sOptionalParameterTypes = H.getField(s, "opt");
-      tOptionalParameterTypes = H.getField(t, "opt");
-      sParametersLen = sParameterTypes != null ? H.getLength(sParameterTypes) : 0;
-      tParametersLen = tParameterTypes != null ? H.getLength(tParameterTypes) : 0;
-      sOptionalParametersLen = sOptionalParameterTypes != null ? H.getLength(sOptionalParameterTypes) : 0;
-      tOptionalParametersLen = tOptionalParameterTypes != null ? H.getLength(tOptionalParameterTypes) : 0;
-      if (typeof sParametersLen !== "number")
-        return sParametersLen.$gt();
-      if (typeof tParametersLen !== "number")
-        return H.iae(tParametersLen);
+      sParameterTypes = s.args;
+      tParameterTypes = t.args;
+      sOptionalParameterTypes = s.opt;
+      tOptionalParameterTypes = t.opt;
+      sParametersLen = sParameterTypes != null ? sParameterTypes.length : 0;
+      tParametersLen = tParameterTypes != null ? tParameterTypes.length : 0;
+      sOptionalParametersLen = sOptionalParameterTypes != null ? sOptionalParameterTypes.length : 0;
+      tOptionalParametersLen = tOptionalParameterTypes != null ? tOptionalParameterTypes.length : 0;
       if (sParametersLen > tParametersLen)
         return false;
-      if (typeof sOptionalParametersLen !== "number")
-        return H.iae(sOptionalParametersLen);
-      if (typeof tOptionalParametersLen !== "number")
-        return H.iae(tOptionalParametersLen);
       if (sParametersLen + sOptionalParametersLen < tParametersLen + tOptionalParametersLen)
         return false;
       for (pos = 0; pos < sParametersLen; ++pos)
-        if (!H.boolConversionCheck(H._isSubtype(H.getIndex(tParameterTypes, pos), tEnv, H.getIndex(sParameterTypes, pos), sEnv)))
+        if (!H._isSubtype(tParameterTypes[pos], tEnv, sParameterTypes[pos], sEnv))
           return false;
       for (tPos = pos, sPos = 0; tPos < tParametersLen; ++sPos, ++tPos)
-        if (!H.boolConversionCheck(H._isSubtype(H.getIndex(tParameterTypes, tPos), tEnv, H.getIndex(sOptionalParameterTypes, sPos), sEnv)))
+        if (!H._isSubtype(tParameterTypes[tPos], tEnv, sOptionalParameterTypes[sPos], sEnv))
           return false;
       for (tPos = 0; tPos < tOptionalParametersLen; ++sPos, ++tPos)
-        if (!H.boolConversionCheck(H._isSubtype(H.getIndex(tOptionalParameterTypes, tPos), tEnv, H.getIndex(sOptionalParameterTypes, sPos), sEnv)))
+        if (!H._isSubtype(tOptionalParameterTypes[tPos], tEnv, sOptionalParameterTypes[sPos], sEnv))
           return false;
-      sNamedParameters = H.getField(s, "named");
-      tNamedParameters = H.getField(t, "named");
+      sNamedParameters = s.named;
+      tNamedParameters = t.named;
       if (tNamedParameters == null)
         return true;
       if (sNamedParameters == null)
@@ -1912,118 +1346,38 @@
         $name = names[i];
         if (!Object.hasOwnProperty.call(s, $name))
           return false;
-        if (!H.boolConversionCheck(H._isSubtype(t[$name], tEnv, s[$name], sEnv)))
+        if (!H._isSubtype(t[$name], tEnv, s[$name], sEnv))
           return false;
       }
       return true;
     },
-    isGenericFunctionTypeParameter: function(type) {
-      return typeof type === "number";
-    },
-    invoke: function($function, $arguments) {
-      return H.invokeOn($function, null, $arguments);
-    },
-    invokeOn: function($function, receiver, $arguments) {
-      return $function.apply(receiver, $arguments);
-    },
-    getField: function(object, $name) {
-      return object[$name];
-    },
-    getIndex: function(array, index) {
-      return array[index];
-    },
-    getLength: function(array) {
-      return array.length;
-    },
-    isJsArray: function(value) {
-      return typeof value === "object" && value !== null && value.constructor === Array;
-    },
-    hasField: function(object, $name) {
-      return $name in object;
-    },
-    hasNoField: function(object, $name) {
-      return !H.boolConversionCheck(H.boolTypeCheck(H.hasField(object, $name)));
-    },
-    isJsFunction: function(o) {
-      return typeof o == "function";
-    },
-    isIdentical: function(s, t) {
-      return s === t;
-    },
-    isNotIdentical: function(s, t) {
-      return s !== t;
-    },
-    isInterestingBound: function(rti) {
-      return rti != null && H.boolConversionCheck(H.isNotIdentical(rti, P.Object));
-    },
-    concat: function(a1, a2) {
-      return a1.concat(a2);
-    },
-    JsLinkedHashMap$: function($K, $V) {
-      return new H.JsLinkedHashMap([$K, $V]);
-    },
-    JsLinkedHashMap_JsLinkedHashMap$es6: function($K, $V) {
-      var t1 = H.JsLinkedHashMap$($K, $V);
-      return t1;
-    },
-    JsLinkedHashMap__isStringKey: function(key) {
-      return typeof key === "string";
-    },
-    JsLinkedHashMap__isNumericKey: function(key) {
-      return typeof key === "number" && (key & 0x3ffffff) === key;
-    },
-    LinkedHashMapCell$: function(hashMapCellKey, hashMapCellValue) {
-      return new H.LinkedHashMapCell(hashMapCellKey, hashMapCellValue);
-    },
-    LinkedHashMapKeyIterable$: function(_map, $E) {
-      return new H.LinkedHashMapKeyIterable(_map, [$E]);
-    },
-    LinkedHashMapKeyIterator$: function(_map, _modifications, $E) {
-      var t1 = new H.LinkedHashMapKeyIterator(_map, _modifications, [$E]);
-      t1.LinkedHashMapKeyIterator$2(_map, _modifications, $E);
-      return t1;
-    },
-    contains: function(userAgent, $name) {
-      return userAgent.indexOf($name) !== -1;
-    },
-    propertyGet: function(object, property) {
-      return object[property];
-    },
-    propertySet: function(object, property, value) {
-      object[property] = value;
-    },
     defineProperty: function(obj, property, value) {
       Object.defineProperty(obj, property, {value: value, enumerable: false, writable: true, configurable: true});
     },
-    interceptorsByTag: function() {
-      return init.interceptorsByTag;
-    },
-    leafTags: function() {
-      return init.leafTags;
-    },
-    lookupInterceptor: function(tag) {
-      return H.propertyGet(H.interceptorsByTag(), tag);
-    },
     lookupAndCacheInterceptor: function(obj) {
-      var interceptor, interceptorClass, mark,
+      var interceptor, interceptorClass, mark, t1,
         tag = H.stringTypeCheck($.getTagFunction.call$1(obj)),
-        record = H.propertyGet($.dispatchRecordsForInstanceTags, tag);
-      if (record != null)
-        return H.patchInstance(obj, record);
-      interceptor = H.propertyGet($.interceptorsForUncacheableTags, tag);
+        record = $.dispatchRecordsForInstanceTags[tag];
+      if (record != null) {
+        Object.defineProperty(obj, init.dispatchPropertyName, {value: record, enumerable: false, writable: true, configurable: true});
+        return record.i;
+      }
+      interceptor = $.interceptorsForUncacheableTags[tag];
       if (interceptor != null)
         return interceptor;
-      interceptorClass = H.lookupInterceptor(tag);
+      interceptorClass = init.interceptorsByTag[tag];
       if (interceptorClass == null) {
         tag = H.stringTypeCheck($.alternateTagFunction.call$2(obj, tag));
         if (tag != null) {
-          record = H.propertyGet($.dispatchRecordsForInstanceTags, tag);
-          if (record != null)
-            return H.patchInstance(obj, record);
-          interceptor = H.propertyGet($.interceptorsForUncacheableTags, tag);
+          record = $.dispatchRecordsForInstanceTags[tag];
+          if (record != null) {
+            Object.defineProperty(obj, init.dispatchPropertyName, {value: record, enumerable: false, writable: true, configurable: true});
+            return record.i;
+          }
+          interceptor = $.interceptorsForUncacheableTags[tag];
           if (interceptor != null)
             return interceptor;
-          interceptorClass = H.lookupInterceptor(tag);
+          interceptorClass = init.interceptorsByTag[tag];
         }
       }
       if (interceptorClass == null)
@@ -2032,35 +1386,33 @@
       mark = tag[0];
       if (mark === "!") {
         record = H.makeLeafDispatchRecord(interceptor);
-        H.propertySet($.dispatchRecordsForInstanceTags, tag, record);
-        return H.patchInstance(obj, record);
+        $.dispatchRecordsForInstanceTags[tag] = record;
+        Object.defineProperty(obj, init.dispatchPropertyName, {value: record, enumerable: false, writable: true, configurable: true});
+        return record.i;
       }
       if (mark === "~") {
-        H.propertySet($.interceptorsForUncacheableTags, tag, interceptor);
+        $.interceptorsForUncacheableTags[tag] = interceptor;
         return interceptor;
       }
-      if (mark === "-")
-        return H.patchProto(obj, H.makeLeafDispatchRecord(interceptor));
+      if (mark === "-") {
+        t1 = H.makeLeafDispatchRecord(interceptor);
+        Object.defineProperty(Object.getPrototypeOf(obj), init.dispatchPropertyName, {value: t1, enumerable: false, writable: true, configurable: true});
+        return t1.i;
+      }
       if (mark === "+")
         return H.patchInteriorProto(obj, interceptor);
       if (mark === "*")
         throw H.wrapException(P.UnimplementedError$(tag));
-      if (H.leafTags()[tag] === true)
-        return H.patchProto(obj, H.makeLeafDispatchRecord(interceptor));
-      else
+      if (init.leafTags[tag] === true) {
+        t1 = H.makeLeafDispatchRecord(interceptor);
+        Object.defineProperty(Object.getPrototypeOf(obj), init.dispatchPropertyName, {value: t1, enumerable: false, writable: true, configurable: true});
+        return t1.i;
+      } else
         return H.patchInteriorProto(obj, interceptor);
-    },
-    patchInstance: function(obj, record) {
-      J.setDispatchProperty(obj, record);
-      return J.dispatchRecordInterceptor(record);
-    },
-    patchProto: function(obj, record) {
-      J.setDispatchProperty(Object.getPrototypeOf(obj), record);
-      return J.dispatchRecordInterceptor(record);
     },
     patchInteriorProto: function(obj, interceptor) {
       var proto = Object.getPrototypeOf(obj);
-      J.setDispatchProperty(proto, J.makeDispatchRecord(interceptor, proto, null, null));
+      Object.defineProperty(proto, init.dispatchPropertyName, {value: J.makeDispatchRecord(interceptor, proto, null, null), enumerable: false, writable: true, configurable: true});
       return interceptor;
     },
     makeLeafDispatchRecord: function(interceptor) {
@@ -2068,13 +1420,10 @@
     },
     makeDefaultDispatchRecord: function(tag, interceptorClass, proto) {
       var interceptor = interceptorClass.prototype;
-      if (H.leafTags()[tag] === true)
+      if (init.leafTags[tag] === true)
         return H.makeLeafDispatchRecord(interceptor);
       else
         return J.makeDispatchRecord(interceptor, proto, null, null);
-    },
-    constructorNameFallback: function(object) {
-      return C.C_JS_CONST(object);
     },
     initNativeDispatch: function() {
       if (true === $.initNativeDispatchFlag)
@@ -2087,7 +1436,7 @@
       $.dispatchRecordsForInstanceTags = Object.create(null);
       $.interceptorsForUncacheableTags = Object.create(null);
       H.initHooks();
-      map = H.interceptorsByTag();
+      map = init.interceptorsByTag;
       tags = Object.getOwnPropertyNames(map);
       if (typeof window != "undefined") {
         window;
@@ -2099,7 +1448,7 @@
           if (proto != null) {
             record = H.makeDefaultDispatchRecord(tag, map[tag], proto);
             if (record != null) {
-              J.setDispatchProperty(proto, record);
+              Object.defineProperty(proto, init.dispatchPropertyName, {value: record, enumerable: false, writable: true, configurable: true});
               fun.prototype = proto;
             }
           }
@@ -2108,12 +1457,12 @@
       for (i = 0; i < tags.length; ++i) {
         tag = tags[i];
         if (/^[A-Za-z_]/.test(tag)) {
-          interceptorClass = H.propertyGet(map, tag);
-          H.propertySet(map, "!" + tag, interceptorClass);
-          H.propertySet(map, "~" + tag, interceptorClass);
-          H.propertySet(map, "-" + tag, interceptorClass);
-          H.propertySet(map, "+" + tag, interceptorClass);
-          H.propertySet(map, "*" + tag, interceptorClass);
+          interceptorClass = map[tag];
+          map["!" + tag] = interceptorClass;
+          map["~" + tag] = interceptorClass;
+          map["-" + tag] = interceptorClass;
+          map["+" + tag] = interceptorClass;
+          map["*" + tag] = interceptorClass;
         }
       }
     },
@@ -2129,7 +1478,7 @@
           for (i = 0; i < transformers.length; ++i) {
             transformer = transformers[i];
             if (typeof transformer == "function")
-              hooks = H.applyHooksTransformer(transformer, hooks);
+              hooks = transformer(hooks) || hooks;
           }
       }
       getTag = hooks.getTag;
@@ -2142,147 +1491,16 @@
     applyHooksTransformer: function(transformer, hooks) {
       return transformer(hooks) || hooks;
     },
-    regExpGetNative: function(regexp) {
-      return regexp._nativeRegExp;
-    },
-    regExpCaptureCount: function(regexp) {
-      return regexp.get$_nativeAnchoredVersion().exec("").length - 2;
-    },
-    JSSyntaxRegExp$: function(source, caseSensitive, dotAll, multiLine, unicode) {
-      return new H.JSSyntaxRegExp(source, H.JSSyntaxRegExp_makeNative(source, multiLine, caseSensitive, unicode, dotAll, false));
-    },
-    JSSyntaxRegExp_makeNative: function(source, multiLine, caseSensitive, unicode, dotAll, global) {
-      var m, i, u, s, g, regexp;
-      H.checkString(source);
-      m = multiLine === true ? "m" : "";
-      i = caseSensitive === true ? "" : "i";
-      u = H.boolConversionCheck(unicode) ? "u" : "";
-      s = H.boolConversionCheck(dotAll) ? "s" : "";
-      g = H.boolConversionCheck(global) ? "g" : "";
-      regexp = function(source, modifiers) {
-        try {
-          return new RegExp(source, modifiers);
-        } catch (e) {
-          return e;
-        }
-      }(source, m + i + u + s + g);
-      if (regexp instanceof RegExp)
-        return regexp;
-      throw H.wrapException(P.FormatException$("Illegal RegExp pattern (" + String(regexp) + ")", source));
-    },
-    _MatchImplementation$: function(pattern, _match) {
-      var t1 = new H._MatchImplementation(_match);
-      t1._MatchImplementation$2(pattern, _match);
-      return t1;
-    },
-    _AllMatchesIterable$: function(_re, _string, _start) {
-      return new H._AllMatchesIterable(_re, _string, _start);
-    },
-    _AllMatchesIterator$: function(_regExp, _string, _nextIndex) {
-      return new H._AllMatchesIterator(_regExp, _string, _nextIndex);
-    },
-    _AllMatchesIterator__isLeadSurrogate: function(c) {
-      if (typeof c !== "number")
-        return c.$ge();
-      return c >= 55296 && c <= 56319;
-    },
-    _AllMatchesIterator__isTrailSurrogate: function(c) {
-      if (typeof c !== "number")
-        return c.$ge();
-      return c >= 56320 && c <= 57343;
-    },
-    stringIndexOfStringUnchecked: function(receiver, other, startIndex) {
-      return receiver.indexOf(other, startIndex);
-    },
-    stringSplitUnchecked: function(receiver, pattern) {
-      return J.JSArray_JSArray$markGrowable(receiver.split(pattern), P.String);
-    },
-    StringMatch$: function(start, input, pattern) {
-      return new H.StringMatch(start, pattern);
-    },
-    allMatchesInStringUnchecked: function(pattern, string, startIndex) {
-      return H._StringAllMatchesIterable$(string, pattern, startIndex);
-    },
-    _StringAllMatchesIterable$: function(_input, _pattern, _index) {
-      return new H._StringAllMatchesIterable(_input, _pattern, _index);
-    },
-    _StringAllMatchesIterator$: function(_input, _pattern, _index) {
-      return new H._StringAllMatchesIterator(_input, _pattern, _index);
-    },
     quoteStringForRegExp: function(string) {
       if (/[[\]{}()*+?.\\^$|]/.test(string))
         return string.replace(/[[\]{}()*+?.\\^$|]/g, "\\$&");
       return string;
     },
-    Native: function Native() {
-    },
-    _Patch: function _Patch() {
-    },
-    ConstantMapView: function ConstantMapView() {
-    },
     ConstantMap: function ConstantMap() {
-    },
-    ConstantStringMap: function ConstantStringMap() {
-    },
-    ConstantStringMap_values_closure: function ConstantStringMap_values_closure() {
-    },
-    ConstantProtoMap: function ConstantProtoMap() {
-    },
-    _ConstantMapKeyIterable: function _ConstantMapKeyIterable() {
     },
     GeneralConstantMap: function GeneralConstantMap(t0, t1) {
       this._jsData = t0;
       this.$ti = t1;
-    },
-    Instantiation: function Instantiation() {
-    },
-    Instantiation1: function Instantiation1() {
-    },
-    Instantiation2: function Instantiation2() {
-    },
-    Instantiation3: function Instantiation3() {
-    },
-    Instantiation4: function Instantiation4() {
-    },
-    Instantiation5: function Instantiation5() {
-    },
-    Instantiation6: function Instantiation6() {
-    },
-    Instantiation7: function Instantiation7() {
-    },
-    Instantiation8: function Instantiation8() {
-    },
-    Instantiation9: function Instantiation9() {
-    },
-    Instantiation10: function Instantiation10() {
-    },
-    Instantiation11: function Instantiation11() {
-    },
-    Instantiation12: function Instantiation12() {
-    },
-    Instantiation13: function Instantiation13() {
-    },
-    Instantiation14: function Instantiation14() {
-    },
-    Instantiation15: function Instantiation15() {
-    },
-    Instantiation16: function Instantiation16() {
-    },
-    Instantiation17: function Instantiation17() {
-    },
-    Instantiation18: function Instantiation18() {
-    },
-    Instantiation19: function Instantiation19() {
-    },
-    Instantiation20: function Instantiation20() {
-    },
-    InternalMap: function InternalMap() {
-    },
-    JSInvocationMirror: function JSInvocationMirror() {
-    },
-    Primitives: function Primitives() {
-    },
-    JsCache: function JsCache() {
     },
     TypeErrorDecoder: function TypeErrorDecoder(t0, t1, t2, t3, t4, t5) {
       var _ = this;
@@ -2305,8 +1523,6 @@
     UnknownJsTypeError: function UnknownJsTypeError(t0) {
       this._message = t0;
     },
-    ExceptionAndStackTrace: function ExceptionAndStackTrace() {
-    },
     unwrapException_saveStackTrace: function unwrapException_saveStackTrace(t0) {
       this.ex = t0;
     },
@@ -2315,8 +1531,6 @@
       this._trace = null;
     },
     Closure: function Closure() {
-    },
-    Closure_fromTearOff_closure: function Closure_fromTearOff_closure() {
     },
     TearOffClosure: function TearOffClosure() {
     },
@@ -2329,39 +1543,17 @@
       _._receiver = t2;
       _._name = t3;
     },
-    Creates: function Creates() {
-    },
-    Returns: function Returns() {
-    },
-    JSName: function JSName() {
-    },
-    JavaScriptIndexingBehavior: function JavaScriptIndexingBehavior() {
-    },
     TypeErrorImplementation: function TypeErrorImplementation(t0) {
       this.message = t0;
     },
     CastErrorImplementation: function CastErrorImplementation(t0) {
       this.message = t0;
     },
-    FallThroughErrorImplementation: function FallThroughErrorImplementation() {
-    },
     RuntimeError: function RuntimeError(t0) {
       this.message = t0;
     },
-    DeferredNotLoadedError: function DeferredNotLoadedError() {
-    },
-    UnimplementedNoSuchMethodError: function UnimplementedNoSuchMethodError() {
-    },
-    MainError: function MainError() {
-    },
     _AssertionError: function _AssertionError(t0) {
       this.message = t0;
-    },
-    _UnreachableError: function _UnreachableError() {
-    },
-    TypeImpl: function TypeImpl() {
-    },
-    TypeVariable: function TypeVariable() {
     },
     JsLinkedHashMap: function JsLinkedHashMap(t0) {
       var _ = this;
@@ -2372,8 +1564,6 @@
     },
     JsLinkedHashMap_values_closure: function JsLinkedHashMap_values_closure(t0) {
       this.$this = t0;
-    },
-    Es6LinkedHashMap: function Es6LinkedHashMap() {
     },
     LinkedHashMapCell: function LinkedHashMapCell(t0, t1) {
       var _ = this;
@@ -2401,201 +1591,39 @@
     initHooks_closure1: function initHooks_closure1(t0) {
       this.prototypeForTag = t0;
     },
-    JSSyntaxRegExp: function JSSyntaxRegExp(t0, t1) {
-      var _ = this;
-      _.pattern = t0;
-      _._nativeRegExp = t1;
-      _._nativeAnchoredRegExp = _._nativeGlobalRegExp = null;
-    },
-    _MatchImplementation: function _MatchImplementation(t0) {
-      this._match = t0;
-    },
-    _AllMatchesIterable: function _AllMatchesIterable(t0, t1, t2) {
-      this._re = t0;
-      this._string = t1;
-      this.__js_helper$_start = t2;
-    },
-    _AllMatchesIterator: function _AllMatchesIterator(t0, t1, t2) {
-      var _ = this;
-      _._regExp = t0;
-      _._string = t1;
-      _._nextIndex = t2;
-      _.__js_helper$_current = null;
-    },
-    StringMatch: function StringMatch(t0, t1) {
-      this.start = t0;
-      this.pattern = t1;
-    },
-    _StringAllMatchesIterable: function _StringAllMatchesIterable(t0, t1, t2) {
-      this._input = t0;
-      this._pattern = t1;
-      this.__js_helper$_index = t2;
-    },
-    _StringAllMatchesIterator: function _StringAllMatchesIterator(t0, t1, t2) {
-      var _ = this;
-      _._input = t0;
-      _._pattern = t1;
-      _.__js_helper$_index = t2;
-      _.__js_helper$_current = null;
-    },
     extractKeys: function(victim) {
       return J.JSArray_JSArray$markFixed(victim ? Object.keys(victim) : [], null);
     },
     unmangleGlobalNameIfPreservedAnyways: function($name) {
-      return H.JsCache_fetch(init.mangledGlobalNames, $name);
-    },
-    unmangleAllIdentifiersIfPreservedAnyways: function(str) {
-      return function(str, names) {
-        return str.replace(/[^<,> ]+/g, function(m) {
-          return names[m] || m;
-        });
-      }(str, init.mangledGlobalNames);
-    },
-    _LazyMangledNamesMap: function _LazyMangledNamesMap() {
-    },
-    _LazyMangledInstanceNamesMap: function _LazyMangledInstanceNamesMap() {
-    },
-    _LazyReflectiveNamesMap: function _LazyReflectiveNamesMap() {
-    },
-    SupportedBrowser: function SupportedBrowser() {
-    },
-    Experimental: function Experimental() {
-    },
-    DomName: function DomName() {
-    },
-    DocsEditable: function DocsEditable() {
-    },
-    Unstable: function Unstable() {
-    },
-    NativeByteBuffer: function NativeByteBuffer() {
-    },
-    NativeFloat32x4List: function NativeFloat32x4List() {
-    },
-    NativeInt32x4List: function NativeInt32x4List() {
-    },
-    NativeFloat64x2List: function NativeFloat64x2List() {
-    },
-    NativeTypedData: function NativeTypedData() {
-    },
-    NativeByteData: function NativeByteData() {
-    },
-    NativeTypedArray: function NativeTypedArray() {
-    },
-    NativeTypedArrayOfDouble: function NativeTypedArrayOfDouble() {
-    },
-    NativeTypedArrayOfInt: function NativeTypedArrayOfInt() {
-    },
-    NativeFloat32List: function NativeFloat32List() {
-    },
-    NativeFloat64List: function NativeFloat64List() {
-    },
-    NativeInt16List: function NativeInt16List() {
-    },
-    NativeInt32List: function NativeInt32List() {
-    },
-    NativeInt8List: function NativeInt8List() {
-    },
-    NativeUint16List: function NativeUint16List() {
-    },
-    NativeUint32List: function NativeUint32List() {
-    },
-    NativeUint8ClampedList: function NativeUint8ClampedList() {
-    },
-    NativeUint8List: function NativeUint8List() {
-    },
-    NativeFloat32x4: function NativeFloat32x4() {
-    },
-    NativeInt32x4: function NativeInt32x4() {
-    },
-    NativeFloat64x2: function NativeFloat64x2() {
-    },
-    _NativeFloat32x4List_Object_ListMixin: function _NativeFloat32x4List_Object_ListMixin() {
-    },
-    _NativeFloat32x4List_Object_ListMixin_FixedLengthListMixin: function _NativeFloat32x4List_Object_ListMixin_FixedLengthListMixin() {
-    },
-    _NativeFloat64x2List_Object_ListMixin: function _NativeFloat64x2List_Object_ListMixin() {
-    },
-    _NativeFloat64x2List_Object_ListMixin_FixedLengthListMixin: function _NativeFloat64x2List_Object_ListMixin_FixedLengthListMixin() {
-    },
-    _NativeInt32x4List_Object_ListMixin: function _NativeInt32x4List_Object_ListMixin() {
-    },
-    _NativeInt32x4List_Object_ListMixin_FixedLengthListMixin: function _NativeInt32x4List_Object_ListMixin_FixedLengthListMixin() {
-    },
-    _NativeTypedArrayOfDouble_NativeTypedArray_ListMixin: function _NativeTypedArrayOfDouble_NativeTypedArray_ListMixin() {
-    },
-    _NativeTypedArrayOfDouble_NativeTypedArray_ListMixin_FixedLengthListMixin: function _NativeTypedArrayOfDouble_NativeTypedArray_ListMixin_FixedLengthListMixin() {
-    },
-    _NativeTypedArrayOfInt_NativeTypedArray_ListMixin: function _NativeTypedArrayOfInt_NativeTypedArray_ListMixin() {
-    },
-    _NativeTypedArrayOfInt_NativeTypedArray_ListMixin_FixedLengthListMixin: function _NativeTypedArrayOfInt_NativeTypedArray_ListMixin_FixedLengthListMixin() {
-    },
-    Recipe: function Recipe() {
-    },
-    Rti: function Rti() {
-    },
-    _FunctionParameters: function _FunctionParameters() {
-    },
-    _Type: function _Type() {
-    },
-    _Error: function _Error() {
-    },
-    _CastError: function _CastError() {
-    },
-    _TypeError: function _TypeError() {
-    },
-    _Universe: function _Universe() {
-    },
-    _Parser: function _Parser() {
-    },
-    TypeRule: function TypeRule() {
-    },
-    _Utils: function _Utils() {
+      return init.mangledGlobalNames[$name];
     }
   },
   J = {
-    getDispatchProperty: function(object) {
-      return object[init.dispatchPropertyName];
-    },
-    setDispatchProperty: function(object, value) {
-      H.defineProperty(object, init.dispatchPropertyName, value);
-    },
     makeDispatchRecord: function(interceptor, proto, extension, indexability) {
       return {i: interceptor, p: proto, e: extension, x: indexability};
     },
-    dispatchRecordInterceptor: function(record) {
-      return record.i;
-    },
-    dispatchRecordProto: function(record) {
-      return record.p;
-    },
-    dispatchRecordExtension: function(record) {
-      return record.e;
-    },
-    dispatchRecordIndexability: function(record) {
-      return record.x;
-    },
     getNativeInterceptor: function(object) {
       var proto, objectProto, $constructor, interceptor,
-        record = J.getDispatchProperty(object);
+        record = object[init.dispatchPropertyName];
       if (record == null)
         if ($.initNativeDispatchFlag == null) {
           H.initNativeDispatch();
-          record = J.getDispatchProperty(object);
+          record = object[init.dispatchPropertyName];
         }
       if (record != null) {
-        proto = J.dispatchRecordProto(record);
+        proto = record.p;
         if (false === proto)
-          return J.dispatchRecordInterceptor(record);
+          return record.i;
         if (true === proto)
           return object;
         objectProto = Object.getPrototypeOf(object);
         if (proto === objectProto)
-          return J.dispatchRecordInterceptor(record);
-        if (J.dispatchRecordExtension(record) === objectProto)
+          return record.i;
+        if (record.e === objectProto)
           throw H.wrapException(P.UnimplementedError$("Return interceptor for " + H.S(proto(object, record))));
       }
       $constructor = object.constructor;
-      interceptor = J.lookupInterceptorByConstructor($constructor);
+      interceptor = $constructor == null ? null : $constructor[$.$get$JS_INTEROP_INTERCEPTOR_TAG()];
       if (interceptor != null)
         return interceptor;
       interceptor = H.lookupAndCacheInterceptor(object);
@@ -2609,116 +1637,17 @@
       if (proto === Object.prototype)
         return C.PlainJavaScriptObject_methods;
       if (typeof $constructor == "function") {
-        J.cacheInterceptorOnConstructor($constructor, C.UnknownJavaScriptObject_methods);
+        Object.defineProperty($constructor, $.$get$JS_INTEROP_INTERCEPTOR_TAG(), {value: C.UnknownJavaScriptObject_methods, enumerable: false, writable: true, configurable: true});
         return C.UnknownJavaScriptObject_methods;
       }
       return C.UnknownJavaScriptObject_methods;
     },
-    lookupInterceptorByConstructor: function($constructor) {
-      return $constructor == null ? null : $constructor[$.$get$JS_INTEROP_INTERCEPTOR_TAG()];
-    },
-    cacheInterceptorOnConstructor: function($constructor, interceptor) {
-      H.defineProperty($constructor, $.$get$JS_INTEROP_INTERCEPTOR_TAG(), interceptor);
-    },
-    JSArray_JSArray$typed: function(allocation, $E) {
-      return allocation;
-    },
     JSArray_JSArray$markFixed: function(allocation, $E) {
-      return J.JSArray_markFixedList(H.setRuntimeTypeInfo(J.JSArray_JSArray$typed(allocation, $E), [$E]));
-    },
-    JSArray_JSArray$markGrowable: function(allocation, $E) {
-      return H.setRuntimeTypeInfo(J.JSArray_JSArray$typed(allocation, $E), [$E]);
+      return J.JSArray_markFixedList(H.setRuntimeTypeInfo(allocation, [$E]));
     },
     JSArray_markFixedList: function(list) {
       list.fixed$length = Array;
       return list;
-    },
-    JSArray_isFixedLength: function(a) {
-      return !!a.fixed$length;
-    },
-    JSArray_isUnmodifiable: function(a) {
-      return !!a.immutable$list;
-    },
-    JSArray_isGrowable: function(a) {
-      return !H.boolConversionCheck(J.JSArray_isFixedLength(a));
-    },
-    JSArray_isMutable: function(a) {
-      return !H.boolConversionCheck(J.JSArray_isUnmodifiable(a));
-    },
-    ArrayIterator$: function(iterable, $E) {
-      return new J.ArrayIterator(iterable, iterable.length, [$E]);
-    },
-    JSString__isWhitespace: function(codeUnit) {
-      if (typeof codeUnit !== "number")
-        return codeUnit.$lt();
-      if (codeUnit < 256)
-        switch (codeUnit) {
-          case 9:
-          case 10:
-          case 11:
-          case 12:
-          case 13:
-          case 32:
-          case 133:
-          case 160:
-            return true;
-          default:
-            return false;
-        }
-      switch (codeUnit) {
-        case 5760:
-        case 8192:
-        case 8193:
-        case 8194:
-        case 8195:
-        case 8196:
-        case 8197:
-        case 8198:
-        case 8199:
-        case 8200:
-        case 8201:
-        case 8202:
-        case 8232:
-        case 8233:
-        case 8239:
-        case 8287:
-        case 12288:
-        case 65279:
-          return true;
-        default:
-          return false;
-      }
-    },
-    JSString__skipLeadingWhitespace: function(string, index) {
-      var codeUnit,
-        t1 = string.length;
-      while (true) {
-        if (typeof index !== "number")
-          return index.$lt();
-        if (!(index < t1))
-          break;
-        codeUnit = C.JSString_methods.codeUnitAt$1(string, index);
-        if (codeUnit !== 32 && codeUnit !== 13 && !H.boolConversionCheck(J.JSString__isWhitespace(codeUnit)))
-          break;
-        ++index;
-      }
-      return index;
-    },
-    JSString__skipTrailingWhitespace: function(string, index) {
-      var index0, codeUnit,
-        t1 = J.getInterceptor$s(string);
-      while (true) {
-        if (typeof index !== "number")
-          return index.$gt();
-        if (!(index > 0))
-          break;
-        index0 = index - 1;
-        codeUnit = t1.codeUnitAt$1(string, index0);
-        if (codeUnit !== 32 && codeUnit !== 13 && !H.boolConversionCheck(J.JSString__isWhitespace(codeUnit)))
-          break;
-        index = index0;
-      }
-      return index;
     },
     getInterceptor$: function(receiver) {
       if (typeof receiver == "number") {
@@ -2791,15 +1720,6 @@
         return receiver;
       return J.getNativeInterceptor(receiver);
     },
-    getInterceptor$n: function(receiver) {
-      if (typeof receiver == "number")
-        return J.JSNumber.prototype;
-      if (receiver == null)
-        return receiver;
-      if (!(receiver instanceof P.Object))
-        return J.UnknownJavaScriptObject.prototype;
-      return receiver;
-    },
     getInterceptor$s: function(receiver) {
       if (typeof receiver == "string")
         return J.JSString.prototype;
@@ -2821,63 +1741,17 @@
         return receiver;
       return J.getNativeInterceptor(receiver);
     },
-    getInterceptor$z: function(receiver) {
-      if (receiver == null)
-        return receiver;
-      if (!(receiver instanceof P.Object))
-        return J.UnknownJavaScriptObject.prototype;
-      return receiver;
-    },
-    set$_innerHtml$x: function(receiver, value) {
-      return J.getInterceptor$x(receiver).set$_innerHtml(receiver, value);
-    },
     get$attributes$x: function(receiver) {
       return J.getInterceptor$x(receiver).get$attributes(receiver);
-    },
-    get$children$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$children(receiver);
-    },
-    get$console$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$console(receiver);
-    },
-    get$currentTarget$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$currentTarget(receiver);
     },
     get$hashCode$: function(receiver) {
       return J.getInterceptor$(receiver).get$hashCode(receiver);
     },
-    get$head$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$head(receiver);
-    },
-    get$isEmpty$asx: function(receiver) {
-      return J.getInterceptor$asx(receiver).get$isEmpty(receiver);
-    },
     get$iterator$ax: function(receiver) {
       return J.getInterceptor$ax(receiver).get$iterator(receiver);
     },
-    get$last$ax: function(receiver) {
-      return J.getInterceptor$ax(receiver).get$last(receiver);
-    },
     get$length$asx: function(receiver) {
       return J.getInterceptor$asx(receiver).get$length(receiver);
-    },
-    get$location$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$location(receiver);
-    },
-    get$nextNode$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$nextNode(receiver);
-    },
-    get$nodes$x: function(receiver) {
-      return J.getInterceptor$x(receiver).get$nodes(receiver);
-    },
-    get$single$ax: function(receiver) {
-      return J.getInterceptor$ax(receiver).get$single(receiver);
-    },
-    get$status$z: function(receiver) {
-      return J.getInterceptor$z(receiver).get$status(receiver);
-    },
-    get$values$z: function(receiver) {
-      return J.getInterceptor$z(receiver).get$values(receiver);
     },
     $add$ansx: function(receiver, a0) {
       if (typeof receiver == "number" && typeof a0 == "number")
@@ -2898,134 +1772,20 @@
             return receiver[a0];
       return J.getInterceptor$asx(receiver).$index(receiver, a0);
     },
-    $indexSet$ax: function(receiver, a0, a1) {
-      return J.getInterceptor$ax(receiver).$indexSet(receiver, a0, a1);
-    },
-    _hasAttribute$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver)._hasAttribute$1(receiver, a0);
-    },
-    _removeChild$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver)._removeChild$1(receiver, a0);
-    },
-    _replaceChild$2$x: function(receiver, a0, a1) {
-      return J.getInterceptor$x(receiver)._replaceChild$2(receiver, a0, a1);
-    },
-    add$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).add$1(receiver, a0);
-    },
-    addAll$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).addAll$1(receiver, a0);
-    },
-    addEventListener$3$x: function(receiver, a0, a1, a2) {
-      return J.getInterceptor$x(receiver).addEventListener$3(receiver, a0, a1, a2);
-    },
-    adoptNode$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).adoptNode$1(receiver, a0);
-    },
-    allMatches$1$s: function(receiver, a0) {
-      return J.getInterceptor$s(receiver).allMatches$1(receiver, a0);
-    },
-    any$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).any$1(receiver, a0);
-    },
-    append$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).append$1(receiver, a0);
-    },
-    codeUnitAt$1$s: function(receiver, a0) {
-      return J.getInterceptor$s(receiver).codeUnitAt$1(receiver, a0);
-    },
-    contains$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).contains$1(receiver, a0);
-    },
-    createContextualFragment$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).createContextualFragment$1(receiver, a0);
-    },
-    createDocumentFragment$0$x: function(receiver) {
-      return J.getInterceptor$x(receiver).createDocumentFragment$0(receiver);
-    },
-    createElement$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).createElement$1(receiver, a0);
-    },
-    createFragment$3$treeSanitizer$validator$x: function(receiver, a0, a1, a2) {
-      return J.getInterceptor$x(receiver).createFragment$3$treeSanitizer$validator(receiver, a0, a1, a2);
-    },
-    deselectAll$0$z: function(receiver) {
-      return J.getInterceptor$z(receiver).deselectAll$0(receiver);
+    _addEventListener$3$x: function(receiver, a0, a1, a2) {
+      return J.getInterceptor$x(receiver)._addEventListener$3(receiver, a0, a1, a2);
     },
     elementAt$1$ax: function(receiver, a0) {
       return J.getInterceptor$ax(receiver).elementAt$1(receiver, a0);
     },
-    firstWhere$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).firstWhere$1(receiver, a0);
-    },
-    forEach$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).forEach$1(receiver, a0);
-    },
-    getAttribute$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).getAttribute$1(receiver, a0);
-    },
     getRange$2$ax: function(receiver, a0, a1) {
       return J.getInterceptor$ax(receiver).getRange$2(receiver, a0, a1);
-    },
-    join$1$z: function(receiver, a0) {
-      return J.getInterceptor$z(receiver).join$1(receiver, a0);
-    },
-    map$1$1$ax: function(receiver, a0, $T1) {
-      return J.getInterceptor$ax(receiver).map$1$1(receiver, a0, $T1);
-    },
-    matchAsPrefix$2$s: function(receiver, a0, a1) {
-      return J.getInterceptor$s(receiver).matchAsPrefix$2(receiver, a0, a1);
-    },
-    preventDefault$0$x: function(receiver) {
-      return J.getInterceptor$x(receiver).preventDefault$0(receiver);
-    },
-    querySelector$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).querySelector$1(receiver, a0);
-    },
-    remainder$1$n: function(receiver, a0) {
-      return J.getInterceptor$n(receiver).remainder$1(receiver, a0);
     },
     remove$0$x: function(receiver) {
       return J.getInterceptor$x(receiver).remove$0(receiver);
     },
-    removeLast$0$ax: function(receiver) {
-      return J.getInterceptor$ax(receiver).removeLast$0(receiver);
-    },
-    removeWhere$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).removeWhere$1(receiver, a0);
-    },
-    replaceWith$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).replaceWith$1(receiver, a0);
-    },
-    select$0$z: function(receiver) {
-      return J.getInterceptor$z(receiver).select$0(receiver);
-    },
-    select$1$status$z: function(receiver, a0) {
-      return J.getInterceptor$z(receiver).select$1$status(receiver, a0);
-    },
-    selectNodeContents$1$x: function(receiver, a0) {
-      return J.getInterceptor$x(receiver).selectNodeContents$1(receiver, a0);
-    },
-    setAttribute$2$x: function(receiver, a0, a1) {
-      return J.getInterceptor$x(receiver).setAttribute$2(receiver, a0, a1);
-    },
-    skip$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).skip$1(receiver, a0);
-    },
-    split$1$s: function(receiver, a0) {
-      return J.getInterceptor$s(receiver).split$1(receiver, a0);
-    },
     startsWith$1$s: function(receiver, a0) {
       return J.getInterceptor$s(receiver).startsWith$1(receiver, a0);
-    },
-    take$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).take$1(receiver, a0);
-    },
-    toList$0$ax: function(receiver) {
-      return J.getInterceptor$ax(receiver).toList$0(receiver);
-    },
-    toList$1$growable$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).toList$1$growable(receiver, a0);
     },
     toLowerCase$0$s: function(receiver) {
       return J.getInterceptor$s(receiver).toLowerCase$0(receiver);
@@ -3033,23 +1793,11 @@
     toString$0$: function(receiver) {
       return J.getInterceptor$(receiver).toString$0(receiver);
     },
-    trim$0$s: function(receiver) {
-      return J.getInterceptor$s(receiver).trim$0(receiver);
-    },
-    where$1$ax: function(receiver, a0) {
-      return J.getInterceptor$ax(receiver).where$1(receiver, a0);
-    },
     Interceptor: function Interceptor() {
     },
     JSBool: function JSBool() {
     },
     JSNull: function JSNull() {
-    },
-    JSIndexable: function JSIndexable() {
-    },
-    JSMutableIndexable: function JSMutableIndexable() {
-    },
-    JSObject: function JSObject() {
     },
     JavaScriptObject: function JavaScriptObject() {
     },
@@ -3059,8 +1807,6 @@
     },
     JavaScriptFunction: function JavaScriptFunction() {
     },
-    _Growable: function _Growable() {
-    },
     JSArray: function JSArray(t0) {
       this.$ti = t0;
     },
@@ -3069,10 +1815,10 @@
     },
     ArrayIterator: function ArrayIterator(t0, t1, t2) {
       var _ = this;
-      _.__interceptors$_iterable = t0;
-      _.__interceptors$_length = t1;
-      _.__interceptors$_index = 0;
-      _.__interceptors$_current = null;
+      _._iterable = t0;
+      _._length = t1;
+      _._index = 0;
+      _._current = null;
       _.$ti = t2;
     },
     JSNumber: function JSNumber() {
@@ -3085,12 +1831,8 @@
     }
   },
   P = {
-    _AsyncRun__scheduleImmediate: function(callback) {
-      $.$get$_AsyncRun__scheduleImmediateClosure().call$1(callback);
-    },
     _AsyncRun__initializeScheduleImmediate: function() {
       var div, span, t1 = {};
-      H.requiresPreamble();
       if (self.scheduleImmediate != null)
         return P.async__AsyncRun__scheduleImmediateJsOverride$closure();
       if (self.MutationObserver != null && self.document != null) {
@@ -3110,61 +1852,29 @@
       self.setImmediate(H.convertDartClosureToJS(new P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback(H.functionTypeCheck(callback, {func: 1, ret: -1})), 0));
     },
     _AsyncRun__scheduleImmediateWithTimer: function(callback) {
-      P.Timer__createTimer(C.Duration_0, H.functionTypeCheck(callback, {func: 1, ret: -1}));
-    },
-    Timer__createTimer: function(duration, callback) {
-      var milliseconds = duration.get$inMilliseconds();
-      if (typeof milliseconds !== "number")
-        return milliseconds.$lt();
-      if (milliseconds < 0)
-        milliseconds = 0;
-      return P._TimerImpl$(milliseconds, callback);
+      H.functionTypeCheck(callback, {func: 1, ret: -1});
+      P._TimerImpl$(0, callback);
     },
     _TimerImpl$: function(milliseconds, callback) {
       var t1 = new P._TimerImpl();
       t1._TimerImpl$2(milliseconds, callback);
       return t1;
     },
-    _hasTimer: function() {
-      H.requiresPreamble();
-      return self.setTimeout != null;
-    },
-    _IterationMarker$_: function(state, value) {
-      return new P._IterationMarker(value, state);
-    },
     _IterationMarker_yieldStar: function(values) {
-      return P._IterationMarker$_(1, values);
+      return new P._IterationMarker(values, 1);
     },
     _IterationMarker_endOfIteration: function() {
       return C._IterationMarker_null_2;
     },
     _IterationMarker_uncaughtError: function(error) {
-      return P._IterationMarker$_(3, error);
-    },
-    _SyncStarIterator$: function(_body, $T) {
-      return new P._SyncStarIterator(_body, [$T]);
+      return new P._IterationMarker(error, 3);
     },
     _makeSyncStarIterable: function(body, $T) {
-      return P._SyncStarIterable$(body, $T);
-    },
-    _SyncStarIterable$: function(_outerHelper, $T) {
-      return new P._SyncStarIterable(_outerHelper, [$T]);
-    },
-    _rethrow: function(error, stackTrace) {
-      error = H.wrapException(error);
-      error.stack = J.toString$0$(stackTrace);
-      throw error;
-    },
-    _FutureListener$then: function(result, onValue, errorCallback, $S, $T) {
-      var t1 = errorCallback == null ? 1 : 3;
-      return new P._FutureListener(result, t1, onValue, errorCallback, [$S, $T]);
-    },
-    _Future$: function($T) {
-      return new P._Future(P.Zone_current(), [$T]);
+      return new P._SyncStarIterable(body, [$T]);
     },
     _Future__chainForeignFuture: function(source, target) {
       var e, s, exception;
-      target._setPendingComplete$0();
+      target._state = 1;
       try {
         source.then$1$2$onError(new P._Future__chainForeignFuture_closure(target), new P._Future__chainForeignFuture_closure0(target), P.Null);
       } catch (exception) {
@@ -3174,29 +1884,31 @@
       }
     },
     _Future__chainCoreFuture: function(source, target) {
-      var listeners;
-      for (; H.boolConversionCheck(source.get$_isChained());)
-        source = source.get$_chainSource();
-      if (H.boolConversionCheck(source.get$_isComplete())) {
+      var t1, listeners;
+      for (; t1 = source._state, t1 === 2;)
+        source = H.interceptedTypeCheck(source._resultOrListeners, "$is_Future");
+      if (t1 >= 4) {
         listeners = target._removeListeners$0();
-        target._cloneResult$1(source);
+        target._state = source._state;
+        target._resultOrListeners = source._resultOrListeners;
         P._Future__propagateToListeners(target, listeners);
       } else {
         listeners = H.interceptedTypeCheck(target._resultOrListeners, "$is_FutureListener");
-        target._setChained$1(source);
+        target._state = 2;
+        target._resultOrListeners = source;
         source._prependListeners$1(listeners);
       }
     },
     _Future__propagateToListeners: function(source, listeners) {
-      var _box_0, hasError, asyncError, listeners0, sourceResult, zone, t2, oldZone, result, _box_1 = {},
+      var _box_0, hasError, asyncError, listeners0, sourceResult, t2, t3, zone, t4, oldZone, current, result, _null = null, _box_1 = {},
         t1 = _box_1.source = source;
       for (; true;) {
         _box_0 = {};
-        hasError = t1.get$_hasError();
+        hasError = t1._state === 8;
         if (listeners == null) {
-          if (H.boolConversionCheck(hasError)) {
-            asyncError = _box_1.source.get$_error();
-            _box_1.source._zone.handleUncaughtError$2(asyncError.error, asyncError.stackTrace);
+          if (hasError) {
+            asyncError = H.interceptedTypeCheck(t1._resultOrListeners, "$isAsyncError");
+            P._rootHandleUncaughtError(_null, _null, t1._zone, asyncError.error, asyncError.stackTrace);
           }
           return;
         }
@@ -3204,63 +1916,84 @@
           listeners._nextListener = null;
           P._Future__propagateToListeners(_box_1.source, listeners);
         }
-        sourceResult = _box_1.source._resultOrListeners;
+        t1 = _box_1.source;
+        sourceResult = t1._resultOrListeners;
         _box_0.listenerHasError = hasError;
         _box_0.listenerValueOrError = sourceResult;
-        H.boolConversionCheck(hasError);
-        t1 = !hasError;
-        if (!t1 || H.boolConversionCheck(listeners.get$handlesValue()) || H.boolConversionCheck(listeners.get$handlesComplete())) {
-          zone = listeners.get$_zone();
-          if (hasError && !H.boolConversionCheck(_box_1.source._zone.inSameErrorZone$1(zone))) {
-            asyncError = _box_1.source.get$_error();
-            _box_1.source._zone.handleUncaughtError$2(asyncError.error, asyncError.stackTrace);
+        t2 = !hasError;
+        if (t2) {
+          t3 = listeners.state;
+          t3 = (t3 & 1) !== 0 || (t3 & 15) === 8;
+        } else
+          t3 = true;
+        if (t3) {
+          t3 = listeners.result;
+          zone = t3._zone;
+          if (hasError) {
+            t4 = t1._zone === zone;
+            t4 = !(t4 || t4);
+          } else
+            t4 = false;
+          if (t4) {
+            H.interceptedTypeCheck(sourceResult, "$isAsyncError");
+            P._rootHandleUncaughtError(_null, _null, t1._zone, sourceResult.error, sourceResult.stackTrace);
             return;
           }
-          t2 = P.Zone_current();
-          oldZone = (t2 == null ? zone != null : t2 !== zone) ? P.Zone__enter(zone) : null;
-          if (H.boolConversionCheck(listeners.get$handlesComplete()))
+          oldZone = $.Zone__current;
+          if (oldZone !== zone)
+            $.Zone__current = zone;
+          else
+            oldZone = _null;
+          t1 = listeners.state;
+          if ((t1 & 15) === 8)
             new P._Future__propagateToListeners_handleWhenCompleteCallback(_box_1, _box_0, listeners, hasError).call$0();
-          else if (t1) {
-            if (H.boolConversionCheck(listeners.get$handlesValue()))
+          else if (t2) {
+            if ((t1 & 1) !== 0)
               new P._Future__propagateToListeners_handleValueCallback(_box_0, listeners, sourceResult).call$0();
-          } else if (H.boolConversionCheck(listeners.get$handlesError()))
+          } else if ((t1 & 2) !== 0)
             new P._Future__propagateToListeners_handleError(_box_1, _box_0, listeners).call$0();
           if (oldZone != null)
-            P.Zone__leave(oldZone);
+            $.Zone__current = oldZone;
           t1 = _box_0.listenerValueOrError;
           if (!!J.getInterceptor$(t1).$isFuture) {
-            result = listeners.result;
-            if (H.boolConversionCheck(t1.get$_isComplete())) {
-              listeners = result._removeListeners$0();
-              result._cloneResult$1(t1);
+            if (t1._state >= 4) {
+              current = H.interceptedTypeCheck(t3._resultOrListeners, "$is_FutureListener");
+              t3._resultOrListeners = null;
+              listeners = t3._reverseListeners$1(current);
+              t3._state = t1._state;
+              t3._resultOrListeners = t1._resultOrListeners;
               _box_1.source = t1;
               continue;
             } else
-              P._Future__chainCoreFuture(t1, result);
+              P._Future__chainCoreFuture(t1, t3);
             return;
           }
         }
         result = listeners.result;
-        listeners = result._removeListeners$0();
-        t1 = H.boolConversionCheck(_box_0.listenerHasError);
+        current = H.interceptedTypeCheck(result._resultOrListeners, "$is_FutureListener");
+        result._resultOrListeners = null;
+        listeners = result._reverseListeners$1(current);
+        t1 = _box_0.listenerHasError;
         t2 = _box_0.listenerValueOrError;
-        if (!t1)
-          result._setValue$1(t2);
-        else
-          result._setErrorObject$1(H.interceptedTypeCheck(t2, "$isAsyncError"));
+        if (!t1) {
+          H.assertSubtypeOfRuntimeType(t2, H.getTypeArgumentByIndex(result, 0));
+          result._state = 4;
+          result._resultOrListeners = t2;
+        } else {
+          H.interceptedTypeCheck(t2, "$isAsyncError");
+          result._state = 8;
+          result._resultOrListeners = t2;
+        }
         _box_1.source = result;
         t1 = result;
       }
     },
     _registerErrorHandler: function(errorHandler, zone) {
       if (H.functionTypeTest(errorHandler, {func: 1, args: [P.Object, P.StackTrace]}))
-        return zone.registerBinaryCallback$3$1(errorHandler, null, P.Object, P.StackTrace);
+        return H.functionTypeCheck(errorHandler, {func: 1, ret: null, args: [P.Object, P.StackTrace]});
       if (H.functionTypeTest(errorHandler, {func: 1, args: [P.Object]}))
-        return zone.registerUnaryCallback$2$1(errorHandler, null, P.Object);
+        return H.functionTypeCheck(errorHandler, {func: 1, ret: null, args: [P.Object]});
       throw H.wrapException(P.ArgumentError$value(errorHandler, "onError", "Error handler must accept one Object or one Object and a StackTrace as arguments, and return a a valid result"));
-    },
-    _AsyncCallbackEntry$: function(callback) {
-      return new P._AsyncCallbackEntry(callback);
     },
     _microtaskLoop: function() {
       var t1, t2;
@@ -3281,65 +2014,46 @@
         $._lastPriorityCallback = null;
         $._isInCallbackLoop = false;
         if ($._nextCallback != null)
-          P._AsyncRun__scheduleImmediate(P.async___startMicrotaskLoop$closure());
+          $.$get$_AsyncRun__scheduleImmediateClosure().call$1(P.async___startMicrotaskLoop$closure());
       }
     },
     _scheduleAsyncCallback: function(callback) {
-      var newEntry = P._AsyncCallbackEntry$(callback);
+      var newEntry = new P._AsyncCallbackEntry(callback);
       if ($._nextCallback == null) {
         $._nextCallback = $._lastCallback = newEntry;
-        if (!H.boolConversionCheck($._isInCallbackLoop))
-          P._AsyncRun__scheduleImmediate(P.async___startMicrotaskLoop$closure());
+        if (!$._isInCallbackLoop)
+          $.$get$_AsyncRun__scheduleImmediateClosure().call$1(P.async___startMicrotaskLoop$closure());
       } else
         $._lastCallback = $._lastCallback.next = newEntry;
     },
     _schedulePriorityAsyncCallback: function(callback) {
-      var entry, t1;
-      if ($._nextCallback == null) {
+      var entry, t2,
+        t1 = $._nextCallback;
+      if (t1 == null) {
         P._scheduleAsyncCallback(callback);
         $._lastPriorityCallback = $._lastCallback;
         return;
       }
-      entry = P._AsyncCallbackEntry$(callback);
-      t1 = $._lastPriorityCallback;
-      if (t1 == null) {
-        entry.next = H.interceptedTypeCheck($._nextCallback, "$is_AsyncCallbackEntry");
+      entry = new P._AsyncCallbackEntry(callback);
+      t2 = $._lastPriorityCallback;
+      if (t2 == null) {
+        entry.next = t1;
         $._nextCallback = $._lastPriorityCallback = entry;
       } else {
-        entry.next = H.interceptedTypeCheck(t1.next, "$is_AsyncCallbackEntry");
-        $._lastPriorityCallback = t1.next = entry;
+        entry.next = t2.next;
+        $._lastPriorityCallback = t2.next = entry;
         if (entry.next == null)
           $._lastCallback = entry;
       }
     },
     scheduleMicrotask: function(callback) {
-      var t1, _null = null,
-        currentZone = H.interceptedTypeCheck(P.Zone_current(), "$is_Zone");
+      var _null = null,
+        currentZone = $.Zone__current;
       if (C.C__RootZone === currentZone) {
         P._rootScheduleMicrotask(_null, _null, C.C__RootZone, callback);
         return;
       }
-      currentZone.get$_scheduleMicrotask().toString;
-      t1 = H.boolConversionCheck(C.C__RootZone.inSameErrorZone$1(currentZone));
-      if (t1) {
-        P._rootScheduleMicrotask(_null, _null, currentZone, currentZone.registerCallback$1$1(callback, -1));
-        return;
-      }
-      P.Zone_current().scheduleMicrotask$1(P.Zone_current().bindCallbackGuarded$1(callback));
-    },
-    AsyncError$: function(error, stackTrace) {
-      return new P.AsyncError(error, stackTrace);
-    },
-    Zone_current: function() {
-      return $.Zone__current;
-    },
-    Zone__enter: function(zone) {
-      var previous = $.Zone__current;
-      $.Zone__current = zone;
-      return previous;
-    },
-    Zone__leave: function(previous) {
-      $.Zone__current = previous;
+      P._rootScheduleMicrotask(_null, _null, currentZone, H.functionTypeCheck(currentZone.bindCallbackGuarded$1(callback), {func: 1, ret: -1}));
     },
     _rootHandleUncaughtError: function($self, $parent, zone, error, stackTrace) {
       var t1 = {};
@@ -3347,48 +2061,53 @@
       P._schedulePriorityAsyncCallback(new P._rootHandleUncaughtError_closure(t1, stackTrace));
     },
     _rootRun: function($self, $parent, zone, f, $R) {
-      var old, t1;
-      if (H.boolConversionCheck(J.$eq$($.Zone__current, zone)))
+      var old,
+        t1 = $.Zone__current;
+      if (t1 === zone)
         return f.call$0();
-      old = P.Zone__enter(zone);
+      $.Zone__current = zone;
+      old = t1;
       try {
         t1 = f.call$0();
         return t1;
       } finally {
-        P.Zone__leave(old);
+        $.Zone__current = old;
       }
     },
     _rootRunUnary: function($self, $parent, zone, f, arg, $R, $T) {
-      var old, t1;
-      if (H.boolConversionCheck(J.$eq$($.Zone__current, zone)))
+      var old,
+        t1 = $.Zone__current;
+      if (t1 === zone)
         return f.call$1(arg);
-      old = P.Zone__enter(zone);
+      $.Zone__current = zone;
+      old = t1;
       try {
         t1 = f.call$1(arg);
         return t1;
       } finally {
-        P.Zone__leave(old);
+        $.Zone__current = old;
       }
     },
     _rootRunBinary: function($self, $parent, zone, f, arg1, arg2, $R, T1, T2) {
-      var old, t1;
-      if (H.boolConversionCheck(J.$eq$($.Zone__current, zone)))
+      var old,
+        t1 = $.Zone__current;
+      if (t1 === zone)
         return f.call$2(arg1, arg2);
-      old = P.Zone__enter(zone);
+      $.Zone__current = zone;
+      old = t1;
       try {
         t1 = f.call$2(arg1, arg2);
         return t1;
       } finally {
-        P.Zone__leave(old);
+        $.Zone__current = old;
       }
     },
     _rootScheduleMicrotask: function($self, $parent, zone, f) {
-      H.interceptedTypeCheck($self, "$isZone");
-      H.interceptedTypeCheck($parent, "$isZoneDelegate");
-      H.interceptedTypeCheck(zone, "$isZone");
+      var t1;
       H.functionTypeCheck(f, {func: 1, ret: -1});
-      if (C.C__RootZone !== zone)
-        f = !H.boolConversionCheck(C.C__RootZone.inSameErrorZone$1(zone)) ? zone.bindCallbackGuarded$1(f) : zone.bindCallback$1$1(f, -1);
+      t1 = C.C__RootZone !== zone;
+      if (t1)
+        f = !(!t1 || false) ? zone.bindCallbackGuarded$1(f) : zone.bindCallback$1$1(f, -1);
       P._scheduleAsyncCallback(f);
     },
     _AsyncRun__initializeScheduleImmediate_internalCallback: function _AsyncRun__initializeScheduleImmediate_internalCallback(t0) {
@@ -3411,10 +2130,6 @@
       this.$this = t0;
       this.callback = t1;
     },
-    _AsyncAwaitCompleter: function _AsyncAwaitCompleter() {
-    },
-    _AsyncStarStreamController: function _AsyncStarStreamController() {
-    },
     _IterationMarker: function _IterationMarker(t0, t1) {
       this.value = t0;
       this.state = t1;
@@ -3428,36 +2143,6 @@
     _SyncStarIterable: function _SyncStarIterable(t0, t1) {
       this._outerHelper = t0;
       this.$ti = t1;
-    },
-    _BroadcastStream: function _BroadcastStream() {
-    },
-    _BroadcastSubscription: function _BroadcastSubscription() {
-    },
-    _BroadcastStreamController: function _BroadcastStreamController() {
-    },
-    _SyncBroadcastStreamController: function _SyncBroadcastStreamController() {
-    },
-    _AsyncBroadcastStreamController: function _AsyncBroadcastStreamController() {
-    },
-    _AsBroadcastStreamController: function _AsBroadcastStreamController() {
-    },
-    DeferredLibrary: function DeferredLibrary() {
-    },
-    DeferredLoadException: function DeferredLoadException() {
-    },
-    FutureOr: function FutureOr() {
-    },
-    Future: function Future() {
-    },
-    TimeoutException: function TimeoutException() {
-    },
-    Completer: function Completer() {
-    },
-    _Completer: function _Completer() {
-    },
-    _AsyncCompleter: function _AsyncCompleter() {
-    },
-    _SyncCompleter: function _SyncCompleter() {
     },
     _FutureListener: function _FutureListener(t0, t1, t2, t3, t4) {
       var _ = this;
@@ -3518,8 +2203,6 @@
       this.callback = t0;
       this.next = null;
     },
-    _AsyncRun: function _AsyncRun() {
-    },
     Stream: function Stream() {
     },
     Stream_length_closure: function Stream_length_closure(t0, t1) {
@@ -3532,148 +2215,11 @@
     },
     StreamSubscription: function StreamSubscription() {
     },
-    EventSink: function EventSink() {
-    },
-    StreamView: function StreamView() {
-    },
-    StreamConsumer: function StreamConsumer() {
-    },
-    StreamSink: function StreamSink() {
-    },
-    StreamTransformer: function StreamTransformer() {
-    },
-    StreamTransformerBase: function StreamTransformerBase() {
-    },
-    StreamIterator: function StreamIterator() {
-    },
-    _ControllerEventSinkWrapper: function _ControllerEventSinkWrapper() {
-    },
-    StreamController: function StreamController() {
-    },
-    SynchronousStreamController: function SynchronousStreamController() {
-    },
-    _StreamControllerLifecycle: function _StreamControllerLifecycle() {
-    },
-    _StreamControllerBase: function _StreamControllerBase() {
-    },
-    _StreamController: function _StreamController() {
-    },
-    _SyncStreamControllerDispatch: function _SyncStreamControllerDispatch() {
-    },
-    _AsyncStreamControllerDispatch: function _AsyncStreamControllerDispatch() {
-    },
-    _AsyncStreamController: function _AsyncStreamController() {
-    },
-    _SyncStreamController: function _SyncStreamController() {
-    },
-    _ControllerStream: function _ControllerStream() {
-    },
-    _ControllerSubscription: function _ControllerSubscription() {
-    },
-    _StreamSinkWrapper: function _StreamSinkWrapper() {
-    },
-    _AddStreamState: function _AddStreamState() {
-    },
-    _StreamControllerAddStreamState: function _StreamControllerAddStreamState() {
-    },
-    _EventSink: function _EventSink() {
-    },
-    _EventDispatch: function _EventDispatch() {
-    },
-    _BufferingStreamSubscription: function _BufferingStreamSubscription() {
-    },
-    _StreamImpl: function _StreamImpl() {
-    },
-    _GeneratedStreamImpl: function _GeneratedStreamImpl() {
-    },
-    _IterablePendingEvents: function _IterablePendingEvents() {
-    },
-    _DelayedEvent: function _DelayedEvent() {
-    },
-    _DelayedData: function _DelayedData() {
-    },
-    _DelayedError: function _DelayedError() {
-    },
-    _DelayedDone: function _DelayedDone() {
-    },
-    _PendingEvents: function _PendingEvents() {
-    },
-    _StreamImplEvents: function _StreamImplEvents() {
-    },
-    _DoneStreamSubscription: function _DoneStreamSubscription() {
-    },
-    _AsBroadcastStream: function _AsBroadcastStream() {
-    },
-    _BroadcastSubscriptionWrapper: function _BroadcastSubscriptionWrapper() {
-    },
-    _StreamIterator: function _StreamIterator() {
-    },
-    _EmptyStream: function _EmptyStream() {
-    },
-    _ForwardingStream: function _ForwardingStream() {
-    },
-    _ForwardingStreamSubscription: function _ForwardingStreamSubscription() {
-    },
-    _WhereStream: function _WhereStream() {
-    },
-    _MapStream: function _MapStream() {
-    },
-    _ExpandStream: function _ExpandStream() {
-    },
-    _HandleErrorStream: function _HandleErrorStream() {
-    },
-    _TakeStream: function _TakeStream() {
-    },
-    _StateStreamSubscription: function _StateStreamSubscription() {
-    },
-    _TakeWhileStream: function _TakeWhileStream() {
-    },
-    _SkipStream: function _SkipStream() {
-    },
-    _SkipWhileStream: function _SkipWhileStream() {
-    },
-    _DistinctStream: function _DistinctStream() {
-    },
-    _EventSinkWrapper: function _EventSinkWrapper() {
-    },
-    _SinkTransformerStreamSubscription: function _SinkTransformerStreamSubscription() {
-    },
-    _StreamSinkTransformer: function _StreamSinkTransformer() {
-    },
-    _BoundSinkStream: function _BoundSinkStream() {
-    },
-    _HandlerEventSink: function _HandlerEventSink() {
-    },
-    _StreamHandlerTransformer: function _StreamHandlerTransformer() {
-    },
-    _StreamBindTransformer: function _StreamBindTransformer() {
-    },
-    _StreamSubscriptionTransformer: function _StreamSubscriptionTransformer() {
-    },
-    _BoundSubscriptionStream: function _BoundSubscriptionStream() {
-    },
-    Timer: function Timer() {
-    },
     AsyncError: function AsyncError(t0, t1) {
       this.error = t0;
       this.stackTrace = t1;
     },
-    _ZoneFunction: function _ZoneFunction(t0) {
-      this.$ti = t0;
-    },
-    ZoneSpecification: function ZoneSpecification() {
-    },
-    _ZoneSpecification: function _ZoneSpecification() {
-    },
-    ZoneDelegate: function ZoneDelegate() {
-    },
-    Zone: function Zone() {
-    },
-    _ZoneDelegate: function _ZoneDelegate() {
-    },
     _Zone: function _Zone() {
-    },
-    _CustomZone: function _CustomZone() {
     },
     _rootHandleUncaughtError_closure: function _rootHandleUncaughtError_closure(t0, t1) {
       this._box_0 = t0;
@@ -3696,145 +2242,113 @@
       this.T = t2;
     },
     LinkedHashMap_LinkedHashMap$_empty: function($K, $V) {
-      return H.JsLinkedHashMap_JsLinkedHashMap$es6($K, $V);
+      return new H.JsLinkedHashMap([$K, $V]);
     },
     LinkedHashSet_LinkedHashSet: function($E) {
-      var t1 = P._LinkedHashSet$($E);
-      return t1;
-    },
-    _LinkedHashSet$: function($E) {
       return new P._LinkedHashSet([$E]);
     },
-    _LinkedHashSet__isStringElement: function(element) {
-      return typeof element === "string" && element !== "__proto__";
-    },
-    _LinkedHashSet__isNumericElement: function(element) {
-      return typeof element === "number" && (element & 1073741823) === element;
-    },
-    _LinkedHashSet__getTableEntry: function(table, key) {
-      return table[key];
-    },
-    _LinkedHashSet__setTableEntry: function(table, key, value) {
-      table[key] = value;
-    },
-    _LinkedHashSet__deleteTableEntry: function(table, key) {
-      delete table[key];
-    },
     _LinkedHashSet__newHashTable: function() {
-      var _s20_ = "<non-identifier-key>",
-        table = Object.create(null);
-      P._LinkedHashSet__setTableEntry(table, _s20_, table);
-      P._LinkedHashSet__deleteTableEntry(table, _s20_);
+      var table = Object.create(null);
+      table["<non-identifier-key>"] = table;
+      delete table["<non-identifier-key>"];
       return table;
-    },
-    _LinkedHashSetCell$: function(_element) {
-      return new P._LinkedHashSetCell(_element);
-    },
-    _LinkedHashSetIterator$: function(_set, _modifications, $E) {
-      var t1 = new P._LinkedHashSetIterator(_set, _modifications, [$E]);
-      t1._LinkedHashSetIterator$2(_set, _modifications, $E);
-      return t1;
     },
     IterableBase_iterableToShortString: function(iterable, leftDelimiter, rightDelimiter) {
       var parts, t1;
-      if (H.boolConversionCheck(P._isToStringVisiting(iterable))) {
+      if (P._isToStringVisiting(iterable)) {
         if (leftDelimiter === "(" && rightDelimiter === ")")
           return "(...)";
-        return H.S(leftDelimiter) + "..." + H.S(rightDelimiter);
+        return leftDelimiter + "..." + rightDelimiter;
       }
       parts = H.setRuntimeTypeInfo([], [P.String]);
-      t1 = J.getInterceptor$ax($._toStringVisiting);
-      t1.add$1($._toStringVisiting, iterable);
+      C.JSArray_methods.add$1($._toStringVisiting, iterable);
       try {
         P._iterablePartsToStrings(iterable, parts);
       } finally {
-        t1.removeLast$0($._toStringVisiting);
+        if (0 >= $._toStringVisiting.length)
+          return H.ioore($._toStringVisiting, -1);
+        $._toStringVisiting.pop();
       }
-      t1 = P.StringBuffer$(leftDelimiter);
-      t1.writeAll$2(parts, ", ");
-      t1.write$1(rightDelimiter);
-      return t1.toString$0(0);
+      t1 = P.StringBuffer__writeAll(leftDelimiter, H.listSuperNativeTypeCheck(parts, "$isIterable"), ", ") + rightDelimiter;
+      return t1.charCodeAt(0) == 0 ? t1 : t1;
     },
     IterableBase_iterableToFullString: function(iterable, leftDelimiter, rightDelimiter) {
       var buffer, t1;
-      if (H.boolConversionCheck(P._isToStringVisiting(iterable)))
-        return H.S(leftDelimiter) + "..." + H.S(rightDelimiter);
-      buffer = P.StringBuffer$(leftDelimiter);
-      t1 = J.getInterceptor$ax($._toStringVisiting);
-      t1.add$1($._toStringVisiting, iterable);
+      if (P._isToStringVisiting(iterable))
+        return leftDelimiter + "..." + rightDelimiter;
+      buffer = new P.StringBuffer(leftDelimiter);
+      C.JSArray_methods.add$1($._toStringVisiting, iterable);
       try {
-        buffer.writeAll$2(iterable, ", ");
+        t1 = buffer;
+        t1._contents = P.StringBuffer__writeAll(t1._contents, iterable, ", ");
       } finally {
-        t1.removeLast$0($._toStringVisiting);
+        if (0 >= $._toStringVisiting.length)
+          return H.ioore($._toStringVisiting, -1);
+        $._toStringVisiting.pop();
       }
-      buffer.write$1(rightDelimiter);
-      return J.toString$0$(buffer);
+      buffer._contents += rightDelimiter;
+      t1 = buffer._contents;
+      return t1.charCodeAt(0) == 0 ? t1 : t1;
     },
     _isToStringVisiting: function(o) {
-      var t2,
-        t1 = J.getInterceptor$asx($._toStringVisiting),
-        i = 0;
-      while (true) {
-        t2 = t1.get$length($._toStringVisiting);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (!(i < t2))
-          break;
-        t2 = t1.$index($._toStringVisiting, i);
-        if (o == null ? t2 == null : o === t2)
+      var t1, i;
+      for (t1 = $._toStringVisiting.length, i = 0; i < t1; ++i)
+        if (o === $._toStringVisiting[i])
           return true;
-        ++i;
-      }
       return false;
     },
     _iterablePartsToStrings: function(iterable, parts) {
-      var next, ultimateString, penultimateString, penultimate, ultimate, ultimate0, t2, elision,
-        it = J.get$iterator$ax(iterable),
-        t1 = J.getInterceptor$asx(parts),
+      var next, ultimateString, penultimateString, penultimate, ultimate, ultimate0, elision,
+        it = iterable.get$iterator(iterable),
         $length = 0, count = 0;
       while (true) {
         if (!($length < 80 || count < 3))
           break;
-        if (!H.boolConversionCheck(it.moveNext$0()))
+        if (!it.moveNext$0())
           return;
         next = H.S(it.get$current());
-        t1.add$1(parts, next);
+        C.JSArray_methods.add$1(parts, next);
         $length += next.length + 2;
         ++count;
       }
-      if (!H.boolConversionCheck(it.moveNext$0())) {
+      if (!it.moveNext$0()) {
         if (count <= 5)
           return;
-        ultimateString = t1.removeLast$0(parts);
-        penultimateString = t1.removeLast$0(parts);
+        if (0 >= parts.length)
+          return H.ioore(parts, -1);
+        ultimateString = parts.pop();
+        if (0 >= parts.length)
+          return H.ioore(parts, -1);
+        penultimateString = parts.pop();
       } else {
         penultimate = it.get$current();
         ++count;
-        if (!H.boolConversionCheck(it.moveNext$0())) {
+        if (!it.moveNext$0()) {
           if (count <= 4) {
-            t1.add$1(parts, H.S(penultimate));
+            C.JSArray_methods.add$1(parts, H.S(penultimate));
             return;
           }
           ultimateString = H.S(penultimate);
-          penultimateString = t1.removeLast$0(parts);
+          if (0 >= parts.length)
+            return H.ioore(parts, -1);
+          penultimateString = parts.pop();
           $length += ultimateString.length + 2;
         } else {
           ultimate = it.get$current();
           ++count;
-          for (; H.boolConversionCheck(it.moveNext$0()); penultimate = ultimate, ultimate = ultimate0) {
+          for (; it.moveNext$0(); penultimate = ultimate, ultimate = ultimate0) {
             ultimate0 = it.get$current();
             ++count;
             if (count > 100) {
               while (true) {
                 if (!($length > 75 && count > 3))
                   break;
-                t2 = J.get$length$asx(t1.removeLast$0(parts));
-                if (typeof t2 !== "number")
-                  return t2.$add();
-                $length -= t2 + 2;
+                if (0 >= parts.length)
+                  return H.ioore(parts, -1);
+                $length -= parts.pop().length + 2;
                 --count;
               }
-              t1.add$1(parts, "...");
+              C.JSArray_methods.add$1(parts, "...");
               return;
             }
           }
@@ -3843,97 +2357,52 @@
           $length += ultimateString.length + penultimateString.length + 4;
         }
       }
-      t2 = t1.get$length(parts);
-      if (typeof t2 !== "number")
-        return t2.$add();
-      if (count > t2 + 2) {
+      if (count > parts.length + 2) {
         $length += 5;
         elision = "...";
       } else
         elision = null;
       while (true) {
-        if ($length > 80) {
-          t2 = t1.get$length(parts);
-          if (typeof t2 !== "number")
-            return t2.$gt();
-          t2 = t2 > 3;
-        } else
-          t2 = false;
-        if (!t2)
+        if (!($length > 80 && parts.length > 3))
           break;
-        t2 = J.get$length$asx(t1.removeLast$0(parts));
-        if (typeof t2 !== "number")
-          return t2.$add();
-        $length -= t2 + 2;
+        if (0 >= parts.length)
+          return H.ioore(parts, -1);
+        $length -= parts.pop().length + 2;
         if (elision == null) {
           $length += 5;
           elision = "...";
         }
       }
       if (elision != null)
-        t1.add$1(parts, elision);
-      t1.add$1(parts, penultimateString);
-      t1.add$1(parts, ultimateString);
+        C.JSArray_methods.add$1(parts, elision);
+      C.JSArray_methods.add$1(parts, penultimateString);
+      C.JSArray_methods.add$1(parts, ultimateString);
     },
     LinkedHashSet_LinkedHashSet$from: function(elements, $E) {
-      var t1,
+      var t1, _i,
         result = P.LinkedHashSet_LinkedHashSet($E);
-      for (t1 = J.get$iterator$ax(elements); H.boolConversionCheck(t1.moveNext$0());)
-        result.add$1(0, H.assertSubtypeOfRuntimeType(t1.get$current(), $E));
+      for (t1 = elements.length, _i = 0; _i < elements.length; elements.length === t1 || (0, H.throwConcurrentModificationError)(elements), ++_i)
+        result.add$1(0, H.assertSubtypeOfRuntimeType(elements[_i], $E));
       return result;
-    },
-    ListBase_listToString: function(list) {
-      return P.IterableBase_iterableToFullString(list, "[", "]");
     },
     MapBase_mapToString: function(m) {
       var result, t1 = {};
-      if (H.boolConversionCheck(P._isToStringVisiting(m)))
+      if (P._isToStringVisiting(m))
         return "{...}";
-      result = P.StringBuffer$("");
+      result = new P.StringBuffer("");
       try {
-        J.add$1$ax($._toStringVisiting, m);
-        result.write$1("{");
+        C.JSArray_methods.add$1($._toStringVisiting, m);
+        result._contents += "{";
         t1.first = true;
-        J.forEach$1$ax(m, new P.MapBase_mapToString_closure(t1, result));
-        result.write$1("}");
+        m.forEach$1(0, new P.MapBase_mapToString_closure(t1, result));
+        result._contents += "}";
       } finally {
-        J.removeLast$0$ax($._toStringVisiting);
+        if (0 >= $._toStringVisiting.length)
+          return H.ioore($._toStringVisiting, -1);
+        $._toStringVisiting.pop();
       }
-      return J.toString$0$(result);
-    },
-    _MapBaseValueIterable$: function(_map, $K, $V) {
-      return new P._MapBaseValueIterable(_map, [$K, $V]);
-    },
-    _MapBaseValueIterator$: function(map, $K, $V) {
-      return new P._MapBaseValueIterator(J.get$iterator$ax(map.get$keys()), map, [$K, $V]);
-    },
-    _HashMap: function _HashMap() {
-    },
-    _IdentityHashMap: function _IdentityHashMap() {
-    },
-    _CustomHashMap: function _CustomHashMap() {
-    },
-    _HashMapKeyIterable: function _HashMapKeyIterable() {
-    },
-    _HashMapKeyIterator: function _HashMapKeyIterator() {
-    },
-    _LinkedIdentityHashMap: function _LinkedIdentityHashMap() {
-    },
-    _Es6LinkedIdentityHashMap: function _Es6LinkedIdentityHashMap() {
-    },
-    _Es6MapIterable: function _Es6MapIterable() {
-    },
-    _Es6MapIterator: function _Es6MapIterator() {
-    },
-    _LinkedCustomHashMap: function _LinkedCustomHashMap() {
-    },
-    _HashSet: function _HashSet() {
-    },
-    _IdentityHashSet: function _IdentityHashSet() {
-    },
-    _CustomHashSet: function _CustomHashSet() {
-    },
-    _HashSetIterator: function _HashSetIterator() {
+      t1 = result._contents;
+      return t1.charCodeAt(0) == 0 ? t1 : t1;
     },
     _LinkedHashSet: function _LinkedHashSet(t0) {
       var _ = this;
@@ -3942,14 +2411,8 @@
       _._collection$_modifications = 0;
       _.$ti = t0;
     },
-    _LinkedIdentityHashSet: function _LinkedIdentityHashSet() {
-    },
-    _LinkedCustomHashSet: function _LinkedCustomHashSet() {
-    },
-    _LinkedCustomHashSet_closure: function _LinkedCustomHashSet_closure() {
-    },
     _LinkedHashSetCell: function _LinkedHashSetCell(t0) {
-      this._element = t0;
+      this._collection$_element = t0;
       this._collection$_previous = this._collection$_next = null;
     },
     _LinkedHashSetIterator: function _LinkedHashSetIterator(t0, t1, t2) {
@@ -3959,27 +2422,7 @@
       _._collection$_current = _._collection$_cell = null;
       _.$ti = t2;
     },
-    UnmodifiableListView: function UnmodifiableListView() {
-    },
-    HashMap: function HashMap() {
-    },
-    HashSet: function HashSet() {
-    },
-    IterableMixin: function IterableMixin() {
-    },
     IterableBase: function IterableBase() {
-    },
-    HasNextIterator: function HasNextIterator() {
-    },
-    LinkedHashMap: function LinkedHashMap() {
-    },
-    LinkedHashSet: function LinkedHashSet() {
-    },
-    LinkedList0: function LinkedList0() {
-    },
-    _LinkedListIterator0: function _LinkedListIterator0() {
-    },
-    LinkedListEntry: function LinkedListEntry() {
     },
     ListBase: function ListBase() {
     },
@@ -3993,355 +2436,58 @@
     },
     MapMixin: function MapMixin() {
     },
-    MapMixin_entries_closure: function MapMixin_entries_closure() {
-    },
-    UnmodifiableMapBase: function UnmodifiableMapBase() {
-    },
-    _MapBaseValueIterable: function _MapBaseValueIterable(t0, t1) {
-      this._collection$_map = t0;
-      this.$ti = t1;
-    },
-    _MapBaseValueIterator: function _MapBaseValueIterator(t0, t1, t2) {
-      var _ = this;
-      _._keys = t0;
-      _._collection$_map = t1;
-      _._collection$_current = null;
-      _.$ti = t2;
-    },
-    _UnmodifiableMapMixin: function _UnmodifiableMapMixin() {
-    },
-    MapView: function MapView() {
-    },
-    UnmodifiableMapView: function UnmodifiableMapView() {
-    },
-    Queue: function Queue() {
-    },
-    _DoubleLink: function _DoubleLink() {
-    },
-    DoubleLinkedQueueEntry: function DoubleLinkedQueueEntry() {
-    },
-    _DoubleLinkedQueueEntry: function _DoubleLinkedQueueEntry() {
-    },
-    _DoubleLinkedQueueElement: function _DoubleLinkedQueueElement() {
-    },
-    _DoubleLinkedQueueSentinel: function _DoubleLinkedQueueSentinel() {
-    },
-    DoubleLinkedQueue: function DoubleLinkedQueue() {
-    },
-    _DoubleLinkedQueueIterator: function _DoubleLinkedQueueIterator() {
-    },
-    ListQueue: function ListQueue() {
-    },
-    _ListQueueIterator: function _ListQueueIterator() {
-    },
-    SetMixin: function SetMixin() {
-    },
-    SetBase: function SetBase() {
-    },
     _SetBase: function _SetBase() {
-    },
-    _UnmodifiableSet: function _UnmodifiableSet() {
-    },
-    _SplayTreeNode: function _SplayTreeNode() {
-    },
-    _SplayTreeMapNode: function _SplayTreeMapNode() {
-    },
-    _SplayTree: function _SplayTree() {
-    },
-    _TypeTest: function _TypeTest() {
-    },
-    SplayTreeMap: function SplayTreeMap() {
-    },
-    _SplayTreeIterator: function _SplayTreeIterator() {
-    },
-    _SplayTreeKeyIterable: function _SplayTreeKeyIterable() {
-    },
-    _SplayTreeValueIterable: function _SplayTreeValueIterable() {
-    },
-    _SplayTreeKeyIterator: function _SplayTreeKeyIterator() {
-    },
-    _SplayTreeValueIterator: function _SplayTreeValueIterator() {
-    },
-    _SplayTreeNodeIterator: function _SplayTreeNodeIterator() {
-    },
-    SplayTreeSet: function SplayTreeSet() {
     },
     _ListBase_Object_ListMixin: function _ListBase_Object_ListMixin() {
     },
-    _SetBase_Object_SetMixin: function _SetBase_Object_SetMixin() {
-    },
-    _SplayTreeMap__SplayTree_MapMixin: function _SplayTreeMap__SplayTree_MapMixin() {
-    },
-    _SplayTreeSet__SplayTree_IterableMixin: function _SplayTreeSet__SplayTree_IterableMixin() {
-    },
-    _SplayTreeSet__SplayTree_IterableMixin_SetMixin: function _SplayTreeSet__SplayTree_IterableMixin_SetMixin() {
-    },
-    _UnmodifiableMapView_MapView__UnmodifiableMapMixin: function _UnmodifiableMapView_MapView__UnmodifiableMapMixin() {
-    },
-    _JsonMap: function _JsonMap() {
-    },
-    _JsonMapKeyIterable: function _JsonMapKeyIterable() {
-    },
-    _JsonDecoderSink: function _JsonDecoderSink() {
-    },
-    AsciiCodec: function AsciiCodec() {
-    },
-    _UnicodeSubsetEncoder: function _UnicodeSubsetEncoder() {
-    },
-    AsciiEncoder: function AsciiEncoder() {
-    },
-    _UnicodeSubsetEncoderSink: function _UnicodeSubsetEncoderSink() {
-    },
-    _UnicodeSubsetDecoder: function _UnicodeSubsetDecoder() {
-    },
-    AsciiDecoder: function AsciiDecoder() {
-    },
-    _ErrorHandlingAsciiDecoderSink: function _ErrorHandlingAsciiDecoderSink() {
-    },
-    _SimpleAsciiDecoderSink: function _SimpleAsciiDecoderSink() {
-    },
-    Base64Codec: function Base64Codec() {
-    },
-    Base64Encoder: function Base64Encoder() {
-    },
-    _Base64Encoder: function _Base64Encoder() {
-    },
-    _BufferCachingBase64Encoder: function _BufferCachingBase64Encoder() {
-    },
-    _Base64EncoderSink: function _Base64EncoderSink() {
-    },
-    _AsciiBase64EncoderSink: function _AsciiBase64EncoderSink() {
-    },
-    _Utf8Base64EncoderSink: function _Utf8Base64EncoderSink() {
-    },
-    Base64Decoder: function Base64Decoder() {
-    },
-    _Base64Decoder: function _Base64Decoder() {
-    },
-    _Base64DecoderSink: function _Base64DecoderSink() {
-    },
-    ByteConversionSink: function ByteConversionSink() {
-    },
-    ByteConversionSinkBase: function ByteConversionSinkBase() {
-    },
-    _ByteAdapterSink: function _ByteAdapterSink() {
-    },
-    _ByteCallbackSink: function _ByteCallbackSink() {
-    },
-    ChunkedConversionSink: function ChunkedConversionSink() {
-    },
-    _SimpleCallbackSink: function _SimpleCallbackSink() {
-    },
-    _ConverterStreamEventSink: function _ConverterStreamEventSink() {
-    },
-    Codec: function Codec() {
-    },
-    _FusedCodec: function _FusedCodec() {
-    },
-    _InvertedCodec: function _InvertedCodec() {
-    },
-    Converter: function Converter() {
-    },
-    _FusedConverter: function _FusedConverter() {
-    },
-    Encoding: function Encoding() {
-    },
-    HtmlEscapeMode: function HtmlEscapeMode() {
-    },
-    HtmlEscape: function HtmlEscape() {
-    },
-    _HtmlEscapeSink: function _HtmlEscapeSink() {
-    },
-    JsonUnsupportedObjectError: function JsonUnsupportedObjectError() {
-    },
-    JsonCyclicError: function JsonCyclicError() {
-    },
-    JsonCodec: function JsonCodec() {
-    },
-    JsonEncoder: function JsonEncoder() {
-    },
-    JsonUtf8Encoder: function JsonUtf8Encoder() {
-    },
-    _JsonEncoderSink: function _JsonEncoderSink() {
-    },
-    _JsonUtf8EncoderSink: function _JsonUtf8EncoderSink() {
-    },
-    JsonDecoder: function JsonDecoder() {
-    },
-    _JsonStringifier: function _JsonStringifier() {
-    },
-    _JsonPrettyPrintMixin: function _JsonPrettyPrintMixin() {
-    },
-    _JsonStringStringifier: function _JsonStringStringifier() {
-    },
-    _JsonStringStringifierPretty: function _JsonStringStringifierPretty() {
-    },
-    _JsonUtf8Stringifier: function _JsonUtf8Stringifier() {
-    },
-    _JsonUtf8StringifierPretty: function _JsonUtf8StringifierPretty() {
-    },
-    Latin1Codec: function Latin1Codec() {
-    },
-    Latin1Encoder: function Latin1Encoder() {
-    },
-    Latin1Decoder: function Latin1Decoder() {
-    },
-    _Latin1DecoderSink: function _Latin1DecoderSink() {
-    },
-    _Latin1AllowInvalidDecoderSink: function _Latin1AllowInvalidDecoderSink() {
-    },
-    LineSplitter: function LineSplitter() {
-    },
-    _LineSplitterSink: function _LineSplitterSink() {
-    },
-    _LineSplitterEventSink: function _LineSplitterEventSink() {
-    },
-    StringConversionSink: function StringConversionSink() {
-    },
-    ClosableStringSink: function ClosableStringSink() {
-    },
-    _ClosableStringSink: function _ClosableStringSink() {
-    },
-    _StringConversionSinkAsStringSinkAdapter: function _StringConversionSinkAsStringSinkAdapter() {
-    },
-    StringConversionSinkBase: function StringConversionSinkBase() {
-    },
-    StringConversionSinkMixin: function StringConversionSinkMixin() {
-    },
-    _StringSinkConversionSink: function _StringSinkConversionSink() {
-    },
-    _StringCallbackSink: function _StringCallbackSink() {
-    },
-    _StringAdapterSink: function _StringAdapterSink() {
-    },
-    _Utf8StringSinkAdapter: function _Utf8StringSinkAdapter() {
-    },
-    _Utf8ConversionSink: function _Utf8ConversionSink() {
-    },
-    Utf8Codec: function Utf8Codec() {
-    },
-    Utf8Encoder: function Utf8Encoder() {
-    },
-    _Utf8Encoder: function _Utf8Encoder() {
-    },
-    _Utf8EncoderSink: function _Utf8EncoderSink() {
-    },
-    Utf8Decoder: function Utf8Decoder() {
-    },
-    _Utf8Decoder: function _Utf8Decoder() {
-    },
-    __JsonStringStringifierPretty__JsonStringStringifier__JsonPrettyPrintMixin: function __JsonStringStringifierPretty__JsonStringStringifier__JsonPrettyPrintMixin() {
-    },
-    __JsonUtf8StringifierPretty__JsonUtf8Stringifier__JsonPrettyPrintMixin: function __JsonUtf8StringifierPretty__JsonUtf8Stringifier__JsonPrettyPrintMixin() {
-    },
-    __Utf8EncoderSink__Utf8Encoder_StringConversionSinkMixin: function __Utf8EncoderSink__Utf8Encoder_StringConversionSinkMixin() {
-    },
     int_parse: function(source) {
-      var value = P.int_tryParse(source, null);
+      var value = H.Primitives_parseInt(source, null);
       if (value != null)
         return value;
       throw H.wrapException(P.FormatException$(source, null));
     },
-    int_tryParse: function(source, radix) {
-      return H.Primitives_parseInt(source, radix);
-    },
     Error__objectToString: function(object) {
       if (object instanceof H.Closure)
         return object.toString$0(0);
-      return H.Primitives_objectToHumanReadableString(object);
-    },
-    Error__stringToSafeString: function(string) {
-      return H.jsonEncodeNative(string);
-    },
-    List_List$from: function(elements, growable, $E) {
-      var t1,
-        list = H.setRuntimeTypeInfo([], [$E]);
-      for (t1 = J.get$iterator$ax(elements); H.boolConversionCheck(t1.moveNext$0());)
-        C.JSArray_methods.add$1(list, H.assertSubtypeOfRuntimeType(t1.get$current(), $E));
-      if (H.boolConversionCheck(growable))
-        return list;
-      return H.makeListFixedLength(list, $E);
-    },
-    RegExp_RegExp: function(source) {
-      return H.JSSyntaxRegExp$(source, true, false, false, false);
-    },
-    StringBuffer$: function($content) {
-      return new P.StringBuffer(H.S($content));
+      return "Instance of '" + H.S(H.Primitives_objectTypeName(object)) + "'";
     },
     StringBuffer__writeAll: function(string, objects, separator) {
       var iterator = J.get$iterator$ax(objects);
-      if (!H.boolConversionCheck(iterator.moveNext$0()))
+      if (!iterator.moveNext$0())
         return string;
-      if (H.boolConversionCheck(J.get$isEmpty$asx(separator))) {
+      if (separator.length === 0) {
         do
-          string = P.StringBuffer__writeOne(string, iterator.get$current());
-        while (H.boolConversionCheck(iterator.moveNext$0()));
+          string += H.S(iterator.get$current());
+        while (iterator.moveNext$0());
       } else {
-        string = P.StringBuffer__writeOne(string, iterator.get$current());
-        for (; H.boolConversionCheck(iterator.moveNext$0());)
-          string = P.StringBuffer__writeOne(P.StringBuffer__writeOne(string, separator), iterator.get$current());
+        string += H.S(iterator.get$current());
+        for (; iterator.moveNext$0();)
+          string = string + separator + H.S(iterator.get$current());
       }
       return string;
-    },
-    StringBuffer__writeOne: function(string, obj) {
-      return H.Primitives_stringConcatUnchecked(string, H.S(obj));
-    },
-    Duration$_microseconds: function(_duration) {
-      return new P.Duration(_duration);
     },
     Error_safeToString: function(object) {
       if (typeof object === "number" || typeof object === "boolean" || null == object)
         return J.toString$0$(object);
       if (typeof object === "string")
-        return P.Error__stringToSafeString(object);
+        return JSON.stringify(object);
       return P.Error__objectToString(object);
-    },
-    NullThrownError$: function() {
-      return new P.NullThrownError();
-    },
-    ArgumentError$: function(message) {
-      return new P.ArgumentError(false, null, null, message);
     },
     ArgumentError$value: function(value, $name, message) {
       return new P.ArgumentError(true, value, $name, message);
-    },
-    ArgumentError$notNull: function($name) {
-      return new P.ArgumentError(false, null, $name, "Must not be null");
-    },
-    ArgumentError_checkNotNull: function(argument, $name) {
-      if (argument == null)
-        throw H.wrapException(P.ArgumentError$notNull($name));
     },
     RangeError$value: function(value, $name) {
       return new P.RangeError(null, null, true, value, $name, "Value not in range");
     },
     RangeError$range: function(invalidValue, minValue, maxValue, $name, message) {
-      return new P.RangeError(minValue, maxValue, true, invalidValue, $name, message != null ? message : "Invalid value");
+      return new P.RangeError(minValue, maxValue, true, invalidValue, $name, "Invalid value");
     },
     RangeError_checkValidRange: function(start, end, $length) {
-      var t1;
-      if (typeof start !== "number")
-        return H.iae(start);
-      if (0 <= start) {
-        if (typeof $length !== "number")
-          return H.iae($length);
-        t1 = start > $length;
-      } else
-        t1 = true;
-      if (t1)
+      if (0 > start || start > $length)
         throw H.wrapException(P.RangeError$range(start, 0, $length, "start", null));
-      if (end != null) {
-        if (!(start > end)) {
-          if (typeof $length !== "number")
-            return H.iae($length);
-          t1 = end > $length;
-        } else
-          t1 = true;
-        if (t1)
-          throw H.wrapException(P.RangeError$range(end, start, $length, "end", null));
-        return end;
-      }
-      return $length;
+      if (start > end || end > $length)
+        throw H.wrapException(P.RangeError$range(end, start, $length, "end", null));
+      return end;
     },
     RangeError_checkNotNegative: function(value, $name) {
       if (typeof value !== "number")
@@ -4351,7 +2497,7 @@
     },
     IndexError$: function(invalidValue, indexable, $name, message, $length) {
       var t1 = H.intTypeCheck($length == null ? J.get$length$asx(indexable) : $length);
-      return new P.IndexError(t1, true, invalidValue, $name, message != null ? message : "Index out of range");
+      return new P.IndexError(t1, true, invalidValue, $name, "Index out of range");
     },
     UnsupportedError$: function(message) {
       return new P.UnsupportedError(message);
@@ -4365,68 +2511,16 @@
     ConcurrentModificationError$: function(modifiedObject) {
       return new P.ConcurrentModificationError(modifiedObject);
     },
-    StackOverflowError$: function() {
-      return new P.StackOverflowError();
-    },
-    CyclicInitializationError$: function(variableName) {
-      return new P.CyclicInitializationError(variableName);
-    },
-    Exception_Exception: function(message) {
-      return P._Exception$(message);
-    },
-    _Exception$: function(message) {
-      return new P._Exception(message);
-    },
     FormatException$: function(message, source) {
       return new P.FormatException(message, source);
     },
-    MapEntry$_: function(key, value, $K, $V) {
-      return new P.MapEntry(key, value, [$K, $V]);
-    },
-    _CompileTimeError: function _CompileTimeError() {
-    },
-    _DuplicatedFieldInitializerError: function _DuplicatedFieldInitializerError() {
-    },
-    _BigIntImpl: function _BigIntImpl() {
-    },
-    _BigIntReduction: function _BigIntReduction() {
-    },
-    _BigIntClassic: function _BigIntClassic() {
-    },
-    Deprecated: function Deprecated() {
-    },
-    _Override: function _Override() {
-    },
-    Provisional: function Provisional() {
-    },
-    _Proxy0: function _Proxy0() {
-    },
-    pragma: function pragma() {
-    },
-    BigInt: function BigInt() {
-    },
     bool: function bool() {
     },
-    Comparable: function Comparable() {
-    },
-    DateTime: function DateTime() {
-    },
     double: function double() {
-    },
-    Duration: function Duration(t0) {
-      this._duration = t0;
-    },
-    Duration_toString_sixDigits: function Duration_toString_sixDigits() {
-    },
-    Duration_toString_twoDigits: function Duration_toString_twoDigits() {
     },
     Error: function Error() {
     },
     AssertionError: function AssertionError() {
-    },
-    TypeError: function TypeError() {
-    },
-    CastError: function CastError() {
     },
     NullThrownError: function NullThrownError() {
     },
@@ -4454,12 +2548,6 @@
       _.name = t3;
       _.message = t4;
     },
-    FallThroughError: function FallThroughError() {
-    },
-    AbstractClassInstantiationError: function AbstractClassInstantiationError() {
-    },
-    NoSuchMethodError: function NoSuchMethodError() {
-    },
     UnsupportedError: function UnsupportedError(t0) {
       this.message = t0;
     },
@@ -4472,16 +2560,10 @@
     ConcurrentModificationError: function ConcurrentModificationError(t0) {
       this.modifiedObject = t0;
     },
-    OutOfMemoryError: function OutOfMemoryError() {
-    },
     StackOverflowError: function StackOverflowError() {
     },
     CyclicInitializationError: function CyclicInitializationError(t0) {
       this.variableName = t0;
-    },
-    LateInitializationError: function LateInitializationError() {
-    },
-    Exception: function Exception() {
     },
     _Exception: function _Exception(t0) {
       this.message = t0;
@@ -4490,29 +2572,15 @@
       this.message = t0;
       this.source = t1;
     },
-    IntegerDivisionByZeroException: function IntegerDivisionByZeroException() {
-    },
-    Expando: function Expando() {
-    },
     Function: function Function() {
     },
     int: function int() {
     },
-    Invocation: function Invocation() {
-    },
-    _Invocation: function _Invocation() {
-    },
     Iterable: function Iterable() {
-    },
-    _GeneratorIterable: function _GeneratorIterable() {
-    },
-    BidirectionalIterator: function BidirectionalIterator() {
     },
     Iterator: function Iterator() {
     },
     List: function List() {
-    },
-    Map: function Map() {
     },
     MapEntry: function MapEntry(t0, t1, t2) {
       this.key = t0;
@@ -4525,1045 +2593,26 @@
     },
     Object: function Object() {
     },
-    Pattern: function Pattern() {
-    },
-    Match: function Match() {
-    },
-    RegExp: function RegExp() {
-    },
-    RegExpMatch: function RegExpMatch() {
-    },
-    Set: function Set() {
-    },
-    Sink: function Sink() {
-    },
     StackTrace: function StackTrace() {
     },
-    _StringStackTrace: function _StringStackTrace() {
-    },
-    Stopwatch: function Stopwatch() {
-    },
     String: function String() {
-    },
-    Runes: function Runes() {
-    },
-    RuneIterator: function RuneIterator() {
     },
     StringBuffer: function StringBuffer(t0) {
       this._contents = t0;
     },
-    StringSink: function StringSink() {
-    },
-    Symbol: function Symbol() {
-    },
-    Type: function Type() {
-    },
-    Uri: function Uri() {
-    },
-    _Uri: function _Uri() {
-    },
-    UriData: function UriData() {
-    },
-    _SimpleUri: function _SimpleUri() {
-    },
-    _DataUri: function _DataUri() {
-    },
-    _FakeUserTag: function _FakeUserTag() {
-    },
-    ServiceExtensionResponse: function ServiceExtensionResponse() {
-    },
-    UserTag: function UserTag() {
-    },
-    Metric: function Metric() {
-    },
-    Gauge: function Gauge() {
-    },
-    Counter: function Counter() {
-    },
-    Metrics: function Metrics() {
-    },
-    ServiceProtocolInfo: function ServiceProtocolInfo() {
-    },
-    Service: function Service() {
-    },
-    Flow: function Flow() {
-    },
-    Timeline: function Timeline() {
-    },
-    TimelineTask: function TimelineTask() {
-    },
-    _AsyncBlock: function _AsyncBlock() {
-    },
-    _SyncBlock: function _SyncBlock() {
-    },
-    FilteredElementList$: function(node) {
-      return new P.FilteredElementList(node, J.get$nodes$x(node));
-    },
-    _StructuredClone: function _StructuredClone() {
-    },
-    _AcceptStructuredClone: function _AcceptStructuredClone() {
-    },
-    ContextAttributes: function ContextAttributes() {
-    },
-    _TypedImageData: function _TypedImageData() {
-    },
-    _StructuredCloneDart2Js: function _StructuredCloneDart2Js() {
-    },
-    _AcceptStructuredCloneDart2Js: function _AcceptStructuredCloneDart2Js() {
-    },
-    CssClassSetImpl: function CssClassSetImpl() {
-    },
-    CssClassSetImpl_add_closure: function CssClassSetImpl_add_closure() {
-    },
-    CssClassSetImpl_addAll_closure: function CssClassSetImpl_addAll_closure(t0, t1) {
-      this.$this = t0;
-      this.iterable = t1;
-    },
-    CssClassSetImpl_removeAll_closure: function CssClassSetImpl_removeAll_closure() {
-    },
-    CssClassSetImpl_removeWhere_closure: function CssClassSetImpl_removeWhere_closure() {
-    },
-    Device: function Device() {
-    },
-    FilteredElementList: function FilteredElementList(t0, t1) {
-      this._node = t0;
-      this._childNodes = t1;
-    },
-    FilteredElementList__iterable_closure: function FilteredElementList__iterable_closure() {
-    },
-    FilteredElementList__iterable_closure0: function FilteredElementList__iterable_closure0() {
-    },
-    FilteredElementList_removeRange_closure: function FilteredElementList_removeRange_closure() {
-    },
-    Lists: function Lists() {
-    },
-    NodeListWrapper: function NodeListWrapper() {
-    },
-    _KeyRangeFactoryProvider: function _KeyRangeFactoryProvider() {
-    },
-    Cursor: function Cursor() {
-    },
-    CursorWithValue: function CursorWithValue() {
-    },
-    Database: function Database() {
-    },
-    IdbFactory: function IdbFactory() {
-    },
-    Index: function Index() {
-    },
-    KeyRange: function KeyRange() {
-    },
-    ObjectStore: function ObjectStore() {
-    },
-    Observation: function Observation() {
-    },
-    Observer: function Observer() {
-    },
-    ObserverChanges: function ObserverChanges() {
-    },
-    OpenDBRequest: function OpenDBRequest() {
-    },
-    Request: function Request() {
-    },
-    Transaction: function Transaction() {
-    },
-    VersionChangeEvent: function VersionChangeEvent() {
-    },
-    BytesBuilder: function BytesBuilder() {
-    },
-    _CopyingBytesBuilder0: function _CopyingBytesBuilder0() {
-    },
-    _BytesBuilder: function _BytesBuilder() {
-    },
-    IOException: function IOException() {
-    },
-    OSError: function OSError() {
-    },
-    _BufferAndStart: function _BufferAndStart() {
-    },
-    _IOCrypto: function _IOCrypto() {
-    },
-    ZLibOption: function ZLibOption() {
-    },
-    ZLibCodec: function ZLibCodec() {
-    },
-    GZipCodec: function GZipCodec() {
-    },
-    ZLibEncoder: function ZLibEncoder() {
-    },
-    ZLibDecoder: function ZLibDecoder() {
-    },
-    RawZLibFilter: function RawZLibFilter() {
-    },
-    _BufferSink: function _BufferSink() {
-    },
-    _ZLibEncoderSink: function _ZLibEncoderSink() {
-    },
-    _ZLibDecoderSink: function _ZLibDecoderSink() {
-    },
-    _FilterSink: function _FilterSink() {
-    },
-    Directory: function Directory() {
-    },
-    _Directory: function _Directory() {
-    },
-    _AsyncDirectoryListerOps: function _AsyncDirectoryListerOps() {
-    },
-    _AsyncDirectoryLister: function _AsyncDirectoryLister() {
-    },
-    _EmbedderConfig: function _EmbedderConfig() {
-    },
-    _EventHandler: function _EventHandler() {
-    },
-    FileMode: function FileMode() {
-    },
-    FileLock: function FileLock() {
-    },
-    File0: function File0() {
-    },
-    RandomAccessFile: function RandomAccessFile() {
-    },
-    FileSystemException: function FileSystemException() {
-    },
-    _FileStream: function _FileStream() {
-    },
-    _FileStreamConsumer: function _FileStreamConsumer() {
-    },
-    _File: function _File() {
-    },
-    _RandomAccessFileOps: function _RandomAccessFileOps() {
-    },
-    _RandomAccessFile: function _RandomAccessFile() {
-    },
-    FileSystemEntityType: function FileSystemEntityType() {
-    },
-    FileStat: function FileStat() {
-    },
-    FileSystemEntity: function FileSystemEntity() {
-    },
-    FileSystemEvent: function FileSystemEvent() {
-    },
-    FileSystemCreateEvent: function FileSystemCreateEvent() {
-    },
-    FileSystemModifyEvent: function FileSystemModifyEvent() {
-    },
-    FileSystemDeleteEvent: function FileSystemDeleteEvent() {
-    },
-    FileSystemMoveEvent: function FileSystemMoveEvent() {
-    },
-    _FileSystemWatcher: function _FileSystemWatcher() {
-    },
-    _IOResourceInfo: function _IOResourceInfo() {
-    },
-    _ReadWriteResourceInfo: function _ReadWriteResourceInfo() {
-    },
-    _FileResourceInfo: function _FileResourceInfo() {
-    },
-    _ProcessResourceInfo: function _ProcessResourceInfo() {
-    },
-    _SocketResourceInfo: function _SocketResourceInfo() {
-    },
-    _IOService: function _IOService() {
-    },
-    IOSink: function IOSink() {
-    },
-    _StreamSinkImpl0: function _StreamSinkImpl0() {
-    },
-    _IOSinkImpl0: function _IOSinkImpl0() {
-    },
-    Link: function Link() {
-    },
-    _Link: function _Link() {
-    },
-    _Namespace: function _Namespace() {
-    },
-    _NetworkProfiling: function _NetworkProfiling() {
-    },
-    _HttpProfile: function _HttpProfile() {
-    },
-    _SocketProfile: function _SocketProfile() {
-    },
-    IOOverrides: function IOOverrides() {
-    },
-    _IOOverridesScope: function _IOOverridesScope() {
-    },
-    Platform0: function Platform0() {
-    },
-    _Platform: function _Platform() {
-    },
-    _CaseInsensitiveStringMap: function _CaseInsensitiveStringMap() {
-    },
-    _ProcessUtils: function _ProcessUtils() {
-    },
-    ProcessInfo: function ProcessInfo() {
-    },
-    ProcessStartMode: function ProcessStartMode() {
-    },
-    Process: function Process() {
-    },
-    ProcessResult: function ProcessResult() {
-    },
-    ProcessSignal: function ProcessSignal() {
-    },
-    SignalException: function SignalException() {
-    },
-    ProcessException: function ProcessException() {
-    },
-    SecureServerSocket: function SecureServerSocket() {
-    },
-    RawSecureServerSocket: function RawSecureServerSocket() {
-    },
-    SecureSocket: function SecureSocket() {
-    },
-    RawSecureSocket: function RawSecureSocket() {
-    },
-    X509Certificate: function X509Certificate() {
-    },
-    _FilterStatus: function _FilterStatus() {
-    },
-    _RawSecureSocket: function _RawSecureSocket() {
-    },
-    _ExternalBuffer: function _ExternalBuffer() {
-    },
-    _SecureFilter: function _SecureFilter() {
-    },
-    TlsException: function TlsException() {
-    },
-    HandshakeException: function HandshakeException() {
-    },
-    CertificateException: function CertificateException() {
-    },
-    SecurityContext: function SecurityContext() {
-    },
-    _ServiceObject0: function _ServiceObject0() {
-    },
-    InternetAddressType: function InternetAddressType() {
-    },
-    InternetAddress: function InternetAddress() {
-    },
-    NetworkInterface: function NetworkInterface() {
-    },
-    RawServerSocket: function RawServerSocket() {
-    },
-    ServerSocket: function ServerSocket() {
-    },
-    SocketDirection: function SocketDirection() {
-    },
-    SocketOption: function SocketOption() {
-    },
-    _RawSocketOptions: function _RawSocketOptions() {
-    },
-    RawSocketOption: function RawSocketOption() {
-    },
-    RawSocketEvent: function RawSocketEvent() {
-    },
-    ConnectionTask: function ConnectionTask() {
-    },
-    RawSocket: function RawSocket() {
-    },
-    Socket: function Socket() {
-    },
-    Datagram: function Datagram() {
-    },
-    RawDatagramSocket: function RawDatagramSocket() {
-    },
-    SocketException: function SocketException() {
-    },
-    _StdStream: function _StdStream() {
-    },
-    Stdin: function Stdin() {
-    },
-    Stdout: function Stdout() {
-    },
-    StdoutException: function StdoutException() {
-    },
-    StdinException: function StdinException() {
-    },
-    _StdConsumer: function _StdConsumer() {
-    },
-    _StdSink: function _StdSink() {
-    },
-    StdioType: function StdioType() {
-    },
-    _StdIOUtils: function _StdIOUtils() {
-    },
-    SystemEncoding: function SystemEncoding() {
-    },
-    _WindowsCodePageEncoder: function _WindowsCodePageEncoder() {
-    },
-    _WindowsCodePageEncoderSink: function _WindowsCodePageEncoderSink() {
-    },
-    _WindowsCodePageDecoder: function _WindowsCodePageDecoder() {
-    },
-    _WindowsCodePageDecoderSink: function _WindowsCodePageDecoderSink() {
-    },
-    RawSynchronousSocket: function RawSynchronousSocket() {
-    },
-    _ReceivePortImpl: function _ReceivePortImpl() {
-    },
-    Capability: function Capability() {
-    },
-    IsolateSpawnException: function IsolateSpawnException() {
-    },
-    Isolate: function Isolate() {
-    },
-    SendPort: function SendPort() {
-    },
-    ReceivePort: function ReceivePort() {
-    },
-    RawReceivePort: function RawReceivePort() {
-    },
-    RemoteError: function RemoteError() {
-    },
-    TransferableTypedData: function TransferableTypedData() {
-    },
-    JsObject: function JsObject() {
-    },
-    JsFunction: function JsFunction() {
-    },
-    JsArray: function JsArray() {
-    },
-    _JsArray_JsObject_ListMixin: function _JsArray_JsObject_ListMixin() {
-    },
-    _JSRandom: function _JSRandom() {
-    },
-    _Random: function _Random() {
-    },
-    _JSSecureRandom: function _JSSecureRandom() {
-    },
-    _JenkinsSmiHash0: function _JenkinsSmiHash0() {
-    },
-    Point: function Point() {
-    },
-    Random: function Random() {
-    },
-    _RectangleBase: function _RectangleBase() {
-    },
-    Rectangle: function Rectangle() {
-    },
-    MutableRectangle: function MutableRectangle() {
-    },
-    MirrorSystem: function MirrorSystem() {
-    },
-    Mirror: function Mirror() {
-    },
-    IsolateMirror: function IsolateMirror() {
-    },
-    DeclarationMirror: function DeclarationMirror() {
-    },
-    ObjectMirror: function ObjectMirror() {
-    },
-    InstanceMirror: function InstanceMirror() {
-    },
-    ClosureMirror: function ClosureMirror() {
-    },
-    LibraryMirror: function LibraryMirror() {
-    },
-    LibraryDependencyMirror: function LibraryDependencyMirror() {
-    },
-    CombinatorMirror: function CombinatorMirror() {
-    },
-    TypeMirror: function TypeMirror() {
-    },
-    ClassMirror: function ClassMirror() {
-    },
-    FunctionTypeMirror: function FunctionTypeMirror() {
-    },
-    TypeVariableMirror: function TypeVariableMirror() {
-    },
-    TypedefMirror: function TypedefMirror() {
-    },
-    MethodMirror: function MethodMirror() {
-    },
-    VariableMirror: function VariableMirror() {
-    },
-    ParameterMirror: function ParameterMirror() {
-    },
-    SourceLocation: function SourceLocation() {
-    },
-    Comment0: function Comment0() {
-    },
-    MirrorsUsed: function MirrorsUsed() {
-    },
-    _SvgElementFactoryProvider: function _SvgElementFactoryProvider() {
-    },
-    AElement: function AElement() {
-    },
-    Angle: function Angle() {
-    },
-    AnimateElement: function AnimateElement() {
-    },
-    AnimateMotionElement: function AnimateMotionElement() {
-    },
-    AnimateTransformElement: function AnimateTransformElement() {
-    },
-    AnimatedAngle: function AnimatedAngle() {
-    },
-    AnimatedBoolean: function AnimatedBoolean() {
-    },
-    AnimatedEnumeration: function AnimatedEnumeration() {
-    },
-    AnimatedInteger: function AnimatedInteger() {
-    },
-    AnimatedLength: function AnimatedLength() {
-    },
-    AnimatedLengthList: function AnimatedLengthList() {
-    },
-    AnimatedNumber: function AnimatedNumber() {
-    },
-    AnimatedNumberList: function AnimatedNumberList() {
-    },
-    AnimatedPreserveAspectRatio: function AnimatedPreserveAspectRatio() {
-    },
-    AnimatedRect: function AnimatedRect() {
-    },
-    AnimatedString: function AnimatedString() {
-    },
-    AnimatedTransformList: function AnimatedTransformList() {
-    },
-    AnimationElement: function AnimationElement() {
-    },
-    CircleElement: function CircleElement() {
-    },
-    ClipPathElement: function ClipPathElement() {
-    },
-    DefsElement: function DefsElement() {
-    },
-    DescElement: function DescElement() {
-    },
-    DiscardElement: function DiscardElement() {
-    },
-    EllipseElement: function EllipseElement() {
-    },
-    FEBlendElement: function FEBlendElement() {
-    },
-    FEColorMatrixElement: function FEColorMatrixElement() {
-    },
-    FEComponentTransferElement: function FEComponentTransferElement() {
-    },
-    FECompositeElement: function FECompositeElement() {
-    },
-    FEConvolveMatrixElement: function FEConvolveMatrixElement() {
-    },
-    FEDiffuseLightingElement: function FEDiffuseLightingElement() {
-    },
-    FEDisplacementMapElement: function FEDisplacementMapElement() {
-    },
-    FEDistantLightElement: function FEDistantLightElement() {
-    },
-    FEFloodElement: function FEFloodElement() {
-    },
-    FEFuncAElement: function FEFuncAElement() {
-    },
-    FEFuncBElement: function FEFuncBElement() {
-    },
-    FEFuncGElement: function FEFuncGElement() {
-    },
-    FEFuncRElement: function FEFuncRElement() {
-    },
-    FEGaussianBlurElement: function FEGaussianBlurElement() {
-    },
-    FEImageElement: function FEImageElement() {
-    },
-    FEMergeElement: function FEMergeElement() {
-    },
-    FEMergeNodeElement: function FEMergeNodeElement() {
-    },
-    FEMorphologyElement: function FEMorphologyElement() {
-    },
-    FEOffsetElement: function FEOffsetElement() {
-    },
-    FEPointLightElement: function FEPointLightElement() {
-    },
-    FESpecularLightingElement: function FESpecularLightingElement() {
-    },
-    FESpotLightElement: function FESpotLightElement() {
-    },
-    FETileElement: function FETileElement() {
-    },
-    FETurbulenceElement: function FETurbulenceElement() {
-    },
-    FilterElement: function FilterElement() {
-    },
-    FilterPrimitiveStandardAttributes: function FilterPrimitiveStandardAttributes() {
-    },
-    FitToViewBox: function FitToViewBox() {
-    },
-    ForeignObjectElement: function ForeignObjectElement() {
-    },
-    GElement: function GElement() {
-    },
-    GeometryElement: function GeometryElement() {
-    },
-    GraphicsElement: function GraphicsElement() {
-    },
-    ImageElement0: function ImageElement0() {
-    },
-    Length: function Length() {
-    },
-    LengthList: function LengthList() {
-    },
-    LineElement: function LineElement() {
-    },
-    LinearGradientElement: function LinearGradientElement() {
-    },
-    MarkerElement: function MarkerElement() {
-    },
-    MaskElement: function MaskElement() {
-    },
-    Matrix: function Matrix() {
-    },
-    MetadataElement: function MetadataElement() {
-    },
-    Number: function Number() {
-    },
-    NumberList: function NumberList() {
-    },
-    PathElement: function PathElement() {
-    },
-    PatternElement: function PatternElement() {
-    },
-    Point0: function Point0() {
-    },
-    PointList: function PointList() {
-    },
-    PolygonElement: function PolygonElement() {
-    },
-    PolylineElement: function PolylineElement() {
-    },
-    PreserveAspectRatio: function PreserveAspectRatio() {
-    },
-    RadialGradientElement: function RadialGradientElement() {
-    },
-    Rect: function Rect() {
-    },
-    RectElement: function RectElement() {
-    },
     ScriptElement: function ScriptElement() {
     },
-    SetElement: function SetElement() {
-    },
-    StopElement: function StopElement() {
-    },
-    StringList: function StringList() {
-    },
-    StyleElement0: function StyleElement0() {
-    },
-    AttributeClassSet: function AttributeClassSet() {
-    },
     SvgElement: function SvgElement() {
-    },
-    SvgSvgElement: function SvgSvgElement() {
-    },
-    SwitchElement: function SwitchElement() {
-    },
-    SymbolElement: function SymbolElement() {
-    },
-    TSpanElement: function TSpanElement() {
-    },
-    Tests: function Tests() {
-    },
-    TextContentElement: function TextContentElement() {
-    },
-    TextElement: function TextElement() {
-    },
-    TextPathElement: function TextPathElement() {
-    },
-    TextPositioningElement: function TextPositioningElement() {
-    },
-    TitleElement0: function TitleElement0() {
-    },
-    Transform: function Transform() {
-    },
-    TransformList: function TransformList() {
-    },
-    UnitTypes: function UnitTypes() {
-    },
-    UriReference: function UriReference() {
-    },
-    UseElement: function UseElement() {
-    },
-    ViewElement: function ViewElement() {
-    },
-    ZoomAndPan: function ZoomAndPan() {
-    },
-    _GradientElement: function _GradientElement() {
-    },
-    _SVGComponentTransferFunctionElement: function _SVGComponentTransferFunctionElement() {
-    },
-    _SVGFEDropShadowElement: function _SVGFEDropShadowElement() {
-    },
-    _SVGMPathElement: function _SVGMPathElement() {
-    },
-    _LengthList_Interceptor_ListMixin: function _LengthList_Interceptor_ListMixin() {
-    },
-    _LengthList_Interceptor_ListMixin_ImmutableListMixin: function _LengthList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _NumberList_Interceptor_ListMixin: function _NumberList_Interceptor_ListMixin() {
-    },
-    _NumberList_Interceptor_ListMixin_ImmutableListMixin: function _NumberList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _StringList_Interceptor_ListMixin: function _StringList_Interceptor_ListMixin() {
-    },
-    _StringList_Interceptor_ListMixin_ImmutableListMixin: function _StringList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _TransformList_Interceptor_ListMixin: function _TransformList_Interceptor_ListMixin() {
-    },
-    _TransformList_Interceptor_ListMixin_ImmutableListMixin: function _TransformList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    ByteBuffer: function ByteBuffer() {
-    },
-    TypedData: function TypedData() {
-    },
-    _TypedIntList: function _TypedIntList() {
-    },
-    _TypedFloatList: function _TypedFloatList() {
-    },
-    Endian: function Endian() {
-    },
-    ByteData: function ByteData() {
-    },
-    Int8List: function Int8List() {
-    },
-    Uint8List: function Uint8List() {
-    },
-    Uint8ClampedList: function Uint8ClampedList() {
-    },
-    Int16List: function Int16List() {
-    },
-    Uint16List: function Uint16List() {
-    },
-    Int32List: function Int32List() {
-    },
-    Uint32List: function Uint32List() {
-    },
-    Int64List: function Int64List() {
-    },
-    Uint64List: function Uint64List() {
-    },
-    Float32List: function Float32List() {
-    },
-    Float64List: function Float64List() {
-    },
-    Float32x4List: function Float32x4List() {
-    },
-    Int32x4List: function Int32x4List() {
-    },
-    Float64x2List: function Float64x2List() {
-    },
-    Float32x4: function Float32x4() {
-    },
-    Int32x4: function Int32x4() {
-    },
-    Float64x2: function Float64x2() {
-    },
-    UnmodifiableByteBufferView: function UnmodifiableByteBufferView() {
-    },
-    UnmodifiableByteDataView: function UnmodifiableByteDataView() {
-    },
-    _UnmodifiableListMixin: function _UnmodifiableListMixin() {
-    },
-    UnmodifiableUint8ListView: function UnmodifiableUint8ListView() {
-    },
-    UnmodifiableInt8ListView: function UnmodifiableInt8ListView() {
-    },
-    UnmodifiableUint8ClampedListView: function UnmodifiableUint8ClampedListView() {
-    },
-    UnmodifiableUint16ListView: function UnmodifiableUint16ListView() {
-    },
-    UnmodifiableInt16ListView: function UnmodifiableInt16ListView() {
-    },
-    UnmodifiableUint32ListView: function UnmodifiableUint32ListView() {
-    },
-    UnmodifiableInt32ListView: function UnmodifiableInt32ListView() {
-    },
-    UnmodifiableUint64ListView: function UnmodifiableUint64ListView() {
-    },
-    UnmodifiableInt64ListView: function UnmodifiableInt64ListView() {
-    },
-    UnmodifiableInt32x4ListView: function UnmodifiableInt32x4ListView() {
-    },
-    UnmodifiableFloat32x4ListView: function UnmodifiableFloat32x4ListView() {
-    },
-    UnmodifiableFloat64x2ListView: function UnmodifiableFloat64x2ListView() {
-    },
-    UnmodifiableFloat32ListView: function UnmodifiableFloat32ListView() {
-    },
-    UnmodifiableFloat64ListView: function UnmodifiableFloat64ListView() {
-    },
-    _UnmodifiableFloat32ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableFloat32ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableFloat32x4ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableFloat32x4ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableFloat64ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableFloat64ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableFloat64x2ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableFloat64x2ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableInt16ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableInt16ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableInt32ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableInt32ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableInt32x4ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableInt32x4ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableInt64ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableInt64ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableInt8ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableInt8ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableUint16ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableUint16ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableUint32ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableUint32ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableUint64ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableUint64ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableUint8ClampedListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableUint8ClampedListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    _UnmodifiableUint8ListView_UnmodifiableListBase__UnmodifiableListMixin: function _UnmodifiableUint8ListView_UnmodifiableListBase__UnmodifiableListMixin() {
-    },
-    AnalyserNode: function AnalyserNode() {
-    },
-    AudioBuffer: function AudioBuffer() {
-    },
-    AudioBufferSourceNode: function AudioBufferSourceNode() {
-    },
-    AudioContext: function AudioContext() {
-    },
-    AudioDestinationNode: function AudioDestinationNode() {
-    },
-    AudioListener: function AudioListener() {
-    },
-    AudioNode: function AudioNode() {
-    },
-    AudioParam: function AudioParam() {
-    },
-    AudioParamMap: function AudioParamMap() {
-    },
-    AudioProcessingEvent: function AudioProcessingEvent() {
-    },
-    AudioScheduledSourceNode: function AudioScheduledSourceNode() {
-    },
-    AudioTrack: function AudioTrack() {
-    },
-    AudioTrackList: function AudioTrackList() {
-    },
-    AudioWorkletGlobalScope: function AudioWorkletGlobalScope() {
-    },
-    AudioWorkletNode: function AudioWorkletNode() {
-    },
-    AudioWorkletProcessor: function AudioWorkletProcessor() {
-    },
-    BaseAudioContext: function BaseAudioContext() {
-    },
-    BiquadFilterNode: function BiquadFilterNode() {
-    },
-    ChannelMergerNode: function ChannelMergerNode() {
-    },
-    ChannelSplitterNode: function ChannelSplitterNode() {
-    },
-    ConstantSourceNode: function ConstantSourceNode() {
-    },
-    ConvolverNode: function ConvolverNode() {
-    },
-    DelayNode: function DelayNode() {
-    },
-    DynamicsCompressorNode: function DynamicsCompressorNode() {
-    },
-    GainNode: function GainNode() {
-    },
-    IirFilterNode: function IirFilterNode() {
-    },
-    MediaElementAudioSourceNode: function MediaElementAudioSourceNode() {
-    },
-    MediaStreamAudioDestinationNode: function MediaStreamAudioDestinationNode() {
-    },
-    MediaStreamAudioSourceNode: function MediaStreamAudioSourceNode() {
-    },
-    OfflineAudioCompletionEvent: function OfflineAudioCompletionEvent() {
-    },
-    OfflineAudioContext: function OfflineAudioContext() {
-    },
-    OscillatorNode: function OscillatorNode() {
-    },
-    PannerNode: function PannerNode() {
-    },
-    PeriodicWave: function PeriodicWave() {
-    },
-    ScriptProcessorNode: function ScriptProcessorNode() {
-    },
-    StereoPannerNode: function StereoPannerNode() {
-    },
-    WaveShaperNode: function WaveShaperNode() {
-    },
-    _AudioParamMap_Interceptor_MapMixin: function _AudioParamMap_Interceptor_MapMixin() {
-    },
-    ActiveInfo: function ActiveInfo() {
-    },
-    AngleInstancedArrays: function AngleInstancedArrays() {
-    },
-    Buffer: function Buffer() {
-    },
-    Canvas: function Canvas() {
-    },
-    ColorBufferFloat: function ColorBufferFloat() {
-    },
-    CompressedTextureAstc: function CompressedTextureAstc() {
-    },
-    CompressedTextureAtc: function CompressedTextureAtc() {
-    },
-    CompressedTextureETC1: function CompressedTextureETC1() {
-    },
-    CompressedTextureEtc: function CompressedTextureEtc() {
-    },
-    CompressedTexturePvrtc: function CompressedTexturePvrtc() {
-    },
-    CompressedTextureS3TC: function CompressedTextureS3TC() {
-    },
-    CompressedTextureS3TCsRgb: function CompressedTextureS3TCsRgb() {
-    },
-    ContextEvent: function ContextEvent() {
-    },
-    DebugRendererInfo: function DebugRendererInfo() {
-    },
-    DebugShaders: function DebugShaders() {
-    },
-    DepthTexture: function DepthTexture() {
-    },
-    DrawBuffers: function DrawBuffers() {
-    },
-    EXTsRgb: function EXTsRgb() {
-    },
-    ExtBlendMinMax: function ExtBlendMinMax() {
-    },
-    ExtColorBufferFloat: function ExtColorBufferFloat() {
-    },
-    ExtColorBufferHalfFloat: function ExtColorBufferHalfFloat() {
-    },
-    ExtDisjointTimerQuery: function ExtDisjointTimerQuery() {
-    },
-    ExtDisjointTimerQueryWebGL2: function ExtDisjointTimerQueryWebGL2() {
-    },
-    ExtFragDepth: function ExtFragDepth() {
-    },
-    ExtShaderTextureLod: function ExtShaderTextureLod() {
-    },
-    ExtTextureFilterAnisotropic: function ExtTextureFilterAnisotropic() {
-    },
-    Framebuffer: function Framebuffer() {
-    },
-    GetBufferSubDataAsync: function GetBufferSubDataAsync() {
-    },
-    LoseContext: function LoseContext() {
-    },
-    OesElementIndexUint: function OesElementIndexUint() {
-    },
-    OesStandardDerivatives: function OesStandardDerivatives() {
-    },
-    OesTextureFloat: function OesTextureFloat() {
-    },
-    OesTextureFloatLinear: function OesTextureFloatLinear() {
-    },
-    OesTextureHalfFloat: function OesTextureHalfFloat() {
-    },
-    OesTextureHalfFloatLinear: function OesTextureHalfFloatLinear() {
-    },
-    OesVertexArrayObject: function OesVertexArrayObject() {
-    },
-    Program: function Program() {
-    },
-    Query: function Query() {
-    },
-    Renderbuffer: function Renderbuffer() {
-    },
-    RenderingContext: function RenderingContext() {
-    },
-    RenderingContext2: function RenderingContext2() {
-    },
-    Sampler: function Sampler() {
-    },
-    Shader: function Shader() {
-    },
-    ShaderPrecisionFormat: function ShaderPrecisionFormat() {
-    },
-    Sync: function Sync() {
-    },
-    Texture: function Texture() {
-    },
-    TimerQueryExt: function TimerQueryExt() {
-    },
-    TransformFeedback: function TransformFeedback() {
-    },
-    UniformLocation: function UniformLocation() {
-    },
-    VertexArrayObject: function VertexArrayObject() {
-    },
-    VertexArrayObjectOes: function VertexArrayObjectOes() {
-    },
-    WebGL: function WebGL() {
-    },
-    _WebGL2RenderingContextBase: function _WebGL2RenderingContextBase() {
-    },
-    _WebGLRenderingContextBase: function _WebGLRenderingContextBase() {
-    },
-    SqlDatabase: function SqlDatabase() {
-    },
-    SqlError: function SqlError() {
-    },
-    SqlResultSet: function SqlResultSet() {
-    },
-    SqlResultSetRowList: function SqlResultSetRowList() {
-    },
-    SqlTransaction: function SqlTransaction() {
-    },
-    _SqlResultSetRowList_Interceptor_ListMixin: function _SqlResultSetRowList_Interceptor_ListMixin() {
-    },
-    _SqlResultSetRowList_Interceptor_ListMixin_ImmutableListMixin: function _SqlResultSetRowList_Interceptor_ListMixin_ImmutableListMixin() {
     }
   },
   W = {
-    window: function() {
-      return window;
-    },
-    document: function() {
-      return document;
-    },
-    AnchorElement_AnchorElement: function() {
-      var e = W.document().createElement("a");
-      return e;
-    },
-    DocumentFragment_DocumentFragment: function() {
-      return J.createDocumentFragment$0$x(W.document());
-    },
-    _ChildrenElementList$_wrap: function(element) {
-      return new W._ChildrenElementList(element, element.children);
-    },
     Element_Element$html: function(html, treeSanitizer, validator) {
-      var t1 = W.document().body;
-      return H.interceptedTypeCheck(J.get$single$ax(J.where$1$ax(J.get$nodes$x((t1 && C.BodyElement_methods).createFragment$3$treeSanitizer$validator(t1, html, treeSanitizer, validator)), new W.Element_Element$html_closure())), "$isElement");
-    },
-    Element__hasCorruptedAttributes: function(element) {
-      return function(element) {
-        if (!(element.attributes instanceof NamedNodeMap))
-          return true;
-        if (element.id == 'lastChild' || element.name == 'lastChild' || element.id == 'previousSibling' || element.name == 'previousSibling' || element.id == 'children' || element.name == 'children')
-          return true;
-        var childNodes = element.childNodes;
-        if (element.lastChild && element.lastChild !== childNodes[childNodes.length - 1])
-          return true;
-        if (element.children)
-          if (!(element.children instanceof HTMLCollection || element.children instanceof NodeList))
-            return true;
-        var length = 0;
-        if (element.children)
-          length = element.children.length;
-        for (var i = 0; i < length; i++) {
-          var child = element.children[i];
-          if (child.id == 'attributes' || child.name == 'attributes' || child.id == 'lastChild' || child.name == 'lastChild' || child.id == 'previousSibling' || child.name == 'previousSibling' || child.id == 'children' || child.name == 'children')
-            return true;
-        }
-        return false;
-      }(element);
-    },
-    Element__hasCorruptedAttributesAdditionalCheck: function(element) {
-      return !(element.attributes instanceof NamedNodeMap);
+      var t1 = document.body,
+        fragment = (t1 && C.BodyElement_methods).createFragment$3$treeSanitizer$validator(t1, html, treeSanitizer, validator);
+      fragment.toString;
+      t1 = W.Node;
+      t1 = new H.WhereIterable(new W._ChildNodeListLazy(fragment), H.functionTypeCheck(new W.Element_Element$html_closure(), {func: 1, ret: P.bool, args: [t1]}), [t1]);
+      return H.interceptedTypeCheck(t1.get$single(t1), "$isElement");
     },
     Element__safeTagName: function(element) {
       var t1, t2, exception,
@@ -5572,95 +2621,37 @@
         t1 = J.getInterceptor$x(element);
         t2 = t1.get$tagName(element);
         if (typeof t2 === "string")
-          result = H.stringTypeCheck(t1.get$tagName(element));
+          result = t1.get$tagName(element);
       } catch (exception) {
         H.unwrapException(exception);
       }
       return result;
     },
-    _ChildNodeListLazy$: function(_this) {
-      return new W._ChildNodeListLazy(_this);
-    },
-    Range_supportsCreateContextualFragment: function() {
-      return "createContextualFragment" in window.Range.prototype;
-    },
-    TableElement_TableElement: function() {
-      return W.document().createElement("table");
-    },
-    _ElementAttributeMap$: function(element) {
-      return new W._ElementAttributeMap(element);
-    },
-    _ElementAttributeMap__remove: function(element, key) {
-      var value = element.getAttribute(key);
-      element.removeAttribute(key);
-      return value;
-    },
-    _ElementCssClassSet$: function(_element) {
-      return new W._ElementCssClassSet(_element);
-    },
-    _ElementCssClassSet__contains: function(_element, value) {
-      return typeof value === "string" && H.boolConversionCheck(W._ElementCssClassSet__classListContains(W._ElementCssClassSet__classListOf(_element), value));
-    },
-    _ElementCssClassSet__add: function(_element, value) {
-      var list = W._ElementCssClassSet__classListOf(_element),
-        t1 = H.boolConversionCheck(W._ElementCssClassSet__classListContainsBeforeAddOrRemove(list, value));
-      W._ElementCssClassSet__classListAdd(list, value);
-      return !t1;
-    },
-    _ElementCssClassSet__addAll: function(_element, iterable) {
-      var t1,
-        list = W._ElementCssClassSet__classListOf(_element);
-      for (t1 = J.get$iterator$ax(iterable); H.boolConversionCheck(t1.moveNext$0());)
-        W._ElementCssClassSet__classListAdd(list, t1.get$current());
-    },
     _ElementCssClassSet__removeWhere: function(_element, test, doRemove) {
-      var t2, item,
-        list = W._ElementCssClassSet__classListOf(_element),
-        t1 = list && C.DomTokenList_methods,
-        i = 0;
-      while (true) {
-        t2 = W._ElementCssClassSet__classListLength(list);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (!(i < t2))
-          break;
-        item = t1.item$1(list, i);
-        t2 = test.call$1(item);
-        if (doRemove == null ? t2 == null : doRemove === t2)
-          W._ElementCssClassSet__classListRemove(list, item);
+      var i, item,
+        list = _element.classList;
+      for (i = 0; i < list.length;) {
+        item = list.item(i);
+        if (true === test.call$1(item))
+          list.remove(item);
         else
           ++i;
       }
     },
-    _ElementCssClassSet__classListOf: function(e) {
-      return e.classList;
-    },
-    _ElementCssClassSet__classListLength: function(list) {
-      return list.length;
-    },
-    _ElementCssClassSet__classListContains: function(list, value) {
-      return list.contains(value);
-    },
-    _ElementCssClassSet__classListContainsBeforeAddOrRemove: function(list, value) {
-      return list.contains(value);
-    },
-    _ElementCssClassSet__classListAdd: function(list, value) {
-      list.add(value);
-    },
-    _ElementCssClassSet__classListRemove: function(list, value) {
-      list.remove(value);
-    },
-    _ElementEventStreamImpl$: function(target, eventType, useCapture, $T) {
-      return new W._ElementEventStreamImpl(H.interceptedTypeCheck(target, "$isEventTarget"), H.stringTypeCheck(eventType), H.boolTypeCheck(useCapture), [$T]);
-    },
     _EventStreamSubscription$: function(_target, _eventType, onData, _useCapture, $T) {
-      var t1 = onData == null ? null : W._wrapZone(new W._EventStreamSubscription_closure(onData), W.Event);
-      t1 = new W._EventStreamSubscription(_target, _eventType, t1, _useCapture, [$T]);
-      t1._EventStreamSubscription$4(_target, _eventType, onData, _useCapture, $T);
-      return t1;
+      var t1 = W._wrapZone(new W._EventStreamSubscription_closure(onData), W.Event),
+        t2 = t1 != null;
+      if (t2 && true) {
+        H.functionTypeCheck(t1, {func: 1, args: [W.Event]});
+        if (t2)
+          J._addEventListener$3$x(_target, _eventType, t1, false);
+      }
+      return new W._EventStreamSubscription(_target, _eventType, t1, false, [$T]);
     },
     _Html5NodeValidator$: function(uriPolicy) {
-      var t1 = new W._Html5NodeValidator(uriPolicy != null ? uriPolicy : W.UriPolicy_UriPolicy());
+      var e = document.createElement("a"),
+        t1 = new W._SameOriginUriPolicy(e, window.location);
+      t1 = new W._Html5NodeValidator(t1);
       t1._Html5NodeValidator$1$uriPolicy(uriPolicy);
       return t1;
     },
@@ -5672,30 +2663,37 @@
       return true;
     },
     _Html5NodeValidator__uriAttributeValidator: function(element, attributeName, value, context) {
+      var t1, t2, t3;
       H.interceptedTypeCheck(element, "$isElement");
       H.stringTypeCheck(attributeName);
       H.stringTypeCheck(value);
-      return H.interceptedTypeCheck(context, "$is_Html5NodeValidator").uriPolicy.allowsUri$1(value);
-    },
-    NodeValidatorBuilder$common: function() {
-      var t1 = new W.NodeValidatorBuilder(H.setRuntimeTypeInfo([], [W.NodeValidator]));
-      t1.NodeValidatorBuilder$common$0();
+      t1 = H.interceptedTypeCheck(context, "$is_Html5NodeValidator").uriPolicy;
+      t2 = t1._hiddenAnchor;
+      t2.href = value;
+      t3 = t2.hostname;
+      t1 = t1._loc;
+      if (!(t3 == t1.hostname && t2.port == t1.port && t2.protocol == t1.protocol))
+        if (t3 === "")
+          if (t2.port === "") {
+            t1 = t2.protocol;
+            t1 = t1 === ":" || t1 === "";
+          } else
+            t1 = false;
+        else
+          t1 = false;
+      else
+        t1 = true;
       return t1;
     },
     _TemplatingNodeValidator$: function() {
       var t1 = P.String,
         t2 = P.LinkedHashSet_LinkedHashSet$from(C.List_wSV, t1),
-        t3 = C.JSArray_methods.map$1$1(C.List_wSV, new W._TemplatingNodeValidator_closure(), t1),
-        t4 = H.setRuntimeTypeInfo(["TEMPLATE"], [t1]);
-      t1 = new W._TemplatingNodeValidator(t2, P.LinkedHashSet_LinkedHashSet(t1), P.LinkedHashSet_LinkedHashSet(t1), P.LinkedHashSet_LinkedHashSet(t1), null);
-      t1._SimpleNodeValidator$4$allowedAttributes$allowedElements$allowedUriAttributes(null, t3, t4, null);
-      return t1;
-    },
-    _SvgNodeValidator$: function() {
-      return new W._SvgNodeValidator();
-    },
-    FixedSizeListIterator$: function(array, $T) {
-      return new W.FixedSizeListIterator(array, J.get$length$asx(array), [$T]);
+        t3 = H.getTypeArgumentByIndex(C.List_wSV, 0),
+        t4 = H.functionTypeCheck(new W._TemplatingNodeValidator_closure(), {func: 1, ret: t1, args: [t3]}),
+        t5 = H.setRuntimeTypeInfo(["TEMPLATE"], [t1]);
+      t2 = new W._TemplatingNodeValidator(t2, P.LinkedHashSet_LinkedHashSet(t1), P.LinkedHashSet_LinkedHashSet(t1), P.LinkedHashSet_LinkedHashSet(t1), null);
+      t2._SimpleNodeValidator$4$allowedAttributes$allowedElements$allowedUriAttributes(null, new H.MappedListIterable(C.List_wSV, t4, [t3, t1]), t5, null);
+      return t2;
     },
     _convertNativeToDart_EventTarget: function(e) {
       var $window;
@@ -5703,987 +2701,70 @@
         return;
       if ("postMessage" in e) {
         $window = W._DOMWindowCrossFrame__createSafe(e);
-        if (!!J.getInterceptor$($window).$isEventTarget)
-          return $window;
-        return;
+        return $window;
       } else
         return H.interceptedTypeCheck(e, "$isEventTarget");
     },
-    _DOMWindowCrossFrame$: function(_window) {
-      return new W._DOMWindowCrossFrame();
-    },
     _DOMWindowCrossFrame__createSafe: function(w) {
-      var t1 = W.window();
-      if (w == null ? t1 == null : w === t1)
+      if (w === window)
         return H.interceptedTypeCheck(w, "$isWindowBase");
-      else {
-        H.registerGlobalObject(w);
-        return W._DOMWindowCrossFrame$(w);
-      }
+      else
+        return new W._DOMWindowCrossFrame();
     },
     _wrapZone: function(callback, $T) {
-      if (H.boolConversionCheck(J.$eq$(P.Zone_current(), C.C__RootZone)))
+      var t1 = $.Zone__current;
+      if (t1 === C.C__RootZone)
         return callback;
-      if (callback == null)
-        return;
-      return P.Zone_current().bindUnaryCallbackGuarded$1$1(callback, $T);
-    },
-    querySelector: function(selectors) {
-      return J.querySelector$1$x(W.document(), selectors);
-    },
-    NodeTreeSanitizer_NodeTreeSanitizer: function(validator) {
-      return W._ValidatingTreeSanitizer$(validator);
-    },
-    UriPolicy_UriPolicy: function() {
-      return W._SameOriginUriPolicy$();
-    },
-    _SameOriginUriPolicy$: function() {
-      return new W._SameOriginUriPolicy(W.AnchorElement_AnchorElement(), J.get$location$x(W.window()));
-    },
-    _ValidatingTreeSanitizer$: function(validator) {
-      return new W._ValidatingTreeSanitizer(validator);
+      return t1.bindUnaryCallbackGuarded$1$1(callback, $T);
     },
     HtmlElement: function HtmlElement() {
     },
-    AbortPaymentEvent: function AbortPaymentEvent() {
-    },
-    AbsoluteOrientationSensor: function AbsoluteOrientationSensor() {
-    },
-    AbstractWorker: function AbstractWorker() {
-    },
-    Accelerometer: function Accelerometer() {
-    },
-    AccessibleNode: function AccessibleNode() {
-    },
-    AccessibleNodeList: function AccessibleNodeList() {
-    },
-    AmbientLightSensor: function AmbientLightSensor() {
-    },
     AnchorElement: function AnchorElement() {
-    },
-    Animation: function Animation() {
-    },
-    AnimationEffectReadOnly: function AnimationEffectReadOnly() {
-    },
-    AnimationEffectTiming: function AnimationEffectTiming() {
-    },
-    AnimationEffectTimingReadOnly: function AnimationEffectTimingReadOnly() {
-    },
-    AnimationEvent: function AnimationEvent() {
-    },
-    AnimationPlaybackEvent: function AnimationPlaybackEvent() {
-    },
-    AnimationTimeline: function AnimationTimeline() {
-    },
-    AnimationWorkletGlobalScope: function AnimationWorkletGlobalScope() {
-    },
-    ApplicationCache: function ApplicationCache() {
-    },
-    ApplicationCacheErrorEvent: function ApplicationCacheErrorEvent() {
     },
     AreaElement: function AreaElement() {
     },
-    AudioElement: function AudioElement() {
-    },
-    AuthenticatorAssertionResponse: function AuthenticatorAssertionResponse() {
-    },
-    AuthenticatorAttestationResponse: function AuthenticatorAttestationResponse() {
-    },
-    AuthenticatorResponse: function AuthenticatorResponse() {
-    },
-    BRElement: function BRElement() {
-    },
-    BackgroundFetchClickEvent: function BackgroundFetchClickEvent() {
-    },
-    BackgroundFetchEvent: function BackgroundFetchEvent() {
-    },
-    BackgroundFetchFailEvent: function BackgroundFetchFailEvent() {
-    },
-    BackgroundFetchFetch: function BackgroundFetchFetch() {
-    },
-    BackgroundFetchManager: function BackgroundFetchManager() {
-    },
-    BackgroundFetchRegistration: function BackgroundFetchRegistration() {
-    },
-    BackgroundFetchSettledFetch: function BackgroundFetchSettledFetch() {
-    },
-    BackgroundFetchedEvent: function BackgroundFetchedEvent() {
-    },
-    BarProp: function BarProp() {
-    },
-    BarcodeDetector: function BarcodeDetector() {
-    },
     BaseElement: function BaseElement() {
-    },
-    BatteryManager: function BatteryManager() {
-    },
-    BeforeInstallPromptEvent: function BeforeInstallPromptEvent() {
-    },
-    BeforeUnloadEvent: function BeforeUnloadEvent() {
-    },
-    Blob: function Blob() {
-    },
-    BlobEvent: function BlobEvent() {
-    },
-    BluetoothRemoteGattDescriptor: function BluetoothRemoteGattDescriptor() {
-    },
-    Body: function Body() {
     },
     BodyElement: function BodyElement() {
     },
-    BroadcastChannel: function BroadcastChannel() {
-    },
-    BudgetState: function BudgetState() {
-    },
     ButtonElement: function ButtonElement() {
-    },
-    CDataSection: function CDataSection() {
-    },
-    CacheStorage: function CacheStorage() {
-    },
-    CanMakePaymentEvent: function CanMakePaymentEvent() {
-    },
-    CanvasCaptureMediaStreamTrack: function CanvasCaptureMediaStreamTrack() {
-    },
-    CanvasElement: function CanvasElement() {
-    },
-    CanvasGradient: function CanvasGradient() {
-    },
-    CanvasPattern: function CanvasPattern() {
-    },
-    CanvasRenderingContext: function CanvasRenderingContext() {
-    },
-    CanvasRenderingContext2D: function CanvasRenderingContext2D() {
     },
     CharacterData: function CharacterData() {
     },
-    ChildNode: function ChildNode() {
-    },
-    Client: function Client() {
-    },
-    Clients: function Clients() {
-    },
-    ClipboardEvent: function ClipboardEvent() {
-    },
-    CloseEvent: function CloseEvent() {
-    },
-    Comment: function Comment() {
-    },
-    CompositionEvent: function CompositionEvent() {
-    },
-    ContentElement: function ContentElement() {
-    },
-    CookieStore: function CookieStore() {
-    },
-    Coordinates: function Coordinates() {
-    },
-    Credential: function Credential() {
-    },
-    CredentialUserData: function CredentialUserData() {
-    },
-    CredentialsContainer: function CredentialsContainer() {
-    },
-    Crypto: function Crypto() {
-    },
-    CryptoKey: function CryptoKey() {
-    },
-    Css: function Css() {
-    },
-    CssCharsetRule: function CssCharsetRule() {
-    },
-    CssConditionRule: function CssConditionRule() {
-    },
-    CssFontFaceRule: function CssFontFaceRule() {
-    },
-    CssGroupingRule: function CssGroupingRule() {
-    },
-    CssImageValue: function CssImageValue() {
-    },
-    CssImportRule: function CssImportRule() {
-    },
-    CssKeyframeRule: function CssKeyframeRule() {
-    },
-    CssKeyframesRule: function CssKeyframesRule() {
-    },
-    CssKeywordValue: function CssKeywordValue() {
-    },
-    CssMatrixComponent: function CssMatrixComponent() {
-    },
-    CssMediaRule: function CssMediaRule() {
-    },
-    CssNamespaceRule: function CssNamespaceRule() {
-    },
-    CssNumericValue: function CssNumericValue() {
-    },
-    CssPageRule: function CssPageRule() {
-    },
-    CssPerspective: function CssPerspective() {
-    },
-    CssPositionValue: function CssPositionValue() {
-    },
-    CssResourceValue: function CssResourceValue() {
-    },
-    CssRotation: function CssRotation() {
-    },
-    CssRule: function CssRule() {
-    },
-    CssScale: function CssScale() {
-    },
-    CssSkew: function CssSkew() {
-    },
-    CssStyleDeclaration: function CssStyleDeclaration() {
-    },
-    _CssStyleDeclarationSet: function _CssStyleDeclarationSet() {
-    },
-    CssStyleDeclarationBase: function CssStyleDeclarationBase() {
-    },
-    CssStyleRule: function CssStyleRule() {
-    },
-    CssStyleSheet: function CssStyleSheet() {
-    },
-    CssStyleValue: function CssStyleValue() {
-    },
-    CssSupportsRule: function CssSupportsRule() {
-    },
-    CssTransformComponent: function CssTransformComponent() {
-    },
-    CssTransformValue: function CssTransformValue() {
-    },
-    CssTranslation: function CssTranslation() {
-    },
-    CssUnitValue: function CssUnitValue() {
-    },
-    CssUnparsedValue: function CssUnparsedValue() {
-    },
-    CssVariableReferenceValue: function CssVariableReferenceValue() {
-    },
-    CssViewportRule: function CssViewportRule() {
-    },
-    CssurlImageValue: function CssurlImageValue() {
-    },
-    CustomElementRegistry: function CustomElementRegistry() {
-    },
-    CustomEvent: function CustomEvent() {
-    },
-    DListElement: function DListElement() {
-    },
-    DataElement: function DataElement() {
-    },
-    DataListElement: function DataListElement() {
-    },
-    DataTransfer: function DataTransfer() {
-    },
-    DataTransferItem: function DataTransferItem() {
-    },
-    DataTransferItemList: function DataTransferItemList() {
-    },
-    DedicatedWorkerGlobalScope: function DedicatedWorkerGlobalScope() {
-    },
-    DeprecatedStorageInfo: function DeprecatedStorageInfo() {
-    },
-    DeprecatedStorageQuota: function DeprecatedStorageQuota() {
-    },
-    DeprecationReport: function DeprecationReport() {
-    },
-    DetailsElement: function DetailsElement() {
-    },
-    DetectedBarcode: function DetectedBarcode() {
-    },
-    DetectedFace: function DetectedFace() {
-    },
-    DetectedText: function DetectedText() {
-    },
-    DeviceAcceleration: function DeviceAcceleration() {
-    },
-    DeviceMotionEvent: function DeviceMotionEvent() {
-    },
-    DeviceOrientationEvent: function DeviceOrientationEvent() {
-    },
-    DeviceRotationRate: function DeviceRotationRate() {
-    },
-    DialogElement: function DialogElement() {
-    },
-    DirectoryEntry: function DirectoryEntry() {
-    },
-    DirectoryReader: function DirectoryReader() {
-    },
     DivElement: function DivElement() {
-    },
-    Document: function Document() {
-    },
-    DocumentFragment: function DocumentFragment() {
-    },
-    DocumentOrShadowRoot: function DocumentOrShadowRoot() {
-    },
-    DocumentTimeline: function DocumentTimeline() {
-    },
-    DomError: function DomError() {
     },
     DomException: function DomException() {
     },
-    DomImplementation: function DomImplementation() {
-    },
-    DomIterator: function DomIterator() {
-    },
-    DomMatrix: function DomMatrix() {
-    },
-    DomMatrixReadOnly: function DomMatrixReadOnly() {
-    },
-    DomParser: function DomParser() {
-    },
-    DomPoint: function DomPoint() {
-    },
-    DomPointReadOnly: function DomPointReadOnly() {
-    },
-    DomQuad: function DomQuad() {
-    },
-    DomRectList: function DomRectList() {
-    },
-    DomRectReadOnly: function DomRectReadOnly() {
-    },
-    DomStringList: function DomStringList() {
-    },
-    DomStringMap: function DomStringMap() {
-    },
     DomTokenList: function DomTokenList() {
-    },
-    _ChildrenElementList: function _ChildrenElementList(t0, t1) {
-      this._html$_element = t0;
-      this._childElements = t1;
-    },
-    _ChildrenElementList__filter_closure: function _ChildrenElementList__filter_closure(t0) {
-      this.test = t0;
-    },
-    ElementList: function ElementList() {
-    },
-    _FrozenElementList: function _FrozenElementList() {
     },
     Element: function Element() {
     },
     Element_Element$html_closure: function Element_Element$html_closure() {
     },
-    _ElementFactoryProvider: function _ElementFactoryProvider() {
-    },
-    ScrollAlignment: function ScrollAlignment() {
-    },
-    EmbedElement: function EmbedElement() {
-    },
-    Entry: function Entry() {
-    },
-    ErrorEvent: function ErrorEvent() {
-    },
     Event: function Event() {
-    },
-    EventSource: function EventSource() {
-    },
-    Events: function Events() {
-    },
-    ElementEvents: function ElementEvents() {
     },
     EventTarget: function EventTarget() {
     },
-    ExtendableEvent: function ExtendableEvent() {
-    },
-    ExtendableMessageEvent: function ExtendableMessageEvent() {
-    },
-    External: function External() {
-    },
-    FaceDetector: function FaceDetector() {
-    },
-    FederatedCredential: function FederatedCredential() {
-    },
-    FetchEvent: function FetchEvent() {
-    },
-    FieldSetElement: function FieldSetElement() {
-    },
-    File: function File() {
-    },
-    FileEntry: function FileEntry() {
-    },
-    FileList: function FileList() {
-    },
-    FileReader: function FileReader() {
-    },
-    FileSystem: function FileSystem() {
-    },
-    FileWriter: function FileWriter() {
-    },
-    FocusEvent: function FocusEvent() {
-    },
-    FontFace: function FontFace() {
-    },
-    FontFaceSet: function FontFaceSet() {
-    },
-    FontFaceSetLoadEvent: function FontFaceSetLoadEvent() {
-    },
-    FontFaceSource: function FontFaceSource() {
-    },
-    ForeignFetchEvent: function ForeignFetchEvent() {
-    },
-    FormData: function FormData() {
-    },
     FormElement: function FormElement() {
-    },
-    Gamepad: function Gamepad() {
-    },
-    GamepadButton: function GamepadButton() {
-    },
-    GamepadEvent: function GamepadEvent() {
-    },
-    GamepadPose: function GamepadPose() {
-    },
-    Geolocation: function Geolocation() {
-    },
-    _GeopositionWrapper: function _GeopositionWrapper() {
-    },
-    Geoposition: function Geoposition() {
-    },
-    GlobalEventHandlers: function GlobalEventHandlers() {
-    },
-    Gyroscope: function Gyroscope() {
-    },
-    HRElement: function HRElement() {
-    },
-    HashChangeEvent: function HashChangeEvent() {
-    },
-    HeadElement: function HeadElement() {
-    },
-    Headers: function Headers() {
-    },
-    HeadingElement: function HeadingElement() {
-    },
-    History: function History() {
     },
     HtmlCollection: function HtmlCollection() {
     },
-    HtmlDocument: function HtmlDocument() {
-    },
-    HtmlFormControlsCollection: function HtmlFormControlsCollection() {
-    },
-    HtmlHtmlElement: function HtmlHtmlElement() {
-    },
-    HtmlHyperlinkElementUtils: function HtmlHyperlinkElementUtils() {
-    },
-    HtmlOptionsCollection: function HtmlOptionsCollection() {
-    },
-    HttpRequest0: function HttpRequest0() {
-    },
-    HttpRequestEventTarget: function HttpRequestEventTarget() {
-    },
-    HttpRequestUpload: function HttpRequestUpload() {
-    },
-    IFrameElement: function IFrameElement() {
-    },
-    IdleDeadline: function IdleDeadline() {
-    },
-    ImageBitmap: function ImageBitmap() {
-    },
-    ImageBitmapRenderingContext: function ImageBitmapRenderingContext() {
-    },
-    ImageCapture: function ImageCapture() {
-    },
-    ImageData: function ImageData() {
-    },
-    ImageElement: function ImageElement() {
-    },
-    InputDeviceCapabilities: function InputDeviceCapabilities() {
-    },
     InputElement: function InputElement() {
-    },
-    InputElementBase: function InputElementBase() {
-    },
-    HiddenInputElement: function HiddenInputElement() {
-    },
-    TextInputElementBase: function TextInputElementBase() {
-    },
-    SearchInputElement: function SearchInputElement() {
-    },
-    TextInputElement: function TextInputElement() {
-    },
-    UrlInputElement: function UrlInputElement() {
-    },
-    TelephoneInputElement: function TelephoneInputElement() {
-    },
-    EmailInputElement: function EmailInputElement() {
-    },
-    PasswordInputElement: function PasswordInputElement() {
-    },
-    RangeInputElementBase: function RangeInputElementBase() {
-    },
-    DateInputElement: function DateInputElement() {
-    },
-    MonthInputElement: function MonthInputElement() {
-    },
-    WeekInputElement: function WeekInputElement() {
-    },
-    TimeInputElement: function TimeInputElement() {
-    },
-    LocalDateTimeInputElement: function LocalDateTimeInputElement() {
-    },
-    NumberInputElement: function NumberInputElement() {
-    },
-    RangeInputElement: function RangeInputElement() {
-    },
-    CheckboxInputElement: function CheckboxInputElement() {
-    },
-    RadioButtonInputElement: function RadioButtonInputElement() {
-    },
-    FileUploadInputElement: function FileUploadInputElement() {
-    },
-    SubmitButtonInputElement: function SubmitButtonInputElement() {
-    },
-    ImageButtonInputElement: function ImageButtonInputElement() {
-    },
-    ResetButtonInputElement: function ResetButtonInputElement() {
-    },
-    ButtonInputElement: function ButtonInputElement() {
-    },
-    InstallEvent: function InstallEvent() {
-    },
-    IntersectionObserver: function IntersectionObserver() {
-    },
-    IntersectionObserverEntry: function IntersectionObserverEntry() {
-    },
-    InterventionReport: function InterventionReport() {
-    },
-    KeyboardEvent: function KeyboardEvent() {
-    },
-    KeyframeEffect: function KeyframeEffect() {
-    },
-    KeyframeEffectReadOnly: function KeyframeEffectReadOnly() {
-    },
-    LIElement: function LIElement() {
-    },
-    LabelElement: function LabelElement() {
-    },
-    LegendElement: function LegendElement() {
-    },
-    LinearAccelerationSensor: function LinearAccelerationSensor() {
-    },
-    LinkElement: function LinkElement() {
     },
     Location: function Location() {
     },
-    Magnetometer: function Magnetometer() {
-    },
-    MapElement: function MapElement() {
-    },
-    MediaCapabilities: function MediaCapabilities() {
-    },
-    MediaCapabilitiesInfo: function MediaCapabilitiesInfo() {
-    },
-    MediaDeviceInfo: function MediaDeviceInfo() {
-    },
-    MediaDevices: function MediaDevices() {
-    },
-    MediaElement: function MediaElement() {
-    },
-    MediaEncryptedEvent: function MediaEncryptedEvent() {
-    },
-    MediaError: function MediaError() {
-    },
-    MediaKeyMessageEvent: function MediaKeyMessageEvent() {
-    },
-    MediaKeySession: function MediaKeySession() {
-    },
-    MediaKeyStatusMap: function MediaKeyStatusMap() {
-    },
-    MediaKeySystemAccess: function MediaKeySystemAccess() {
-    },
-    MediaKeys: function MediaKeys() {
-    },
-    MediaKeysPolicy: function MediaKeysPolicy() {
-    },
-    MediaList: function MediaList() {
-    },
-    MediaMetadata: function MediaMetadata() {
-    },
-    MediaQueryList: function MediaQueryList() {
-    },
-    MediaQueryListEvent: function MediaQueryListEvent() {
-    },
-    MediaRecorder: function MediaRecorder() {
-    },
-    MediaSession: function MediaSession() {
-    },
-    MediaSettingsRange: function MediaSettingsRange() {
-    },
-    MediaSource: function MediaSource() {
-    },
-    MediaStream: function MediaStream() {
-    },
-    MediaStreamEvent: function MediaStreamEvent() {
-    },
-    MediaStreamTrack: function MediaStreamTrack() {
-    },
-    MediaStreamTrackEvent: function MediaStreamTrackEvent() {
-    },
-    MemoryInfo: function MemoryInfo() {
-    },
-    MenuElement: function MenuElement() {
-    },
-    MessageChannel: function MessageChannel() {
-    },
-    MessageEvent: function MessageEvent() {
-    },
-    MessagePort: function MessagePort() {
-    },
-    MetaElement: function MetaElement() {
-    },
-    Metadata: function Metadata() {
-    },
-    MeterElement: function MeterElement() {
-    },
-    MidiAccess: function MidiAccess() {
-    },
-    MidiConnectionEvent: function MidiConnectionEvent() {
-    },
-    MidiInput: function MidiInput() {
-    },
-    MidiInputMap: function MidiInputMap() {
-    },
-    MidiMessageEvent: function MidiMessageEvent() {
-    },
-    MidiOutput: function MidiOutput() {
-    },
-    MidiOutputMap: function MidiOutputMap() {
-    },
-    MidiPort: function MidiPort() {
-    },
-    MimeType: function MimeType() {
-    },
-    MimeTypeArray: function MimeTypeArray() {
-    },
-    ModElement: function ModElement() {
-    },
     MouseEvent: function MouseEvent() {
-    },
-    MutationEvent: function MutationEvent() {
-    },
-    MutationObserver: function MutationObserver() {
-    },
-    MutationRecord: function MutationRecord() {
-    },
-    NavigationPreloadManager: function NavigationPreloadManager() {
-    },
-    Navigator: function Navigator() {
-    },
-    NavigatorAutomationInformation: function NavigatorAutomationInformation() {
-    },
-    NavigatorConcurrentHardware: function NavigatorConcurrentHardware() {
-    },
-    NavigatorCookies: function NavigatorCookies() {
-    },
-    NavigatorID: function NavigatorID() {
-    },
-    NavigatorLanguage: function NavigatorLanguage() {
-    },
-    NavigatorOnLine: function NavigatorOnLine() {
-    },
-    NavigatorUserMediaError: function NavigatorUserMediaError() {
-    },
-    NetworkInformation: function NetworkInformation() {
     },
     _ChildNodeListLazy: function _ChildNodeListLazy(t0) {
       this._this = t0;
     },
     Node: function Node() {
     },
-    NodeFilter: function NodeFilter() {
-    },
-    NodeIterator: function NodeIterator() {
-    },
     NodeList: function NodeList() {
-    },
-    NonDocumentTypeChildNode: function NonDocumentTypeChildNode() {
-    },
-    NonElementParentNode: function NonElementParentNode() {
-    },
-    NoncedElement: function NoncedElement() {
-    },
-    Notification: function Notification() {
-    },
-    NotificationEvent: function NotificationEvent() {
-    },
-    OListElement: function OListElement() {
-    },
-    ObjectElement: function ObjectElement() {
-    },
-    OffscreenCanvas: function OffscreenCanvas() {
-    },
-    OffscreenCanvasRenderingContext2D: function OffscreenCanvasRenderingContext2D() {
-    },
-    OptGroupElement: function OptGroupElement() {
-    },
-    OptionElement: function OptionElement() {
-    },
-    OrientationSensor: function OrientationSensor() {
-    },
-    OutputElement: function OutputElement() {
-    },
-    OverconstrainedError: function OverconstrainedError() {
-    },
-    PageTransitionEvent: function PageTransitionEvent() {
-    },
-    PaintRenderingContext2D: function PaintRenderingContext2D() {
-    },
-    PaintSize: function PaintSize() {
-    },
-    PaintWorkletGlobalScope: function PaintWorkletGlobalScope() {
-    },
-    ParagraphElement: function ParagraphElement() {
-    },
-    ParamElement: function ParamElement() {
-    },
-    ParentNode: function ParentNode() {
-    },
-    PasswordCredential: function PasswordCredential() {
-    },
-    Path2D: function Path2D() {
-    },
-    PaymentAddress: function PaymentAddress() {
-    },
-    PaymentInstruments: function PaymentInstruments() {
-    },
-    PaymentManager: function PaymentManager() {
-    },
-    PaymentRequest: function PaymentRequest() {
-    },
-    PaymentRequestEvent: function PaymentRequestEvent() {
-    },
-    PaymentRequestUpdateEvent: function PaymentRequestUpdateEvent() {
-    },
-    PaymentResponse: function PaymentResponse() {
-    },
-    Performance: function Performance() {
-    },
-    PerformanceEntry: function PerformanceEntry() {
-    },
-    PerformanceLongTaskTiming: function PerformanceLongTaskTiming() {
-    },
-    PerformanceMark: function PerformanceMark() {
-    },
-    PerformanceMeasure: function PerformanceMeasure() {
-    },
-    PerformanceNavigation: function PerformanceNavigation() {
-    },
-    PerformanceNavigationTiming: function PerformanceNavigationTiming() {
-    },
-    PerformanceObserver: function PerformanceObserver() {
-    },
-    PerformanceObserverEntryList: function PerformanceObserverEntryList() {
-    },
-    PerformancePaintTiming: function PerformancePaintTiming() {
-    },
-    PerformanceResourceTiming: function PerformanceResourceTiming() {
-    },
-    PerformanceServerTiming: function PerformanceServerTiming() {
-    },
-    PerformanceTiming: function PerformanceTiming() {
-    },
-    PermissionStatus: function PermissionStatus() {
-    },
-    Permissions: function Permissions() {
-    },
-    PhotoCapabilities: function PhotoCapabilities() {
-    },
-    PictureElement: function PictureElement() {
-    },
-    Plugin: function Plugin() {
-    },
-    PluginArray: function PluginArray() {
-    },
-    PointerEvent: function PointerEvent() {
-    },
-    PopStateEvent: function PopStateEvent() {
-    },
-    PositionError: function PositionError() {
-    },
-    PreElement: function PreElement() {
-    },
-    Presentation: function Presentation() {
-    },
-    PresentationAvailability: function PresentationAvailability() {
-    },
-    PresentationConnection: function PresentationConnection() {
-    },
-    PresentationConnectionAvailableEvent: function PresentationConnectionAvailableEvent() {
-    },
-    PresentationConnectionCloseEvent: function PresentationConnectionCloseEvent() {
-    },
-    PresentationConnectionList: function PresentationConnectionList() {
-    },
-    PresentationReceiver: function PresentationReceiver() {
-    },
-    PresentationRequest: function PresentationRequest() {
-    },
-    ProcessingInstruction: function ProcessingInstruction() {
-    },
-    ProgressElement: function ProgressElement() {
-    },
-    ProgressEvent: function ProgressEvent() {
-    },
-    PromiseRejectionEvent: function PromiseRejectionEvent() {
-    },
-    PublicKeyCredential: function PublicKeyCredential() {
-    },
-    PushEvent: function PushEvent() {
-    },
-    PushManager: function PushManager() {
-    },
-    PushMessageData: function PushMessageData() {
-    },
-    PushSubscription: function PushSubscription() {
-    },
-    PushSubscriptionOptions: function PushSubscriptionOptions() {
-    },
-    QuoteElement: function QuoteElement() {
-    },
-    Range: function Range() {
-    },
-    RelatedApplication: function RelatedApplication() {
-    },
-    RelativeOrientationSensor: function RelativeOrientationSensor() {
-    },
-    RemotePlayback: function RemotePlayback() {
-    },
-    ReportBody: function ReportBody() {
-    },
-    ReportingObserver: function ReportingObserver() {
-    },
-    ResizeObserver: function ResizeObserver() {
-    },
-    ResizeObserverEntry: function ResizeObserverEntry() {
-    },
-    RtcCertificate: function RtcCertificate() {
-    },
-    RtcDataChannel: function RtcDataChannel() {
-    },
-    RtcDataChannelEvent: function RtcDataChannelEvent() {
-    },
-    RtcDtmfSender: function RtcDtmfSender() {
-    },
-    RtcDtmfToneChangeEvent: function RtcDtmfToneChangeEvent() {
-    },
-    RtcIceCandidate: function RtcIceCandidate() {
-    },
-    RtcLegacyStatsReport: function RtcLegacyStatsReport() {
-    },
-    RtcPeerConnection: function RtcPeerConnection() {
-    },
-    RtcPeerConnectionIceEvent: function RtcPeerConnectionIceEvent() {
-    },
-    RtcRtpContributingSource: function RtcRtpContributingSource() {
-    },
-    RtcRtpReceiver: function RtcRtpReceiver() {
-    },
-    RtcRtpSender: function RtcRtpSender() {
-    },
-    RtcSessionDescription: function RtcSessionDescription() {
-    },
-    RtcStatsReport: function RtcStatsReport() {
-    },
-    RtcStatsResponse: function RtcStatsResponse() {
-    },
-    RtcTrackEvent: function RtcTrackEvent() {
-    },
-    Screen: function Screen() {
-    },
-    ScreenOrientation: function ScreenOrientation() {
-    },
-    ScriptElement0: function ScriptElement0() {
-    },
-    ScrollState: function ScrollState() {
-    },
-    ScrollTimeline: function ScrollTimeline() {
-    },
-    SecurityPolicyViolationEvent: function SecurityPolicyViolationEvent() {
     },
     SelectElement: function SelectElement() {
     },
-    Selection: function Selection() {
-    },
-    Sensor: function Sensor() {
-    },
-    SensorErrorEvent: function SensorErrorEvent() {
-    },
-    ServiceWorker: function ServiceWorker() {
-    },
-    ServiceWorkerContainer: function ServiceWorkerContainer() {
-    },
-    ServiceWorkerGlobalScope: function ServiceWorkerGlobalScope() {
-    },
-    ServiceWorkerRegistration: function ServiceWorkerRegistration() {
-    },
-    ShadowElement: function ShadowElement() {
-    },
-    ShadowRoot: function ShadowRoot() {
-    },
-    SharedArrayBuffer: function SharedArrayBuffer() {
-    },
-    SharedWorker: function SharedWorker() {
-    },
-    SharedWorkerGlobalScope: function SharedWorkerGlobalScope() {
-    },
-    SlotElement: function SlotElement() {
-    },
-    SourceBuffer: function SourceBuffer() {
-    },
-    SourceBufferList: function SourceBufferList() {
-    },
-    SourceElement: function SourceElement() {
-    },
     SpanElement: function SpanElement() {
-    },
-    SpeechGrammar: function SpeechGrammar() {
-    },
-    SpeechGrammarList: function SpeechGrammarList() {
-    },
-    SpeechRecognition: function SpeechRecognition() {
-    },
-    SpeechRecognitionAlternative: function SpeechRecognitionAlternative() {
-    },
-    SpeechRecognitionError: function SpeechRecognitionError() {
-    },
-    SpeechRecognitionEvent: function SpeechRecognitionEvent() {
-    },
-    SpeechRecognitionResult: function SpeechRecognitionResult() {
-    },
-    SpeechSynthesis: function SpeechSynthesis() {
-    },
-    SpeechSynthesisEvent: function SpeechSynthesisEvent() {
-    },
-    SpeechSynthesisUtterance: function SpeechSynthesisUtterance() {
-    },
-    SpeechSynthesisVoice: function SpeechSynthesisVoice() {
-    },
-    StaticRange: function StaticRange() {
-    },
-    Storage: function Storage() {
-    },
-    StorageEvent: function StorageEvent() {
-    },
-    StorageManager: function StorageManager() {
-    },
-    StyleElement: function StyleElement() {
-    },
-    StyleMedia: function StyleMedia() {
-    },
-    StylePropertyMap: function StylePropertyMap() {
-    },
-    StylePropertyMapReadonly: function StylePropertyMapReadonly() {
-    },
-    StyleSheet: function StyleSheet() {
-    },
-    SyncEvent: function SyncEvent() {
-    },
-    SyncManager: function SyncManager() {
-    },
-    TableCaptionElement: function TableCaptionElement() {
-    },
-    TableCellElement: function TableCellElement() {
-    },
-    TableColElement: function TableColElement() {
     },
     TableElement: function TableElement() {
     },
@@ -6691,327 +2772,20 @@
     },
     TableSectionElement: function TableSectionElement() {
     },
-    TaskAttributionTiming: function TaskAttributionTiming() {
-    },
     TemplateElement: function TemplateElement() {
-    },
-    Text: function Text() {
-    },
-    TextAreaElement: function TextAreaElement() {
-    },
-    TextDetector: function TextDetector() {
-    },
-    TextEvent: function TextEvent() {
-    },
-    TextMetrics: function TextMetrics() {
-    },
-    TextTrack: function TextTrack() {
-    },
-    TextTrackCue: function TextTrackCue() {
-    },
-    TextTrackCueList: function TextTrackCueList() {
-    },
-    TextTrackList: function TextTrackList() {
-    },
-    TimeElement: function TimeElement() {
-    },
-    TimeRanges: function TimeRanges() {
-    },
-    TitleElement: function TitleElement() {
-    },
-    Touch: function Touch() {
-    },
-    TouchEvent: function TouchEvent() {
-    },
-    TouchList: function TouchList() {
-    },
-    TrackDefault: function TrackDefault() {
-    },
-    TrackDefaultList: function TrackDefaultList() {
-    },
-    TrackElement: function TrackElement() {
-    },
-    TrackEvent: function TrackEvent() {
-    },
-    TransitionEvent: function TransitionEvent() {
-    },
-    TreeWalker: function TreeWalker() {
-    },
-    TrustedHtml: function TrustedHtml() {
-    },
-    TrustedScriptUrl: function TrustedScriptUrl() {
-    },
-    TrustedUrl: function TrustedUrl() {
     },
     UIEvent: function UIEvent() {
     },
-    UListElement: function UListElement() {
-    },
-    UnderlyingSourceBase: function UnderlyingSourceBase() {
-    },
-    UnknownElement: function UnknownElement() {
-    },
-    Url: function Url() {
-    },
-    UrlSearchParams: function UrlSearchParams() {
-    },
-    UrlUtilsReadOnly: function UrlUtilsReadOnly() {
-    },
-    VR: function VR() {
-    },
-    VRCoordinateSystem: function VRCoordinateSystem() {
-    },
-    VRDevice: function VRDevice() {
-    },
-    VRDeviceEvent: function VRDeviceEvent() {
-    },
-    VRDisplay: function VRDisplay() {
-    },
-    VRDisplayCapabilities: function VRDisplayCapabilities() {
-    },
-    VRDisplayEvent: function VRDisplayEvent() {
-    },
-    VREyeParameters: function VREyeParameters() {
-    },
-    VRFrameData: function VRFrameData() {
-    },
-    VRFrameOfReference: function VRFrameOfReference() {
-    },
-    VRPose: function VRPose() {
-    },
-    VRSession: function VRSession() {
-    },
-    VRSessionEvent: function VRSessionEvent() {
-    },
-    VRStageBounds: function VRStageBounds() {
-    },
-    VRStageBoundsPoint: function VRStageBoundsPoint() {
-    },
-    VRStageParameters: function VRStageParameters() {
-    },
-    ValidityState: function ValidityState() {
-    },
-    VideoElement: function VideoElement() {
-    },
-    VideoPlaybackQuality: function VideoPlaybackQuality() {
-    },
-    VideoTrack: function VideoTrack() {
-    },
-    VideoTrackList: function VideoTrackList() {
-    },
-    VisualViewport: function VisualViewport() {
-    },
-    VttCue: function VttCue() {
-    },
-    VttRegion: function VttRegion() {
-    },
-    WebSocket0: function WebSocket0() {
-    },
-    WheelEvent: function WheelEvent() {
-    },
     Window: function Window() {
-    },
-    _BeforeUnloadEvent: function _BeforeUnloadEvent() {
-    },
-    _BeforeUnloadEventStreamProvider: function _BeforeUnloadEventStreamProvider() {
-    },
-    WindowBase64: function WindowBase64() {
-    },
-    WindowClient: function WindowClient() {
-    },
-    WindowEventHandlers: function WindowEventHandlers() {
-    },
-    Worker: function Worker() {
-    },
-    WorkerGlobalScope: function WorkerGlobalScope() {
-    },
-    WorkerPerformance: function WorkerPerformance() {
-    },
-    WorkletAnimation: function WorkletAnimation() {
-    },
-    WorkletGlobalScope: function WorkletGlobalScope() {
-    },
-    XPathEvaluator: function XPathEvaluator() {
-    },
-    XPathExpression: function XPathExpression() {
-    },
-    XPathNSResolver: function XPathNSResolver() {
-    },
-    XPathResult: function XPathResult() {
-    },
-    XmlDocument: function XmlDocument() {
-    },
-    XmlSerializer: function XmlSerializer() {
-    },
-    XsltProcessor: function XsltProcessor() {
     },
     _Attr: function _Attr() {
     },
-    _Bluetooth: function _Bluetooth() {
-    },
-    _BluetoothCharacteristicProperties: function _BluetoothCharacteristicProperties() {
-    },
-    _BluetoothDevice: function _BluetoothDevice() {
-    },
-    _BluetoothRemoteGATTCharacteristic: function _BluetoothRemoteGATTCharacteristic() {
-    },
-    _BluetoothRemoteGATTServer: function _BluetoothRemoteGATTServer() {
-    },
-    _BluetoothRemoteGATTService: function _BluetoothRemoteGATTService() {
-    },
-    _BluetoothUUID: function _BluetoothUUID() {
-    },
-    _BudgetService: function _BudgetService() {
-    },
-    _Cache: function _Cache() {
-    },
-    _CanvasPath: function _CanvasPath() {
-    },
-    _Clipboard: function _Clipboard() {
-    },
-    _CssRuleList: function _CssRuleList() {
-    },
-    _DOMFileSystemSync: function _DOMFileSystemSync() {
-    },
-    _DirectoryEntrySync: function _DirectoryEntrySync() {
-    },
-    _DirectoryReaderSync: function _DirectoryReaderSync() {
-    },
-    _DocumentType: function _DocumentType() {
-    },
-    _DomRect: function _DomRect() {
-    },
-    _JenkinsSmiHash: function _JenkinsSmiHash() {
-    },
-    _EntrySync: function _EntrySync() {
-    },
-    _FileEntrySync: function _FileEntrySync() {
-    },
-    _FileReaderSync: function _FileReaderSync() {
-    },
-    _FileWriterSync: function _FileWriterSync() {
-    },
-    _GamepadList: function _GamepadList() {
-    },
-    _HTMLAllCollection: function _HTMLAllCollection() {
-    },
-    _HTMLDirectoryElement: function _HTMLDirectoryElement() {
-    },
-    _HTMLFontElement: function _HTMLFontElement() {
-    },
-    _HTMLFrameElement: function _HTMLFrameElement() {
-    },
-    _HTMLFrameSetElement: function _HTMLFrameSetElement() {
-    },
-    _HTMLMarqueeElement: function _HTMLMarqueeElement() {
-    },
-    _Mojo: function _Mojo() {
-    },
-    _MojoHandle: function _MojoHandle() {
-    },
-    _MojoInterfaceInterceptor: function _MojoInterfaceInterceptor() {
-    },
-    _MojoInterfaceRequestEvent: function _MojoInterfaceRequestEvent() {
-    },
-    _MojoWatcher: function _MojoWatcher() {
-    },
-    _NFC: function _NFC() {
-    },
     _NamedNodeMap: function _NamedNodeMap() {
-    },
-    _PagePopupController: function _PagePopupController() {
-    },
-    _Report: function _Report() {
-    },
-    _Request: function _Request() {
-    },
-    _ResourceProgressEvent: function _ResourceProgressEvent() {
-    },
-    _Response: function _Response() {
-    },
-    _SpeechRecognitionResultList: function _SpeechRecognitionResultList() {
-    },
-    _StyleSheetList: function _StyleSheetList() {
-    },
-    _SubtleCrypto: function _SubtleCrypto() {
-    },
-    _USB: function _USB() {
-    },
-    _USBAlternateInterface: function _USBAlternateInterface() {
-    },
-    _USBConfiguration: function _USBConfiguration() {
-    },
-    _USBConnectionEvent: function _USBConnectionEvent() {
-    },
-    _USBDevice: function _USBDevice() {
-    },
-    _USBEndpoint: function _USBEndpoint() {
-    },
-    _USBInTransferResult: function _USBInTransferResult() {
-    },
-    _USBInterface: function _USBInterface() {
-    },
-    _USBIsochronousInTransferPacket: function _USBIsochronousInTransferPacket() {
-    },
-    _USBIsochronousInTransferResult: function _USBIsochronousInTransferResult() {
-    },
-    _USBIsochronousOutTransferPacket: function _USBIsochronousOutTransferPacket() {
-    },
-    _USBIsochronousOutTransferResult: function _USBIsochronousOutTransferResult() {
-    },
-    _USBOutTransferResult: function _USBOutTransferResult() {
-    },
-    _WindowTimers: function _WindowTimers() {
-    },
-    _WorkerLocation: function _WorkerLocation() {
-    },
-    _WorkerNavigator: function _WorkerNavigator() {
-    },
-    _Worklet: function _Worklet() {
     },
     _AttributeMap: function _AttributeMap() {
     },
     _ElementAttributeMap: function _ElementAttributeMap(t0) {
-      this._html$_element = t0;
-    },
-    _NamespacedAttributeMap: function _NamespacedAttributeMap() {
-    },
-    _DataAttributeMap: function _DataAttributeMap() {
-    },
-    CanvasImageSource: function CanvasImageSource() {
-    },
-    WindowBase: function WindowBase() {
-    },
-    LocationBase: function LocationBase() {
-    },
-    HistoryBase: function HistoryBase() {
-    },
-    CssClassSet: function CssClassSet() {
-    },
-    _ContentCssRect: function _ContentCssRect() {
-    },
-    _ContentCssListRect: function _ContentCssListRect() {
-    },
-    _PaddingCssRect: function _PaddingCssRect() {
-    },
-    _BorderCssRect: function _BorderCssRect() {
-    },
-    _MarginCssRect: function _MarginCssRect() {
-    },
-    CssRect: function CssRect() {
-    },
-    _MultiElementCssClassSet: function _MultiElementCssClassSet() {
-    },
-    _ElementCssClassSet: function _ElementCssClassSet(t0) {
-      this._html$_element = t0;
-    },
-    Dimension: function Dimension() {
-    },
-    EventStreamProvider: function EventStreamProvider(t0, t1) {
-      this._eventType = t0;
-      this.$ti = t1;
-    },
-    ElementStream: function ElementStream() {
+      this._element = t0;
     },
     _EventStream: function _EventStream() {
     },
@@ -7021,8 +2795,6 @@
       _._eventType = t1;
       _._useCapture = t2;
       _.$ti = t3;
-    },
-    _ElementListEventStreamImpl: function _ElementListEventStreamImpl() {
     },
     _EventStreamSubscription: function _EventStreamSubscription(t0, t1, t2, t3, t4) {
       var _ = this;
@@ -7035,30 +2807,10 @@
     _EventStreamSubscription_closure: function _EventStreamSubscription_closure(t0) {
       this.onData = t0;
     },
-    CustomStream: function CustomStream() {
-    },
-    _CustomEventStreamImpl: function _CustomEventStreamImpl() {
-    },
-    _CustomKeyEventStreamImpl: function _CustomKeyEventStreamImpl() {
-    },
-    _StreamPool: function _StreamPool() {
-    },
-    _CustomEventStreamProvider: function _CustomEventStreamProvider() {
-    },
     _Html5NodeValidator: function _Html5NodeValidator(t0) {
       this.uriPolicy = t0;
     },
     ImmutableListMixin: function ImmutableListMixin() {
-    },
-    KeyCode: function KeyCode() {
-    },
-    KeyLocation: function KeyLocation() {
-    },
-    _KeyName: function _KeyName() {
-    },
-    _KeyboardEventHandler: function _KeyboardEventHandler() {
-    },
-    KeyboardEventStream: function KeyboardEventStream() {
     },
     NodeValidatorBuilder: function NodeValidatorBuilder(t0) {
       this._validators = t0;
@@ -7077,8 +2829,6 @@
     },
     _SimpleNodeValidator_closure0: function _SimpleNodeValidator_closure0() {
     },
-    _CustomElementNodeValidator: function _CustomElementNodeValidator() {
-    },
     _TemplatingNodeValidator: function _TemplatingNodeValidator(t0, t1, t2, t3, t4) {
       var _ = this;
       _._templateAttrs = t0;
@@ -7091,14 +2841,6 @@
     },
     _SvgNodeValidator: function _SvgNodeValidator() {
     },
-    ReadyState: function ReadyState() {
-    },
-    _WrappedList: function _WrappedList() {
-    },
-    _WrappedIterator: function _WrappedIterator() {
-    },
-    _HttpRequestUtils: function _HttpRequestUtils() {
-    },
     FixedSizeListIterator: function FixedSizeListIterator(t0, t1, t2) {
       var _ = this;
       _._array = t0;
@@ -7107,39 +2849,13 @@
       _._html$_current = null;
       _.$ti = t2;
     },
-    _VariableSizeListIterator: function _VariableSizeListIterator() {
-    },
-    Console: function Console() {
-    },
-    _JSElementUpgrader: function _JSElementUpgrader() {
-    },
     _DOMWindowCrossFrame: function _DOMWindowCrossFrame() {
     },
-    _LocationCrossFrame: function _LocationCrossFrame() {
-    },
-    _HistoryCrossFrame: function _HistoryCrossFrame() {
-    },
-    KeyEvent: function KeyEvent() {
-    },
-    Platform: function Platform() {
-    },
-    _WrappedEvent: function _WrappedEvent() {
-    },
-    ElementUpgrader: function ElementUpgrader() {
-    },
     NodeValidator: function NodeValidator() {
-    },
-    NodeTreeSanitizer: function NodeTreeSanitizer() {
-    },
-    _TrustedHtmlTreeSanitizer: function _TrustedHtmlTreeSanitizer() {
-    },
-    UriPolicy: function UriPolicy() {
     },
     _SameOriginUriPolicy: function _SameOriginUriPolicy(t0, t1) {
       this._hiddenAnchor = t0;
       this._loc = t1;
-    },
-    _ThrowsNodeValidator: function _ThrowsNodeValidator() {
     },
     _ValidatingTreeSanitizer: function _ValidatingTreeSanitizer(t0) {
       this.validator = t0;
@@ -7148,85 +2864,17 @@
     _ValidatingTreeSanitizer_sanitizeTree_walk: function _ValidatingTreeSanitizer_sanitizeTree_walk(t0) {
       this.$this = t0;
     },
-    _CssStyleDeclaration_Interceptor_CssStyleDeclarationBase: function _CssStyleDeclaration_Interceptor_CssStyleDeclarationBase() {
-    },
-    _DomRectList_Interceptor_ListMixin: function _DomRectList_Interceptor_ListMixin() {
-    },
-    _DomRectList_Interceptor_ListMixin_ImmutableListMixin: function _DomRectList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _DomStringList_Interceptor_ListMixin: function _DomStringList_Interceptor_ListMixin() {
-    },
-    _DomStringList_Interceptor_ListMixin_ImmutableListMixin: function _DomStringList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _FileList_Interceptor_ListMixin: function _FileList_Interceptor_ListMixin() {
-    },
-    _FileList_Interceptor_ListMixin_ImmutableListMixin: function _FileList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
     _HtmlCollection_Interceptor_ListMixin: function _HtmlCollection_Interceptor_ListMixin() {
     },
     _HtmlCollection_Interceptor_ListMixin_ImmutableListMixin: function _HtmlCollection_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _MidiInputMap_Interceptor_MapMixin: function _MidiInputMap_Interceptor_MapMixin() {
-    },
-    _MidiOutputMap_Interceptor_MapMixin: function _MidiOutputMap_Interceptor_MapMixin() {
-    },
-    _MimeTypeArray_Interceptor_ListMixin: function _MimeTypeArray_Interceptor_ListMixin() {
-    },
-    _MimeTypeArray_Interceptor_ListMixin_ImmutableListMixin: function _MimeTypeArray_Interceptor_ListMixin_ImmutableListMixin() {
     },
     _NodeList_Interceptor_ListMixin: function _NodeList_Interceptor_ListMixin() {
     },
     _NodeList_Interceptor_ListMixin_ImmutableListMixin: function _NodeList_Interceptor_ListMixin_ImmutableListMixin() {
     },
-    _PluginArray_Interceptor_ListMixin: function _PluginArray_Interceptor_ListMixin() {
-    },
-    _PluginArray_Interceptor_ListMixin_ImmutableListMixin: function _PluginArray_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _RtcStatsReport_Interceptor_MapMixin: function _RtcStatsReport_Interceptor_MapMixin() {
-    },
-    _SourceBufferList_EventTarget_ListMixin: function _SourceBufferList_EventTarget_ListMixin() {
-    },
-    _SourceBufferList_EventTarget_ListMixin_ImmutableListMixin: function _SourceBufferList_EventTarget_ListMixin_ImmutableListMixin() {
-    },
-    _SpeechGrammarList_Interceptor_ListMixin: function _SpeechGrammarList_Interceptor_ListMixin() {
-    },
-    _SpeechGrammarList_Interceptor_ListMixin_ImmutableListMixin: function _SpeechGrammarList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _Storage_Interceptor_MapMixin: function _Storage_Interceptor_MapMixin() {
-    },
-    _TextTrackCueList_Interceptor_ListMixin: function _TextTrackCueList_Interceptor_ListMixin() {
-    },
-    _TextTrackCueList_Interceptor_ListMixin_ImmutableListMixin: function _TextTrackCueList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    _TextTrackList_EventTarget_ListMixin: function _TextTrackList_EventTarget_ListMixin() {
-    },
-    _TextTrackList_EventTarget_ListMixin_ImmutableListMixin: function _TextTrackList_EventTarget_ListMixin_ImmutableListMixin() {
-    },
-    _TouchList_Interceptor_ListMixin: function _TouchList_Interceptor_ListMixin() {
-    },
-    _TouchList_Interceptor_ListMixin_ImmutableListMixin: function _TouchList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    __CssRuleList_Interceptor_ListMixin: function __CssRuleList_Interceptor_ListMixin() {
-    },
-    __CssRuleList_Interceptor_ListMixin_ImmutableListMixin: function __CssRuleList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    __CssStyleDeclarationSet_Object_CssStyleDeclarationBase: function __CssStyleDeclarationSet_Object_CssStyleDeclarationBase() {
-    },
-    __GamepadList_Interceptor_ListMixin: function __GamepadList_Interceptor_ListMixin() {
-    },
-    __GamepadList_Interceptor_ListMixin_ImmutableListMixin: function __GamepadList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
     __NamedNodeMap_Interceptor_ListMixin: function __NamedNodeMap_Interceptor_ListMixin() {
     },
     __NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin: function __NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    __SpeechRecognitionResultList_Interceptor_ListMixin: function __SpeechRecognitionResultList_Interceptor_ListMixin() {
-    },
-    __SpeechRecognitionResultList_Interceptor_ListMixin_ImmutableListMixin: function __SpeechRecognitionResultList_Interceptor_ListMixin_ImmutableListMixin() {
-    },
-    __StyleSheetList_Interceptor_ListMixin: function __StyleSheetList_Interceptor_ListMixin() {
-    },
-    __StyleSheetList_Interceptor_ListMixin_ImmutableListMixin: function __StyleSheetList_Interceptor_ListMixin_ImmutableListMixin() {
     }
   },
   D = {
@@ -7235,12 +2883,8 @@
       t1.BoardModel$0();
       return t1;
     },
-    BoardView$: function(_board, _parentSelector) {
-      return new D.BoardView(_board, _parentSelector);
-    },
     BoardController$: function(_model, parentSelector) {
-      var t1 = P.LinkedHashMap_LinkedHashMap$_empty(E.Status, M.ColumnController);
-      t1 = new D.BoardController(_model, D.BoardView$(_model, parentSelector), t1, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
+      var t1 = new D.BoardController(_model, new D.BoardView(_model, parentSelector), P.LinkedHashMap_LinkedHashMap$_empty(E.Status, M.ColumnController), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
       t1.BoardController$2(_model, parentSelector);
       return t1;
     },
@@ -7306,15 +2950,8 @@
     }
   },
   M = {
-    ColumnModel$: function(_status) {
-      return new M.ColumnModel(_status, H.setRuntimeTypeInfo([], [F.NoteModel]), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
-    },
-    ColumnView$: function(_column, _parentSelector) {
-      return new M.ColumnView(_column, _parentSelector);
-    },
     ColumnController$: function(_model, parentSelector) {
-      var t1 = H.setRuntimeTypeInfo([], [F.NoteController]);
-      t1 = new M.ColumnController(_model, M.ColumnView$(_model, parentSelector), t1, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
+      var t1 = new M.ColumnController(_model, new M.ColumnView(_model, parentSelector), H.setRuntimeTypeInfo([], [F.NoteController]), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
       t1.ColumnController$2(_model, parentSelector);
       return t1;
     },
@@ -7384,37 +3021,20 @@
     }, Status: function Status(t0) {
       this._status$_name = t0;
     }},
-  F = {
-    NoteModel$: function(header, body, $status) {
-      var t1 = $._id;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      $._id = t1 + 1;
-      return new F.NoteModel(t1, header, body, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
-    },
-    NoteView$: function(_note, _parentSelector) {
-      return new F.NoteView(_note, _parentSelector);
-    },
-    NoteController$: function(_model, parentSelector) {
-      return new F.NoteController(_model, F.NoteView$(_model, parentSelector), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
-    },
-    NoteModel: function NoteModel(t0, t1, t2, t3) {
+  F = {NoteModel: function NoteModel(t0, t1, t2, t3) {
       var _ = this;
       _.id = t0;
       _.header = t1;
       _.body = t2;
       _._events = t3;
-    },
-    NoteView: function NoteView(t0, t1) {
+    }, NoteView: function NoteView(t0, t1) {
       this._note = t0;
       this._note$_parentSelector = t1;
-    },
-    NoteController: function NoteController(t0, t1, t2) {
+    }, NoteController: function NoteController(t0, t1, t2) {
       this._note$_model = t0;
       this._note$_view = t1;
       this._events = t2;
-    },
-    NoteController_initControls_closure: function NoteController_initControls_closure(t0) {
+    }, NoteController_initControls_closure: function NoteController_initControls_closure(t0) {
       this.$this = t0;
     },
     main: function() {
@@ -7425,366 +3045,6 @@
   hunkHelpers.setFunctionNamesIfNecessary(holders);
   var $ = {};
   H.JS_CONST.prototype = {};
-  H._CryptoUtils.prototype = {};
-  H._HashBase.prototype = {};
-  H._MD5.prototype = {};
-  H._SHA1.prototype = {};
-  H.HttpServer.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [H.HttpRequest];
-    }
-  };
-  H.HttpConnectionsInfo.prototype = {};
-  H.HttpHeaders.prototype = {};
-  H.HeaderValue.prototype = {};
-  H.HttpSession.prototype = {$isMap: 1,
-    $asMap: function() {
-    }
-  };
-  H.ContentType.prototype = {$isHeaderValue: 1};
-  H.Cookie.prototype = {};
-  H.HttpRequest.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.Uint8List];
-    }
-  };
-  H.HttpResponse.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1
-  };
-  H.HttpClient.prototype = {};
-  H.HttpClientRequest.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1
-  };
-  H.HttpClientResponse.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H.HttpClientResponseCompressionState.prototype = {};
-  H.HttpClientCredentials.prototype = {};
-  H.HttpClientBasicCredentials.prototype = {};
-  H.HttpClientDigestCredentials.prototype = {};
-  H.HttpConnectionInfo.prototype = {};
-  H.RedirectInfo.prototype = {};
-  H.DetachedSocket.prototype = {};
-  H.HttpException.prototype = {$isException: 1, $isIOException: 1};
-  H.RedirectException.prototype = {$isHttpException: 1, $isException: 1, $isIOException: 1};
-  H.HttpDate.prototype = {};
-  H._HttpHeaders.prototype = {$isHttpHeaders: 1};
-  H._HeaderValue.prototype = {$isHeaderValue: 1};
-  H._ContentType.prototype = {$isContentType: 1};
-  H._Cookie.prototype = {$isCookie: 1};
-  H._ServiceObject.prototype = {};
-  H._CopyingBytesBuilder.prototype = {$isBytesBuilder: 1};
-  H._HttpIncoming.prototype = {
-    $asStream: function() {
-      return [P.Uint8List];
-    }
-  };
-  H._HttpInboundMessageListInt.prototype = {
-    $asStream: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._HttpInboundMessage.prototype = {
-    $asStream: function() {
-      return [P.Uint8List];
-    }
-  };
-  H._HttpRequest.prototype = {$isHttpRequest: 1};
-  H._HttpClientResponse.prototype = {$isHttpClientResponse: 1};
-  H._ToUint8List.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], P.Uint8List];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], P.Uint8List];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], P.Uint8List];
-    }
-  };
-  H._Uint8ListConversionSink.prototype = {$isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._StreamSinkImpl.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isSink: 1};
-  H._IOSinkImpl.prototype = {
-    $as_StreamSinkImpl: function() {
-      return [[P.List, P.int]];
-    },
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1
-  };
-  H._HttpOutboundMessage.prototype = {};
-  H._HttpResponse.prototype = {$isHttpResponse: 1,
-    $as_StreamSinkImpl: function() {
-      return [[P.List, P.int]];
-    },
-    $as_HttpOutboundMessage: function() {
-      return [H.HttpResponse];
-    },
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asSink: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._HttpClientRequest.prototype = {$isHttpClientRequest: 1,
-    $as_StreamSinkImpl: function() {
-      return [[P.List, P.int]];
-    },
-    $as_HttpOutboundMessage: function() {
-      return [H.HttpClientResponse];
-    },
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asSink: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._HttpGZipSink.prototype = {};
-  H._HttpOutgoing.prototype = {$isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._HttpClientConnection.prototype = {};
-  H._ConnectionInfo.prototype = {};
-  H._ConnectionTarget.prototype = {};
-  H._HttpClient.prototype = {$isHttpClient: 1};
-  H._HttpConnection.prototype = {$is_ServiceObject: 1,
-    $asLinkedListEntry: function() {
-      return [H._HttpConnection];
-    }
-  };
-  H._HttpServer.prototype = {$isHttpServer: 1, $is_ServiceObject: 1,
-    $asStream: function() {
-      return [H.HttpRequest];
-    }
-  };
-  H._ProxyConfiguration.prototype = {};
-  H._Proxy.prototype = {};
-  H._HttpConnectionInfo.prototype = {$isHttpConnectionInfo: 1};
-  H._DetachedSocket.prototype = {
-    $asStream: function() {
-      return [P.Uint8List];
-    },
-    $isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1,
-    $isSocket: 1
-  };
-  H._AuthenticationScheme.prototype = {};
-  H._Credentials.prototype = {};
-  H._SiteCredentials.prototype = {};
-  H._ProxyCredentials.prototype = {};
-  H._HttpClientCredentials.prototype = {$isHttpClientCredentials: 1};
-  H._HttpClientBasicCredentials.prototype = {$isHttpClientBasicCredentials: 1};
-  H._HttpClientDigestCredentials.prototype = {$isHttpClientDigestCredentials: 1};
-  H._RedirectInfo.prototype = {$isRedirectInfo: 1};
-  H._Const.prototype = {};
-  H._CharCode.prototype = {};
-  H._State.prototype = {};
-  H._HttpVersion.prototype = {};
-  H._MessageType.prototype = {};
-  H._HttpDetachedStreamSubscription.prototype = {$isStreamSubscription: 1,
-    $asStreamSubscription: function() {
-      return [P.Uint8List];
-    }
-  };
-  H._HttpDetachedIncoming.prototype = {
-    $asStream: function() {
-      return [P.Uint8List];
-    }
-  };
-  H._HttpParser.prototype = {
-    $asStream: function() {
-      return [H._HttpIncoming];
-    }
-  };
-  H._HttpSession.prototype = {$isHttpSession: 1, $isMap: 1,
-    $asMap: function() {
-    }
-  };
-  H._HttpSessionManager.prototype = {};
-  H.HttpOverrides.prototype = {};
-  H._HttpOverridesScope.prototype = {};
-  H.WebSocketStatus.prototype = {};
-  H.CompressionOptions.prototype = {};
-  H.WebSocketTransformer.prototype = {$isStreamTransformer: 1,
-    $asStreamTransformer: function() {
-      return [H.HttpRequest, H.WebSocket];
-    }
-  };
-  H.WebSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-    },
-    $isEventSink: 1,
-    $asEventSink: function() {
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-    },
-    $isSink: 1,
-    $asSink: function() {
-    }
-  };
-  H.WebSocketException.prototype = {$isException: 1, $isIOException: 1};
-  H._WebSocketMessageType.prototype = {};
-  H._WebSocketOpcode.prototype = {};
-  H._EncodedString.prototype = {};
-  H._CompressionMaxWindowBits.prototype = {};
-  H._WebSocketProtocolTransformer.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], null];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], null];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  H._WebSocketPing.prototype = {};
-  H._WebSocketPong.prototype = {};
-  H._WebSocketTransformerImpl.prototype = {$isWebSocketTransformer: 1,
-    $asStreamTransformer: function() {
-      return [H.HttpRequest, H.WebSocket];
-    },
-    $asStreamTransformerBase: function() {
-      return [H.HttpRequest, H.WebSocket];
-    }
-  };
-  H._WebSocketPerMessageDeflate.prototype = {};
-  H._WebSocketOutgoingTransformer.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-    },
-    $asStreamTransformer: function() {
-      return [null, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [null, [P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-    }
-  };
-  H._WebSocketConsumer.prototype = {$isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-    }
-  };
-  H._WebSocketImpl.prototype = {$is_ServiceObject: 1, $isWebSocket: 1,
-    $asStream: function() {
-    },
-    $isEventSink: 1,
-    $asEventSink: function() {
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-    },
-    $isSink: 1,
-    $asSink: function() {
-    }
-  };
-  H.__HttpConnection_LinkedListEntry__ServiceObject.prototype = {$is_ServiceObject: 1,
-    $asLinkedListEntry: function() {
-      return [H._HttpConnection];
-    }
-  };
-  H.__HttpServer_Stream__ServiceObject.prototype = {$is_ServiceObject: 1,
-    $asStream: function() {
-      return [H.HttpRequest];
-    }
-  };
-  H.__WebSocketImpl_Stream__ServiceObject.prototype = {$is_ServiceObject: 1,
-    $asStream: function() {
-    }
-  };
   J.Interceptor.prototype = {
     $eq: function(receiver, other) {
       return receiver === other;
@@ -7793,7 +3053,7 @@
       return H.Primitives_objectHashCode(receiver);
     },
     toString$0: function(receiver) {
-      return H.Primitives_objectToHumanReadableString(receiver);
+      return "Instance of '" + H.S(H.Primitives_objectTypeName(receiver)) + "'";
     }
   };
   J.JSBool.prototype = {
@@ -7817,17 +3077,13 @@
     },
     $isNull: 1
   };
-  J.JSIndexable.prototype = {};
-  J.JSMutableIndexable.prototype = {};
-  J.JSObject.prototype = {};
   J.JavaScriptObject.prototype = {
     get$hashCode: function(receiver) {
       return 0;
     },
     toString$0: function(receiver) {
       return String(receiver);
-    },
-    $isJSObject: 1
+    }
   };
   J.PlainJavaScriptObject.prototype = {};
   J.UnknownJavaScriptObject.prototype = {};
@@ -7843,43 +3099,21 @@
     },
     $isFunction: 1
   };
-  J._Growable.prototype = {};
   J.JSArray.prototype = {
-    checkMutable$1: function(receiver, reason) {
-      H.stringTypeCheck(reason);
-      if (!H.boolConversionCheck(J.JSArray_isMutable(receiver)))
-        throw H.wrapException(P.UnsupportedError$(reason));
-    },
-    checkGrowable$1: function(receiver, reason) {
-      H.stringTypeCheck(reason);
-      if (!H.boolConversionCheck(J.JSArray_isGrowable(receiver)))
-        throw H.wrapException(P.UnsupportedError$(reason));
-    },
     add$1: function(receiver, value) {
       H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(receiver, 0));
-      this.checkGrowable$1(receiver, "add");
+      if (!!receiver.fixed$length)
+        H.throwExpression(P.UnsupportedError$("add"));
       receiver.push(value);
-    },
-    removeLast$0: function(receiver) {
-      this.checkGrowable$1(receiver, "removeLast");
-      if (receiver.length === 0)
-        throw H.wrapException(H.diagnoseIndexError(receiver, -1));
-      return receiver.pop();
-    },
-    removeWhere$1: function(receiver, test) {
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getTypeArgumentByIndex(receiver, 0)]});
-      this.checkGrowable$1(receiver, "removeWhere");
-      this._removeWhere$2(receiver, test, true);
     },
     _removeWhere$2: function(receiver, test, removeMatching) {
       var retained, end, i, element, t1;
       H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getTypeArgumentByIndex(receiver, 0)]});
-      H.boolTypeCheck(removeMatching);
       retained = [];
       end = receiver.length;
       for (i = 0; i < end; ++i) {
         element = receiver[i];
-        if (!H.boolConversionCheck(test.call$1(element)) === removeMatching)
+        if (!H.boolConversionCheck(test.call$1(element)))
           retained.push(element);
         if (receiver.length !== end)
           throw H.wrapException(P.ConcurrentModificationError$(receiver));
@@ -7891,17 +3125,6 @@
       for (i = 0; i < retained.length; ++i)
         receiver[i] = retained[i];
     },
-    where$1: function(receiver, f) {
-      var t1 = H.getTypeArgumentByIndex(receiver, 0);
-      return H.WhereIterable$(receiver, H.functionTypeCheck(f, {func: 1, ret: P.bool, args: [t1]}), t1);
-    },
-    addAll$1: function(receiver, collection) {
-      var t1;
-      H.assertSubtype(collection, "$isIterable", [H.getTypeArgumentByIndex(receiver, 0)], "$asIterable");
-      this.checkGrowable$1(receiver, "addAll");
-      for (t1 = J.get$iterator$ax(collection); H.boolConversionCheck(t1.moveNext$0());)
-        receiver.push(t1.get$current());
-    },
     forEach$1: function(receiver, f) {
       var end, i;
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(receiver, 0)]});
@@ -7911,16 +3134,6 @@
         if (receiver.length !== end)
           throw H.wrapException(P.ConcurrentModificationError$(receiver));
       }
-    },
-    map$1$1: function(receiver, f, $T) {
-      var t1 = H.getTypeArgumentByIndex(receiver, 0);
-      return H.MappedListIterable$(receiver, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
-    take$1: function(receiver, n) {
-      return H.SubListIterable$(receiver, 0, H.intTypeCheck(n), H.getTypeArgumentByIndex(receiver, 0));
-    },
-    skip$1: function(receiver, n) {
-      return H.SubListIterable$(receiver, H.intTypeCheck(n), null, H.getTypeArgumentByIndex(receiver, 0));
     },
     firstWhere$1: function(receiver, test) {
       var end, i, element;
@@ -7936,11 +3149,11 @@
       throw H.wrapException(H.IterableElementError_noElement());
     },
     elementAt$1: function(receiver, index) {
-      return this.$index(receiver, H.intTypeCheck(index));
+      if (index < 0 || index >= receiver.length)
+        return H.ioore(receiver, index);
+      return receiver[index];
     },
     getRange$2: function(receiver, start, end) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
       P.RangeError_checkValidRange(start, end, receiver.length);
       return H.SubListIterable$(receiver, start, end, H.getTypeArgumentByIndex(receiver, 0));
     },
@@ -7949,48 +3162,6 @@
       if (t1 > 0)
         return receiver[t1 - 1];
       throw H.wrapException(H.IterableElementError_noElement());
-    },
-    get$single: function(receiver) {
-      var t1 = receiver.length;
-      if (t1 === 1) {
-        if (0 >= t1)
-          return H.ioore(receiver, 0);
-        return receiver[0];
-      }
-      if (t1 === 0)
-        throw H.wrapException(H.IterableElementError_noElement());
-      throw H.wrapException(H.IterableElementError_tooMany());
-    },
-    setRange$3: function(receiver, start, end, iterable) {
-      var t1, $length, t2, otherList, i;
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      t1 = H.getTypeArgumentByIndex(receiver, 0);
-      H.assertSubtype(iterable, "$isIterable", [t1], "$asIterable");
-      this.checkMutable$1(receiver, "setRange");
-      P.RangeError_checkValidRange(start, end, receiver.length);
-      if (typeof end !== "number")
-        return end.$sub();
-      if (typeof start !== "number")
-        return H.iae(start);
-      $length = end - start;
-      if ($length === 0)
-        return;
-      P.RangeError_checkNotNegative(0, "skipCount");
-      t2 = J.getInterceptor$(iterable);
-      otherList = !!t2.$isList ? H.assertSubtype(iterable, "$isList", [t1], "$asList") : J.toList$1$growable$ax(t2.skip$1(iterable, 0), false);
-      t1 = J.getInterceptor$asx(otherList);
-      t2 = t1.get$length(otherList);
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      if ($length > t2)
-        throw H.wrapException(H.IterableElementError_tooFew());
-      if (0 < start)
-        for (i = $length - 1; i >= 0; --i)
-          receiver[start + i] = t1.$index(otherList, i);
-      else
-        for (i = 0; i < $length; ++i)
-          receiver[start + i] = t1.$index(otherList, i);
     },
     any$1: function(receiver, test) {
       var end, i;
@@ -8007,30 +3178,15 @@
     contains$1: function(receiver, other) {
       var i;
       for (i = 0; i < receiver.length; ++i)
-        if (H.boolConversionCheck(J.$eq$(receiver[i], other)))
+        if (J.$eq$(receiver[i], other))
           return true;
       return false;
     },
-    get$isEmpty: function(receiver) {
-      return receiver.length === 0;
-    },
     toString$0: function(receiver) {
-      return P.ListBase_listToString(receiver);
-    },
-    toList$1$growable: function(receiver, growable) {
-      return H.boolConversionCheck(H.boolTypeCheck(growable)) ? this._toListGrowable$0(receiver) : this._toListFixed$0(receiver);
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    },
-    _toListGrowable$0: function(receiver) {
-      return J.JSArray_JSArray$markGrowable(receiver.slice(0), H.getTypeArgumentByIndex(receiver, 0));
-    },
-    _toListFixed$0: function(receiver) {
-      return J.JSArray_JSArray$markFixed(receiver.slice(0), H.getTypeArgumentByIndex(receiver, 0));
+      return P.IterableBase_iterableToFullString(receiver, "[", "]");
     },
     get$iterator: function(receiver) {
-      return J.ArrayIterator$(receiver, H.getTypeArgumentByIndex(receiver, 0));
+      return new J.ArrayIterator(receiver, receiver.length, [H.getTypeArgumentByIndex(receiver, 0)]);
     },
     get$hashCode: function(receiver) {
       return H.Primitives_objectHashCode(receiver);
@@ -8039,50 +3195,16 @@
       return receiver.length;
     },
     set$length: function(receiver, newLength) {
-      var _s9_ = "newLength";
-      H.intTypeCheck(newLength);
-      this.checkGrowable$1(receiver, "set length");
-      if (typeof newLength !== "number" || Math.floor(newLength) !== newLength)
-        throw H.wrapException(P.ArgumentError$value(newLength, _s9_, null));
+      if (!!receiver.fixed$length)
+        H.throwExpression(P.UnsupportedError$("set length"));
       if (newLength < 0)
-        throw H.wrapException(P.RangeError$range(newLength, 0, null, _s9_, null));
+        throw H.wrapException(P.RangeError$range(newLength, 0, null, "newLength", null));
       receiver.length = newLength;
     },
     $index: function(receiver, index) {
-      H.intTypeCheck(index);
-      if (typeof index !== "number" || Math.floor(index) !== index)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
       if (index >= receiver.length || index < 0)
         throw H.wrapException(H.diagnoseIndexError(receiver, index));
       return receiver[index];
-    },
-    $indexSet: function(receiver, index, value) {
-      H.intTypeCheck(index);
-      H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(receiver, 0));
-      this.checkMutable$1(receiver, "indexed set");
-      if (typeof index !== "number" || Math.floor(index) !== index)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      if (index >= receiver.length || index < 0)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      receiver[index] = value;
-    },
-    $add: function(receiver, other) {
-      var t2, t3, totalLength,
-        t1 = [H.getTypeArgumentByIndex(receiver, 0)];
-      H.assertSubtype(other, "$isList", t1, "$asList");
-      t2 = receiver.length;
-      t3 = J.get$length$asx(other);
-      if (typeof t3 !== "number")
-        return H.iae(t3);
-      totalLength = t2 + t3;
-      t1 = H.setRuntimeTypeInfo([], t1);
-      this.set$length(t1, totalLength);
-      this.setRange$3(t1, 0, receiver.length, receiver);
-      this.setRange$3(t1, receiver.length, totalLength, other);
-      return t1;
-    },
-    $isJSIndexable: 1,
-    $asJSIndexable: function() {
     },
     $isEfficientLengthIterable: 1,
     $isIterable: 1,
@@ -8091,43 +3213,29 @@
   J.JSUnmodifiableArray.prototype = {};
   J.ArrayIterator.prototype = {
     get$current: function() {
-      return this.__interceptors$_current;
+      return this._current;
     },
     moveNext$0: function() {
-      var t3, _this = this,
-        t1 = _this.__interceptors$_iterable,
-        t2 = J.getInterceptor$asx(t1),
-        $length = t2.get$length(t1);
-      if (!H.boolConversionCheck(J.$eq$(_this.__interceptors$_length, $length)))
+      var t2, _this = this,
+        t1 = _this._iterable,
+        $length = t1.length;
+      if (_this._length !== $length)
         throw H.wrapException(H.throwConcurrentModificationError(t1));
-      t3 = _this.__interceptors$_index;
-      if (typeof t3 !== "number")
-        return t3.$ge();
-      if (typeof $length !== "number")
-        return H.iae($length);
-      if (t3 >= $length) {
-        _this.set$__interceptors$_current(null);
+      t2 = _this._index;
+      if (t2 >= $length) {
+        _this.set$_current(null);
         return false;
       }
-      _this.set$__interceptors$_current(t2.$index(t1, t3));
-      t1 = _this.__interceptors$_index;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      _this.__interceptors$_index = H.intTypeCheck(t1 + 1);
+      _this.set$_current(t1[t2]);
+      ++_this._index;
       return true;
     },
-    set$__interceptors$_current: function(_current) {
-      this.__interceptors$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
+    set$_current: function(_current) {
+      this._current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
     },
     $isIterator: 1
   };
   J.JSNumber.prototype = {
-    remainder$1: function(receiver, b) {
-      H.numTypeCheck(b);
-      if (typeof b !== "number")
-        throw H.wrapException(H.argumentErrorValue(b));
-      return receiver % b;
-    },
     toString$0: function(receiver) {
       if (receiver === 0 && 1 / receiver < 0)
         return "-0.0";
@@ -8145,163 +3253,43 @@
       scaled = absolute < 1 ? absolute / factor : factor / absolute;
       return 536870911 & ((scaled * 9007199254740992 | 0) + (scaled * 3542243181176521 | 0)) * 599197 + floorLog2 * 1259;
     },
-    $add: function(receiver, other) {
-      H.numTypeCheck(other);
-      if (typeof other !== "number")
-        throw H.wrapException(H.argumentErrorValue(other));
-      return receiver + other;
-    },
-    _isInt32$1: function(receiver, value) {
-      return (value | 0) === value;
-    },
-    _tdivFast$1: function(receiver, other) {
-      H.numTypeCheck(other);
-      return H.boolConversionCheck(this._isInt32$1(receiver, receiver)) ? receiver / other | 0 : this._tdivSlow$1(receiver, other);
-    },
-    _tdivSlow$1: function(receiver, other) {
-      var quotient;
-      H.numTypeCheck(other);
-      quotient = receiver / other;
-      if (quotient >= -2147483648 && quotient <= 2147483647)
-        return quotient | 0;
-      if (quotient > 0) {
-        if (quotient !== 1 / 0)
-          return Math.floor(quotient);
-      } else if (quotient > -1 / 0)
-        return Math.ceil(quotient);
-      throw H.wrapException(P.UnsupportedError$("Result of truncating division is " + H.S(quotient) + ": " + H.S(receiver) + " ~/ " + H.S(other)));
-    },
     _shrOtherPositive$1: function(receiver, other) {
       var t1;
-      H.numTypeCheck(other);
       if (receiver > 0)
         t1 = this._shrBothPositive$1(receiver, other);
       else {
-        if (typeof other !== "number")
-          return other.$gt();
-        if (other > 31)
-          t1 = 31;
-        else
-          t1 = other;
+        t1 = other > 31 ? 31 : other;
         t1 = receiver >> t1 >>> 0;
       }
       return t1;
     },
     _shrBothPositive$1: function(receiver, other) {
-      H.numTypeCheck(other);
       return other > 31 ? 0 : receiver >>> other;
     },
-    $lt: function(receiver, other) {
-      H.numTypeCheck(other);
-      if (typeof other !== "number")
-        throw H.wrapException(H.argumentErrorValue(other));
-      return receiver < other;
-    },
-    $isComparable: 1,
-    $asComparable: function() {
-      return [P.num];
-    },
-    $isdouble: 1,
     $isnum: 1
   };
   J.JSInt.prototype = {$isint: 1};
   J.JSDouble.prototype = {};
   J.JSString.prototype = {
-    codeUnitAt$1: function(receiver, index) {
-      H.intTypeCheck(index);
-      if (typeof index !== "number" || Math.floor(index) !== index)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      if (index < 0)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      return this._codeUnitAt$1(receiver, index);
-    },
     _codeUnitAt$1: function(receiver, index) {
-      H.intTypeCheck(index);
-      if (typeof index !== "number")
-        return index.$ge();
       if (index >= receiver.length)
         throw H.wrapException(H.diagnoseIndexError(receiver, index));
       return receiver.charCodeAt(index);
     },
-    allMatches$1: function(receiver, string) {
-      H.stringTypeCheck(string);
-      H.checkString(string);
-      string.length;
-      return H.allMatchesInStringUnchecked(receiver, string, 0);
-    },
-    matchAsPrefix$2: function(receiver, string, start) {
-      var t1, t2, i;
-      H.stringTypeCheck(string);
-      H.intTypeCheck(start);
-      if (typeof start !== "number")
-        return start.$lt();
-      if (start < 0 || start > string.length)
-        throw H.wrapException(P.RangeError$range(start, 0, string.length, null, null));
-      t1 = receiver.length;
-      if (start + t1 > string.length)
-        return;
-      for (t2 = J.getInterceptor$s(string), i = 0; i < t1; ++i)
-        if (!H.boolConversionCheck(J.$eq$(t2.codeUnitAt$1(string, start + i), this._codeUnitAt$1(receiver, i))))
-          return;
-      return H.StringMatch$(start, string, receiver);
-    },
     $add: function(receiver, other) {
-      H.stringTypeCheck(other);
       if (typeof other !== "string")
         throw H.wrapException(P.ArgumentError$value(other, null, null));
       return receiver + other;
     },
-    split$1: function(receiver, pattern) {
-      H.stringSuperNativeTypeCheck(pattern, "$isPattern");
-      H.checkNull(pattern);
-      if (typeof pattern === "string")
-        return H.stringSplitUnchecked(receiver, pattern);
-      else if (pattern instanceof H.JSSyntaxRegExp && H.boolConversionCheck(J.$eq$(H.regExpCaptureCount(pattern), 0)))
-        return H.stringSplitUnchecked(receiver, H.regExpGetNative(pattern));
-      else
-        return this._defaultSplit$1(receiver, pattern);
-    },
-    _defaultSplit$1: function(receiver, pattern) {
-      var result, t1, start, $length, t2, matchStart, matchEnd;
-      H.stringSuperNativeTypeCheck(pattern, "$isPattern");
-      result = H.setRuntimeTypeInfo([], [P.String]);
-      for (t1 = J.get$iterator$ax(J.allMatches$1$s(pattern, receiver)), start = 0, $length = 1; H.boolConversionCheck(t1.moveNext$0());) {
-        t2 = t1.get$current();
-        matchStart = t2.get$start(t2);
-        matchEnd = t2.get$end();
-        if (typeof matchEnd !== "number")
-          return matchEnd.$sub();
-        if (typeof matchStart !== "number")
-          return H.iae(matchStart);
-        $length = matchEnd - matchStart;
-        if ($length === 0 && start === matchStart)
-          continue;
-        C.JSArray_methods.add$1(result, this.substring$2(receiver, start, matchStart));
-        start = matchEnd;
-      }
-      if (start < receiver.length || $length > 0)
-        C.JSArray_methods.add$1(result, this.substring$1(receiver, start));
-      return result;
-    },
     startsWith$1: function(receiver, pattern) {
-      var otherLength;
-      H.stringSuperNativeTypeCheck(pattern, "$isPattern");
-      if (typeof pattern === "string") {
-        otherLength = pattern.length;
-        if (otherLength > receiver.length)
-          return false;
-        return pattern === receiver.substring(0, otherLength);
-      }
-      return J.matchAsPrefix$2$s(pattern, receiver, 0) != null;
+      var otherLength = pattern.length;
+      if (otherLength > receiver.length)
+        return false;
+      return pattern === receiver.substring(0, otherLength);
     },
     substring$2: function(receiver, startIndex, endIndex) {
-      H.intTypeCheck(startIndex);
-      H.intTypeCheck(endIndex);
-      H.checkInt(startIndex);
       if (endIndex == null)
         endIndex = receiver.length;
-      if (typeof startIndex !== "number")
-        return startIndex.$lt();
       if (startIndex < 0)
         throw H.wrapException(P.RangeError$value(startIndex, null));
       if (startIndex > endIndex)
@@ -8315,27 +3303,6 @@
     },
     toLowerCase$0: function(receiver) {
       return receiver.toLowerCase();
-    },
-    trim$0: function(receiver) {
-      var startIndex, t1, endIndex0,
-        result = receiver.trim(),
-        endIndex = result.length;
-      if (endIndex === 0)
-        return result;
-      if (this._codeUnitAt$1(result, 0) === 133) {
-        startIndex = J.JSString__skipLeadingWhitespace(result, 1);
-        if (startIndex === endIndex)
-          return "";
-      } else
-        startIndex = 0;
-      t1 = endIndex - 1;
-      endIndex0 = this.codeUnitAt$1(result, t1) === 133 ? J.JSString__skipTrailingWhitespace(result, t1) : endIndex;
-      if (startIndex === 0 && endIndex0 === endIndex)
-        return result;
-      return result.substring(startIndex, endIndex0);
-    },
-    get$isEmpty: function(receiver) {
-      return receiver.length === 0;
     },
     toString$0: function(receiver) {
       return receiver;
@@ -8354,314 +3321,50 @@
     get$length: function(receiver) {
       return receiver.length;
     },
-    $index: function(receiver, index) {
-      H.intTypeCheck(index);
-      if (typeof index !== "number" || Math.floor(index) !== index)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      if (index >= receiver.length || index < 0)
-        throw H.wrapException(H.diagnoseIndexError(receiver, index));
-      return receiver[index];
-    },
-    $isJSIndexable: 1,
-    $asJSIndexable: function() {
-    },
-    $isComparable: 1,
-    $asComparable: function() {
-      return [P.String];
-    },
     $isPattern: 1,
     $isString: 1
   };
-  H.CastStream.prototype = {
-    $asStream: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastStreamSubscription.prototype = {$isStreamSubscription: 1,
-    $asStreamSubscription: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastStreamTransformer.prototype = {
-    $asStreamTransformer: function(SS, ST, TS, TT) {
-      return [TS, TT];
-    },
-    $asStreamTransformerBase: function(SS, ST, TS, TT) {
-      return [TS, TT];
-    }
-  };
-  H.CastConverter.prototype = {
-    $asStreamTransformer: function(SS, ST, TS, TT) {
-      return [TS, TT];
-    },
-    $asStreamTransformerBase: function(SS, ST, TS, TT) {
-      return [TS, TT];
-    },
-    $asConverter: function(SS, ST, TS, TT) {
-      return [TS, TT];
-    }
-  };
-  H._CastIterableBase.prototype = {
-    $asIterable: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastIterator.prototype = {$isIterator: 1,
-    $asIterator: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastIterable.prototype = {};
-  H._EfficientLengthCastIterable.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function($S, $T) {
-      return [$T];
-    }
-  };
-  H._CastListBase.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function($S, $T) {
-      return [$T];
-    },
-    $isListMixin: 1,
-    $asListMixin: function($S, $T) {
-      return [$T];
-    },
-    $isList: 1,
-    $asList: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastList.prototype = {};
-  H.CastSet.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function($S, $T) {
-      return [$T];
-    },
-    $isSet: 1,
-    $asSet: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CastMap.prototype = {
-    $asMapBase: function(SK, SV, $K, $V) {
-      return [$K, $V];
-    },
-    $asMapMixin: function(SK, SV, $K, $V) {
-      return [$K, $V];
-    },
-    $asMap: function(SK, SV, $K, $V) {
-      return [$K, $V];
-    }
-  };
-  H.CastQueue.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function($S, $T) {
-      return [$T];
-    },
-    $isQueue: 1,
-    $asQueue: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.CodeUnits.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  H.ExternalName.prototype = {};
-  H.Since.prototype = {};
-  H.HttpStatus.prototype = {};
   H.EfficientLengthIterable.prototype = {};
   H.ListIterable.prototype = {
     get$iterator: function(_) {
-      return H.ListIterator$(this, H.getRuntimeTypeArgument(this, "ListIterable", 0));
-    },
-    forEach$1: function(_, action) {
-      var $length, i, _this = this;
-      H.functionTypeCheck(action, {func: 1, ret: -1, args: [H.getRuntimeTypeArgument(_this, "ListIterable", 0)]});
-      $length = _this.get$length(_this);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        action.call$1(_this.elementAt$1(0, i));
-        if ($length !== _this.get$length(_this))
-          throw H.wrapException(P.ConcurrentModificationError$(_this));
-      }
-    },
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
-    get$last: function(_) {
-      var t1, _this = this;
-      if (H.boolConversionCheck(J.$eq$(_this.get$length(_this), 0)))
-        throw H.wrapException(H.IterableElementError_noElement());
-      t1 = _this.get$length(_this);
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      return _this.elementAt$1(0, t1 - 1);
-    },
-    get$single: function(_) {
-      var t1, _this = this;
-      if (H.boolConversionCheck(J.$eq$(_this.get$length(_this), 0)))
-        throw H.wrapException(H.IterableElementError_noElement());
-      t1 = _this.get$length(_this);
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (t1 > 1)
-        throw H.wrapException(H.IterableElementError_tooMany());
-      return _this.elementAt$1(0, 0);
-    },
-    contains$1: function(_, element) {
-      var i, _this = this,
-        $length = _this.get$length(_this);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        if (H.boolConversionCheck(J.$eq$(_this.elementAt$1(0, i), element)))
-          return true;
-        if ($length !== _this.get$length(_this))
-          throw H.wrapException(P.ConcurrentModificationError$(_this));
-      }
-      return false;
+      var _this = this;
+      return new H.ListIterator(_this, _this.get$length(_this), [H.getRuntimeTypeArgument(_this, "ListIterable", 0)]);
     },
     where$1: function(_, test) {
       return this.super$Iterable$where(0, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getRuntimeTypeArgument(this, "ListIterable", 0)]}));
-    },
-    map$1$1: function(_, f, $T) {
-      var t1 = H.getRuntimeTypeArgument(this, "ListIterable", 0);
-      return H.MappedListIterable$(this, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
-    skip$1: function(_, count) {
-      return H.SubListIterable$(this, H.intTypeCheck(count), null, H.getRuntimeTypeArgument(this, "ListIterable", 0));
-    },
-    take$1: function(_, count) {
-      return H.SubListIterable$(this, 0, H.intTypeCheck(count), H.getRuntimeTypeArgument(this, "ListIterable", 0));
-    },
-    toList$1$growable: function(_, growable) {
-      var result, t2, i, _this = this,
-        t1 = H.getRuntimeTypeArgument(_this, "ListIterable", 0);
-      if (H.boolConversionCheck(H.boolTypeCheck(growable))) {
-        result = H.setRuntimeTypeInfo([], [t1]);
-        C.JSArray_methods.set$length(result, _this.get$length(_this));
-      } else {
-        t2 = _this.get$length(_this);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        t2 = new Array(t2);
-        t2.fixed$length = Array;
-        result = H.setRuntimeTypeInfo(t2, [t1]);
-      }
-      i = 0;
-      while (true) {
-        t1 = _this.get$length(_this);
-        if (typeof t1 !== "number")
-          return H.iae(t1);
-        if (!(i < t1))
-          break;
-        C.JSArray_methods.$indexSet(result, i, _this.elementAt$1(0, i));
-        ++i;
-      }
-      return result;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
     }
   };
   H.SubListIterable.prototype = {
-    SubListIterable$3: function(_iterable, _start, _endOrLength, $E) {
-      var t2,
-        t1 = this._start;
-      P.RangeError_checkNotNegative(t1, "start");
-      t2 = this._endOrLength;
-      if (t2 != null) {
-        P.RangeError_checkNotNegative(t2, "end");
-        if (typeof t1 !== "number")
-          return t1.$gt();
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (t1 > t2)
-          throw H.wrapException(P.RangeError$range(t1, 0, t2, "start", null));
-      }
-    },
     get$_endIndex: function() {
-      var t2,
-        $length = J.get$length$asx(this._iterable),
+      var $length = J.get$length$asx(this.__internal$_iterable),
         t1 = this._endOrLength;
-      if (t1 != null) {
-        if (typeof t1 !== "number")
-          return t1.$gt();
-        if (typeof $length !== "number")
-          return H.iae($length);
-        t2 = t1 > $length;
-      } else
-        t2 = true;
-      if (t2)
+      if (t1 == null || t1 > $length)
         return $length;
       return t1;
     },
     get$_startIndex: function() {
-      var $length = J.get$length$asx(this._iterable),
+      var $length = J.get$length$asx(this.__internal$_iterable),
         t1 = this._start;
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (typeof $length !== "number")
-        return H.iae($length);
       if (t1 > $length)
         return $length;
       return t1;
     },
     get$length: function(_) {
-      var t2, t3,
-        $length = J.get$length$asx(this._iterable),
+      var t2,
+        $length = J.get$length$asx(this.__internal$_iterable),
         t1 = this._start;
-      if (typeof t1 !== "number")
-        return t1.$ge();
-      if (typeof $length !== "number")
-        return H.iae($length);
       if (t1 >= $length)
         return 0;
       t2 = this._endOrLength;
-      if (t2 != null) {
-        if (typeof t2 !== "number")
-          return t2.$ge();
-        t3 = t2 >= $length;
-      } else
-        t3 = true;
-      if (t3)
+      if (t2 == null || t2 >= $length)
         return $length - t1;
       if (typeof t2 !== "number")
         return t2.$sub();
       return t2 - t1;
     },
     elementAt$1: function(_, index) {
-      var t1, realIndex, _this = this;
-      H.intTypeCheck(index);
-      t1 = _this.get$_startIndex();
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof index !== "number")
-        return H.iae(index);
-      realIndex = t1 + index;
+      var t1, _this = this,
+        realIndex = _this.get$_startIndex() + index;
       if (index >= 0) {
         t1 = _this.get$_endIndex();
         if (typeof t1 !== "number")
@@ -8671,153 +3374,40 @@
         t1 = true;
       if (t1)
         throw H.wrapException(P.IndexError$(index, _this, "index", null, null));
-      return J.elementAt$1$ax(_this._iterable, realIndex);
-    },
-    skip$1: function(_, count) {
-      var t1, newStart, t2, _this = this;
-      H.intTypeCheck(count);
-      P.RangeError_checkNotNegative(count, "count");
-      t1 = _this._start;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof count !== "number")
-        return H.iae(count);
-      newStart = t1 + count;
-      t1 = _this._endOrLength;
-      if (t1 != null) {
-        if (typeof t1 !== "number")
-          return H.iae(t1);
-        t2 = newStart >= t1;
-      } else
-        t2 = false;
-      if (t2)
-        return H.EmptyIterable$(H.getTypeArgumentByIndex(_this, 0));
-      return H.SubListIterable$(_this._iterable, newStart, t1, H.getTypeArgumentByIndex(_this, 0));
-    },
-    take$1: function(_, count) {
-      var t1, t2, newEnd, _this = this;
-      H.intTypeCheck(count);
-      P.RangeError_checkNotNegative(count, "count");
-      t1 = _this._endOrLength;
-      t2 = _this._start;
-      if (t1 == null) {
-        if (typeof t2 !== "number")
-          return t2.$add();
-        if (typeof count !== "number")
-          return H.iae(count);
-        return H.SubListIterable$(_this._iterable, t2, t2 + count, H.getTypeArgumentByIndex(_this, 0));
-      } else {
-        if (typeof t2 !== "number")
-          return t2.$add();
-        if (typeof count !== "number")
-          return H.iae(count);
-        newEnd = t2 + count;
-        if (typeof t1 !== "number")
-          return t1.$lt();
-        if (t1 < newEnd)
-          return _this;
-        return H.SubListIterable$(_this._iterable, t2, newEnd, H.getTypeArgumentByIndex(_this, 0));
-      }
-    },
-    toList$1$growable: function(_, growable) {
-      var start, t1, t2, end, end0, t3, $length, result, t4, i, _this = this;
-      H.boolTypeCheck(growable);
-      start = _this._start;
-      t1 = _this._iterable;
-      t2 = J.getInterceptor$asx(t1);
-      end = t2.get$length(t1);
-      end0 = _this._endOrLength;
-      if (end0 != null) {
-        if (typeof end0 !== "number")
-          return end0.$lt();
-        if (typeof end !== "number")
-          return H.iae(end);
-        t3 = end0 < end;
-      } else
-        t3 = false;
-      if (t3)
-        end = end0;
-      if (typeof end !== "number")
-        return end.$sub();
-      if (typeof start !== "number")
-        return H.iae(start);
-      $length = end - start;
-      if ($length < 0)
-        $length = 0;
-      t3 = _this.$ti;
-      if (H.boolConversionCheck(growable)) {
-        result = H.setRuntimeTypeInfo([], t3);
-        C.JSArray_methods.set$length(result, $length);
-      } else {
-        t4 = new Array($length);
-        t4.fixed$length = Array;
-        result = H.setRuntimeTypeInfo(t4, t3);
-      }
-      for (i = 0; i < $length; ++i) {
-        C.JSArray_methods.$indexSet(result, i, t2.elementAt$1(t1, start + i));
-        t3 = t2.get$length(t1);
-        if (typeof t3 !== "number")
-          return t3.$lt();
-        if (t3 < end)
-          throw H.wrapException(P.ConcurrentModificationError$(_this));
-      }
-      return result;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
+      return J.elementAt$1$ax(_this.__internal$_iterable, realIndex);
     }
   };
   H.ListIterator.prototype = {
     get$current: function() {
-      return this._current;
+      return this.__internal$_current;
     },
     moveNext$0: function() {
       var t3, _this = this,
-        t1 = _this._iterable,
+        t1 = _this.__internal$_iterable,
         t2 = J.getInterceptor$asx(t1),
         $length = t2.get$length(t1);
-      if (!H.boolConversionCheck(J.$eq$(_this._length, $length)))
+      if (_this.__internal$_length !== $length)
         throw H.wrapException(P.ConcurrentModificationError$(t1));
-      t3 = _this._index;
-      if (typeof t3 !== "number")
-        return t3.$ge();
-      if (typeof $length !== "number")
-        return H.iae($length);
+      t3 = _this.__internal$_index;
       if (t3 >= $length) {
-        _this.set$_current(null);
+        _this.set$__internal$_current(null);
         return false;
       }
-      _this.set$_current(t2.elementAt$1(t1, t3));
-      t1 = _this._index;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      _this._index = H.intTypeCheck(t1 + 1);
+      _this.set$__internal$_current(t2.elementAt$1(t1, t3));
+      ++_this.__internal$_index;
       return true;
     },
-    set$_current: function(_current) {
-      this._current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
+    set$__internal$_current: function(_current) {
+      this.__internal$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
     },
     $isIterator: 1
   };
   H.MappedIterable.prototype = {
     get$iterator: function(_) {
-      var _this = this;
-      return H.MappedIterator$(J.get$iterator$ax(_this._iterable), _this._f, H.getTypeArgumentByIndex(_this, 0), H.getTypeArgumentByIndex(_this, 1));
+      return new H.MappedIterator(J.get$iterator$ax(this.__internal$_iterable), this._f, this.$ti);
     },
     get$length: function(_) {
-      return J.get$length$asx(this._iterable);
-    },
-    get$isEmpty: function(_) {
-      return J.get$isEmpty$asx(this._iterable);
-    },
-    get$last: function(_) {
-      return this._f.call$1(J.get$last$ax(this._iterable));
-    },
-    get$single: function(_) {
-      return this._f.call$1(J.get$single$ax(this._iterable));
-    },
-    elementAt$1: function(_, index) {
-      return this._f.call$1(J.elementAt$1$ax(this._iterable, H.intTypeCheck(index)));
+      return J.get$length$asx(this.__internal$_iterable);
     },
     $asIterable: function($S, $T) {
       return [$T];
@@ -8832,18 +3422,18 @@
     moveNext$0: function() {
       var _this = this,
         t1 = _this._iterator;
-      if (H.boolConversionCheck(t1.moveNext$0())) {
-        _this.set$_current(_this._f.call$1(t1.get$current()));
+      if (t1.moveNext$0()) {
+        _this.set$__internal$_current(_this._f.call$1(t1.get$current()));
         return true;
       }
-      _this.set$_current(null);
+      _this.set$__internal$_current(null);
       return false;
     },
     get$current: function() {
-      return this._current;
+      return this.__internal$_current;
     },
-    set$_current: function(_current) {
-      this._current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 1));
+    set$__internal$_current: function(_current) {
+      this.__internal$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 1));
     },
     $asIterator: function($S, $T) {
       return [$T];
@@ -8854,7 +3444,7 @@
       return J.get$length$asx(this._source);
     },
     elementAt$1: function(_, index) {
-      return this._f.call$1(J.elementAt$1$ax(this._source, H.intTypeCheck(index)));
+      return this._f.call$1(J.elementAt$1$ax(this._source, index));
     },
     $asEfficientLengthIterable: function($S, $T) {
       return [$T];
@@ -8868,17 +3458,13 @@
   };
   H.WhereIterable.prototype = {
     get$iterator: function(_) {
-      return H.WhereIterator$(J.get$iterator$ax(this._iterable), this._f, H.getTypeArgumentByIndex(this, 0));
-    },
-    map$1$1: function(_, f, $T) {
-      var t1 = H.getTypeArgumentByIndex(this, 0);
-      return H.MappedIterable$_(this, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
+      return new H.WhereIterator(J.get$iterator$ax(this.__internal$_iterable), this._f, this.$ti);
     }
   };
   H.WhereIterator.prototype = {
     moveNext$0: function() {
       var t1, t2;
-      for (t1 = this._iterator, t2 = this._f; H.boolConversionCheck(t1.moveNext$0());)
+      for (t1 = this._iterator, t2 = this._f; t1.moveNext$0();)
         if (H.boolConversionCheck(t2.call$1(t1.get$current())))
           return true;
       return false;
@@ -8887,270 +3473,9 @@
       return this._iterator.get$current();
     }
   };
-  H.ExpandIterable.prototype = {
-    $asIterable: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.ExpandIterator.prototype = {$isIterator: 1,
-    $asIterator: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.TakeIterable.prototype = {
-    get$iterator: function(_) {
-      return H.TakeIterator$(J.get$iterator$ax(this._iterable), this._takeCount, H.getTypeArgumentByIndex(this, 0));
-    }
-  };
-  H.EfficientLengthTakeIterable.prototype = {
-    get$length: function(_) {
-      var iterableLength = J.get$length$asx(this._iterable),
-        t1 = this._takeCount;
-      if (typeof iterableLength !== "number")
-        return iterableLength.$gt();
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      if (iterableLength > t1)
-        return t1;
-      return iterableLength;
-    },
-    $isEfficientLengthIterable: 1
-  };
-  H.TakeIterator.prototype = {
-    TakeIterator$2: function(_iterator, _remaining, $E) {
-    },
-    moveNext$0: function() {
-      var _this = this,
-        t1 = _this._remaining;
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      t1 = H.intTypeCheck(t1 - 1);
-      _this._remaining = t1;
-      if (t1 >= 0)
-        return _this._iterator.moveNext$0();
-      _this._remaining = -1;
-      return false;
-    },
-    get$current: function() {
-      var t1 = this._remaining;
-      if (typeof t1 !== "number")
-        return t1.$lt();
-      if (t1 < 0)
-        return;
-      return this._iterator.get$current();
-    }
-  };
-  H.TakeWhileIterable.prototype = {};
-  H.TakeWhileIterator.prototype = {};
-  H.SkipIterable.prototype = {
-    skip$1: function(_, count) {
-      var t1 = this._skipCount,
-        t2 = H._checkCount(H.intTypeCheck(count));
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      return H.SkipIterable$_(this._iterable, t1 + t2, H.getTypeArgumentByIndex(this, 0));
-    },
-    get$iterator: function(_) {
-      return H.SkipIterator$(J.get$iterator$ax(this._iterable), this._skipCount, H.getTypeArgumentByIndex(this, 0));
-    }
-  };
-  H.EfficientLengthSkipIterable.prototype = {
-    get$length: function(_) {
-      var $length,
-        t1 = J.get$length$asx(this._iterable),
-        t2 = this._skipCount;
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      $length = t1 - t2;
-      if ($length >= 0)
-        return $length;
-      return 0;
-    },
-    skip$1: function(_, count) {
-      var t1 = this._skipCount,
-        t2 = H._checkCount(H.intTypeCheck(count));
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      return H.EfficientLengthSkipIterable$_(this._iterable, t1 + t2, H.getTypeArgumentByIndex(this, 0));
-    },
-    $isEfficientLengthIterable: 1
-  };
-  H.SkipIterator.prototype = {
-    SkipIterator$2: function(_iterator, _skipCount, $E) {
-    },
-    moveNext$0: function() {
-      var t2,
-        t1 = this._iterator,
-        i = 0;
-      while (true) {
-        t2 = this._skipCount;
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        if (!(i < t2))
-          break;
-        t1.moveNext$0();
-        ++i;
-      }
-      this._skipCount = 0;
-      return t1.moveNext$0();
-    },
-    get$current: function() {
-      return this._iterator.get$current();
-    }
-  };
-  H.SkipWhileIterable.prototype = {};
-  H.SkipWhileIterator.prototype = {};
-  H.EmptyIterable.prototype = {
-    get$iterator: function(_) {
-      return C.C_EmptyIterator;
-    },
-    forEach$1: function(_, action) {
-      H.functionTypeCheck(action, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(this, 0)]});
-    },
-    get$isEmpty: function(_) {
-      return true;
-    },
-    get$length: function(_) {
-      return 0;
-    },
-    get$last: function(_) {
-      throw H.wrapException(H.IterableElementError_noElement());
-    },
-    get$single: function(_) {
-      throw H.wrapException(H.IterableElementError_noElement());
-    },
-    elementAt$1: function(_, index) {
-      throw H.wrapException(P.RangeError$range(H.intTypeCheck(index), 0, 0, "index", null));
-    },
-    contains$1: function(_, element) {
-      return false;
-    },
-    where$1: function(_, test) {
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getTypeArgumentByIndex(this, 0)]});
-      return this;
-    },
-    map$1$1: function(_, f, $T) {
-      H.functionTypeCheck(f, {func: 1, ret: $T, args: [H.getTypeArgumentByIndex(this, 0)]});
-      return H.EmptyIterable$($T);
-    },
-    skip$1: function(_, count) {
-      P.RangeError_checkNotNegative(H.intTypeCheck(count), "count");
-      return this;
-    },
-    take$1: function(_, count) {
-      P.RangeError_checkNotNegative(H.intTypeCheck(count), "count");
-      return this;
-    },
-    toList$1$growable: function(_, growable) {
-      var t2,
-        t1 = this.$ti;
-      if (H.boolConversionCheck(H.boolTypeCheck(growable)))
-        t1 = H.setRuntimeTypeInfo([], t1);
-      else {
-        t2 = new Array(0);
-        t2.fixed$length = Array;
-        t1 = H.setRuntimeTypeInfo(t2, t1);
-      }
-      return t1;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    }
-  };
-  H.EmptyIterator.prototype = {
-    moveNext$0: function() {
-      return false;
-    },
-    get$current: function() {
-      return;
-    },
-    $isIterator: 1
-  };
-  H.FollowedByIterable.prototype = {};
-  H.EfficientLengthFollowedByIterable.prototype = {$isEfficientLengthIterable: 1};
-  H.FollowedByIterator.prototype = {$isIterator: 1};
-  H.WhereTypeIterable.prototype = {};
-  H.WhereTypeIterator.prototype = {$isIterator: 1};
-  H.IterableElementError.prototype = {};
-  H.LinkedList.prototype = {};
-  H.LinkedListEntry0.prototype = {};
-  H._LinkedListIterator.prototype = {$isIterator: 1};
-  H.FixedLengthListMixin.prototype = {};
-  H.UnmodifiableListMixin.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1, $isList: 1};
-  H.FixedLengthListBase.prototype = {$isFixedLengthListMixin: 1};
-  H.UnmodifiableListBase.prototype = {$isUnmodifiableListMixin: 1};
-  H._ListIndicesIterable.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asListIterable: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    }
-  };
-  H.ListMapView.prototype = {
-    $asMapBase: function($E) {
-      return [P.int, $E];
-    },
-    $asMapMixin: function($E) {
-      return [P.int, $E];
-    },
-    $asUnmodifiableMapBase: function($E) {
-      return [P.int, $E];
-    },
-    $as_UnmodifiableMapMixin: function($E) {
-      return [P.int, $E];
-    },
-    $asMap: function($E) {
-      return [P.int, $E];
-    }
-  };
-  H.ReversedListIterable.prototype = {};
-  H.UnmodifiableListError.prototype = {};
-  H.NonGrowableListError.prototype = {};
-  H.Sort.prototype = {};
-  H.Symbol0.prototype = {$isSymbol: 1};
-  H.__CastListBase__CastIterableBase_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function($S, $T) {
-      return [$T];
-    },
-    $isListMixin: 1,
-    $asListMixin: function($S, $T) {
-      return [$T];
-    },
-    $isList: 1,
-    $asList: function($S, $T) {
-      return [$T];
-    }
-  };
-  H.JsGetName.prototype = {};
-  H.JsBuiltin.prototype = {};
-  H.RtiUniverseFieldNames.prototype = {};
-  H.Native.prototype = {};
-  H._Patch.prototype = {};
-  H.ConstantMapView.prototype = {$isConstantMap: 1};
   H.ConstantMap.prototype = {
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
     toString$0: function(_) {
       return P.MapBase_mapToString(this);
-    },
-    $indexSet: function(_, key, val) {
-      H.assertSubtypeOfRuntimeType(key, H.getTypeArgumentByIndex(this, 0));
-      H.assertSubtypeOfRuntimeType(val, H.getTypeArgumentByIndex(this, 1));
-      return H.ConstantMap__throwUnmodifiable();
-    },
-    remove$1: function(_, key) {
-      return H.ConstantMap__throwUnmodifiable();
     },
     get$entries: function(_) {
       return this.entries$body$ConstantMap(_, [P.MapEntry, H.getTypeArgumentByIndex(this, 0), H.getTypeArgumentByIndex(this, 1)]);
@@ -9159,7 +3484,7 @@
       var $async$self = this;
       return P._makeSyncStarIterable(function() {
         var _ = $async$_;
-        var $async$goto = 0, $async$handler = 1, $async$currentError, t1, t2, t3, key;
+        var $async$goto = 0, $async$handler = 1, $async$currentError, t1, t2, key;
         return function $async$get$entries($async$errorCode, $async$result) {
           if ($async$errorCode === 1) {
             $async$currentError = $async$result;
@@ -9169,17 +3494,17 @@
             switch ($async$goto) {
               case 0:
                 // Function start
-                t1 = J.get$iterator$ax($async$self.get$keys()), t2 = H.getTypeArgumentByIndex($async$self, 0), t3 = H.getTypeArgumentByIndex($async$self, 1);
+                t1 = $async$self.get$keys(), t1 = t1.get$iterator(t1), t2 = $async$self.$ti;
               case 2:
                 // for condition
-                if (!H.boolConversionCheck(t1.moveNext$0())) {
+                if (!t1.moveNext$0()) {
                   // goto after for
                   $async$goto = 3;
                   break;
                 }
                 key = t1.get$current();
                 $async$goto = 4;
-                return P.MapEntry$_(key, $async$self.$index(0, key), t2, t3);
+                return new P.MapEntry(key, $async$self.$index(0, key), t2);
               case 4:
                 // after yield
                 // goto for condition
@@ -9198,66 +3523,32 @@
     },
     $isMap: 1
   };
-  H.ConstantStringMap.prototype = {};
-  H.ConstantStringMap_values_closure.prototype = {};
-  H.ConstantProtoMap.prototype = {};
-  H._ConstantMapKeyIterable.prototype = {};
   H.GeneralConstantMap.prototype = {
     _getMap$0: function() {
       var _this = this,
         backingMap = _this.$map;
       if (backingMap == null) {
-        backingMap = H.JsLinkedHashMap$(H.getTypeArgumentByIndex(_this, 0), H.getTypeArgumentByIndex(_this, 1));
+        backingMap = new H.JsLinkedHashMap(_this.$ti);
         H.fillLiteralMap(_this._jsData, backingMap);
         _this.$map = backingMap;
       }
       return backingMap;
     },
-    containsKey$1: function(key) {
-      return this._getMap$0().containsKey$1(key);
-    },
     $index: function(_, key) {
-      return J.$index$asx(this._getMap$0(), key);
+      return this._getMap$0().$index(0, key);
     },
     forEach$1: function(_, f) {
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(this, 0), H.getTypeArgumentByIndex(this, 1)]});
-      J.forEach$1$ax(this._getMap$0(), f);
+      this._getMap$0().forEach$1(0, f);
     },
     get$keys: function() {
-      return this._getMap$0().get$keys();
-    },
-    get$values: function(_) {
-      return J.get$values$z(this._getMap$0());
+      var t1 = this._getMap$0();
+      return new H.LinkedHashMapKeyIterable(t1, [H.getTypeArgumentByIndex(t1, 0)]);
     },
     get$length: function(_) {
-      return J.get$length$asx(this._getMap$0());
+      return this._getMap$0().__js_helper$_length;
     }
   };
-  H.Instantiation.prototype = {};
-  H.Instantiation1.prototype = {};
-  H.Instantiation2.prototype = {};
-  H.Instantiation3.prototype = {};
-  H.Instantiation4.prototype = {};
-  H.Instantiation5.prototype = {};
-  H.Instantiation6.prototype = {};
-  H.Instantiation7.prototype = {};
-  H.Instantiation8.prototype = {};
-  H.Instantiation9.prototype = {};
-  H.Instantiation10.prototype = {};
-  H.Instantiation11.prototype = {};
-  H.Instantiation12.prototype = {};
-  H.Instantiation13.prototype = {};
-  H.Instantiation14.prototype = {};
-  H.Instantiation15.prototype = {};
-  H.Instantiation16.prototype = {};
-  H.Instantiation17.prototype = {};
-  H.Instantiation18.prototype = {};
-  H.Instantiation19.prototype = {};
-  H.Instantiation20.prototype = {};
-  H.InternalMap.prototype = {};
-  H.JSInvocationMirror.prototype = {$isInvocation: 1};
-  H.Primitives.prototype = {};
-  H.JsCache.prototype = {};
   H.TypeErrorDecoder.prototype = {
     matchTypeError$1: function(message) {
       var result, t1, _this = this,
@@ -9266,19 +3557,19 @@
         return;
       result = Object.create(null);
       t1 = _this._arguments;
-      if (!H.boolConversionCheck(J.$eq$(t1, -1)))
+      if (t1 !== -1)
         result.arguments = match[t1 + 1];
       t1 = _this._argumentsExpr;
-      if (!H.boolConversionCheck(J.$eq$(t1, -1)))
+      if (t1 !== -1)
         result.argumentsExpr = match[t1 + 1];
       t1 = _this._expr;
-      if (!H.boolConversionCheck(J.$eq$(t1, -1)))
+      if (t1 !== -1)
         result.expr = match[t1 + 1];
       t1 = _this._method;
-      if (!H.boolConversionCheck(J.$eq$(t1, -1)))
+      if (t1 !== -1)
         result.method = match[t1 + 1];
       t1 = _this._receiver;
-      if (!H.boolConversionCheck(J.$eq$(t1, -1)))
+      if (t1 !== -1)
         result.receiver = match[t1 + 1];
       return result;
     }
@@ -9288,9 +3579,8 @@
       var t1 = this._method;
       if (t1 == null)
         return "NoSuchMethodError: " + H.S(this._message);
-      return "NoSuchMethodError: method not found: '" + H.S(t1) + "' on null";
-    },
-    $isNoSuchMethodError: 1
+      return "NoSuchMethodError: method not found: '" + t1 + "' on null";
+    }
   };
   H.JsNoSuchMethodError.prototype = {
     toString$0: function(_) {
@@ -9301,18 +3591,16 @@
         return "NoSuchMethodError: " + H.S(_this._message);
       t2 = _this._receiver;
       if (t2 == null)
-        return _s38_ + H.S(t1) + "' (" + H.S(_this._message) + ")";
-      return _s38_ + H.S(t1) + "' on '" + H.S(t2) + "' (" + H.S(_this._message) + ")";
-    },
-    $isNoSuchMethodError: 1
+        return _s38_ + t1 + "' (" + H.S(_this._message) + ")";
+      return _s38_ + t1 + "' on '" + t2 + "' (" + H.S(_this._message) + ")";
+    }
   };
   H.UnknownJsTypeError.prototype = {
     toString$0: function(_) {
       var t1 = this._message;
-      return H.boolConversionCheck(J.get$isEmpty$asx(t1)) ? "Error" : "Error: " + H.S(t1);
+      return t1.length === 0 ? "Error" : "Error: " + t1;
     }
   };
-  H.ExceptionAndStackTrace.prototype = {};
   H.unwrapException_saveStackTrace.prototype = {
     call$1: function(error) {
       if (!!J.getInterceptor$(error).$isError)
@@ -9320,7 +3608,7 @@
           error.$thrownJsError = this.ex;
       return error;
     },
-    $signature: 6
+    $signature: 8
   };
   H._StackTrace.prototype = {
     toString$0: function(_) {
@@ -9338,7 +3626,7 @@
     toString$0: function(_) {
       var $constructor = this.constructor,
         $name = $constructor == null ? null : $constructor.name;
-      return "Closure '" + H.S(H.unminifyOrTag($name == null ? "unknown" : $name)) + "'";
+      return "Closure '" + H.unminifyOrTag($name == null ? "unknown" : $name) + "'";
     },
     $isFunction: 1,
     get$$call: function() {
@@ -9348,14 +3636,13 @@
     $requiredArgCount: 1,
     $defaultValues: null
   };
-  H.Closure_fromTearOff_closure.prototype = {$signature: 1};
   H.TearOffClosure.prototype = {};
   H.StaticClosure.prototype = {
     toString$0: function(_) {
       var $name = this.$static_name;
       if ($name == null)
         return "Closure of unknown static method";
-      return "Closure '" + H.S(H.unminifyOrTag($name)) + "'";
+      return "Closure '" + H.unminifyOrTag($name) + "'";
     }
   };
   H.BoundClosure.prototype = {
@@ -9376,103 +3663,75 @@
         receiverHashCode = H.Primitives_objectHashCode(this._self);
       else
         receiverHashCode = typeof t1 !== "object" ? J.get$hashCode$(t1) : H.Primitives_objectHashCode(t1);
-      t1 = H.Primitives_objectHashCode(this._target);
-      if (typeof receiverHashCode !== "number")
-        return receiverHashCode.$xor();
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      return (receiverHashCode ^ t1) >>> 0;
+      return (receiverHashCode ^ H.Primitives_objectHashCode(this._target)) >>> 0;
     },
     toString$0: function(_) {
       var receiver = this._receiver;
       if (receiver == null)
         receiver = this._self;
-      return "Closure '" + H.S(this._name) + "' of " + H.S(H.Primitives_objectToHumanReadableString(receiver));
+      return "Closure '" + H.S(this._name) + "' of " + ("Instance of '" + H.S(H.Primitives_objectTypeName(receiver)) + "'");
     }
   };
-  H.Creates.prototype = {};
-  H.Returns.prototype = {};
-  H.JSName.prototype = {};
-  H.JavaScriptIndexingBehavior.prototype = {};
   H.TypeErrorImplementation.prototype = {
     toString$0: function(_) {
       return this.message;
-    },
-    $isAssertionError: 1,
-    $isTypeError: 1
+    }
   };
   H.CastErrorImplementation.prototype = {
     toString$0: function(_) {
       return this.message;
-    },
-    $isCastError: 1
+    }
   };
-  H.FallThroughErrorImplementation.prototype = {};
   H.RuntimeError.prototype = {
     toString$0: function(_) {
       return "RuntimeError: " + H.S(this.message);
     }
   };
-  H.DeferredNotLoadedError.prototype = {$isNoSuchMethodError: 1};
-  H.UnimplementedNoSuchMethodError.prototype = {$isNoSuchMethodError: 1};
-  H.MainError.prototype = {$isNoSuchMethodError: 1};
   H._AssertionError.prototype = {
     toString$0: function(_) {
-      return C.JSString_methods.$add("Assertion failed: ", P.Error_safeToString(this.message));
+      return "Assertion failed: " + P.Error_safeToString(this.message);
     }
   };
-  H._UnreachableError.prototype = {};
-  H.TypeImpl.prototype = {$isType: 1};
-  H.TypeVariable.prototype = {};
   H.JsLinkedHashMap.prototype = {
     get$length: function(_) {
       return this.__js_helper$_length;
     },
-    get$isEmpty: function(_) {
-      return J.$eq$(this.__js_helper$_length, 0);
-    },
     get$keys: function() {
-      return H.LinkedHashMapKeyIterable$(this, H.getTypeArgumentByIndex(this, 0));
+      return new H.LinkedHashMapKeyIterable(this, [H.getTypeArgumentByIndex(this, 0)]);
     },
     get$values: function(_) {
-      var _this = this;
-      return H.MappedIterable_MappedIterable(_this.get$keys(), new H.JsLinkedHashMap_values_closure(_this), H.getTypeArgumentByIndex(_this, 0), H.getTypeArgumentByIndex(_this, 1));
+      var _this = this,
+        t1 = H.getTypeArgumentByIndex(_this, 0);
+      return H.MappedIterable_MappedIterable(new H.LinkedHashMapKeyIterable(_this, [t1]), new H.JsLinkedHashMap_values_closure(_this), t1, H.getTypeArgumentByIndex(_this, 1));
     },
     containsKey$1: function(key) {
-      var strings, nums, _this = this;
-      if (H.boolConversionCheck(H.JsLinkedHashMap__isStringKey(key))) {
-        strings = _this._strings;
+      var strings, t1;
+      if (typeof key === "string") {
+        strings = this._strings;
         if (strings == null)
           return false;
-        return _this._containsTableEntry$2(strings, key);
-      } else if (H.boolConversionCheck(H.JsLinkedHashMap__isNumericKey(key))) {
-        nums = _this._nums;
-        if (nums == null)
-          return false;
-        return _this._containsTableEntry$2(nums, key);
-      } else
-        return _this.internalContainsKey$1(key);
+        return this._containsTableEntry$2(strings, key);
+      } else {
+        t1 = this.internalContainsKey$1(key);
+        return t1;
+      }
     },
     internalContainsKey$1: function(key) {
-      var t1,
-        rest = this._rest;
+      var rest = this._rest;
       if (rest == null)
         return false;
-      t1 = this.internalFindBucketIndex$2(this._getBucket$2(rest, key), key);
-      if (typeof t1 !== "number")
-        return t1.$ge();
-      return t1 >= 0;
+      return this.internalFindBucketIndex$2(this._getTableBucket$2(rest, J.get$hashCode$(key) & 0x3ffffff), key) >= 0;
     },
     $index: function(_, key) {
       var strings, cell, t1, nums, _this = this;
-      if (H.boolConversionCheck(H.JsLinkedHashMap__isStringKey(key))) {
+      if (typeof key === "string") {
         strings = _this._strings;
         if (strings == null)
           return;
         cell = _this._getTableCell$2(strings, key);
         t1 = cell == null ? null : cell.hashMapCellValue;
         return t1;
-      } else if (H.boolConversionCheck(H.JsLinkedHashMap__isNumericKey(key))) {
+      } else if (typeof key === "number" && (key & 0x3ffffff) === key) {
         nums = _this._nums;
         if (nums == null)
           return;
@@ -9487,84 +3746,47 @@
         rest = this._rest;
       if (rest == null)
         return;
-      bucket = this._getBucket$2(rest, key);
+      bucket = this._getTableBucket$2(rest, J.get$hashCode$(key) & 0x3ffffff);
       index = this.internalFindBucketIndex$2(bucket, key);
-      if (typeof index !== "number")
-        return index.$lt();
       if (index < 0)
         return;
       return bucket[index].hashMapCellValue;
     },
     $indexSet: function(_, key, value) {
-      var strings, nums, _this = this;
+      var strings, nums, rest, hash, bucket, index, _this = this;
       H.assertSubtypeOfRuntimeType(key, H.getTypeArgumentByIndex(_this, 0));
       H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(_this, 1));
-      if (H.boolConversionCheck(H.JsLinkedHashMap__isStringKey(key))) {
+      if (typeof key === "string") {
         strings = _this._strings;
         _this._addHashTableEntry$3(strings == null ? _this._strings = _this._newHashTable$0() : strings, key, value);
-      } else if (H.boolConversionCheck(H.JsLinkedHashMap__isNumericKey(key))) {
+      } else if (typeof key === "number" && (key & 0x3ffffff) === key) {
         nums = _this._nums;
         _this._addHashTableEntry$3(nums == null ? _this._nums = _this._newHashTable$0() : nums, key, value);
-      } else
-        _this.internalSet$2(key, value);
-    },
-    internalSet$2: function(key, value) {
-      var rest, hash, bucket, index, _this = this;
-      H.assertSubtypeOfRuntimeType(key, H.getTypeArgumentByIndex(_this, 0));
-      H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(_this, 1));
-      rest = _this._rest;
-      if (rest == null)
-        rest = _this._rest = _this._newHashTable$0();
-      hash = _this.internalComputeHashCode$1(key);
-      bucket = _this._getTableBucket$2(rest, hash);
-      if (bucket == null)
-        _this._setTableEntry$3(rest, hash, [_this._newLinkedCell$2(key, value)]);
-      else {
-        index = _this.internalFindBucketIndex$2(bucket, key);
-        if (typeof index !== "number")
-          return index.$ge();
-        if (index >= 0)
-          bucket[index].hashMapCellValue = value;
-        else
-          bucket.push(_this._newLinkedCell$2(key, value));
+      } else {
+        rest = _this._rest;
+        if (rest == null)
+          rest = _this._rest = _this._newHashTable$0();
+        hash = J.get$hashCode$(key) & 0x3ffffff;
+        bucket = _this._getTableBucket$2(rest, hash);
+        if (bucket == null)
+          _this._setTableEntry$3(rest, hash, [_this._newLinkedCell$2(key, value)]);
+        else {
+          index = _this.internalFindBucketIndex$2(bucket, key);
+          if (index >= 0)
+            bucket[index].hashMapCellValue = value;
+          else
+            bucket.push(_this._newLinkedCell$2(key, value));
+        }
       }
     },
-    remove$1: function(_, key) {
-      var _this = this;
-      if (H.boolConversionCheck(H.JsLinkedHashMap__isStringKey(key)))
-        return _this._removeHashTableEntry$2(_this._strings, key);
-      else if (H.boolConversionCheck(H.JsLinkedHashMap__isNumericKey(key)))
-        return _this._removeHashTableEntry$2(_this._nums, key);
-      else
-        return _this.internalRemove$1(key);
-    },
-    internalRemove$1: function(key) {
-      var hash, bucket, index, cell, _this = this,
-        rest = _this._rest;
-      if (rest == null)
-        return;
-      hash = _this.internalComputeHashCode$1(key);
-      bucket = _this._getTableBucket$2(rest, hash);
-      index = _this.internalFindBucketIndex$2(bucket, key);
-      if (typeof index !== "number")
-        return index.$lt();
-      if (index < 0)
-        return;
-      cell = bucket.splice(index, 1)[0];
-      _this._unlinkCell$1(cell);
-      if (bucket.length === 0)
-        _this._deleteTableEntry$2(rest, hash);
-      return cell.hashMapCellValue;
-    },
     forEach$1: function(_, action) {
-      var cell, modifications, t1, _this = this;
+      var cell, modifications, _this = this;
       H.functionTypeCheck(action, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(_this, 0), H.getTypeArgumentByIndex(_this, 1)]});
       cell = _this._first;
       modifications = _this._modifications;
       for (; cell != null;) {
         action.call$2(cell.hashMapCellKey, cell.hashMapCellValue);
-        t1 = _this._modifications;
-        if (modifications == null ? t1 != null : modifications !== t1)
+        if (modifications !== _this._modifications)
           throw H.wrapException(P.ConcurrentModificationError$(_this));
         cell = cell._next;
       }
@@ -9579,26 +3801,12 @@
       else
         cell.hashMapCellValue = value;
     },
-    _removeHashTableEntry$2: function(table, key) {
-      var cell;
-      if (table == null)
-        return;
-      cell = this._getTableCell$2(table, key);
-      if (cell == null)
-        return;
-      this._unlinkCell$1(cell);
-      this._deleteTableEntry$2(table, key);
-      return cell.hashMapCellValue;
-    },
     _modified$0: function() {
-      var t1 = this._modifications;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      this._modifications = t1 + 1 & 67108863;
+      this._modifications = this._modifications + 1 & 67108863;
     },
     _newLinkedCell$2: function(key, value) {
-      var last, t1, _this = this,
-        cell = H.LinkedHashMapCell$(H.assertSubtypeOfRuntimeType(key, H.getTypeArgumentByIndex(_this, 0)), H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(_this, 1)));
+      var last, _this = this,
+        cell = new H.LinkedHashMapCell(H.assertSubtypeOfRuntimeType(key, H.getTypeArgumentByIndex(_this, 0)), H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(_this, 1)));
       if (_this._first == null)
         _this._first = _this._last = cell;
       else {
@@ -9606,37 +3814,9 @@
         cell._previous = last;
         _this._last = last._next = cell;
       }
-      t1 = _this.__js_helper$_length;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      _this.__js_helper$_length = H.intTypeCheck(t1 + 1);
+      ++_this.__js_helper$_length;
       _this._modified$0();
       return cell;
-    },
-    _unlinkCell$1: function(cell) {
-      var previous, next, t1, _this = this;
-      H.interceptedTypeCheck(cell, "$isLinkedHashMapCell");
-      previous = cell._previous;
-      next = cell._next;
-      if (previous == null)
-        _this._first = next;
-      else
-        previous._next = next;
-      if (next == null)
-        _this._last = previous;
-      else
-        next._previous = previous;
-      t1 = _this.__js_helper$_length;
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      _this.__js_helper$_length = H.intTypeCheck(t1 - 1);
-      _this._modified$0();
-    },
-    internalComputeHashCode$1: function(key) {
-      return J.get$hashCode$(key) & 0x3ffffff;
-    },
-    _getBucket$2: function(table, key) {
-      return this._getTableBucket$2(table, this.internalComputeHashCode$1(key));
     },
     internalFindBucketIndex$2: function(bucket, key) {
       var $length, i;
@@ -9644,7 +3824,7 @@
         return -1;
       $length = bucket.length;
       for (i = 0; i < $length; ++i)
-        if (H.boolConversionCheck(J.$eq$(bucket[i].hashMapCellKey, key)))
+        if (J.$eq$(bucket[i].hashMapCellKey, key))
           return i;
       return -1;
     },
@@ -9672,71 +3852,51 @@
       this._setTableEntry$3(table, _s20_, table);
       this._deleteTableEntry$2(table, _s20_);
       return table;
-    },
-    $isInternalMap: 1,
-    $isLinkedHashMap: 1,
-    get$__js_helper$_length: function() {
-      return this.__js_helper$_length;
-    },
-    get$_first: function() {
-      return this._first;
-    },
-    get$_modifications: function() {
-      return this._modifications;
     }
   };
   H.JsLinkedHashMap_values_closure.prototype = {
     call$1: function(each) {
       var t1 = this.$this;
-      return J.$index$asx(t1, H.assertSubtypeOfRuntimeType(each, H.getTypeArgumentByIndex(t1, 0)));
+      return t1.$index(0, H.assertSubtypeOfRuntimeType(each, H.getTypeArgumentByIndex(t1, 0)));
     },
     $signature: function() {
       var t1 = this.$this;
       return {func: 1, ret: H.getTypeArgumentByIndex(t1, 1), args: [H.getTypeArgumentByIndex(t1, 0)]};
     }
   };
-  H.Es6LinkedHashMap.prototype = {};
   H.LinkedHashMapCell.prototype = {};
   H.LinkedHashMapKeyIterable.prototype = {
     get$length: function(_) {
-      return H.intTypeCheck(this._map.get$__js_helper$_length());
-    },
-    get$isEmpty: function(_) {
-      return J.$eq$(this._map.get$__js_helper$_length(), 0);
+      return this._map.__js_helper$_length;
     },
     get$iterator: function(_) {
-      var t1 = this._map;
-      return H.LinkedHashMapKeyIterator$(t1, H.intTypeCheck(t1.get$_modifications()), H.getTypeArgumentByIndex(this, 0));
-    },
-    contains$1: function(_, element) {
-      return H.boolTypeCheck(this._map.containsKey$1(element));
+      var t1 = this._map,
+        t2 = new H.LinkedHashMapKeyIterator(t1, t1._modifications, this.$ti);
+      t2._cell = t1._first;
+      return t2;
     },
     forEach$1: function(_, f) {
-      var t1, cell, modifications, t2;
+      var t1, cell, modifications;
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(this, 0)]});
       t1 = this._map;
-      cell = H.interceptedTypeCheck(t1.get$_first(), "$isLinkedHashMapCell");
-      modifications = H.intTypeCheck(t1.get$_modifications());
+      cell = t1._first;
+      modifications = t1._modifications;
       for (; cell != null;) {
         f.call$1(cell.hashMapCellKey);
-        t2 = t1.get$_modifications();
-        if (modifications == null ? t2 != null : modifications !== t2)
+        if (modifications !== t1._modifications)
           throw H.wrapException(P.ConcurrentModificationError$(t1));
         cell = cell._next;
       }
     }
   };
   H.LinkedHashMapKeyIterator.prototype = {
-    LinkedHashMapKeyIterator$2: function(_map, _modifications, $E) {
-      this._cell = H.interceptedTypeCheck(this._map.get$_first(), "$isLinkedHashMapCell");
-    },
     get$current: function() {
       return this.__js_helper$_current;
     },
     moveNext$0: function() {
       var _this = this,
         t1 = _this._map;
-      if (!H.boolConversionCheck(J.$eq$(_this._modifications, t1.get$_modifications())))
+      if (_this._modifications !== t1._modifications)
         throw H.wrapException(P.ConcurrentModificationError$(t1));
       else {
         t1 = _this._cell;
@@ -9745,7 +3905,7 @@
           return false;
         } else {
           _this.set$__js_helper$_current(t1.hashMapCellKey);
-          _this._cell = H.interceptedTypeCheck(_this._cell._next, "$isLinkedHashMapCell");
+          _this._cell = _this._cell._next;
           return true;
         }
       }
@@ -9753,632 +3913,26 @@
     set$__js_helper$_current: function(_current) {
       this.__js_helper$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
     },
-    $isIterator: 1,
-    get$_modifications: function() {
-      return this._modifications;
-    }
+    $isIterator: 1
   };
   H.initHooks_closure.prototype = {
     call$1: function(o) {
       return this.getTag(o);
     },
-    $signature: 6
+    $signature: 8
   };
   H.initHooks_closure0.prototype = {
     call$2: function(o, tag) {
-      return this.getUnknownTag(o, H.stringTypeCheck(tag));
+      return this.getUnknownTag(o, tag);
     },
-    $signature: 23
+    $signature: 13
   };
   H.initHooks_closure1.prototype = {
     call$1: function(tag) {
       return this.prototypeForTag(H.stringTypeCheck(tag));
     },
-    $signature: 24
+    $signature: 14
   };
-  H.JSSyntaxRegExp.prototype = {
-    toString$0: function(_) {
-      return "RegExp/" + H.S(this.pattern) + "/" + this._nativeRegExp.flags;
-    },
-    get$_nativeGlobalVersion: function() {
-      var _this = this,
-        t1 = _this._nativeGlobalRegExp;
-      if (t1 != null)
-        return t1;
-      return _this._nativeGlobalRegExp = H.JSSyntaxRegExp_makeNative(_this.pattern, _this.get$_isMultiLine(), _this.get$_isCaseSensitive(), _this.get$_isUnicode(), _this.get$_isDotAll(), true);
-    },
-    get$_nativeAnchoredVersion: function() {
-      var _this = this,
-        t1 = _this._nativeAnchoredRegExp;
-      if (t1 != null)
-        return t1;
-      return _this._nativeAnchoredRegExp = H.JSSyntaxRegExp_makeNative(H.S(_this.pattern) + "|()", _this.get$_isMultiLine(), _this.get$_isCaseSensitive(), _this.get$_isUnicode(), _this.get$_isDotAll(), true);
-    },
-    get$_isMultiLine: function() {
-      return this._nativeRegExp.multiline;
-    },
-    get$_isCaseSensitive: function() {
-      return !this._nativeRegExp.ignoreCase;
-    },
-    get$_isUnicode: function() {
-      return this._nativeRegExp.unicode;
-    },
-    get$_isDotAll: function() {
-      return this._nativeRegExp.dotAll;
-    },
-    hasMatch$1: function(string) {
-      return this._nativeRegExp.test(H.checkString(H.stringTypeCheck(string)));
-    },
-    allMatches$1: function(_, string) {
-      H.stringTypeCheck(string);
-      H.checkString(string);
-      string.length;
-      return H._AllMatchesIterable$(this, string, 0);
-    },
-    _execGlobal$2: function(string, start) {
-      var regexp, match;
-      H.stringTypeCheck(string);
-      H.intTypeCheck(start);
-      regexp = this.get$_nativeGlobalVersion();
-      regexp.lastIndex = start;
-      match = regexp.exec(string);
-      if (match == null)
-        return;
-      return H._MatchImplementation$(this, match);
-    },
-    _execAnchored$2: function(string, start) {
-      var regexp, match;
-      H.stringTypeCheck(string);
-      H.intTypeCheck(start);
-      regexp = this.get$_nativeAnchoredVersion();
-      regexp.lastIndex = start;
-      match = regexp.exec(string);
-      if (match == null)
-        return;
-      if (0 >= match.length)
-        return H.ioore(match, -1);
-      if (match.pop() != null)
-        return;
-      return H._MatchImplementation$(this, match);
-    },
-    matchAsPrefix$2: function(_, string, start) {
-      H.stringTypeCheck(string);
-      H.intTypeCheck(start);
-      if (typeof start !== "number")
-        return start.$lt();
-      if (start < 0 || start > string.length)
-        throw H.wrapException(P.RangeError$range(start, 0, string.length, null, null));
-      return this._execAnchored$2(string, start);
-    },
-    get$isUnicode: function() {
-      return this.get$_isUnicode();
-    },
-    $isPattern: 1,
-    $isRegExp: 1
-  };
-  H._MatchImplementation.prototype = {
-    _MatchImplementation$2: function(pattern, _match) {
-    },
-    get$start: function(_) {
-      return this._match.index;
-    },
-    get$end: function() {
-      var t1 = this.get$start(this),
-        t2 = this._match[0].length;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      return H.intTypeCheck(t1 + t2);
-    },
-    group$1: function(index) {
-      return J.$index$asx(this._match, H.intTypeCheck(index));
-    },
-    $index: function(_, index) {
-      return this.group$1(H.intTypeCheck(index));
-    },
-    $isMatch: 1,
-    $isRegExpMatch: 1
-  };
-  H._AllMatchesIterable.prototype = {
-    get$iterator: function(_) {
-      return H._AllMatchesIterator$(this._re, this._string, this.__js_helper$_start);
-    },
-    $asIterableBase: function() {
-      return [P.RegExpMatch];
-    },
-    $asIterable: function() {
-      return [P.RegExpMatch];
-    }
-  };
-  H._AllMatchesIterator.prototype = {
-    get$current: function() {
-      return this.__js_helper$_current;
-    },
-    moveNext$0: function() {
-      var t2, match, nextIndex, _this = this,
-        t1 = _this._string;
-      if (t1 == null)
-        return false;
-      t2 = _this._nextIndex;
-      t1 = J.get$length$asx(t1);
-      if (typeof t2 !== "number")
-        return t2.$le();
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      if (t2 <= t1) {
-        t1 = _this._regExp;
-        match = t1._execGlobal$2(_this._string, _this._nextIndex);
-        if (match != null) {
-          _this.__js_helper$_current = match;
-          nextIndex = match.get$end();
-          if (H.boolConversionCheck(J.$eq$(match.get$start(match), nextIndex))) {
-            if (H.boolConversionCheck(t1.get$isUnicode())) {
-              t1 = _this._nextIndex;
-              if (typeof t1 !== "number")
-                return t1.$add();
-              t2 = J.get$length$asx(_this._string);
-              if (typeof t2 !== "number")
-                return H.iae(t2);
-              if (t1 + 1 < t2)
-                if (H.boolConversionCheck(H._AllMatchesIterator__isLeadSurrogate(J.codeUnitAt$1$s(_this._string, _this._nextIndex)))) {
-                  t1 = _this._string;
-                  t2 = _this._nextIndex;
-                  if (typeof t2 !== "number")
-                    return t2.$add();
-                  t2 = H.boolConversionCheck(H._AllMatchesIterator__isTrailSurrogate(J.codeUnitAt$1$s(t1, t2 + 1)));
-                  t1 = t2;
-                } else
-                  t1 = false;
-              else
-                t1 = false;
-            } else
-              t1 = false;
-            if (t1) {
-              if (typeof nextIndex !== "number")
-                return nextIndex.$add();
-              ++nextIndex;
-            }
-            if (typeof nextIndex !== "number")
-              return nextIndex.$add();
-            ++nextIndex;
-          }
-          _this._nextIndex = nextIndex;
-          return true;
-        }
-      }
-      _this._string = _this.__js_helper$_current = null;
-      return false;
-    },
-    $isIterator: 1,
-    $asIterator: function() {
-      return [P.RegExpMatch];
-    }
-  };
-  H.StringMatch.prototype = {
-    get$end: function() {
-      var t1 = this.start,
-        t2 = J.get$length$asx(this.pattern);
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      return t1 + t2;
-    },
-    $index: function(_, g) {
-      return this.group$1(H.intTypeCheck(g));
-    },
-    group$1: function(group_) {
-      H.intTypeCheck(group_);
-      if (group_ !== 0)
-        throw H.wrapException(P.RangeError$value(group_, null));
-      return this.pattern;
-    },
-    $isMatch: 1,
-    get$start: function(receiver) {
-      return this.start;
-    }
-  };
-  H._StringAllMatchesIterable.prototype = {
-    get$iterator: function(_) {
-      return H._StringAllMatchesIterator$(this._input, this._pattern, this.__js_helper$_index);
-    },
-    $asIterable: function() {
-      return [P.Match];
-    }
-  };
-  H._StringAllMatchesIterator.prototype = {
-    moveNext$0: function() {
-      var t5, t6, t7, index, end, _this = this,
-        t1 = _this.__js_helper$_index,
-        t2 = _this._pattern,
-        t3 = J.getInterceptor$asx(t2),
-        t4 = t3.get$length(t2);
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t4 !== "number")
-        return H.iae(t4);
-      t5 = _this._input;
-      t6 = J.getInterceptor$asx(t5);
-      t7 = t6.get$length(t5);
-      if (typeof t7 !== "number")
-        return H.iae(t7);
-      if (t1 + t4 > t7) {
-        _this.__js_helper$_current = null;
-        return false;
-      }
-      index = H.stringIndexOfStringUnchecked(t5, t2, _this.__js_helper$_index);
-      t1 = J.getInterceptor$n(index);
-      if (H.boolConversionCheck(H.boolTypeCheck(t1.$lt(index, 0)))) {
-        t1 = t6.get$length(t5);
-        if (typeof t1 !== "number")
-          return t1.$add();
-        _this.__js_helper$_index = H.intTypeCheck(t1 + 1);
-        _this.__js_helper$_current = null;
-        return false;
-      }
-      end = H.intTypeCheck(t1.$add(index, t3.get$length(t2)));
-      _this.__js_helper$_current = H.StringMatch$(H.intTypeCheck(index), t5, t2);
-      t1 = _this.__js_helper$_index;
-      if (end == null ? t1 == null : end === t1) {
-        if (typeof end !== "number")
-          return end.$add();
-        ++end;
-      }
-      _this.__js_helper$_index = end;
-      return true;
-    },
-    get$current: function() {
-      return this.__js_helper$_current;
-    },
-    $isIterator: 1,
-    $asIterator: function() {
-      return [P.Match];
-    }
-  };
-  H._LazyMangledNamesMap.prototype = {};
-  H._LazyMangledInstanceNamesMap.prototype = {};
-  H._LazyReflectiveNamesMap.prototype = {};
-  H.SupportedBrowser.prototype = {};
-  H.Experimental.prototype = {};
-  H.DomName.prototype = {};
-  H.DocsEditable.prototype = {};
-  H.Unstable.prototype = {};
-  H.NativeByteBuffer.prototype = {$isNativeByteBuffer: 1, $isByteBuffer: 1};
-  H.NativeFloat32x4List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Float32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float32x4];
-    },
-    $isTypedData: 1,
-    $isFloat32x4List: 1
-  };
-  H.NativeInt32x4List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Int32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Int32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Int32x4];
-    },
-    $isTypedData: 1,
-    $isInt32x4List: 1
-  };
-  H.NativeFloat64x2List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Float64x2];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float64x2];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float64x2];
-    },
-    $isTypedData: 1,
-    $isFloat64x2List: 1
-  };
-  H.NativeTypedData.prototype = {$isNativeTypedData: 1, $isTypedData: 1};
-  H.NativeByteData.prototype = {$isNativeByteData: 1, $isByteData: 1};
-  H.NativeTypedArray.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-    }
-  };
-  H.NativeTypedArrayOfDouble.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.double];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.double];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.double];
-    }
-  };
-  H.NativeTypedArrayOfInt.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.int];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    }
-  };
-  H.NativeFloat32List.prototype = {$isNativeFloat32List: 1, $is_TypedFloatList: 1, $isFloat32List: 1};
-  H.NativeFloat64List.prototype = {$isNativeFloat64List: 1, $is_TypedFloatList: 1, $isFloat64List: 1};
-  H.NativeInt16List.prototype = {$isNativeInt16List: 1, $is_TypedIntList: 1, $isInt16List: 1};
-  H.NativeInt32List.prototype = {$isNativeInt32List: 1, $is_TypedIntList: 1, $isInt32List: 1};
-  H.NativeInt8List.prototype = {$isNativeInt8List: 1, $is_TypedIntList: 1, $isInt8List: 1};
-  H.NativeUint16List.prototype = {$isNativeUint16List: 1, $is_TypedIntList: 1, $isUint16List: 1};
-  H.NativeUint32List.prototype = {$isNativeUint32List: 1, $is_TypedIntList: 1, $isUint32List: 1};
-  H.NativeUint8ClampedList.prototype = {$isNativeUint8ClampedList: 1, $is_TypedIntList: 1, $isUint8ClampedList: 1};
-  H.NativeUint8List.prototype = {$isNativeUint8List: 1, $is_TypedIntList: 1, $isUint8List: 1};
-  H.NativeFloat32x4.prototype = {$isFloat32x4: 1};
-  H.NativeInt32x4.prototype = {$isInt32x4: 1};
-  H.NativeFloat64x2.prototype = {$isFloat64x2: 1};
-  H._NativeFloat32x4List_Object_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float32x4];
-    }
-  };
-  H._NativeFloat32x4List_Object_ListMixin_FixedLengthListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Float32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float32x4];
-    }
-  };
-  H._NativeFloat64x2List_Object_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float64x2];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float64x2];
-    }
-  };
-  H._NativeFloat64x2List_Object_ListMixin_FixedLengthListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Float64x2];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Float64x2];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float64x2];
-    }
-  };
-  H._NativeInt32x4List_Object_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Int32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Int32x4];
-    }
-  };
-  H._NativeInt32x4List_Object_ListMixin_FixedLengthListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.Int32x4];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Int32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Int32x4];
-    }
-  };
-  H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.double];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.double];
-    }
-  };
-  H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin_FixedLengthListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.double];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.double];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.double];
-    }
-  };
-  H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    }
-  };
-  H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin_FixedLengthListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isFixedLengthListMixin: 1,
-    $asFixedLengthListMixin: function() {
-      return [P.int];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    }
-  };
-  H.Recipe.prototype = {};
-  H.Rti.prototype = {};
-  H._FunctionParameters.prototype = {};
-  H._Type.prototype = {$isType: 1};
-  H._Error.prototype = {};
-  H._CastError.prototype = {$isCastError: 1};
-  H._TypeError.prototype = {$isAssertionError: 1, $isTypeError: 1};
-  H._Universe.prototype = {};
-  H._Parser.prototype = {};
-  H.TypeRule.prototype = {};
-  H._Utils.prototype = {};
   P._AsyncRun__initializeScheduleImmediate_internalCallback.prototype = {
     call$1: function(_) {
       var t1 = this._box_0,
@@ -10386,7 +3940,7 @@
       t1.storedCallback = null;
       f.call$0();
     },
-    $signature: 11
+    $signature: 9
   };
   P._AsyncRun__initializeScheduleImmediate_closure.prototype = {
     call$1: function(callback) {
@@ -10396,28 +3950,27 @@
       t2 = this.span;
       t1.firstChild ? t1.removeChild(t2) : t1.appendChild(t2);
     },
-    $signature: 20
+    $signature: 15
   };
   P._AsyncRun__scheduleImmediateJsOverride_internalCallback.prototype = {
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 1
+    $signature: 2
   };
   P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback.prototype = {
     call$0: function() {
       this.callback.call$0();
     },
-    $signature: 1
+    $signature: 2
   };
   P._TimerImpl.prototype = {
     _TimerImpl$2: function(milliseconds, callback) {
-      if (H.boolConversionCheck(P._hasTimer()))
+      if (self.setTimeout != null)
         self.setTimeout(H.convertDartClosureToJS(new P._TimerImpl_internalCallback(this, callback), 0), milliseconds);
       else
         throw H.wrapException(P.UnsupportedError$("`setTimeout()` not found."));
-    },
-    $isTimer: 1
+    }
   };
   P._TimerImpl_internalCallback.prototype = {
     call$0: function() {
@@ -10425,11 +3978,9 @@
     },
     $signature: 3
   };
-  P._AsyncAwaitCompleter.prototype = {$isCompleter: 1};
-  P._AsyncStarStreamController.prototype = {};
   P._IterationMarker.prototype = {
     toString$0: function(_) {
-      return "IterationMarker(" + H.S(this.state) + ", " + H.S(this.value) + ")";
+      return "IterationMarker(" + this.state + ", " + H.S(this.value) + ")";
     }
   };
   P._SyncStarIterator.prototype = {
@@ -10439,50 +3990,49 @@
         return this._async$_current;
       return H.assertSubtypeOfRuntimeType(t1.get$current(), H.getTypeArgumentByIndex(this, 0));
     },
-    _runBody$0: function() {
-      return function(body, SUCCESS, ERROR) {
-        var errorValue,
-          errorCode = SUCCESS;
-        while (true)
-          try {
-            return body(errorCode, errorValue);
-          } catch (error) {
-            errorValue = error;
-            errorCode = ERROR;
-          }
-      }(this._body, 0, 1);
-    },
     moveNext$0: function() {
       var t1, value, state, inner, _this = this;
       for (; true;) {
         t1 = _this._nestedIterator;
         if (t1 != null)
-          if (H.boolConversionCheck(t1.moveNext$0()))
+          if (t1.moveNext$0())
             return true;
           else
             _this._nestedIterator = null;
-        value = _this._runBody$0();
+        value = function(body, SUCCESS, ERROR) {
+          var errorValue,
+            errorCode = SUCCESS;
+          while (true)
+            try {
+              return body(errorCode, errorValue);
+            } catch (error) {
+              errorValue = error;
+              errorCode = ERROR;
+            }
+        }(_this._body, 0, 1);
         if (value instanceof P._IterationMarker) {
           state = value.state;
           if (state === 2) {
             t1 = _this._suspendedBodies;
-            if (t1 == null || H.boolConversionCheck(J.get$isEmpty$asx(t1))) {
+            if (t1 == null || t1.length === 0) {
               _this.set$_async$_current(null);
               return false;
             }
-            _this._body = J.removeLast$0$ax(_this._suspendedBodies);
+            if (0 >= t1.length)
+              return H.ioore(t1, -1);
+            _this._body = t1.pop();
             continue;
           } else {
             t1 = value.value;
             if (state === 3)
               throw t1;
             else {
-              inner = H.interceptedTypeCheck(J.get$iterator$ax(t1), "$isIterator");
-              if (inner instanceof P._SyncStarIterator) {
+              inner = J.get$iterator$ax(t1);
+              if (!!inner.$is_SyncStarIterator) {
                 t1 = _this._suspendedBodies;
                 if (t1 == null)
                   t1 = _this._suspendedBodies = [];
-                J.add$1$ax(t1, _this._body);
+                C.JSArray_methods.add$1(t1, _this._body);
                 _this._body = inner._body;
                 continue;
               } else {
@@ -10505,209 +4055,92 @@
   };
   P._SyncStarIterable.prototype = {
     get$iterator: function(_) {
-      return P._SyncStarIterator$(this._outerHelper(), H.getTypeArgumentByIndex(this, 0));
+      return new P._SyncStarIterator(this._outerHelper(), this.$ti);
     }
   };
-  P._BroadcastStream.prototype = {};
-  P._BroadcastSubscription.prototype = {};
-  P._BroadcastStreamController.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $is_StreamControllerLifecycle: 1, $is_StreamControllerBase: 1, $is_EventSink: 1, $is_EventDispatch: 1, $isSink: 1};
-  P._SyncBroadcastStreamController.prototype = {$isSynchronousStreamController: 1};
-  P._AsyncBroadcastStreamController.prototype = {};
-  P._AsBroadcastStreamController.prototype = {};
-  P.DeferredLibrary.prototype = {};
-  P.DeferredLoadException.prototype = {$isException: 1};
-  P.FutureOr.prototype = {};
-  P.Future.prototype = {};
-  P.TimeoutException.prototype = {$isException: 1};
-  P.Completer.prototype = {};
-  P._Completer.prototype = {$isCompleter: 1};
-  P._AsyncCompleter.prototype = {};
-  P._SyncCompleter.prototype = {};
   P._FutureListener.prototype = {
-    get$_zone: function() {
-      return this.result._zone;
-    },
-    get$handlesValue: function() {
-      var t1 = this.state;
-      if (typeof t1 !== "number")
-        return t1.$and();
-      return (t1 & 1) !== 0;
-    },
-    get$handlesError: function() {
-      var t1 = this.state;
-      if (typeof t1 !== "number")
-        return t1.$and();
-      return (t1 & 2) !== 0;
-    },
-    get$hasErrorTest: function() {
-      var t1 = this.state;
-      if (typeof t1 !== "number")
-        return t1.$and();
-      return (t1 & 15) === 6;
-    },
-    get$handlesComplete: function() {
-      var t1 = this.state;
-      if (typeof t1 !== "number")
-        return t1.$and();
-      return (t1 & 15) === 8;
-    },
-    get$_onValue: function() {
-      return H.functionTypeCheck(this.callback, {func: 1, ret: {futureOr: 1, type: H.getTypeArgumentByIndex(this, 1)}, args: [H.getTypeArgumentByIndex(this, 0)]});
-    },
-    get$_onError: function() {
-      return this.errorCallback;
-    },
-    get$_errorTest: function() {
-      return H.functionTypeCheck(this.callback, {func: 1, ret: P.bool, args: [P.Object]});
-    },
-    get$_whenCompleteAction: function() {
-      return H.functionTypeCheck(this.callback, {func: 1});
-    },
-    get$hasErrorCallback: function() {
-      return this.get$_onError() != null;
-    },
-    handleValue$1: function(sourceResult) {
-      var _this = this,
-        t1 = H.getTypeArgumentByIndex(_this, 0);
-      H.assertSubtypeOfRuntimeType(sourceResult, t1);
-      return _this.get$_zone().runUnary$2$2(_this.get$_onValue(), sourceResult, {futureOr: 1, type: H.getTypeArgumentByIndex(_this, 1)}, t1);
-    },
     matchesErrorTest$1: function(asyncError) {
-      H.interceptedTypeCheck(asyncError, "$isAsyncError");
-      if (!H.boolConversionCheck(this.get$hasErrorTest()))
+      if ((this.state & 15) !== 6)
         return true;
-      return this.get$_zone().runUnary$2$2(this.get$_errorTest(), asyncError.error, P.bool, P.Object);
+      return this.result._zone.runUnary$2$2(H.functionTypeCheck(this.callback, {func: 1, ret: P.bool, args: [P.Object]}), asyncError.error, P.bool, P.Object);
     },
     handleError$1: function(asyncError) {
-      var errorCallback, t1, t2, _this = this;
-      H.interceptedTypeCheck(asyncError, "$isAsyncError");
-      errorCallback = _this.errorCallback;
-      t1 = P.Object;
-      t2 = {futureOr: 1, type: H.getTypeArgumentByIndex(_this, 1)};
+      var errorCallback = this.errorCallback,
+        t1 = P.Object,
+        t2 = {futureOr: 1, type: H.getTypeArgumentByIndex(this, 1)},
+        t3 = this.result._zone;
       if (H.functionTypeTest(errorCallback, {func: 1, args: [P.Object, P.StackTrace]}))
-        return H.futureOrCheck(_this.get$_zone().runBinary$3$3(errorCallback, asyncError.error, asyncError.stackTrace, null, t1, P.StackTrace), t2);
+        return H.futureOrCheck(t3.runBinary$3$3(errorCallback, asyncError.error, asyncError.stackTrace, null, t1, P.StackTrace), t2);
       else
-        return H.futureOrCheck(_this.get$_zone().runUnary$2$2(H.functionTypeCheck(errorCallback, {func: 1, args: [P.Object]}), asyncError.error, null, t1), t2);
-    },
-    handleWhenComplete$0: function() {
-      return this.get$_zone().run$1$1(this.get$_whenCompleteAction(), null);
+        return H.futureOrCheck(t3.runUnary$2$2(H.functionTypeCheck(errorCallback, {func: 1, args: [P.Object]}), asyncError.error, null, t1), t2);
     }
   };
   P._Future.prototype = {
-    get$_mayAddListener: function() {
-      var t1 = this._state;
-      if (typeof t1 !== "number")
-        return t1.$le();
-      return t1 <= 1;
-    },
-    get$_isChained: function() {
-      return J.$eq$(this._state, 2);
-    },
-    get$_isComplete: function() {
-      var t1 = this._state;
-      if (typeof t1 !== "number")
-        return t1.$ge();
-      return t1 >= 4;
-    },
-    get$_hasError: function() {
-      return J.$eq$(this._state, 8);
-    },
-    _setChained$1: function(source) {
-      H.interceptedTypeCheck(source, "$is_Future");
-      this._state = 2;
-      this._resultOrListeners = source;
-    },
     then$1$2$onError: function(f, onError, $R) {
-      var currentZone, result,
+      var currentZone, result, t2,
         t1 = H.getTypeArgumentByIndex(this, 0);
       H.functionTypeCheck(f, {func: 1, ret: {futureOr: 1, type: $R}, args: [t1]});
-      H.interceptedTypeCheck(onError, "$isFunction");
-      currentZone = P.Zone_current();
+      currentZone = $.Zone__current;
       if (currentZone !== C.C__RootZone) {
-        f = currentZone.registerUnaryCallback$2$1(f, {futureOr: 1, type: $R}, t1);
+        H.functionTypeCheck(f, {func: 1, ret: {futureOr: 1, type: $R}, args: [t1]});
         if (onError != null)
           onError = P._registerErrorHandler(onError, currentZone);
       }
-      result = P._Future$($R);
-      this._addListener$1(P._FutureListener$then(result, f, onError, t1, $R));
+      result = new P._Future($.Zone__current, [$R]);
+      t2 = onError == null ? 1 : 3;
+      this._addListener$1(new P._FutureListener(result, t2, f, onError, [t1, $R]));
       return result;
     },
     then$1$1: function(f, $R) {
       return this.then$1$2$onError(f, null, $R);
     },
-    _setPendingComplete$0: function() {
-      this._state = 1;
-    },
-    _clearPendingComplete$0: function() {
-      this._state = 0;
-    },
-    get$_error: function() {
-      return H.interceptedTypeCheck(this._resultOrListeners, "$isAsyncError");
-    },
-    get$_chainSource: function() {
-      return H.interceptedTypeCheck(this._resultOrListeners, "$is_Future");
-    },
-    _setValue$1: function(value) {
-      H.assertSubtypeOfRuntimeType(value, H.getTypeArgumentByIndex(this, 0));
-      this._state = 4;
-      this._resultOrListeners = value;
-    },
-    _setErrorObject$1: function(error) {
-      H.interceptedTypeCheck(error, "$isAsyncError");
-      this._state = 8;
-      this._resultOrListeners = error;
-    },
-    _setError$2: function(error, stackTrace) {
-      this._setErrorObject$1(P.AsyncError$(error, H.interceptedTypeCheck(stackTrace, "$isStackTrace")));
-    },
-    _cloneResult$1: function(source) {
-      H.interceptedTypeCheck(source, "$is_Future");
-      this._state = H.intTypeCheck(source._state);
-      this._resultOrListeners = source._resultOrListeners;
-    },
     _addListener$1: function(listener) {
-      var source, _this = this;
-      H.interceptedTypeCheck(listener, "$is_FutureListener");
-      if (H.boolConversionCheck(_this.get$_mayAddListener())) {
+      var source, _this = this,
+        t1 = _this._state;
+      if (t1 <= 1) {
         listener._nextListener = H.interceptedTypeCheck(_this._resultOrListeners, "$is_FutureListener");
         _this._resultOrListeners = listener;
       } else {
-        if (H.boolConversionCheck(_this.get$_isChained())) {
-          source = _this.get$_chainSource();
-          if (!H.boolConversionCheck(source.get$_isComplete())) {
+        if (t1 === 2) {
+          source = H.interceptedTypeCheck(_this._resultOrListeners, "$is_Future");
+          t1 = source._state;
+          if (t1 < 4) {
             source._addListener$1(listener);
             return;
           }
-          _this._cloneResult$1(source);
+          _this._state = t1;
+          _this._resultOrListeners = source._resultOrListeners;
         }
-        _this._zone.scheduleMicrotask$1(new P._Future__addListener_closure(_this, listener));
+        P._rootScheduleMicrotask(null, null, _this._zone, H.functionTypeCheck(new P._Future__addListener_closure(_this, listener), {func: 1, ret: -1}));
       }
     },
     _prependListeners$1: function(listeners) {
-      var existingListeners, cursor, cursor0, source, _this = this, _box_0 = {};
+      var t1, existingListeners, cursor, cursor0, source, _this = this, _box_0 = {};
       _box_0.listeners = listeners;
-      H.interceptedTypeCheck(listeners, "$is_FutureListener");
       if (listeners == null)
         return;
-      if (H.boolConversionCheck(_this.get$_mayAddListener())) {
+      t1 = _this._state;
+      if (t1 <= 1) {
         existingListeners = H.interceptedTypeCheck(_this._resultOrListeners, "$is_FutureListener");
-        _this._resultOrListeners = listeners;
+        cursor = _this._resultOrListeners = listeners;
         if (existingListeners != null) {
-          for (cursor = listeners; cursor0 = cursor._nextListener, cursor0 != null; cursor = cursor0)
+          for (; cursor0 = cursor._nextListener, cursor0 != null; cursor = cursor0)
             ;
           cursor._nextListener = existingListeners;
         }
       } else {
-        if (H.boolConversionCheck(_this.get$_isChained())) {
-          source = _this.get$_chainSource();
-          if (!H.boolConversionCheck(source.get$_isComplete())) {
+        if (t1 === 2) {
+          source = H.interceptedTypeCheck(_this._resultOrListeners, "$is_Future");
+          t1 = source._state;
+          if (t1 < 4) {
             source._prependListeners$1(listeners);
             return;
           }
-          _this._cloneResult$1(source);
+          _this._state = t1;
+          _this._resultOrListeners = source._resultOrListeners;
         }
         _box_0.listeners = _this._reverseListeners$1(listeners);
-        _this._zone.scheduleMicrotask$1(new P._Future__prependListeners_closure(_box_0, _this));
+        P._rootScheduleMicrotask(null, null, _this._zone, H.functionTypeCheck(new P._Future__prependListeners_closure(_box_0, _this), {func: 1, ret: -1}));
       }
     },
     _removeListeners$0: function() {
@@ -10717,7 +4150,6 @@
     },
     _reverseListeners$1: function(listeners) {
       var current, prev, next;
-      H.interceptedTypeCheck(listeners, "$is_FutureListener");
       for (current = listeners, prev = null; current != null; prev = current, current = next) {
         next = current._nextListener;
         current._nextListener = prev;
@@ -10736,19 +4168,19 @@
           P._Future__chainForeignFuture(value, _this);
       else {
         listeners = _this._removeListeners$0();
-        _this._setValue$1(H.assertSubtypeOfRuntimeType(value, t1));
+        H.assertSubtypeOfRuntimeType(value, t1);
+        _this._state = 4;
+        _this._resultOrListeners = value;
         P._Future__propagateToListeners(_this, listeners);
       }
     },
     _completeError$2: function(error, stackTrace) {
-      var listeners;
+      var listeners, _this = this;
       H.interceptedTypeCheck(stackTrace, "$isStackTrace");
-      listeners = this._removeListeners$0();
-      this._setError$2(error, stackTrace);
-      P._Future__propagateToListeners(this, listeners);
-    },
-    _completeError$1: function(error) {
-      return this._completeError$2(error, null);
+      listeners = _this._removeListeners$0();
+      _this._state = 8;
+      _this._resultOrListeners = new P.AsyncError(error, stackTrace);
+      P._Future__propagateToListeners(_this, listeners);
     },
     $isFuture: 1
   };
@@ -10756,21 +4188,21 @@
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this.listener);
     },
-    $signature: 1
+    $signature: 2
   };
   P._Future__prependListeners_closure.prototype = {
     call$0: function() {
       P._Future__propagateToListeners(this.$this, this._box_0.listeners);
     },
-    $signature: 1
+    $signature: 2
   };
   P._Future__chainForeignFuture_closure.prototype = {
     call$1: function(value) {
       var t1 = this.target;
-      t1._clearPendingComplete$0();
+      t1._state = 0;
       t1._complete$1(value);
     },
-    $signature: 11
+    $signature: 9
   };
   P._Future__chainForeignFuture_closure0.prototype = {
     call$2: function(error, stackTrace) {
@@ -10780,24 +4212,25 @@
     call$1: function(error) {
       return this.call$2(error, null);
     },
-    $signature: 26
+    $signature: 16
   };
   P._Future__chainForeignFuture_closure1.prototype = {
     call$0: function() {
       this.target._completeError$2(this.e, this.s);
     },
-    $signature: 1
+    $signature: 2
   };
   P._Future__propagateToListeners_handleWhenCompleteCallback.prototype = {
     call$0: function() {
-      var e, s, exception, t1, t2, originalSource, _this = this, completeResult = null;
+      var e, s, t1, exception, t2, originalSource, _this = this, completeResult = null;
       try {
-        completeResult = _this.listener.handleWhenComplete$0();
+        t1 = _this.listener;
+        completeResult = t1.result._zone.run$1$1(H.functionTypeCheck(t1.callback, {func: 1}), null);
       } catch (exception) {
         e = H.unwrapException(exception);
         s = H.getTraceFromException(exception);
-        if (H.boolConversionCheck(_this.hasError)) {
-          t1 = _this._box_1.source.get$_error().error;
+        if (_this.hasError) {
+          t1 = H.interceptedTypeCheck(_this._box_1.source._resultOrListeners, "$isAsyncError").error;
           t2 = e;
           t2 = t1 == null ? t2 == null : t1 === t2;
           t1 = t2;
@@ -10805,17 +4238,17 @@
           t1 = false;
         t2 = _this._box_0;
         if (t1)
-          t2.listenerValueOrError = _this._box_1.source.get$_error();
+          t2.listenerValueOrError = H.interceptedTypeCheck(_this._box_1.source._resultOrListeners, "$isAsyncError");
         else
-          t2.listenerValueOrError = P.AsyncError$(e, s);
+          t2.listenerValueOrError = new P.AsyncError(e, s);
         t2.listenerHasError = true;
         return;
       }
       if (!!J.getInterceptor$(completeResult).$isFuture) {
-        if (completeResult instanceof P._Future && H.boolConversionCheck(completeResult.get$_isComplete())) {
-          if (H.boolConversionCheck(completeResult.get$_hasError())) {
+        if (completeResult instanceof P._Future && completeResult._state >= 4) {
+          if (completeResult._state === 8) {
             t1 = _this._box_0;
-            t1.listenerValueOrError = completeResult.get$_error();
+            t1.listenerValueOrError = H.interceptedTypeCheck(completeResult._resultOrListeners, "$isAsyncError");
             t1.listenerHasError = true;
           }
           return;
@@ -10832,18 +4265,22 @@
     call$1: function(_) {
       return this.originalSource;
     },
-    $signature: 27
+    $signature: 17
   };
   P._Future__propagateToListeners_handleValueCallback.prototype = {
     call$0: function() {
-      var e, s, exception, t1, _this = this;
+      var e, s, t1, t2, t3, t4, exception, _this = this;
       try {
-        _this._box_0.listenerValueOrError = _this.listener.handleValue$1(_this.sourceResult);
+        t1 = _this.listener;
+        t2 = H.getTypeArgumentByIndex(t1, 0);
+        t3 = H.assertSubtypeOfRuntimeType(_this.sourceResult, t2);
+        t4 = H.getTypeArgumentByIndex(t1, 1);
+        _this._box_0.listenerValueOrError = t1.result._zone.runUnary$2$2(H.functionTypeCheck(t1.callback, {func: 1, ret: {futureOr: 1, type: t4}, args: [t2]}), t3, {futureOr: 1, type: t4}, t2);
       } catch (exception) {
         e = H.unwrapException(exception);
         s = H.getTraceFromException(exception);
         t1 = _this._box_0;
-        t1.listenerValueOrError = P.AsyncError$(e, s);
+        t1.listenerValueOrError = new P.AsyncError(e, s);
         t1.listenerHasError = true;
       }
     },
@@ -10853,9 +4290,9 @@
     call$0: function() {
       var asyncError, e, s, t1, t2, exception, t3, t4, _this = this;
       try {
-        asyncError = _this._box_1.source.get$_error();
+        asyncError = H.interceptedTypeCheck(_this._box_1.source._resultOrListeners, "$isAsyncError");
         t1 = _this.listener;
-        if (H.boolConversionCheck(t1.matchesErrorTest$1(asyncError)) && H.boolConversionCheck(t1.get$hasErrorCallback())) {
+        if (H.boolConversionCheck(t1.matchesErrorTest$1(asyncError)) && t1.errorCallback != null) {
           t2 = _this._box_0;
           t2.listenerValueOrError = t1.handleError$1(asyncError);
           t2.listenerHasError = false;
@@ -10863,39 +4300,36 @@
       } catch (exception) {
         e = H.unwrapException(exception);
         s = H.getTraceFromException(exception);
-        t1 = _this._box_1;
-        t2 = t1.source.get$_error().error;
+        t1 = H.interceptedTypeCheck(_this._box_1.source._resultOrListeners, "$isAsyncError");
+        t2 = t1.error;
         t3 = e;
         t4 = _this._box_0;
         if (t2 == null ? t3 == null : t2 === t3)
-          t4.listenerValueOrError = t1.source.get$_error();
+          t4.listenerValueOrError = t1;
         else
-          t4.listenerValueOrError = P.AsyncError$(e, s);
+          t4.listenerValueOrError = new P.AsyncError(e, s);
         t4.listenerHasError = true;
       }
     },
     $signature: 3
   };
   P._AsyncCallbackEntry.prototype = {};
-  P._AsyncRun.prototype = {};
   P.Stream.prototype = {
     get$length: function(_) {
-      var t1 = {},
-        future = P._Future$(P.int);
+      var t2, t3, _this = this, t1 = {},
+        future = new P._Future($.Zone__current, [P.int]);
       t1.count = 0;
-      this.listen$4$cancelOnError$onDone$onError(new P.Stream_length_closure(t1, this), true, new P.Stream_length_closure0(t1, future), future.get$_completeError());
+      t2 = H.getTypeArgumentByIndex(_this, 0);
+      t3 = H.functionTypeCheck(new P.Stream_length_closure(t1, _this), {func: 1, ret: -1, args: [t2]});
+      H.functionTypeCheck(new P.Stream_length_closure0(t1, future), {func: 1, ret: -1});
+      W._EventStreamSubscription$(_this._html$_target, _this._eventType, t3, false, t2);
       return future;
     }
   };
   P.Stream_length_closure.prototype = {
     call$1: function(_) {
-      var t1, t2;
       H.assertSubtypeOfRuntimeType(_, H.getTypeArgumentByIndex(this.$this, 0));
-      t1 = this._box_0;
-      t2 = t1.count;
-      if (typeof t2 !== "number")
-        return t2.$add();
-      t1.count = t2 + 1;
+      ++this._box_0.count;
     },
     $signature: function() {
       return {func: 1, ret: P.Null, args: [H.getTypeArgumentByIndex(this.$this, 0)]};
@@ -10905,218 +4339,49 @@
     call$0: function() {
       this.future._complete$1(this._box_0.count);
     },
-    $signature: 1
+    $signature: 2
   };
   P.StreamSubscription.prototype = {};
-  P.EventSink.prototype = {$isSink: 1};
-  P.StreamView.prototype = {};
-  P.StreamConsumer.prototype = {};
-  P.StreamSink.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isSink: 1};
-  P.StreamTransformer.prototype = {};
-  P.StreamTransformerBase.prototype = {$isStreamTransformer: 1};
-  P.StreamIterator.prototype = {};
-  P._ControllerEventSinkWrapper.prototype = {$isEventSink: 1, $isSink: 1};
-  P.StreamController.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isSink: 1};
-  P.SynchronousStreamController.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $isSink: 1};
-  P._StreamControllerLifecycle.prototype = {};
-  P._StreamControllerBase.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $is_StreamControllerLifecycle: 1, $is_EventSink: 1, $is_EventDispatch: 1, $isSink: 1};
-  P._StreamController.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $is_StreamControllerLifecycle: 1, $is_StreamControllerBase: 1, $is_EventSink: 1, $is_EventDispatch: 1, $isSink: 1};
-  P._SyncStreamControllerDispatch.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $isSynchronousStreamController: 1, $is_StreamControllerLifecycle: 1, $is_StreamControllerBase: 1, $is_StreamController: 1, $is_EventSink: 1, $is_EventDispatch: 1, $isSink: 1};
-  P._AsyncStreamControllerDispatch.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isStreamController: 1, $is_StreamControllerLifecycle: 1, $is_StreamControllerBase: 1, $is_StreamController: 1, $is_EventSink: 1, $is_EventDispatch: 1, $isSink: 1};
-  P._AsyncStreamController.prototype = {$is_AsyncStreamControllerDispatch: 1};
-  P._SyncStreamController.prototype = {$isSynchronousStreamController: 1, $is_SyncStreamControllerDispatch: 1};
-  P._ControllerStream.prototype = {};
-  P._ControllerSubscription.prototype = {};
-  P._StreamSinkWrapper.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isSink: 1};
-  P._AddStreamState.prototype = {};
-  P._StreamControllerAddStreamState.prototype = {};
-  P._EventSink.prototype = {};
-  P._EventDispatch.prototype = {};
-  P._BufferingStreamSubscription.prototype = {$isStreamSubscription: 1, $is_EventSink: 1, $is_EventDispatch: 1};
-  P._StreamImpl.prototype = {};
-  P._GeneratedStreamImpl.prototype = {};
-  P._IterablePendingEvents.prototype = {};
-  P._DelayedEvent.prototype = {};
-  P._DelayedData.prototype = {};
-  P._DelayedError.prototype = {
-    $as_DelayedEvent: function() {
-    }
-  };
-  P._DelayedDone.prototype = {$is_DelayedEvent: 1,
-    $as_DelayedEvent: function() {
-    }
-  };
-  P._PendingEvents.prototype = {};
-  P._StreamImplEvents.prototype = {};
-  P._DoneStreamSubscription.prototype = {$isStreamSubscription: 1};
-  P._AsBroadcastStream.prototype = {};
-  P._BroadcastSubscriptionWrapper.prototype = {$isStreamSubscription: 1};
-  P._StreamIterator.prototype = {$isStreamIterator: 1};
-  P._EmptyStream.prototype = {};
-  P._ForwardingStream.prototype = {
-    $asStream: function($S, $T) {
-      return [$T];
-    }
-  };
-  P._ForwardingStreamSubscription.prototype = {
-    $asStreamSubscription: function($S, $T) {
-      return [$T];
-    },
-    $as_EventSink: function($S, $T) {
-      return [$T];
-    },
-    $as_EventDispatch: function($S, $T) {
-      return [$T];
-    },
-    $as_BufferingStreamSubscription: function($S, $T) {
-      return [$T];
-    }
-  };
-  P._WhereStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._MapStream.prototype = {};
-  P._ExpandStream.prototype = {};
-  P._HandleErrorStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._TakeStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._StateStreamSubscription.prototype = {$asStreamSubscription: null, $as_EventSink: null, $as_EventDispatch: null, $as_BufferingStreamSubscription: null,
-    $as_ForwardingStreamSubscription: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._TakeWhileStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._SkipStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._SkipWhileStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._DistinctStream.prototype = {$asStream: null,
-    $as_ForwardingStream: function($T) {
-      return [$T, $T];
-    }
-  };
-  P._EventSinkWrapper.prototype = {$isEventSink: 1, $isSink: 1};
-  P._SinkTransformerStreamSubscription.prototype = {
-    $asStreamSubscription: function($S, $T) {
-      return [$T];
-    },
-    $as_EventSink: function($S, $T) {
-      return [$T];
-    },
-    $as_EventDispatch: function($S, $T) {
-      return [$T];
-    },
-    $as_BufferingStreamSubscription: function($S, $T) {
-      return [$T];
-    }
-  };
-  P._StreamSinkTransformer.prototype = {};
-  P._BoundSinkStream.prototype = {
-    $asStream: function($S, $T) {
-      return [$T];
-    }
-  };
-  P._HandlerEventSink.prototype = {$isEventSink: 1,
-    $asEventSink: function($S, $T) {
-      return [$S];
-    },
-    $isSink: 1,
-    $asSink: function($S, $T) {
-      return [$S];
-    }
-  };
-  P._StreamHandlerTransformer.prototype = {};
-  P._StreamBindTransformer.prototype = {};
-  P._StreamSubscriptionTransformer.prototype = {};
-  P._BoundSubscriptionStream.prototype = {
-    $asStream: function($S, $T) {
-      return [$T];
-    }
-  };
-  P.Timer.prototype = {};
   P.AsyncError.prototype = {
     toString$0: function(_) {
       return H.S(this.error);
     },
     $isError: 1
   };
-  P._ZoneFunction.prototype = {};
-  P.ZoneSpecification.prototype = {};
-  P._ZoneSpecification.prototype = {$isZoneSpecification: 1};
-  P.ZoneDelegate.prototype = {};
-  P.Zone.prototype = {};
-  P._ZoneDelegate.prototype = {$isZoneDelegate: 1};
-  P._Zone.prototype = {
-    inSameErrorZone$1: function(otherZone) {
-      var t1, t2;
-      H.interceptedTypeCheck(otherZone, "$isZone");
-      if (this !== otherZone) {
-        t1 = this.get$errorZone();
-        t2 = otherZone.get$errorZone();
-        t2 = t1 == null ? t2 == null : t1 === t2;
-        t1 = t2;
-      } else
-        t1 = true;
-      return t1;
-    },
-    $isZone: 1
-  };
-  P._CustomZone.prototype = {};
+  P._Zone.prototype = {$isZone: 1};
   P._rootHandleUncaughtError_closure.prototype = {
     call$0: function() {
-      var t1 = this._box_0,
+      var error,
+        t1 = this._box_0,
         t2 = t1.error;
-      t1 = t2 == null ? t1.error = P.NullThrownError$() : t2;
+      t1 = t2 == null ? t1.error = new P.NullThrownError() : t2;
       t2 = this.stackTrace;
       if (t2 == null)
         throw H.wrapException(t1);
-      P._rethrow(t1, t2);
+      error = H.wrapException(t1);
+      error.stack = t2.toString$0(0);
+      throw error;
     },
-    $signature: 1
+    $signature: 2
   };
   P._RootZone.prototype = {
-    get$_scheduleMicrotask: function() {
-      return C.C__ZoneFunction;
-    },
-    get$errorZone: function() {
-      return this;
-    },
     runGuarded$1: function(f) {
-      var e, s, exception;
+      var e, s, exception, _null = null;
       H.functionTypeCheck(f, {func: 1, ret: -1});
       try {
         if (C.C__RootZone === $.Zone__current) {
           f.call$0();
           return;
         }
-        P._rootRun(null, null, this, f, -1);
+        P._rootRun(_null, _null, this, f, -1);
       } catch (exception) {
         e = H.unwrapException(exception);
         s = H.getTraceFromException(exception);
-        this.handleUncaughtError$2(e, s);
+        P._rootHandleUncaughtError(_null, _null, this, e, H.interceptedTypeCheck(s, "$isStackTrace"));
       }
     },
     runUnaryGuarded$1$2: function(f, arg, $T) {
-      var e, s, exception;
+      var e, s, exception, _null = null;
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [$T]});
       H.assertSubtypeOfRuntimeType(arg, $T);
       try {
@@ -11124,11 +4389,11 @@
           f.call$1(arg);
           return;
         }
-        P._rootRunUnary(null, null, this, f, arg, -1, $T);
+        P._rootRunUnary(_null, _null, this, f, arg, -1, $T);
       } catch (exception) {
         e = H.unwrapException(exception);
         s = H.getTraceFromException(exception);
-        this.handleUncaughtError$2(e, s);
+        P._rootHandleUncaughtError(_null, _null, this, e, H.interceptedTypeCheck(s, "$isStackTrace"));
       }
     },
     bindCallback$1$1: function(f, $R) {
@@ -11139,12 +4404,6 @@
     },
     bindUnaryCallbackGuarded$1$1: function(f, $T) {
       return new P._RootZone_bindUnaryCallbackGuarded_closure(this, H.functionTypeCheck(f, {func: 1, ret: -1, args: [$T]}), $T);
-    },
-    $index: function(_, key) {
-      return;
-    },
-    handleUncaughtError$2: function(error, stackTrace) {
-      P._rootHandleUncaughtError(null, null, this, error, H.interceptedTypeCheck(stackTrace, "$isStackTrace"));
     },
     run$1$1: function(f, $R) {
       H.functionTypeCheck(f, {func: 1, ret: $R});
@@ -11166,18 +4425,6 @@
       if ($.Zone__current === C.C__RootZone)
         return f.call$2(arg1, arg2);
       return P._rootRunBinary(null, null, this, f, arg1, arg2, $R, T1, T2);
-    },
-    registerCallback$1$1: function(f, $R) {
-      return H.functionTypeCheck(f, {func: 1, ret: $R});
-    },
-    registerUnaryCallback$2$1: function(f, $R, $T) {
-      return H.functionTypeCheck(f, {func: 1, ret: $R, args: [$T]});
-    },
-    registerBinaryCallback$3$1: function(f, $R, T1, T2) {
-      return H.functionTypeCheck(f, {func: 1, ret: $R, args: [T1, T2]});
-    },
-    scheduleMicrotask$1: function(f) {
-      P._rootScheduleMicrotask(null, null, this, H.functionTypeCheck(f, {func: 1, ret: -1}));
     }
   };
   P._RootZone_bindCallback_closure.prototype = {
@@ -11203,89 +4450,48 @@
       return {func: 1, ret: -1, args: [this.T]};
     }
   };
-  P._HashMap.prototype = {$isHashMap: 1};
-  P._IdentityHashMap.prototype = {};
-  P._CustomHashMap.prototype = {};
-  P._HashMapKeyIterable.prototype = {};
-  P._HashMapKeyIterator.prototype = {$isIterator: 1};
-  P._LinkedIdentityHashMap.prototype = {};
-  P._Es6LinkedIdentityHashMap.prototype = {};
-  P._Es6MapIterable.prototype = {};
-  P._Es6MapIterator.prototype = {$isIterator: 1};
-  P._LinkedCustomHashMap.prototype = {};
-  P._HashSet.prototype = {$isHashSet: 1};
-  P._IdentityHashSet.prototype = {};
-  P._CustomHashSet.prototype = {};
-  P._HashSetIterator.prototype = {$isIterator: 1};
   P._LinkedHashSet.prototype = {
     get$iterator: function(_) {
-      return P._LinkedHashSetIterator$(this, this._collection$_modifications, H.getTypeArgumentByIndex(this, 0));
+      var _this = this,
+        t1 = new P._LinkedHashSetIterator(_this, _this._collection$_modifications, _this.$ti);
+      t1._collection$_cell = _this._collection$_first;
+      return t1;
     },
     get$length: function(_) {
       return this._collection$_length;
     },
-    get$isEmpty: function(_) {
-      return J.$eq$(this._collection$_length, 0);
-    },
     contains$1: function(_, object) {
-      var strings, nums;
-      if (H.boolConversionCheck(P._LinkedHashSet__isStringElement(object))) {
+      var strings, t1;
+      if (typeof object === "string" && object !== "__proto__") {
         strings = this._collection$_strings;
         if (strings == null)
           return false;
-        return H.interceptedTypeCheck(P._LinkedHashSet__getTableEntry(strings, object), "$is_LinkedHashSetCell") != null;
-      } else if (H.boolConversionCheck(P._LinkedHashSet__isNumericElement(object))) {
-        nums = this._collection$_nums;
-        if (nums == null)
-          return false;
-        return H.interceptedTypeCheck(P._LinkedHashSet__getTableEntry(nums, object), "$is_LinkedHashSetCell") != null;
-      } else
-        return this._contains$1(object);
-    },
-    _contains$1: function(object) {
-      var t1,
-        rest = this._collection$_rest;
-      if (rest == null)
-        return false;
-      t1 = this._findBucketIndex$2(this._collection$_getBucket$2(rest, object), object);
-      if (typeof t1 !== "number")
-        return t1.$ge();
-      return t1 >= 0;
-    },
-    forEach$1: function(_, action) {
-      var cell, modifications, t2, _this = this,
-        t1 = H.getTypeArgumentByIndex(_this, 0);
-      H.functionTypeCheck(action, {func: 1, ret: -1, args: [t1]});
-      cell = _this._collection$_first;
-      modifications = _this._collection$_modifications;
-      for (; cell != null;) {
-        action.call$1(H.assertSubtypeOfRuntimeType(cell._element, t1));
-        t2 = _this._collection$_modifications;
-        if (modifications == null ? t2 != null : modifications !== t2)
-          throw H.wrapException(P.ConcurrentModificationError$(_this));
-        cell = cell._collection$_next;
+        return H.interceptedTypeCheck(strings[object], "$is_LinkedHashSetCell") != null;
+      } else {
+        t1 = this._contains$1(object);
+        return t1;
       }
     },
-    get$last: function(_) {
-      var t1 = this._collection$_last;
-      if (t1 == null)
-        throw H.wrapException(P.StateError$("No elements"));
-      return H.assertSubtypeOfRuntimeType(t1._element, H.getTypeArgumentByIndex(this, 0));
+    _contains$1: function(object) {
+      var rest = this._collection$_rest;
+      if (rest == null)
+        return false;
+      return this._findBucketIndex$2(this._getBucket$2(rest, object), object) >= 0;
     },
     add$1: function(_, element) {
       var strings, nums, _this = this;
       H.assertSubtypeOfRuntimeType(element, H.getTypeArgumentByIndex(_this, 0));
-      if (H.boolConversionCheck(P._LinkedHashSet__isStringElement(element))) {
+      if (typeof element === "string" && element !== "__proto__") {
         strings = _this._collection$_strings;
         return _this._collection$_addHashTableEntry$2(strings == null ? _this._collection$_strings = P._LinkedHashSet__newHashTable() : strings, element);
-      } else if (H.boolConversionCheck(P._LinkedHashSet__isNumericElement(element))) {
+      } else if (typeof element === "number" && (element & 1073741823) === element) {
         nums = _this._collection$_nums;
         return _this._collection$_addHashTableEntry$2(nums == null ? _this._collection$_nums = P._LinkedHashSet__newHashTable() : nums, element);
       } else
         return _this._add$1(element);
     },
     _add$1: function(element) {
-      var rest, hash, bucket, index, _this = this;
+      var rest, hash, bucket, _this = this;
       H.assertSubtypeOfRuntimeType(element, H.getTypeArgumentByIndex(_this, 0));
       rest = _this._collection$_rest;
       if (rest == null)
@@ -11293,12 +4499,9 @@
       hash = _this._computeHashCode$1(element);
       bucket = rest[hash];
       if (bucket == null)
-        P._LinkedHashSet__setTableEntry(rest, hash, [_this._collection$_newLinkedCell$1(element)]);
+        rest[hash] = [_this._collection$_newLinkedCell$1(element)];
       else {
-        index = _this._findBucketIndex$2(bucket, element);
-        if (typeof index !== "number")
-          return index.$ge();
-        if (index >= 0)
+        if (_this._findBucketIndex$2(bucket, element) >= 0)
           return false;
         bucket.push(_this._collection$_newLinkedCell$1(element));
       }
@@ -11306,20 +4509,17 @@
     },
     _collection$_addHashTableEntry$2: function(table, element) {
       H.assertSubtypeOfRuntimeType(element, H.getTypeArgumentByIndex(this, 0));
-      if (H.interceptedTypeCheck(P._LinkedHashSet__getTableEntry(table, element), "$is_LinkedHashSetCell") != null)
+      if (H.interceptedTypeCheck(table[element], "$is_LinkedHashSetCell") != null)
         return false;
-      P._LinkedHashSet__setTableEntry(table, element, this._collection$_newLinkedCell$1(element));
+      table[element] = this._collection$_newLinkedCell$1(element);
       return true;
     },
     _collection$_modified$0: function() {
-      var t1 = this._collection$_modifications;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      this._collection$_modifications = 1073741823 & t1 + 1;
+      this._collection$_modifications = 1073741823 & this._collection$_modifications + 1;
     },
     _collection$_newLinkedCell$1: function(element) {
-      var last, t1, _this = this,
-        cell = P._LinkedHashSetCell$(H.assertSubtypeOfRuntimeType(element, H.getTypeArgumentByIndex(_this, 0)));
+      var last, _this = this,
+        cell = new P._LinkedHashSetCell(H.assertSubtypeOfRuntimeType(element, H.getTypeArgumentByIndex(_this, 0)));
       if (_this._collection$_first == null)
         _this._collection$_first = _this._collection$_last = cell;
       else {
@@ -11327,17 +4527,14 @@
         cell._collection$_previous = last;
         _this._collection$_last = last._collection$_next = cell;
       }
-      t1 = _this._collection$_length;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      _this._collection$_length = H.intTypeCheck(t1 + 1);
+      ++_this._collection$_length;
       _this._collection$_modified$0();
       return cell;
     },
     _computeHashCode$1: function(element) {
       return J.get$hashCode$(element) & 1073741823;
     },
-    _collection$_getBucket$2: function(table, element) {
+    _getBucket$2: function(table, element) {
       return table[this._computeHashCode$1(element)];
     },
     _findBucketIndex$2: function(bucket, element) {
@@ -11346,33 +4543,20 @@
         return -1;
       $length = bucket.length;
       for (i = 0; i < $length; ++i)
-        if (H.boolConversionCheck(J.$eq$(bucket[i]._element, element)))
+        if (J.$eq$(bucket[i]._collection$_element, element))
           return i;
       return -1;
-    },
-    $isLinkedHashSet: 1,
-    get$_collection$_first: function() {
-      return this._collection$_first;
-    },
-    get$_collection$_modifications: function() {
-      return this._collection$_modifications;
     }
   };
-  P._LinkedIdentityHashSet.prototype = {};
-  P._LinkedCustomHashSet.prototype = {};
-  P._LinkedCustomHashSet_closure.prototype = {$signature: 32};
   P._LinkedHashSetCell.prototype = {};
   P._LinkedHashSetIterator.prototype = {
-    _LinkedHashSetIterator$2: function(_set, _modifications, $E) {
-      this._collection$_cell = H.interceptedTypeCheck(this._set.get$_collection$_first(), "$is_LinkedHashSetCell");
-    },
     get$current: function() {
       return this._collection$_current;
     },
     moveNext$0: function() {
       var _this = this,
         t1 = _this._set;
-      if (!H.boolConversionCheck(J.$eq$(_this._collection$_modifications, t1.get$_collection$_modifications())))
+      if (_this._collection$_modifications !== t1._collection$_modifications)
         throw H.wrapException(P.ConcurrentModificationError$(t1));
       else {
         t1 = _this._collection$_cell;
@@ -11380,8 +4564,8 @@
           _this.set$_collection$_current(null);
           return false;
         } else {
-          _this.set$_collection$_current(H.assertSubtypeOfRuntimeType(t1._element, H.getTypeArgumentByIndex(_this, 0)));
-          _this._collection$_cell = H.interceptedTypeCheck(_this._collection$_cell._collection$_next, "$is_LinkedHashSetCell");
+          _this.set$_collection$_current(H.assertSubtypeOfRuntimeType(t1._collection$_element, H.getTypeArgumentByIndex(_this, 0)));
+          _this._collection$_cell = _this._collection$_cell._collection$_next;
           return true;
         }
       }
@@ -11389,1145 +4573,79 @@
     set$_collection$_current: function(_current) {
       this._collection$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 0));
     },
-    $isIterator: 1,
-    get$_collection$_modifications: function() {
-      return this._collection$_modifications;
-    }
+    $isIterator: 1
   };
-  P.UnmodifiableListView.prototype = {};
-  P.HashMap.prototype = {$isMap: 1};
-  P.HashSet.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1, $isSet: 1};
-  P.IterableMixin.prototype = {$isIterable: 1};
   P.IterableBase.prototype = {};
-  P.HasNextIterator.prototype = {};
-  P.LinkedHashMap.prototype = {$isMap: 1};
-  P.LinkedHashSet.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1, $isSet: 1};
-  P.LinkedList0.prototype = {};
-  P._LinkedListIterator0.prototype = {$isIterator: 1};
-  P.LinkedListEntry.prototype = {};
-  P.ListBase.prototype = {$isEfficientLengthIterable: 1, $isListMixin: 1, $isIterable: 1, $isList: 1};
+  P.ListBase.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1, $isList: 1};
   P.ListMixin.prototype = {
     get$iterator: function(receiver) {
-      return H.ListIterator$(receiver, H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0));
+      return new H.ListIterator(receiver, this.get$length(receiver), [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0)]);
     },
     elementAt$1: function(receiver, index) {
-      return this.$index(receiver, H.intTypeCheck(index));
-    },
-    forEach$1: function(receiver, action) {
-      var $length, i, _this = this;
-      H.functionTypeCheck(action, {func: 1, ret: -1, args: [H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0)]});
-      $length = _this.get$length(receiver);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        action.call$1(_this.$index(receiver, i));
-        if ($length !== _this.get$length(receiver))
-          throw H.wrapException(P.ConcurrentModificationError$(receiver));
-      }
-    },
-    get$isEmpty: function(receiver) {
-      return J.$eq$(this.get$length(receiver), 0);
-    },
-    get$last: function(receiver) {
-      var t1;
-      if (H.boolConversionCheck(J.$eq$(this.get$length(receiver), 0)))
-        throw H.wrapException(H.IterableElementError_noElement());
-      t1 = this.get$length(receiver);
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      return this.$index(receiver, t1 - 1);
-    },
-    get$single: function(receiver) {
-      var t1;
-      if (H.boolConversionCheck(J.$eq$(this.get$length(receiver), 0)))
-        throw H.wrapException(H.IterableElementError_noElement());
-      t1 = this.get$length(receiver);
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (t1 > 1)
-        throw H.wrapException(H.IterableElementError_tooMany());
-      return this.$index(receiver, 0);
-    },
-    contains$1: function(receiver, element) {
-      var i,
-        $length = this.get$length(receiver);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        if (H.boolConversionCheck(J.$eq$(this.$index(receiver, i), element)))
-          return true;
-        if ($length !== this.get$length(receiver))
-          throw H.wrapException(P.ConcurrentModificationError$(receiver));
-      }
-      return false;
-    },
-    any$1: function(receiver, test) {
-      var $length, i, _this = this;
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0)]});
-      $length = _this.get$length(receiver);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        if (H.boolConversionCheck(test.call$1(_this.$index(receiver, i))))
-          return true;
-        if ($length !== _this.get$length(receiver))
-          throw H.wrapException(P.ConcurrentModificationError$(receiver));
-      }
-      return false;
-    },
-    firstWhere$1: function(receiver, test) {
-      var $length, i, element, _this = this;
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0)]});
-      $length = _this.get$length(receiver);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        element = _this.$index(receiver, i);
-        if (H.boolConversionCheck(test.call$1(element)))
-          return element;
-        if ($length !== _this.get$length(receiver))
-          throw H.wrapException(P.ConcurrentModificationError$(receiver));
-      }
-      throw H.wrapException(H.IterableElementError_noElement());
-    },
-    where$1: function(receiver, test) {
-      var t1 = H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0);
-      return H.WhereIterable$(receiver, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [t1]}), t1);
-    },
-    map$1$1: function(receiver, f, $T) {
-      var t1 = H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0);
-      return H.MappedListIterable$(receiver, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
-    skip$1: function(receiver, count) {
-      return H.SubListIterable$(receiver, H.intTypeCheck(count), null, H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0));
-    },
-    take$1: function(receiver, count) {
-      return H.SubListIterable$(receiver, 0, H.intTypeCheck(count), H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0));
-    },
-    toList$1$growable: function(receiver, growable) {
-      var result, t2, i, _this = this,
-        t1 = H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0);
-      if (H.boolConversionCheck(H.boolTypeCheck(growable))) {
-        result = H.setRuntimeTypeInfo([], [t1]);
-        C.JSArray_methods.set$length(result, _this.get$length(receiver));
-      } else {
-        t2 = _this.get$length(receiver);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        t2 = new Array(t2);
-        t2.fixed$length = Array;
-        result = H.setRuntimeTypeInfo(t2, [t1]);
-      }
-      i = 0;
-      while (true) {
-        t1 = _this.get$length(receiver);
-        if (typeof t1 !== "number")
-          return H.iae(t1);
-        if (!(i < t1))
-          break;
-        C.JSArray_methods.$indexSet(result, i, _this.$index(receiver, i));
-        ++i;
-      }
-      return result;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    },
-    add$1: function(receiver, element) {
-      var t1, _this = this;
-      H.assertSubtypeOfRuntimeType(element, H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0));
-      t1 = _this.get$length(receiver);
-      if (typeof t1 !== "number")
-        return t1.$add();
-      _this.set$length(receiver, t1 + 1);
-      _this.$indexSet(receiver, t1, element);
-    },
-    addAll$1: function(receiver, iterable) {
-      var i, t1, element, i0, _this = this;
-      H.assertSubtype(iterable, "$isIterable", [H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0)], "$asIterable");
-      i = _this.get$length(receiver);
-      for (t1 = J.get$iterator$ax(iterable); H.boolConversionCheck(t1.moveNext$0()); i = i0) {
-        element = t1.get$current();
-        if (typeof i !== "number")
-          return i.$add();
-        i0 = i + 1;
-        _this.set$length(receiver, i0);
-        _this.$indexSet(receiver, i, element);
-      }
-    },
-    removeWhere$1: function(receiver, test) {
-      this._collection$_filter$2(receiver, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0)]}), false);
-    },
-    _collection$_filter$2: function(receiver, test, retainMatching) {
-      var retained, $length, i, element, _this = this,
-        t1 = H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0);
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [t1]});
-      H.boolTypeCheck(retainMatching);
-      retained = H.setRuntimeTypeInfo([], [t1]);
-      $length = _this.get$length(receiver);
-      if (typeof $length !== "number")
-        return H.iae($length);
-      i = 0;
-      for (; i < $length; ++i) {
-        element = _this.$index(receiver, i);
-        if (H.boolConversionCheck(J.$eq$(test.call$1(element), retainMatching)))
-          C.JSArray_methods.add$1(retained, element);
-        if ($length !== _this.get$length(receiver))
-          throw H.wrapException(P.ConcurrentModificationError$(receiver));
-      }
-      if (retained.length !== _this.get$length(receiver)) {
-        _this.setRange$3(receiver, 0, retained.length, retained);
-        _this.set$length(receiver, retained.length);
-      }
-    },
-    removeLast$0: function(receiver) {
-      var t1, result, _this = this;
-      if (H.boolConversionCheck(J.$eq$(_this.get$length(receiver), 0)))
-        throw H.wrapException(H.IterableElementError_noElement());
-      t1 = _this.get$length(receiver);
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      result = _this.$index(receiver, t1 - 1);
-      t1 = _this.get$length(receiver);
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      _this.set$length(receiver, t1 - 1);
-      return result;
-    },
-    $add: function(receiver, other) {
-      var result, t2, _this = this,
-        t1 = [H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0)];
-      H.assertSubtype(other, "$isList", t1, "$asList");
-      result = H.setRuntimeTypeInfo([], t1);
-      t1 = _this.get$length(receiver);
-      t2 = J.get$length$asx(other);
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      C.JSArray_methods.set$length(result, t1 + t2);
-      C.JSArray_methods.setRange$3(result, 0, _this.get$length(receiver), receiver);
-      C.JSArray_methods.setRange$3(result, _this.get$length(receiver), result.length, other);
-      return result;
+      return this.$index(receiver, index);
     },
     getRange$2: function(receiver, start, end) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
       P.RangeError_checkValidRange(start, end, this.get$length(receiver));
       return H.SubListIterable$(receiver, start, end, H.getRuntimeTypeArgumentIntercepted(this, receiver, "ListMixin", 0));
     },
-    setRange$3: function(receiver, start, end, iterable) {
-      var t1, $length, otherList, t2, i, _this = this;
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      t1 = H.getRuntimeTypeArgumentIntercepted(_this, receiver, "ListMixin", 0);
-      H.assertSubtype(iterable, "$isIterable", [t1], "$asIterable");
-      P.RangeError_checkValidRange(start, end, _this.get$length(receiver));
-      if (typeof end !== "number")
-        return end.$sub();
-      if (typeof start !== "number")
-        return H.iae(start);
-      $length = end - start;
-      if ($length === 0)
-        return;
-      P.RangeError_checkNotNegative(0, "skipCount");
-      otherList = H.checkSubtype(iterable, "$isList", [t1], "$asList") ? iterable : J.toList$1$growable$ax(J.skip$1$ax(iterable, 0), false);
-      t1 = J.getInterceptor$asx(otherList);
-      t2 = t1.get$length(otherList);
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      if ($length > t2)
-        throw H.wrapException(H.IterableElementError_tooFew());
-      if (0 < start)
-        for (i = $length - 1; i >= 0; --i)
-          _this.$indexSet(receiver, start + i, t1.$index(otherList, i));
-      else
-        for (i = 0; i < $length; ++i)
-          _this.$indexSet(receiver, start + i, t1.$index(otherList, i));
-    },
     toString$0: function(receiver) {
       return P.IterableBase_iterableToFullString(receiver, "[", "]");
-    },
-    $isEfficientLengthIterable: 1,
-    $isIterable: 1,
-    $isList: 1
+    }
   };
   P.MapBase.prototype = {};
   P.MapBase_mapToString_closure.prototype = {
     call$2: function(k, v) {
-      var t1 = this._box_0;
-      if (!H.boolConversionCheck(t1.first))
-        this.result.write$1(", ");
+      var t2,
+        t1 = this._box_0;
+      if (!t1.first)
+        this.result._contents += ", ";
       t1.first = false;
       t1 = this.result;
-      t1.write$1(k);
-      t1.write$1(": ");
-      t1.write$1(v);
+      t2 = t1._contents += H.S(k);
+      t1._contents = t2 + ": ";
+      t1._contents += H.S(v);
     },
-    $signature: 17
+    $signature: 18
   };
   P.MapMixin.prototype = {
     forEach$1: function(_, action) {
       var t1, key, _this = this;
       H.functionTypeCheck(action, {func: 1, ret: -1, args: [H.getRuntimeTypeArgument(_this, "MapMixin", 0), H.getRuntimeTypeArgument(_this, "MapMixin", 1)]});
-      for (t1 = J.get$iterator$ax(_this.get$keys()); H.boolConversionCheck(t1.moveNext$0());) {
+      for (t1 = J.get$iterator$ax(_this.get$keys()); t1.moveNext$0();) {
         key = t1.get$current();
         action.call$2(key, _this.$index(0, key));
       }
     },
-    containsKey$1: function(key) {
-      return J.contains$1$ax(this.get$keys(), key);
-    },
     get$length: function(_) {
       return J.get$length$asx(this.get$keys());
-    },
-    get$isEmpty: function(_) {
-      return J.get$isEmpty$asx(this.get$keys());
-    },
-    get$values: function(_) {
-      return P._MapBaseValueIterable$(this, H.getRuntimeTypeArgument(this, "MapMixin", 0), H.getRuntimeTypeArgument(this, "MapMixin", 1));
     },
     toString$0: function(_) {
       return P.MapBase_mapToString(this);
     },
     $isMap: 1
   };
-  P.MapMixin_entries_closure.prototype = {};
-  P.UnmodifiableMapBase.prototype = {$is_UnmodifiableMapMixin: 1};
-  P._MapBaseValueIterable.prototype = {
-    get$length: function(_) {
-      return J.get$length$asx(this._collection$_map);
-    },
-    get$isEmpty: function(_) {
-      return J.get$isEmpty$asx(this._collection$_map);
-    },
-    get$single: function(_) {
-      var t1 = this._collection$_map;
-      return J.$index$asx(t1, J.get$single$ax(t1.get$keys()));
-    },
-    get$last: function(_) {
-      var t1 = this._collection$_map;
-      return J.$index$asx(t1, J.get$last$ax(t1.get$keys()));
-    },
-    get$iterator: function(_) {
-      return P._MapBaseValueIterator$(this._collection$_map, H.getTypeArgumentByIndex(this, 0), H.getTypeArgumentByIndex(this, 1));
-    },
-    $asEfficientLengthIterable: function($K, $V) {
-      return [$V];
-    },
-    $asIterable: function($K, $V) {
-      return [$V];
-    }
-  };
-  P._MapBaseValueIterator.prototype = {
-    moveNext$0: function() {
-      var _this = this,
-        t1 = _this._keys;
-      if (H.boolConversionCheck(t1.moveNext$0())) {
-        _this.set$_collection$_current(J.$index$asx(_this._collection$_map, t1.get$current()));
-        return true;
-      }
-      _this.set$_collection$_current(null);
-      return false;
-    },
-    get$current: function() {
-      return this._collection$_current;
-    },
-    set$_collection$_current: function(_current) {
-      this._collection$_current = H.assertSubtypeOfRuntimeType(_current, H.getTypeArgumentByIndex(this, 1));
-    },
-    $isIterator: 1,
-    $asIterator: function($K, $V) {
-      return [$V];
-    }
-  };
-  P._UnmodifiableMapMixin.prototype = {$isMap: 1};
-  P.MapView.prototype = {$isMap: 1};
-  P.UnmodifiableMapView.prototype = {$is_UnmodifiableMapMixin: 1};
-  P.Queue.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1};
-  P._DoubleLink.prototype = {};
-  P.DoubleLinkedQueueEntry.prototype = {
-    $as_DoubleLink: function($E) {
-      return [[P.DoubleLinkedQueueEntry, $E]];
-    }
-  };
-  P._DoubleLinkedQueueEntry.prototype = {};
-  P._DoubleLinkedQueueElement.prototype = {};
-  P._DoubleLinkedQueueSentinel.prototype = {};
-  P.DoubleLinkedQueue.prototype = {$isEfficientLengthIterable: 1, $isQueue: 1};
-  P._DoubleLinkedQueueIterator.prototype = {$isIterator: 1};
-  P.ListQueue.prototype = {$isQueue: 1};
-  P._ListQueueIterator.prototype = {$isIterator: 1};
-  P.SetMixin.prototype = {
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
-    addAll$1: function(_, elements) {
-      var t1;
-      for (t1 = J.get$iterator$ax(H.assertSubtype(elements, "$isIterable", [H.getRuntimeTypeArgument(this, "SetMixin", 0)], "$asIterable")); H.boolConversionCheck(t1.moveNext$0());)
-        this.add$1(0, t1.get$current());
-    },
-    toList$1$growable: function(_, growable) {
-      var result, t2, i, i0, _this = this,
-        t1 = H.getRuntimeTypeArgument(_this, "SetMixin", 0);
-      if (H.boolConversionCheck(H.boolTypeCheck(growable))) {
-        result = H.setRuntimeTypeInfo([], [t1]);
-        C.JSArray_methods.set$length(result, _this.get$length(_this));
-      } else {
-        t2 = _this.get$length(_this);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        t2 = new Array(t2);
-        t2.fixed$length = Array;
-        result = H.setRuntimeTypeInfo(t2, [t1]);
-      }
-      for (t1 = _this.get$iterator(_this), i = 0; H.boolConversionCheck(t1.moveNext$0()); i = i0) {
-        i0 = i + 1;
-        C.JSArray_methods.$indexSet(result, i, t1.get$current());
-      }
-      return result;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    },
-    map$1$1: function(_, f, $T) {
-      var t1 = H.getRuntimeTypeArgument(this, "SetMixin", 0);
-      return H.EfficientLengthMappedIterable$(this, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
-    get$single: function(_) {
-      var it, _this = this,
-        t1 = _this.get$length(_this);
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (t1 > 1)
-        throw H.wrapException(H.IterableElementError_tooMany());
-      it = _this.get$iterator(_this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
-        throw H.wrapException(H.IterableElementError_noElement());
-      return it.get$current();
-    },
-    toString$0: function(_) {
-      return P.IterableBase_iterableToFullString(this, "{", "}");
-    },
-    where$1: function(_, f) {
-      var t1 = H.getRuntimeTypeArgument(this, "SetMixin", 0);
-      return H.WhereIterable$(this, H.functionTypeCheck(f, {func: 1, ret: P.bool, args: [t1]}), t1);
-    },
-    forEach$1: function(_, f) {
-      var t1;
-      H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getRuntimeTypeArgument(this, "SetMixin", 0)]});
-      for (t1 = this.get$iterator(this); H.boolConversionCheck(t1.moveNext$0());)
-        f.call$1(t1.get$current());
-    },
-    join$1: function(_, separator) {
-      var iterator, buffer;
-      H.stringTypeCheck(separator);
-      iterator = this.get$iterator(this);
-      if (!H.boolConversionCheck(iterator.moveNext$0()))
-        return "";
-      buffer = P.StringBuffer$("");
-      if (separator == null || separator === "") {
-        do
-          buffer.write$1(iterator.get$current());
-        while (H.boolConversionCheck(iterator.moveNext$0()));
-      } else {
-        buffer.write$1(iterator.get$current());
-        for (; H.boolConversionCheck(iterator.moveNext$0());) {
-          buffer.write$1(separator);
-          buffer.write$1(iterator.get$current());
-        }
-      }
-      return buffer.toString$0(0);
-    },
-    take$1: function(_, n) {
-      return H.TakeIterable_TakeIterable(this, H.intTypeCheck(n), H.getRuntimeTypeArgument(this, "SetMixin", 0));
-    },
-    skip$1: function(_, n) {
-      return H.SkipIterable_SkipIterable(this, H.intTypeCheck(n), H.getRuntimeTypeArgument(this, "SetMixin", 0));
-    },
-    get$last: function(_) {
-      var result,
-        it = this.get$iterator(this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
-        throw H.wrapException(H.IterableElementError_noElement());
-      do
-        result = it.get$current();
-      while (H.boolConversionCheck(it.moveNext$0()));
-      return result;
-    },
-    elementAt$1: function(_, index) {
-      var t1, elementIndex, element, _s5_ = "index";
-      H.intTypeCheck(index);
-      P.ArgumentError_checkNotNull(index, _s5_);
-      P.RangeError_checkNotNegative(index, _s5_);
-      for (t1 = this.get$iterator(this), elementIndex = 0; H.boolConversionCheck(t1.moveNext$0());) {
-        element = t1.get$current();
-        if (index === elementIndex)
-          return element;
-        ++elementIndex;
-      }
-      throw H.wrapException(P.IndexError$(index, this, _s5_, null, elementIndex));
-    },
-    $isEfficientLengthIterable: 1,
-    $isIterable: 1,
-    $isSet: 1
-  };
-  P.SetBase.prototype = {$isEfficientLengthIterable: 1, $isSetMixin: 1, $isIterable: 1, $isSet: 1};
   P._SetBase.prototype = {
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
     addAll$1: function(_, elements) {
       var t1;
-      for (t1 = J.get$iterator$ax(H.assertSubtype(elements, "$isIterable", this.$ti, "$asIterable")); H.boolConversionCheck(t1.moveNext$0());)
+      for (t1 = J.get$iterator$ax(H.assertSubtype(elements, "$isIterable", this.$ti, "$asIterable")); t1.moveNext$0();)
         this.add$1(0, t1.get$current());
-    },
-    toList$1$growable: function(_, growable) {
-      var result, t2, i, i0, _this = this,
-        t1 = _this.$ti;
-      if (H.boolConversionCheck(H.boolTypeCheck(growable))) {
-        result = H.setRuntimeTypeInfo([], t1);
-        C.JSArray_methods.set$length(result, _this.get$length(_this));
-      } else {
-        t2 = _this.get$length(_this);
-        if (typeof t2 !== "number")
-          return H.iae(t2);
-        t2 = new Array(t2);
-        t2.fixed$length = Array;
-        result = H.setRuntimeTypeInfo(t2, t1);
-      }
-      for (t1 = _this.get$iterator(_this), i = 0; H.boolConversionCheck(t1.moveNext$0()); i = i0) {
-        i0 = i + 1;
-        C.JSArray_methods.$indexSet(result, i, t1.get$current());
-      }
-      return result;
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    },
-    map$1$1: function(_, f, $T) {
-      var t1 = H.getTypeArgumentByIndex(this, 0);
-      return H.EfficientLengthMappedIterable$(this, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
-    get$single: function(_) {
-      var it, _this = this,
-        t1 = _this.get$length(_this);
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (t1 > 1)
-        throw H.wrapException(H.IterableElementError_tooMany());
-      it = _this.get$iterator(_this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
-        throw H.wrapException(H.IterableElementError_noElement());
-      return it.get$current();
     },
     toString$0: function(_) {
       return P.IterableBase_iterableToFullString(this, "{", "}");
-    },
-    where$1: function(_, f) {
-      var t1 = H.getTypeArgumentByIndex(this, 0);
-      return H.WhereIterable$(this, H.functionTypeCheck(f, {func: 1, ret: P.bool, args: [t1]}), t1);
-    },
-    forEach$1: function(_, f) {
-      var t1;
-      H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getTypeArgumentByIndex(this, 0)]});
-      for (t1 = this.get$iterator(this); H.boolConversionCheck(t1.moveNext$0());)
-        f.call$1(t1.get$current());
-    },
-    join$1: function(_, separator) {
-      var iterator, buffer;
-      H.stringTypeCheck(separator);
-      iterator = this.get$iterator(this);
-      if (!H.boolConversionCheck(iterator.moveNext$0()))
-        return "";
-      buffer = P.StringBuffer$("");
-      if (separator == null || separator === "") {
-        do
-          buffer.write$1(iterator.get$current());
-        while (H.boolConversionCheck(iterator.moveNext$0()));
-      } else {
-        buffer.write$1(iterator.get$current());
-        for (; H.boolConversionCheck(iterator.moveNext$0());) {
-          buffer.write$1(separator);
-          buffer.write$1(iterator.get$current());
-        }
-      }
-      return buffer.toString$0(0);
-    },
-    take$1: function(_, n) {
-      return H.TakeIterable_TakeIterable(this, H.intTypeCheck(n), H.getTypeArgumentByIndex(this, 0));
-    },
-    skip$1: function(_, n) {
-      return H.SkipIterable_SkipIterable(this, H.intTypeCheck(n), H.getTypeArgumentByIndex(this, 0));
-    },
-    get$last: function(_) {
-      var result,
-        it = this.get$iterator(this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
-        throw H.wrapException(H.IterableElementError_noElement());
-      do
-        result = it.get$current();
-      while (H.boolConversionCheck(it.moveNext$0()));
-      return result;
-    },
-    elementAt$1: function(_, index) {
-      var t1, elementIndex, element, _s5_ = "index";
-      H.intTypeCheck(index);
-      P.ArgumentError_checkNotNull(index, _s5_);
-      P.RangeError_checkNotNegative(index, _s5_);
-      for (t1 = this.get$iterator(this), elementIndex = 0; H.boolConversionCheck(t1.moveNext$0());) {
-        element = t1.get$current();
-        if (index === elementIndex)
-          return element;
-        ++elementIndex;
-      }
-      throw H.wrapException(P.IndexError$(index, this, _s5_, null, elementIndex));
     },
     $isEfficientLengthIterable: 1,
     $isIterable: 1,
     $isSet: 1
   };
-  P._UnmodifiableSet.prototype = {};
-  P._SplayTreeNode.prototype = {};
-  P._SplayTreeMapNode.prototype = {
-    $as_SplayTreeNode: function($K, $V) {
-      return [$K];
-    }
-  };
-  P._SplayTree.prototype = {};
-  P._TypeTest.prototype = {};
-  P.SplayTreeMap.prototype = {$isMapMixin: 1,
-    $as_SplayTree: function($K, $V) {
-      return [$K, [P._SplayTreeMapNode, $K, $V]];
-    },
-    $isMap: 1
-  };
-  P._SplayTreeIterator.prototype = {$isIterator: 1,
-    $asIterator: function($K, $T) {
-      return [$T];
-    }
-  };
-  P._SplayTreeKeyIterable.prototype = {};
-  P._SplayTreeValueIterable.prototype = {
-    $asEfficientLengthIterable: function($K, $V) {
-      return [$V];
-    },
-    $asIterable: function($K, $V) {
-      return [$V];
-    }
-  };
-  P._SplayTreeKeyIterator.prototype = {
-    $as_SplayTreeIterator: function($K) {
-      return [$K, $K];
-    },
-    $asIterator: null
-  };
-  P._SplayTreeValueIterator.prototype = {};
-  P._SplayTreeNodeIterator.prototype = {
-    $as_SplayTreeIterator: function($K) {
-      return [$K, [P._SplayTreeNode, $K]];
-    },
-    $asIterator: function($K) {
-      return [[P._SplayTreeNode, $K]];
-    }
-  };
-  P.SplayTreeSet.prototype = {$isEfficientLengthIterable: 1, $isIterableMixin: 1, $isSetMixin: 1,
-    $as_SplayTree: function($E) {
-      return [$E, [P._SplayTreeNode, $E]];
-    },
-    $isIterable: 1,
-    $isSet: 1
-  };
-  P._ListBase_Object_ListMixin.prototype = {$isEfficientLengthIterable: 1, $isListMixin: 1, $isIterable: 1, $isList: 1};
-  P._SetBase_Object_SetMixin.prototype = {$isEfficientLengthIterable: 1, $isSetMixin: 1, $isIterable: 1, $isSet: 1};
-  P._SplayTreeMap__SplayTree_MapMixin.prototype = {$isMapMixin: 1,
-    $as_SplayTree: function($K, $V) {
-      return [$K, [P._SplayTreeMapNode, $K, $V]];
-    },
-    $isMap: 1
-  };
-  P._SplayTreeSet__SplayTree_IterableMixin.prototype = {$isIterableMixin: 1,
-    $as_SplayTree: function($E) {
-      return [$E, [P._SplayTreeNode, $E]];
-    },
-    $isIterable: 1
-  };
-  P._SplayTreeSet__SplayTree_IterableMixin_SetMixin.prototype = {$isEfficientLengthIterable: 1, $isIterableMixin: 1, $isSetMixin: 1,
-    $as_SplayTree: function($E) {
-      return [$E, [P._SplayTreeNode, $E]];
-    },
-    $isIterable: 1,
-    $isSet: 1
-  };
-  P._UnmodifiableMapView_MapView__UnmodifiableMapMixin.prototype = {$is_UnmodifiableMapMixin: 1};
-  P._JsonMap.prototype = {
-    $asMapBase: function() {
-      return [P.String, null];
-    },
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $asMap: function() {
-      return [P.String, null];
-    }
-  };
-  P._JsonMapKeyIterable.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $asListIterable: function() {
-      return [P.String];
-    },
-    $asIterable: function() {
-      return [P.String];
-    }
-  };
-  P._JsonDecoderSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $as_StringSinkConversionSink: function() {
-      return [P.StringSink];
-    },
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P.AsciiCodec.prototype = {};
-  P._UnicodeSubsetEncoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [P.String, [P.List, P.int]];
-    }
-  };
-  P.AsciiEncoder.prototype = {};
-  P._UnicodeSubsetEncoderSink.prototype = {};
-  P._UnicodeSubsetDecoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], P.String];
-    }
-  };
-  P.AsciiDecoder.prototype = {};
-  P._ErrorHandlingAsciiDecoderSink.prototype = {};
-  P._SimpleAsciiDecoderSink.prototype = {};
-  P.Base64Codec.prototype = {
-    $asCodec: function() {
-      return [[P.List, P.int], P.String];
-    }
-  };
-  P.Base64Encoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], P.String];
-    }
-  };
-  P._Base64Encoder.prototype = {};
-  P._BufferCachingBase64Encoder.prototype = {};
-  P._Base64EncoderSink.prototype = {};
-  P._AsciiBase64EncoderSink.prototype = {};
-  P._Utf8Base64EncoderSink.prototype = {};
-  P.Base64Decoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [P.String, [P.List, P.int]];
-    }
-  };
-  P._Base64Decoder.prototype = {};
-  P._Base64DecoderSink.prototype = {};
-  P.ByteConversionSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asSink: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P.ByteConversionSinkBase.prototype = {};
-  P._ByteAdapterSink.prototype = {};
-  P._ByteCallbackSink.prototype = {};
-  P.ChunkedConversionSink.prototype = {$isSink: 1};
-  P._SimpleCallbackSink.prototype = {};
-  P._ConverterStreamEventSink.prototype = {$isEventSink: 1,
-    $asEventSink: function($S, $T) {
-      return [$S];
-    },
-    $isSink: 1,
-    $asSink: function($S, $T) {
-      return [$S];
-    }
-  };
-  P.Codec.prototype = {};
-  P._FusedCodec.prototype = {
-    $asCodec: function($S, $M, $T) {
-      return [$S, $T];
-    }
-  };
-  P._InvertedCodec.prototype = {};
-  P.Converter.prototype = {};
-  P._FusedConverter.prototype = {
-    $asStreamTransformer: function($S, $M, $T) {
-      return [$S, $T];
-    },
-    $asStreamTransformerBase: function($S, $M, $T) {
-      return [$S, $T];
-    },
-    $asConverter: function($S, $M, $T) {
-      return [$S, $T];
-    }
-  };
-  P.Encoding.prototype = {
-    $asCodec: function() {
-      return [P.String, [P.List, P.int]];
-    }
-  };
-  P.HtmlEscapeMode.prototype = {};
-  P.HtmlEscape.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, P.String];
-    },
-    $asConverter: function() {
-      return [P.String, P.String];
-    }
-  };
-  P._HtmlEscapeSink.prototype = {};
-  P.JsonUnsupportedObjectError.prototype = {};
-  P.JsonCyclicError.prototype = {};
-  P.JsonCodec.prototype = {
-    $asCodec: function() {
-      return [P.Object, P.String];
-    }
-  };
-  P.JsonEncoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.Object, P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.Object, P.String];
-    },
-    $asConverter: function() {
-      return [P.Object, P.String];
-    }
-  };
-  P.JsonUtf8Encoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.Object, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.Object, [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [P.Object, [P.List, P.int]];
-    }
-  };
-  P._JsonEncoderSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [P.Object];
-    },
-    $asSink: function() {
-      return [P.Object];
-    }
-  };
-  P._JsonUtf8EncoderSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [P.Object];
-    },
-    $asSink: function() {
-      return [P.Object];
-    }
-  };
-  P.JsonDecoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, P.Object];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, P.Object];
-    },
-    $asConverter: function() {
-      return [P.String, P.Object];
-    }
-  };
-  P._JsonStringifier.prototype = {};
-  P._JsonPrettyPrintMixin.prototype = {$is_JsonStringifier: 1};
-  P._JsonStringStringifier.prototype = {};
-  P._JsonStringStringifierPretty.prototype = {$is_JsonPrettyPrintMixin: 1};
-  P._JsonUtf8Stringifier.prototype = {};
-  P._JsonUtf8StringifierPretty.prototype = {$is_JsonPrettyPrintMixin: 1};
-  P.Latin1Codec.prototype = {};
-  P.Latin1Encoder.prototype = {};
-  P.Latin1Decoder.prototype = {};
-  P._Latin1DecoderSink.prototype = {};
-  P._Latin1AllowInvalidDecoderSink.prototype = {};
-  P.LineSplitter.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, P.String];
-    }
-  };
-  P._LineSplitterSink.prototype = {};
-  P._LineSplitterEventSink.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [P.String];
-    }
-  };
-  P.StringConversionSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P.ClosableStringSink.prototype = {};
-  P._ClosableStringSink.prototype = {$isClosableStringSink: 1, $isStringSink: 1};
-  P._StringConversionSinkAsStringSinkAdapter.prototype = {$isClosableStringSink: 1, $isStringSink: 1};
-  P.StringConversionSinkBase.prototype = {};
-  P.StringConversionSinkMixin.prototype = {$isChunkedConversionSink: 1,
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $isStringConversionSink: 1,
-    $isSink: 1,
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P._StringSinkConversionSink.prototype = {};
-  P._StringCallbackSink.prototype = {
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $as_StringSinkConversionSink: function() {
-      return [P.StringBuffer];
-    },
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P._StringAdapterSink.prototype = {};
-  P._Utf8StringSinkAdapter.prototype = {};
-  P._Utf8ConversionSink.prototype = {};
-  P.Utf8Codec.prototype = {};
-  P.Utf8Encoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [P.String, [P.List, P.int]];
-    }
-  };
-  P._Utf8Encoder.prototype = {};
-  P._Utf8EncoderSink.prototype = {$isChunkedConversionSink: 1,
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $isStringConversionSink: 1,
-    $isStringConversionSinkMixin: 1,
-    $isSink: 1,
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P.Utf8Decoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], P.String];
-    }
-  };
-  P._Utf8Decoder.prototype = {};
-  P.__JsonStringStringifierPretty__JsonStringStringifier__JsonPrettyPrintMixin.prototype = {$is_JsonPrettyPrintMixin: 1};
-  P.__JsonUtf8StringifierPretty__JsonUtf8Stringifier__JsonPrettyPrintMixin.prototype = {$is_JsonPrettyPrintMixin: 1};
-  P.__Utf8EncoderSink__Utf8Encoder_StringConversionSinkMixin.prototype = {$isChunkedConversionSink: 1,
-    $asChunkedConversionSink: function() {
-      return [P.String];
-    },
-    $isStringConversionSink: 1,
-    $isStringConversionSinkMixin: 1,
-    $isSink: 1,
-    $asSink: function() {
-      return [P.String];
-    }
-  };
-  P._CompileTimeError.prototype = {};
-  P._DuplicatedFieldInitializerError.prototype = {};
-  P._BigIntImpl.prototype = {$isBigInt: 1, $isComparable: 1,
-    $asComparable: function() {
-      return [P.BigInt];
-    }
-  };
-  P._BigIntReduction.prototype = {};
-  P._BigIntClassic.prototype = {$is_BigIntReduction: 1};
-  P.Deprecated.prototype = {};
-  P._Override.prototype = {};
-  P.Provisional.prototype = {};
-  P._Proxy0.prototype = {};
-  P.pragma.prototype = {};
-  P.BigInt.prototype = {$isComparable: 1,
-    $asComparable: function() {
-      return [P.BigInt];
-    }
-  };
+  P._ListBase_Object_ListMixin.prototype = {};
   P.bool.prototype = {};
-  P.Comparable.prototype = {};
-  P.DateTime.prototype = {$isComparable: 1,
-    $asComparable: function() {
-      return [P.DateTime];
-    }
-  };
   P.double.prototype = {};
-  P.Duration.prototype = {
-    $add: function(_, other) {
-      var t1 = this._duration,
-        t2 = H.interceptedTypeCheck(other, "$isDuration")._duration;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      return P.Duration$_microseconds(t1 + t2);
-    },
-    $lt: function(_, other) {
-      var t1 = this._duration,
-        t2 = H.interceptedTypeCheck(other, "$isDuration")._duration;
-      if (typeof t1 !== "number")
-        return t1.$lt();
-      if (typeof t2 !== "number")
-        return H.iae(t2);
-      return t1 < t2;
-    },
-    get$inHours: function() {
-      var t1 = this._duration;
-      if (typeof t1 !== "number")
-        return t1.$tdiv();
-      return C.JSNumber_methods._tdivFast$1(t1, 3600000000);
-    },
-    get$inMinutes: function() {
-      var t1 = this._duration;
-      if (typeof t1 !== "number")
-        return t1.$tdiv();
-      return C.JSNumber_methods._tdivFast$1(t1, 60000000);
-    },
-    get$inSeconds: function() {
-      var t1 = this._duration;
-      if (typeof t1 !== "number")
-        return t1.$tdiv();
-      return C.JSNumber_methods._tdivFast$1(t1, 1000000);
-    },
-    get$inMilliseconds: function() {
-      var t1 = this._duration;
-      if (typeof t1 !== "number")
-        return t1.$tdiv();
-      return C.JSNumber_methods._tdivFast$1(t1, 1000);
-    },
-    get$inMicroseconds: function() {
-      return this._duration;
-    },
-    $eq: function(_, other) {
-      if (other == null)
-        return false;
-      return other instanceof P.Duration && H.boolConversionCheck(J.$eq$(this._duration, other.get$inMicroseconds()));
-    },
-    get$hashCode: function(_) {
-      return J.get$hashCode$(this._duration);
-    },
-    toString$0: function(_) {
-      var twoDigitMinutes, twoDigitSeconds, sixDigitUs, _this = this,
-        t1 = new P.Duration_toString_twoDigits(),
-        t2 = _this.get$inMicroseconds();
-      if (typeof t2 !== "number")
-        return t2.$lt();
-      if (t2 < 0)
-        return "-" + H.S(_this.$negate(0));
-      twoDigitMinutes = t1.call$1(J.remainder$1$n(_this.get$inMinutes(), 60));
-      twoDigitSeconds = t1.call$1(J.remainder$1$n(_this.get$inSeconds(), 60));
-      sixDigitUs = new P.Duration_toString_sixDigits().call$1(J.remainder$1$n(_this.get$inMicroseconds(), 1000000));
-      return H.S(_this.get$inHours()) + ":" + H.S(twoDigitMinutes) + ":" + H.S(twoDigitSeconds) + "." + H.S(sixDigitUs);
-    },
-    $negate: function(_) {
-      var t1 = this._duration;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
-      return P.Duration$_microseconds(0 - t1);
-    },
-    $isComparable: 1,
-    $asComparable: function() {
-      return [P.Duration];
-    }
-  };
-  P.Duration_toString_sixDigits.prototype = {
-    call$1: function(n) {
-      H.intTypeCheck(n);
-      if (typeof n !== "number")
-        return n.$ge();
-      if (n >= 100000)
-        return "" + n;
-      if (n >= 10000)
-        return "0" + n;
-      if (n >= 1000)
-        return "00" + n;
-      if (n >= 100)
-        return "000" + n;
-      if (n >= 10)
-        return "0000" + n;
-      return "00000" + n;
-    },
-    $signature: 10
-  };
-  P.Duration_toString_twoDigits.prototype = {
-    call$1: function(n) {
-      H.intTypeCheck(n);
-      if (typeof n !== "number")
-        return n.$ge();
-      if (n >= 10)
-        return "" + n;
-      return "0" + n;
-    },
-    $signature: 10
-  };
   P.Error.prototype = {};
   P.AssertionError.prototype = {
     toString$0: function(_) {
       return "Assertion failed";
     }
   };
-  P.TypeError.prototype = {};
-  P.CastError.prototype = {};
   P.NullThrownError.prototype = {
     toString$0: function(_) {
       return "Throw of null.";
@@ -12535,7 +4653,7 @@
   };
   P.ArgumentError.prototype = {
     get$_errorName: function() {
-      return "Invalid argument" + (!H.boolConversionCheck(this._hasValue) ? "(s)" : "");
+      return "Invalid argument" + (!this._hasValue ? "(s)" : "");
     },
     get$_errorExplanation: function() {
       return "";
@@ -12543,15 +4661,15 @@
     toString$0: function(_) {
       var message, prefix, explanation, errorValue, _this = this,
         t1 = _this.name,
-        nameString = t1 != null ? " (" + H.S(t1) + ")" : "";
+        nameString = t1 != null ? " (" + t1 + ")" : "";
       t1 = _this.message;
-      message = t1 == null ? "" : ": " + H.S(t1);
-      prefix = H.S(_this.get$_errorName()) + nameString + message;
-      if (!H.boolConversionCheck(_this._hasValue))
+      message = t1 == null ? "" : ": " + t1;
+      prefix = _this.get$_errorName() + nameString + message;
+      if (!_this._hasValue)
         return prefix;
       explanation = _this.get$_errorExplanation();
       errorValue = P.Error_safeToString(_this.invalidValue);
-      return prefix + H.S(explanation) + ": " + H.S(errorValue);
+      return prefix + explanation + ": " + errorValue;
     }
   };
   P.RangeError.prototype = {
@@ -12568,16 +4686,10 @@
         t2 = this.end;
         if (t2 == null)
           explanation = ": Not greater than or equal to " + H.S(t1);
-        else {
-          if (typeof t2 !== "number")
-            return t2.$gt();
-          if (typeof t1 !== "number")
-            return H.iae(t1);
-          if (t2 > t1)
-            explanation = ": Not in range " + H.S(t1) + ".." + H.S(t2) + ", inclusive";
-          else
-            explanation = t2 < t1 ? ": Valid value range is empty" : ": Only valid value is " + H.S(t1);
-        }
+        else if (t2 > t1)
+          explanation = ": Not in range " + H.S(t1) + ".." + H.S(t2) + ", inclusive";
+        else
+          explanation = t2 < t1 ? ": Valid value range is empty" : ": Only valid value is " + H.S(t1);
       }
       return explanation;
     }
@@ -12594,33 +4706,28 @@
       if (invalidValue < 0)
         return ": index must not be negative";
       t1 = this.length;
-      if (H.boolConversionCheck(J.$eq$(t1, 0)))
+      if (t1 === 0)
         return ": no indices are valid";
       return ": index should be less than " + H.S(t1);
     },
-    $isRangeError: 1,
     get$length: function(receiver) {
       return this.length;
     }
   };
-  P.FallThroughError.prototype = {};
-  P.AbstractClassInstantiationError.prototype = {};
-  P.NoSuchMethodError.prototype = {};
   P.UnsupportedError.prototype = {
     toString$0: function(_) {
-      return "Unsupported operation: " + H.S(this.message);
+      return "Unsupported operation: " + this.message;
     }
   };
   P.UnimplementedError.prototype = {
     toString$0: function(_) {
       var t1 = this.message;
-      return t1 != null ? "UnimplementedError: " + H.S(t1) : "UnimplementedError";
-    },
-    $isUnsupportedError: 1
+      return t1 != null ? "UnimplementedError: " + t1 : "UnimplementedError";
+    }
   };
   P.StateError.prototype = {
     toString$0: function(_) {
-      return "Bad state: " + H.S(this.message);
+      return "Bad state: " + this.message;
     }
   };
   P.ConcurrentModificationError.prototype = {
@@ -12628,10 +4735,9 @@
       var t1 = this.modifiedObject;
       if (t1 == null)
         return "Concurrent modification during iteration.";
-      return "Concurrent modification during iteration: " + H.S(P.Error_safeToString(t1)) + ".";
+      return "Concurrent modification during iteration: " + P.Error_safeToString(t1) + ".";
     }
   };
-  P.OutOfMemoryError.prototype = {$isError: 1};
   P.StackOverflowError.prototype = {
     toString$0: function(_) {
       return "Stack Overflow";
@@ -12641,19 +4747,13 @@
   P.CyclicInitializationError.prototype = {
     toString$0: function(_) {
       var t1 = this.variableName;
-      return t1 == null ? "Reading static variable during its initialization" : "Reading static variable '" + H.S(t1) + "' during its initialization";
+      return t1 == null ? "Reading static variable during its initialization" : "Reading static variable '" + t1 + "' during its initialization";
     }
   };
-  P.LateInitializationError.prototype = {};
-  P.Exception.prototype = {};
   P._Exception.prototype = {
     toString$0: function(_) {
-      var t1 = this.message;
-      if (t1 == null)
-        return "Exception";
-      return "Exception: " + H.S(t1);
-    },
-    $isException: 1
+      return "Exception: " + this.message;
+    }
   };
   P.FormatException.prototype = {
     toString$0: function(_) {
@@ -12662,105 +4762,59 @@
         report = t1 != null && "" !== t1 ? "FormatException: " + H.S(t1) : "FormatException",
         objectSource = this.source;
       if (typeof objectSource === "string") {
-        source = objectSource.length > 78 ? J.$add$ansx(C.JSString_methods.substring$2(objectSource, 0, 75), "...") : objectSource;
-        return report + "\n" + H.S(source);
+        source = objectSource.length > 78 ? C.JSString_methods.substring$2(objectSource, 0, 75) + "..." : objectSource;
+        return report + "\n" + source;
       } else
         return report;
-    },
-    $isException: 1
+    }
   };
-  P.IntegerDivisionByZeroException.prototype = {$isException: 1};
-  P.Expando.prototype = {};
   P.Function.prototype = {};
   P.int.prototype = {};
-  P.Invocation.prototype = {};
-  P._Invocation.prototype = {$isInvocation: 1};
   P.Iterable.prototype = {
-    map$1$1: function(_, f, $T) {
-      var t1 = H.getRuntimeTypeArgument(this, "Iterable", 0);
-      return H.MappedIterable_MappedIterable(this, H.functionTypeCheck(f, {func: 1, ret: $T, args: [t1]}), t1, $T);
-    },
     where$1: function(_, test) {
       var t1 = H.getRuntimeTypeArgument(this, "Iterable", 0);
-      return H.WhereIterable$(this, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [t1]}), t1);
-    },
-    contains$1: function(_, element) {
-      var t1;
-      for (t1 = this.get$iterator(this); H.boolConversionCheck(t1.moveNext$0());)
-        if (H.boolConversionCheck(J.$eq$(t1.get$current(), element)))
-          return true;
-      return false;
+      return new H.WhereIterable(this, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [t1]}), [t1]);
     },
     forEach$1: function(_, f) {
       var t1;
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [H.getRuntimeTypeArgument(this, "Iterable", 0)]});
-      for (t1 = this.get$iterator(this); H.boolConversionCheck(t1.moveNext$0());)
+      for (t1 = this.get$iterator(this); t1.moveNext$0();)
         f.call$1(t1.get$current());
-    },
-    toList$1$growable: function(_, growable) {
-      return P.List_List$from(this, H.boolTypeCheck(growable), H.getRuntimeTypeArgument(this, "Iterable", 0));
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
     },
     get$length: function(_) {
       var count,
         it = this.get$iterator(this);
-      for (count = 0; H.boolConversionCheck(it.moveNext$0());)
+      for (count = 0; it.moveNext$0();)
         ++count;
       return count;
-    },
-    get$isEmpty: function(_) {
-      return !H.boolConversionCheck(this.get$iterator(this).moveNext$0());
-    },
-    take$1: function(_, count) {
-      return H.TakeIterable_TakeIterable(this, H.intTypeCheck(count), H.getRuntimeTypeArgument(this, "Iterable", 0));
-    },
-    skip$1: function(_, count) {
-      return H.SkipIterable_SkipIterable(this, H.intTypeCheck(count), H.getRuntimeTypeArgument(this, "Iterable", 0));
-    },
-    get$last: function(_) {
-      var result,
-        it = this.get$iterator(this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
-        throw H.wrapException(H.IterableElementError_noElement());
-      do
-        result = it.get$current();
-      while (H.boolConversionCheck(it.moveNext$0()));
-      return result;
     },
     get$single: function(_) {
       var result,
         it = this.get$iterator(this);
-      if (!H.boolConversionCheck(it.moveNext$0()))
+      if (!it.moveNext$0())
         throw H.wrapException(H.IterableElementError_noElement());
       result = it.get$current();
-      if (H.boolConversionCheck(it.moveNext$0()))
+      if (it.moveNext$0())
         throw H.wrapException(H.IterableElementError_tooMany());
       return result;
     },
     elementAt$1: function(_, index) {
-      var t1, elementIndex, element, _s5_ = "index";
-      H.intTypeCheck(index);
-      P.ArgumentError_checkNotNull(index, _s5_);
-      P.RangeError_checkNotNegative(index, _s5_);
-      for (t1 = this.get$iterator(this), elementIndex = 0; H.boolConversionCheck(t1.moveNext$0());) {
+      var t1, elementIndex, element;
+      P.RangeError_checkNotNegative(index, "index");
+      for (t1 = this.get$iterator(this), elementIndex = 0; t1.moveNext$0();) {
         element = t1.get$current();
         if (index === elementIndex)
           return element;
         ++elementIndex;
       }
-      throw H.wrapException(P.IndexError$(index, this, _s5_, null, elementIndex));
+      throw H.wrapException(P.IndexError$(index, this, "index", null, elementIndex));
     },
     toString$0: function(_) {
       return P.IterableBase_iterableToShortString(this, "(", ")");
     }
   };
-  P._GeneratorIterable.prototype = {};
-  P.BidirectionalIterator.prototype = {$isIterator: 1};
   P.Iterator.prototype = {};
   P.List.prototype = {$isEfficientLengthIterable: 1, $isIterable: 1};
-  P.Map.prototype = {};
   P.MapEntry.prototype = {
     toString$0: function(_) {
       return "MapEntry(" + H.S(this.key) + ": " + H.S(this.value) + ")";
@@ -12774,11 +4828,7 @@
       return "null";
     }
   };
-  P.num.prototype = {$isComparable: 1,
-    $asComparable: function() {
-      return [P.num];
-    }
-  };
+  P.num.prototype = {};
   P.Object.prototype = {constructor: P.Object, $isObject: 1,
     $eq: function(_, other) {
       return this === other;
@@ -12787,608 +4837,130 @@
       return H.Primitives_objectHashCode(this);
     },
     toString$0: function(_) {
-      return H.Primitives_objectToHumanReadableString(this);
+      return "Instance of '" + H.S(H.Primitives_objectTypeName(this)) + "'";
     },
     toString: function() {
       return this.toString$0(this);
     }
   };
-  P.Pattern.prototype = {};
-  P.Match.prototype = {};
-  P.RegExp.prototype = {$isPattern: 1};
-  P.RegExpMatch.prototype = {$isMatch: 1};
-  P.Set.prototype = {};
-  P.Sink.prototype = {};
   P.StackTrace.prototype = {};
-  P._StringStackTrace.prototype = {$isStackTrace: 1};
-  P.Stopwatch.prototype = {};
-  P.String.prototype = {$isComparable: 1,
-    $asComparable: function() {
-      return [P.String];
-    },
-    $isPattern: 1
-  };
-  P.Runes.prototype = {
-    $asIterable: function() {
-      return [P.int];
-    }
-  };
-  P.RuneIterator.prototype = {$isBidirectionalIterator: 1,
-    $asBidirectionalIterator: function() {
-      return [P.int];
-    },
-    $isIterator: 1,
-    $asIterator: function() {
-      return [P.int];
-    }
-  };
+  P.String.prototype = {$isPattern: 1};
   P.StringBuffer.prototype = {
     get$length: function(_) {
-      return J.get$length$asx(this._contents);
-    },
-    write$1: function(obj) {
-      this._writeString$1(H.S(obj));
-    },
-    writeAll$2: function(objects, separator) {
-      H.listSuperNativeTypeCheck(objects, "$isIterable");
-      H.stringTypeCheck(separator);
-      this._contents = H.stringTypeCheck(P.StringBuffer__writeAll(this._contents, objects, separator));
+      return this._contents.length;
     },
     toString$0: function(_) {
-      return H.Primitives_flattenString(this._contents);
-    },
-    _writeString$1: function(str) {
-      this._contents = H.stringTypeCheck(H.Primitives_stringConcatUnchecked(this._contents, H.stringTypeCheck(str)));
-    },
-    $isStringSink: 1
+      var t1 = this._contents;
+      return t1.charCodeAt(0) == 0 ? t1 : t1;
+    }
   };
-  P.StringSink.prototype = {};
-  P.Symbol.prototype = {};
-  P.Type.prototype = {};
-  P.Uri.prototype = {};
-  P._Uri.prototype = {$isUri: 1};
-  P.UriData.prototype = {};
-  P._SimpleUri.prototype = {$isUri: 1};
-  P._DataUri.prototype = {};
-  P._FakeUserTag.prototype = {$isUserTag: 1};
-  P.ServiceExtensionResponse.prototype = {};
-  P.UserTag.prototype = {};
-  P.Metric.prototype = {};
-  P.Gauge.prototype = {};
-  P.Counter.prototype = {};
-  P.Metrics.prototype = {};
-  P.ServiceProtocolInfo.prototype = {};
-  P.Service.prototype = {};
-  P.Flow.prototype = {};
-  P.Timeline.prototype = {};
-  P.TimelineTask.prototype = {};
-  P._AsyncBlock.prototype = {};
-  P._SyncBlock.prototype = {};
-  W.HtmlElement.prototype = {$isHtmlElement: 1, $isNoncedElement: 1};
-  W.AbortPaymentEvent.prototype = {$isAbortPaymentEvent: 1};
-  W.AbsoluteOrientationSensor.prototype = {$isAbsoluteOrientationSensor: 1};
-  W.AbstractWorker.prototype = {$isEventTarget: 1};
-  W.Accelerometer.prototype = {$isAccelerometer: 1};
-  W.AccessibleNode.prototype = {$isAccessibleNode: 1};
-  W.AccessibleNodeList.prototype = {$isAccessibleNodeList: 1};
-  W.AmbientLightSensor.prototype = {$isAmbientLightSensor: 1};
+  W.HtmlElement.prototype = {};
   W.AnchorElement.prototype = {
     toString$0: function(receiver) {
       return String(receiver);
     },
-    $isAnchorElement: 1,
-    $isHtmlHyperlinkElementUtils: 1
+    $isAnchorElement: 1
   };
-  W.Animation.prototype = {$isAnimation: 1};
-  W.AnimationEffectReadOnly.prototype = {$isAnimationEffectReadOnly: 1};
-  W.AnimationEffectTiming.prototype = {$isAnimationEffectTiming: 1};
-  W.AnimationEffectTimingReadOnly.prototype = {$isAnimationEffectTimingReadOnly: 1};
-  W.AnimationEvent.prototype = {$isAnimationEvent: 1};
-  W.AnimationPlaybackEvent.prototype = {$isAnimationPlaybackEvent: 1};
-  W.AnimationTimeline.prototype = {$isAnimationTimeline: 1};
-  W.AnimationWorkletGlobalScope.prototype = {$isAnimationWorkletGlobalScope: 1};
-  W.ApplicationCache.prototype = {$isApplicationCache: 1};
-  W.ApplicationCacheErrorEvent.prototype = {$isApplicationCacheErrorEvent: 1};
   W.AreaElement.prototype = {
     toString$0: function(receiver) {
       return String(receiver);
-    },
-    $isAreaElement: 1,
-    $isHtmlHyperlinkElementUtils: 1
+    }
   };
-  W.AudioElement.prototype = {$isAudioElement: 1};
-  W.AuthenticatorAssertionResponse.prototype = {$isAuthenticatorAssertionResponse: 1};
-  W.AuthenticatorAttestationResponse.prototype = {$isAuthenticatorAttestationResponse: 1};
-  W.AuthenticatorResponse.prototype = {$isAuthenticatorResponse: 1};
-  W.BRElement.prototype = {$isBRElement: 1};
-  W.BackgroundFetchClickEvent.prototype = {$isBackgroundFetchClickEvent: 1};
-  W.BackgroundFetchEvent.prototype = {$isBackgroundFetchEvent: 1};
-  W.BackgroundFetchFailEvent.prototype = {$isBackgroundFetchFailEvent: 1};
-  W.BackgroundFetchFetch.prototype = {$isBackgroundFetchFetch: 1};
-  W.BackgroundFetchManager.prototype = {$isBackgroundFetchManager: 1};
-  W.BackgroundFetchRegistration.prototype = {$isBackgroundFetchRegistration: 1};
-  W.BackgroundFetchSettledFetch.prototype = {$isBackgroundFetchSettledFetch: 1};
-  W.BackgroundFetchedEvent.prototype = {$isBackgroundFetchedEvent: 1};
-  W.BarProp.prototype = {$isBarProp: 1};
-  W.BarcodeDetector.prototype = {$isBarcodeDetector: 1};
   W.BaseElement.prototype = {$isBaseElement: 1};
-  W.BatteryManager.prototype = {$isBatteryManager: 1};
-  W.BeforeInstallPromptEvent.prototype = {$isBeforeInstallPromptEvent: 1};
-  W.BeforeUnloadEvent.prototype = {$isBeforeUnloadEvent: 1};
-  W.Blob.prototype = {$isBlob: 1};
-  W.BlobEvent.prototype = {$isBlobEvent: 1};
-  W.BluetoothRemoteGattDescriptor.prototype = {$isBluetoothRemoteGattDescriptor: 1};
-  W.Body.prototype = {$isBody: 1};
-  W.BodyElement.prototype = {$isBodyElement: 1, $isWindowEventHandlers: 1};
-  W.BroadcastChannel.prototype = {$isBroadcastChannel: 1};
-  W.BudgetState.prototype = {$isBudgetState: 1};
+  W.BodyElement.prototype = {$isBodyElement: 1};
   W.ButtonElement.prototype = {$isButtonElement: 1};
-  W.CDataSection.prototype = {$isCDataSection: 1};
-  W.CacheStorage.prototype = {$isCacheStorage: 1};
-  W.CanMakePaymentEvent.prototype = {$isCanMakePaymentEvent: 1};
-  W.CanvasCaptureMediaStreamTrack.prototype = {$isCanvasCaptureMediaStreamTrack: 1};
-  W.CanvasElement.prototype = {$isCanvasElement: 1, $isCanvasImageSource: 1};
-  W.CanvasGradient.prototype = {$isCanvasGradient: 1};
-  W.CanvasPattern.prototype = {$isCanvasPattern: 1};
-  W.CanvasRenderingContext.prototype = {};
-  W.CanvasRenderingContext2D.prototype = {$isCanvasRenderingContext: 1, $isCanvasRenderingContext2D: 1};
-  W.CharacterData.prototype = {$isCharacterData: 1, $isChildNode: 1, $isNonDocumentTypeChildNode: 1,
+  W.CharacterData.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     }
   };
-  W.ChildNode.prototype = {};
-  W.Client.prototype = {$isClient: 1};
-  W.Clients.prototype = {$isClients: 1};
-  W.ClipboardEvent.prototype = {$isClipboardEvent: 1};
-  W.CloseEvent.prototype = {$isCloseEvent: 1};
-  W.Comment.prototype = {$isComment: 1};
-  W.CompositionEvent.prototype = {$isCompositionEvent: 1};
-  W.ContentElement.prototype = {$isContentElement: 1};
-  W.CookieStore.prototype = {$isCookieStore: 1};
-  W.Coordinates.prototype = {$isCoordinates: 1};
-  W.Credential.prototype = {$isCredential: 1};
-  W.CredentialUserData.prototype = {$isCredentialUserData: 1};
-  W.CredentialsContainer.prototype = {$isCredentialsContainer: 1};
-  W.Crypto.prototype = {$isCrypto: 1};
-  W.CryptoKey.prototype = {$isCryptoKey: 1};
-  W.Css.prototype = {$isCss: 1};
-  W.CssCharsetRule.prototype = {$isCssCharsetRule: 1};
-  W.CssConditionRule.prototype = {$isCssConditionRule: 1};
-  W.CssFontFaceRule.prototype = {$isCssFontFaceRule: 1};
-  W.CssGroupingRule.prototype = {$isCssGroupingRule: 1};
-  W.CssImageValue.prototype = {$isCssImageValue: 1};
-  W.CssImportRule.prototype = {$isCssImportRule: 1};
-  W.CssKeyframeRule.prototype = {$isCssKeyframeRule: 1};
-  W.CssKeyframesRule.prototype = {$isCssKeyframesRule: 1};
-  W.CssKeywordValue.prototype = {$isCssKeywordValue: 1};
-  W.CssMatrixComponent.prototype = {$isCssMatrixComponent: 1};
-  W.CssMediaRule.prototype = {$isCssMediaRule: 1};
-  W.CssNamespaceRule.prototype = {$isCssNamespaceRule: 1};
-  W.CssNumericValue.prototype = {$isCssNumericValue: 1};
-  W.CssPageRule.prototype = {$isCssPageRule: 1};
-  W.CssPerspective.prototype = {$isCssPerspective: 1};
-  W.CssPositionValue.prototype = {$isCssPositionValue: 1};
-  W.CssResourceValue.prototype = {$isCssResourceValue: 1};
-  W.CssRotation.prototype = {$isCssRotation: 1};
-  W.CssRule.prototype = {$isCssRule: 1};
-  W.CssScale.prototype = {$isCssScale: 1};
-  W.CssSkew.prototype = {$isCssSkew: 1};
-  W.CssStyleDeclaration.prototype = {$isCssStyleDeclaration: 1, $isCssStyleDeclarationBase: 1};
-  W._CssStyleDeclarationSet.prototype = {$isCssStyleDeclarationBase: 1};
-  W.CssStyleDeclarationBase.prototype = {};
-  W.CssStyleRule.prototype = {$isCssStyleRule: 1};
-  W.CssStyleSheet.prototype = {$isCssStyleSheet: 1};
-  W.CssStyleValue.prototype = {$isCssStyleValue: 1};
-  W.CssSupportsRule.prototype = {$isCssSupportsRule: 1};
-  W.CssTransformComponent.prototype = {$isCssTransformComponent: 1};
-  W.CssTransformValue.prototype = {$isCssTransformValue: 1};
-  W.CssTranslation.prototype = {$isCssTranslation: 1};
-  W.CssUnitValue.prototype = {$isCssUnitValue: 1};
-  W.CssUnparsedValue.prototype = {$isCssUnparsedValue: 1};
-  W.CssVariableReferenceValue.prototype = {$isCssVariableReferenceValue: 1};
-  W.CssViewportRule.prototype = {$isCssViewportRule: 1};
-  W.CssurlImageValue.prototype = {$isCssurlImageValue: 1};
-  W.CustomElementRegistry.prototype = {$isCustomElementRegistry: 1};
-  W.CustomEvent.prototype = {$isCustomEvent: 1};
-  W.DListElement.prototype = {$isDListElement: 1};
-  W.DataElement.prototype = {$isDataElement: 1};
-  W.DataListElement.prototype = {$isDataListElement: 1};
-  W.DataTransfer.prototype = {$isDataTransfer: 1};
-  W.DataTransferItem.prototype = {$isDataTransferItem: 1};
-  W.DataTransferItemList.prototype = {$isDataTransferItemList: 1};
-  W.DedicatedWorkerGlobalScope.prototype = {$isDedicatedWorkerGlobalScope: 1};
-  W.DeprecatedStorageInfo.prototype = {$isDeprecatedStorageInfo: 1};
-  W.DeprecatedStorageQuota.prototype = {$isDeprecatedStorageQuota: 1};
-  W.DeprecationReport.prototype = {$isDeprecationReport: 1};
-  W.DetailsElement.prototype = {$isDetailsElement: 1};
-  W.DetectedBarcode.prototype = {$isDetectedBarcode: 1};
-  W.DetectedFace.prototype = {$isDetectedFace: 1};
-  W.DetectedText.prototype = {$isDetectedText: 1};
-  W.DeviceAcceleration.prototype = {$isDeviceAcceleration: 1};
-  W.DeviceMotionEvent.prototype = {$isDeviceMotionEvent: 1};
-  W.DeviceOrientationEvent.prototype = {$isDeviceOrientationEvent: 1};
-  W.DeviceRotationRate.prototype = {$isDeviceRotationRate: 1};
-  W.DialogElement.prototype = {$isDialogElement: 1};
-  W.DirectoryEntry.prototype = {$isDirectoryEntry: 1};
-  W.DirectoryReader.prototype = {$isDirectoryReader: 1};
   W.DivElement.prototype = {$isDivElement: 1};
-  W.Document.prototype = {
-    adoptNode$1: function(receiver, node) {
-      return receiver.adoptNode(H.interceptedTypeCheck(node, "$isNode"));
-    },
-    createDocumentFragment$0: function(receiver) {
-      return receiver.createDocumentFragment();
-    },
-    createRange$0: function(receiver) {
-      return receiver.createRange();
-    },
-    querySelector$1: function(receiver, selectors) {
-      return receiver.querySelector(H.stringTypeCheck(selectors));
-    },
-    createElement$1: function(receiver, tagName) {
-      var t1 = this._createElement_2$1(receiver, H.stringTypeCheck(tagName));
-      return H.interceptedTypeCheck(t1, "$isElement");
-    },
-    _createElement_2$1: function(receiver, tagName) {
-      return receiver.createElement(H.stringTypeCheck(tagName));
-    },
-    $isDocument: 1
-  };
-  W.DocumentFragment.prototype = {$isDocumentFragment: 1, $isNonElementParentNode: 1, $isParentNode: 1};
-  W.DocumentOrShadowRoot.prototype = {$isDocumentOrShadowRoot: 1};
-  W.DocumentTimeline.prototype = {$isDocumentTimeline: 1};
-  W.DomError.prototype = {$isDomError: 1};
   W.DomException.prototype = {
     toString$0: function(receiver) {
       return String(receiver);
-    },
-    $isDomException: 1
-  };
-  W.DomImplementation.prototype = {
-    createHtmlDocument$1: function(receiver, title) {
-      return receiver.createHTMLDocument(H.stringTypeCheck(title));
-    },
-    $isDomImplementation: 1
-  };
-  W.DomIterator.prototype = {$isDomIterator: 1};
-  W.DomMatrix.prototype = {$isDomMatrix: 1};
-  W.DomMatrixReadOnly.prototype = {$isDomMatrixReadOnly: 1};
-  W.DomParser.prototype = {$isDomParser: 1};
-  W.DomPoint.prototype = {$isDomPoint: 1};
-  W.DomPointReadOnly.prototype = {$isDomPointReadOnly: 1};
-  W.DomQuad.prototype = {$isDomQuad: 1};
-  W.DomRectList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isDomRectList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [[P.Rectangle, P.num]];
     }
   };
-  W.DomRectReadOnly.prototype = {$isDomRectReadOnly: 1, $is_RectangleBase: 1,
-    $as_RectangleBase: function() {
-      return [P.num];
-    },
-    $isRectangle: 1,
-    $asRectangle: function() {
-      return [P.num];
-    }
-  };
-  W.DomStringList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [P.String];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [P.String];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    },
-    $isDomStringList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.String];
-    }
-  };
-  W.DomStringMap.prototype = {$isDomStringMap: 1};
   W.DomTokenList.prototype = {
-    item$1: function(receiver, index) {
-      return receiver.item(H.intTypeCheck(index));
-    },
-    $isDomTokenList: 1,
     get$length: function(receiver) {
       return receiver.length;
     }
   };
-  W._ChildrenElementList.prototype = {
-    contains$1: function(_, element) {
-      return J.contains$1$ax(this._childElements, element);
-    },
-    get$isEmpty: function(_) {
-      return this._html$_element.firstElementChild == null;
-    },
-    get$length: function(_) {
-      return J.get$length$asx(this._childElements);
-    },
-    $index: function(_, index) {
-      return H.interceptedTypeCheck(J.$index$asx(this._childElements, H.intTypeCheck(index)), "$isElement");
-    },
-    $indexSet: function(_, index, value) {
-      H.intTypeCheck(index);
-      J._replaceChild$2$x(this._html$_element, H.interceptedTypeCheck(value, "$isElement"), J.$index$asx(this._childElements, index));
-    },
-    set$length: function(_, newLength) {
-      H.intTypeCheck(newLength);
-      throw H.wrapException(P.UnsupportedError$("Cannot resize element lists"));
-    },
-    add$1: function(_, value) {
-      H.interceptedTypeCheck(value, "$isElement");
-      J.append$1$x(this._html$_element, value);
-      return value;
-    },
-    get$iterator: function(_) {
-      return J.get$iterator$ax(this.toList$0(this));
-    },
-    addAll$1: function(_, iterable) {
-      var t2, t3,
-        t1 = W.Element;
-      H.assertSubtype(iterable, "$isIterable", [t1], "$asIterable");
-      for (t1 = J.get$iterator$ax(iterable instanceof W._ChildNodeListLazy ? P.List_List$from(iterable, true, t1) : iterable), t2 = this._html$_element, t3 = J.getInterceptor$x(t2); H.boolConversionCheck(t1.moveNext$0());)
-        t3.append$1(t2, t1.get$current());
-    },
-    removeWhere$1: function(_, test) {
-      this._filter$2(0, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [W.Element]}), false);
-    },
-    _filter$2: function(_, test, retainMatching) {
-      var t1;
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [W.Element]});
-      t1 = this._html$_element;
-      for (t1 = J.get$iterator$ax(H.listSuperNativeTypeCheck(H.boolConversionCheck(H.boolTypeCheck(retainMatching)) ? J.where$1$ax(J.get$children$x(t1), new W._ChildrenElementList__filter_closure(test)) : J.where$1$ax(J.get$children$x(t1), test), "$isIterable")); H.boolConversionCheck(t1.moveNext$0());)
-        J.remove$0$x(t1.get$current());
-    },
-    setRange$3: function(_, start, end, iterable) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      H.assertSubtype(iterable, "$isIterable", [W.Element], "$asIterable");
-      throw H.wrapException(P.UnimplementedError$(null));
-    },
-    removeLast$0: function(_) {
-      var result = this.get$last(this);
-      if (result != null)
-        J._removeChild$1$x(this._html$_element, result);
-      return result;
-    },
-    get$first: function(_) {
-      var result = this._html$_element.firstElementChild;
-      if (result == null)
-        throw H.wrapException(P.StateError$("No elements"));
-      return result;
-    },
-    get$last: function(_) {
-      var result = this._html$_element.lastElementChild;
-      if (result == null)
-        throw H.wrapException(P.StateError$("No elements"));
-      return result;
-    },
-    get$single: function(_) {
-      var _this = this,
-        t1 = _this.get$length(_this);
-      if (typeof t1 !== "number")
-        return t1.$gt();
-      if (t1 > 1)
-        throw H.wrapException(P.StateError$("More than one element"));
-      return _this.get$first(_this);
-    },
-    $asEfficientLengthIterable: function() {
-      return [W.Element];
-    },
-    $asListBase: function() {
-      return [W.Element];
-    },
-    $asListMixin: function() {
-      return [W.Element];
-    },
-    $asIterable: function() {
-      return [W.Element];
-    },
-    $asList: function() {
-      return [W.Element];
-    },
-    $isNodeListWrapper: 1,
-    $as_ListBase_Object_ListMixin: function() {
-      return [W.Element];
-    }
-  };
-  W._ChildrenElementList__filter_closure.prototype = {
-    call$1: function(e) {
-      return !H.boolConversionCheck(this.test.call$1(H.interceptedTypeCheck(e, "$isElement")));
-    },
-    $signature: 18
-  };
-  W.ElementList.prototype = {};
-  W._FrozenElementList.prototype = {$isElementList: 1, $isNodeListWrapper: 1};
   W.Element.prototype = {
     get$attributes: function(receiver) {
-      return W._ElementAttributeMap$(receiver);
-    },
-    getAttribute$1: function(receiver, $name) {
-      return this._getAttribute$1(receiver, H.stringTypeCheck($name));
-    },
-    setAttribute$2: function(receiver, $name, value) {
-      this._setAttribute$2(receiver, H.stringTypeCheck($name), H.stringTypeCheck(value));
-    },
-    get$children: function(receiver) {
-      return W._ChildrenElementList$_wrap(receiver);
-    },
-    get$classes: function(receiver) {
-      return W._ElementCssClassSet$(receiver);
-    },
-    get$localName: function(receiver) {
-      return receiver.localName;
+      return new W._ElementAttributeMap(receiver);
     },
     toString$0: function(receiver) {
-      return this.get$localName(receiver);
+      return receiver.localName;
     },
     createFragment$3$treeSanitizer$validator: function(receiver, html, treeSanitizer, validator) {
-      var t1, base, contextElement, fragment, t2;
-      H.stringTypeCheck(html);
-      H.interceptedTypeCheck(validator, "$isNodeValidator");
-      H.interceptedTypeCheck(treeSanitizer, "$isNodeTreeSanitizer");
+      var t1, t2, contextElement, fragment;
       if (treeSanitizer == null) {
-        if (validator == null) {
-          t1 = $.Element__defaultValidator;
-          if (t1 == null) {
-            t1 = W.NodeValidatorBuilder$common();
-            $.Element__defaultValidator = t1;
-            validator = t1;
-          } else
-            validator = t1;
-        }
+        t1 = $.Element__defaultValidator;
+        if (t1 == null) {
+          t1 = H.setRuntimeTypeInfo([], [W.NodeValidator]);
+          t2 = new W.NodeValidatorBuilder(t1);
+          C.JSArray_methods.add$1(t1, W._Html5NodeValidator$(null));
+          C.JSArray_methods.add$1(t1, W._TemplatingNodeValidator$());
+          $.Element__defaultValidator = t2;
+          validator = t2;
+        } else
+          validator = t1;
         t1 = $.Element__defaultSanitizer;
         if (t1 == null) {
-          t1 = W._ValidatingTreeSanitizer$(validator);
+          t1 = new W._ValidatingTreeSanitizer(validator);
           $.Element__defaultSanitizer = t1;
           treeSanitizer = t1;
         } else {
           t1.validator = validator;
           treeSanitizer = t1;
         }
-      } else if (validator != null)
-        throw H.wrapException(P.ArgumentError$("validator can only be passed if treeSanitizer is null"));
+      }
       if ($.Element__parseDocument == null) {
-        t1 = W.document().implementation;
-        t1 = $.Element__parseDocument = (t1 && C.DomImplementation_methods).createHtmlDocument$1(t1, "");
-        $.Element__parseRange = (t1 && C.HtmlDocument_methods).createRange$0(t1);
-        base = H.interceptedTypeCheck(J.createElement$1$x($.Element__parseDocument, "base"), "$isBaseElement");
-        base.href = W.document().baseURI;
-        J.append$1$x(J.get$head$x($.Element__parseDocument), base);
+        t1 = document;
+        t2 = t1.implementation.createHTMLDocument("");
+        $.Element__parseDocument = t2;
+        $.Element__parseRange = t2.createRange();
+        t2 = $.Element__parseDocument.createElement("base");
+        H.interceptedTypeCheck(t2, "$isBaseElement");
+        t2.href = t1.baseURI;
+        $.Element__parseDocument.head.appendChild(t2);
       }
       t1 = $.Element__parseDocument;
-      if (t1.body == null)
-        t1.body = H.interceptedTypeCheck(J.createElement$1$x(t1, "body"), "$isBodyElement");
+      if (t1.body == null) {
+        t2 = t1.createElement("body");
+        t1.body = H.interceptedTypeCheck(t2, "$isBodyElement");
+      }
       t1 = $.Element__parseDocument;
       if (!!this.$isBodyElement)
         contextElement = t1.body;
       else {
-        contextElement = J.createElement$1$x(t1, receiver.tagName);
-        t1 = $.Element__parseDocument.body;
-        H.interceptedTypeCheck(contextElement, "$isNode");
-        (t1 && C.BodyElement_methods).append$1(t1, contextElement);
+        contextElement = t1.createElement(receiver.tagName);
+        $.Element__parseDocument.body.appendChild(contextElement);
       }
-      if (H.boolConversionCheck(W.Range_supportsCreateContextualFragment()) && H.boolConversionCheck(this.get$_canBeUsedToCreateContextualFragment(receiver))) {
-        J.selectNodeContents$1$x($.Element__parseRange, contextElement);
-        fragment = J.createContextualFragment$1$x($.Element__parseRange, html);
+      if ("createContextualFragment" in window.Range.prototype && !C.JSArray_methods.contains$1(C.List_ego, receiver.tagName)) {
+        $.Element__parseRange.selectNodeContents(contextElement);
+        fragment = $.Element__parseRange.createContextualFragment(html);
       } else {
-        J.set$_innerHtml$x(contextElement, html);
-        fragment = J.createDocumentFragment$0$x($.Element__parseDocument);
-        for (t1 = J.getInterceptor$x(fragment); t2 = contextElement.firstChild, t2 != null;)
-          t1.append$1(fragment, t2);
+        contextElement.innerHTML = html;
+        fragment = $.Element__parseDocument.createDocumentFragment();
+        for (; t1 = contextElement.firstChild, t1 != null;)
+          fragment.appendChild(t1);
       }
       t1 = $.Element__parseDocument.body;
       if (contextElement == null ? t1 != null : contextElement !== t1)
         J.remove$0$x(contextElement);
-      H.interceptedTypeCheck(fragment, "$isNode");
       treeSanitizer.sanitizeTree$1(fragment);
-      J.adoptNode$1$x(W.document(), fragment);
-      return H.interceptedTypeCheck(fragment, "$isDocumentFragment");
+      document.adoptNode(fragment);
+      return fragment;
     },
     createFragment$2$treeSanitizer: function($receiver, html, treeSanitizer) {
       return this.createFragment$3$treeSanitizer$validator($receiver, html, treeSanitizer, null);
     },
-    get$_canBeUsedToCreateContextualFragment: function(receiver) {
-      return !H.boolConversionCheck(this.get$_cannotBeUsedToCreateContextualFragment(receiver));
-    },
-    get$_cannotBeUsedToCreateContextualFragment: function(receiver) {
-      return C.JSArray_methods.contains$1(C.List_ego, receiver.tagName);
-    },
     setInnerHtml$1: function(receiver, html) {
-      H.stringTypeCheck(html);
       receiver.textContent = null;
-      this.append$1(receiver, this.createFragment$3$treeSanitizer$validator(receiver, html, null, null));
+      receiver.appendChild(this.createFragment$3$treeSanitizer$validator(receiver, html, null, null));
     },
-    _getAttribute$1: function(receiver, $name) {
-      return receiver.getAttribute(H.stringTypeCheck($name));
-    },
-    _hasAttribute$1: function(receiver, $name) {
-      return receiver.hasAttribute(H.stringTypeCheck($name));
-    },
-    _setAttribute$2: function(receiver, $name, value) {
-      return receiver.setAttribute(H.stringTypeCheck($name), H.stringTypeCheck(value));
-    },
-    get$onClick: function(receiver) {
-      return C.EventStreamProvider_click.forElement$1(receiver);
-    },
-    get$onDragEnd: function(receiver) {
-      return C.EventStreamProvider_dragend.forElement$1(receiver);
-    },
-    get$onDragEnter: function(receiver) {
-      return C.EventStreamProvider_dragenter.forElement$1(receiver);
-    },
-    get$onDragLeave: function(receiver) {
-      return C.EventStreamProvider_dragleave.forElement$1(receiver);
-    },
-    get$onDragOver: function(receiver) {
-      return C.EventStreamProvider_dragover.forElement$1(receiver);
-    },
-    get$onDragStart: function(receiver) {
-      return C.EventStreamProvider_dragstart.forElement$1(receiver);
-    },
-    get$onDrop: function(receiver) {
-      return C.EventStreamProvider_drop.forElement$1(receiver);
-    },
-    set$_innerHtml: function(receiver, _innerHtml) {
-      receiver.innerHTML = H.stringTypeCheck(_innerHtml);
-    },
-    $isChildNode: 1,
     $isElement: 1,
-    $isGlobalEventHandlers: 1,
-    $isNonDocumentTypeChildNode: 1,
-    $isParentNode: 1,
     get$tagName: function(receiver) {
       return receiver.tagName;
     }
@@ -13397,160 +4969,33 @@
     call$1: function(e) {
       return !!J.getInterceptor$(H.interceptedTypeCheck(e, "$isNode")).$isElement;
     },
-    $signature: 12
+    $signature: 19
   };
-  W._ElementFactoryProvider.prototype = {};
-  W.ScrollAlignment.prototype = {};
-  W.EmbedElement.prototype = {$isEmbedElement: 1};
-  W.Entry.prototype = {$isEntry: 1};
-  W.ErrorEvent.prototype = {$isErrorEvent: 1};
-  W.Event.prototype = {
-    get$currentTarget: function(receiver) {
-      return W._convertNativeToDart_EventTarget(receiver.currentTarget);
-    },
-    get$target: function(receiver) {
-      return W._convertNativeToDart_EventTarget(receiver.target);
-    },
-    preventDefault$0: function(receiver) {
-      return receiver.preventDefault();
-    },
-    $isEvent: 1
-  };
-  W.EventSource.prototype = {$isEventSource: 1};
-  W.Events.prototype = {};
-  W.ElementEvents.prototype = {};
+  W.Event.prototype = {$isEvent: 1};
   W.EventTarget.prototype = {
-    addEventListener$3: function(receiver, type, listener, useCapture) {
-      H.stringTypeCheck(type);
-      H.functionTypeCheck(listener, {func: 1, args: [W.Event]});
-      H.boolTypeCheck(useCapture);
-      if (listener != null)
-        this._addEventListener$3(receiver, type, listener, useCapture);
-    },
     _addEventListener$3: function(receiver, type, listener, options) {
-      H.stringTypeCheck(type);
-      H.functionTypeCheck(listener, {func: 1, args: [W.Event]});
-      H.boolTypeCheck(options);
-      return receiver.addEventListener(type, H.convertDartClosureToJS(listener, 1), options);
+      return receiver.addEventListener(type, H.convertDartClosureToJS(H.functionTypeCheck(listener, {func: 1, args: [W.Event]}), 1), false);
     },
     $isEventTarget: 1
   };
-  W.ExtendableEvent.prototype = {$isExtendableEvent: 1};
-  W.ExtendableMessageEvent.prototype = {$isExtendableMessageEvent: 1};
-  W.External.prototype = {$isExternal: 1};
-  W.FaceDetector.prototype = {$isFaceDetector: 1};
-  W.FederatedCredential.prototype = {$isCredentialUserData: 1, $isFederatedCredential: 1};
-  W.FetchEvent.prototype = {$isFetchEvent: 1};
-  W.FieldSetElement.prototype = {$isFieldSetElement: 1};
-  W.File.prototype = {$isFile: 1};
-  W.FileEntry.prototype = {$isFileEntry: 1};
-  W.FileList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.File];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.File];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.File];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.File];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.File];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.File];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.File];
-    },
-    $isFileList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.File];
-    }
-  };
-  W.FileReader.prototype = {$isFileReader: 1};
-  W.FileSystem.prototype = {$isFileSystem: 1};
-  W.FileWriter.prototype = {$isFileWriter: 1};
-  W.FocusEvent.prototype = {$isFocusEvent: 1};
-  W.FontFace.prototype = {$isFontFace: 1};
-  W.FontFaceSet.prototype = {$isFontFaceSet: 1};
-  W.FontFaceSetLoadEvent.prototype = {$isFontFaceSetLoadEvent: 1};
-  W.FontFaceSource.prototype = {$isFontFaceSource: 1};
-  W.ForeignFetchEvent.prototype = {$isForeignFetchEvent: 1};
-  W.FormData.prototype = {$isFormData: 1};
-  W.FormElement.prototype = {$isFormElement: 1,
+  W.FormElement.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     }
   };
-  W.Gamepad.prototype = {$isGamepad: 1};
-  W.GamepadButton.prototype = {$isGamepadButton: 1};
-  W.GamepadEvent.prototype = {$isGamepadEvent: 1};
-  W.GamepadPose.prototype = {$isGamepadPose: 1};
-  W.Geolocation.prototype = {$isGeolocation: 1};
-  W._GeopositionWrapper.prototype = {$isInterceptor: 1, $isGeoposition: 1};
-  W.Geoposition.prototype = {$isGeoposition: 1};
-  W.GlobalEventHandlers.prototype = {$isInterceptor: 1, $isEventTarget: 1};
-  W.Gyroscope.prototype = {$isGyroscope: 1};
-  W.HRElement.prototype = {$isHRElement: 1};
-  W.HashChangeEvent.prototype = {$isHashChangeEvent: 1};
-  W.HeadElement.prototype = {$isHeadElement: 1};
-  W.Headers.prototype = {$isHeaders: 1};
-  W.HeadingElement.prototype = {$isHeadingElement: 1};
-  W.History.prototype = {$isHistory: 1, $isHistoryBase: 1};
   W.HtmlCollection.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     },
     $index: function(receiver, index) {
-      H.intTypeCheck(index);
       if (index >>> 0 !== index || index >= receiver.length)
         throw H.wrapException(P.IndexError$(index, receiver, null, null, null));
       return receiver[index];
     },
-    $indexSet: function(receiver, index, value) {
-      H.intTypeCheck(index);
-      H.interceptedTypeCheck(value, "$isNode");
-      throw H.wrapException(P.UnsupportedError$("Cannot assign element of immutable List."));
-    },
-    set$length: function(receiver, value) {
-      H.intTypeCheck(value);
-      throw H.wrapException(P.UnsupportedError$("Cannot resize immutable List."));
-    },
-    get$last: function(receiver) {
-      var len = receiver.length;
-      if (len > 0)
-        return receiver[len - 1];
-      throw H.wrapException(P.StateError$("No elements"));
-    },
-    get$single: function(receiver) {
-      var len = receiver.length;
-      if (len === 1)
-        return receiver[0];
-      if (len === 0)
-        throw H.wrapException(P.StateError$("No elements"));
-      throw H.wrapException(P.StateError$("More than one element"));
-    },
     elementAt$1: function(receiver, index) {
-      return this.$index(receiver, H.intTypeCheck(index));
-    },
-    $isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Node];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Node];
+      if (index < 0 || index >= receiver.length)
+        return H.ioore(receiver, index);
+      return receiver[index];
     },
     $isEfficientLengthIterable: 1,
     $asEfficientLengthIterable: function() {
@@ -13560,7 +5005,6 @@
     $asJavaScriptIndexingBehavior: function() {
       return [W.Node];
     },
-    $isListMixin: 1,
     $asListMixin: function() {
       return [W.Node];
     },
@@ -13572,278 +5016,52 @@
     $asList: function() {
       return [W.Node];
     },
-    $isHtmlCollection: 1,
-    $isImmutableListMixin: 1,
     $asImmutableListMixin: function() {
       return [W.Node];
     }
   };
-  W.HtmlDocument.prototype = {
-    get$head: function(receiver) {
-      return receiver.head;
-    },
-    $isHtmlDocument: 1
-  };
-  W.HtmlFormControlsCollection.prototype = {$isHtmlFormControlsCollection: 1};
-  W.HtmlHtmlElement.prototype = {$isHtmlHtmlElement: 1};
-  W.HtmlHyperlinkElementUtils.prototype = {$isHtmlHyperlinkElementUtils: 1};
-  W.HtmlOptionsCollection.prototype = {$isHtmlOptionsCollection: 1};
-  W.HttpRequest0.prototype = {$isHttpRequest0: 1};
-  W.HttpRequestEventTarget.prototype = {$isHttpRequestEventTarget: 1};
-  W.HttpRequestUpload.prototype = {$isHttpRequestUpload: 1};
-  W.IFrameElement.prototype = {$isIFrameElement: 1};
-  W.IdleDeadline.prototype = {$isIdleDeadline: 1};
-  W.ImageBitmap.prototype = {$isImageBitmap: 1};
-  W.ImageBitmapRenderingContext.prototype = {$isImageBitmapRenderingContext: 1};
-  W.ImageCapture.prototype = {$isImageCapture: 1};
-  W.ImageData.prototype = {$isImageData: 1};
-  W.ImageElement.prototype = {$isImageElement: 1, $isCanvasImageSource: 1};
-  W.InputDeviceCapabilities.prototype = {$isInputDeviceCapabilities: 1};
-  W.InputElement.prototype = {$isInputElement: 1, $isInputElementBase: 1, $isHiddenInputElement: 1, $isTextInputElementBase: 1, $isSearchInputElement: 1, $isTextInputElement: 1, $isUrlInputElement: 1, $isTelephoneInputElement: 1, $isEmailInputElement: 1, $isPasswordInputElement: 1, $isRangeInputElementBase: 1, $isDateInputElement: 1, $isMonthInputElement: 1, $isWeekInputElement: 1, $isTimeInputElement: 1, $isLocalDateTimeInputElement: 1, $isNumberInputElement: 1, $isRangeInputElement: 1, $isCheckboxInputElement: 1, $isRadioButtonInputElement: 1, $isFileUploadInputElement: 1, $isSubmitButtonInputElement: 1, $isImageButtonInputElement: 1, $isResetButtonInputElement: 1, $isButtonInputElement: 1};
-  W.InputElementBase.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.HiddenInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.TextInputElementBase.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.SearchInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.TextInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.UrlInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.TelephoneInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.EmailInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.PasswordInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isTextInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.RangeInputElementBase.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.DateInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.MonthInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.WeekInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.TimeInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.LocalDateTimeInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.NumberInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.RangeInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isRangeInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.CheckboxInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.RadioButtonInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.FileUploadInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.SubmitButtonInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.ImageButtonInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.ResetButtonInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.ButtonInputElement.prototype = {$isInterceptor: 1, $isChildNode: 1, $isElement: 1, $isEventTarget: 1, $isGlobalEventHandlers: 1, $isInputElementBase: 1, $isNode: 1, $isNonDocumentTypeChildNode: 1, $isParentNode: 1};
-  W.InstallEvent.prototype = {$isInstallEvent: 1};
-  W.IntersectionObserver.prototype = {$isIntersectionObserver: 1};
-  W.IntersectionObserverEntry.prototype = {$isIntersectionObserverEntry: 1};
-  W.InterventionReport.prototype = {$isInterventionReport: 1};
-  W.KeyboardEvent.prototype = {$isKeyboardEvent: 1};
-  W.KeyframeEffect.prototype = {$isKeyframeEffect: 1};
-  W.KeyframeEffectReadOnly.prototype = {$isKeyframeEffectReadOnly: 1};
-  W.LIElement.prototype = {$isLIElement: 1};
-  W.LabelElement.prototype = {$isLabelElement: 1};
-  W.LegendElement.prototype = {$isLegendElement: 1};
-  W.LinearAccelerationSensor.prototype = {$isLinearAccelerationSensor: 1};
-  W.LinkElement.prototype = {$isLinkElement: 1};
+  W.InputElement.prototype = {$isInputElement: 1};
   W.Location.prototype = {
     toString$0: function(receiver) {
       return String(receiver);
     },
-    $isLocation: 1,
-    $isLocationBase: 1
+    $isLocation: 1
   };
-  W.Magnetometer.prototype = {$isMagnetometer: 1};
-  W.MapElement.prototype = {$isMapElement: 1};
-  W.MediaCapabilities.prototype = {$isMediaCapabilities: 1};
-  W.MediaCapabilitiesInfo.prototype = {$isMediaCapabilitiesInfo: 1};
-  W.MediaDeviceInfo.prototype = {$isMediaDeviceInfo: 1};
-  W.MediaDevices.prototype = {$isMediaDevices: 1};
-  W.MediaElement.prototype = {$isMediaElement: 1};
-  W.MediaEncryptedEvent.prototype = {$isMediaEncryptedEvent: 1};
-  W.MediaError.prototype = {$isMediaError: 1};
-  W.MediaKeyMessageEvent.prototype = {$isMediaKeyMessageEvent: 1};
-  W.MediaKeySession.prototype = {$isMediaKeySession: 1};
-  W.MediaKeyStatusMap.prototype = {$isMediaKeyStatusMap: 1};
-  W.MediaKeySystemAccess.prototype = {$isMediaKeySystemAccess: 1};
-  W.MediaKeys.prototype = {$isMediaKeys: 1};
-  W.MediaKeysPolicy.prototype = {$isMediaKeysPolicy: 1};
-  W.MediaList.prototype = {$isMediaList: 1};
-  W.MediaMetadata.prototype = {$isMediaMetadata: 1};
-  W.MediaQueryList.prototype = {$isMediaQueryList: 1};
-  W.MediaQueryListEvent.prototype = {$isMediaQueryListEvent: 1};
-  W.MediaRecorder.prototype = {$isMediaRecorder: 1};
-  W.MediaSession.prototype = {$isMediaSession: 1};
-  W.MediaSettingsRange.prototype = {$isMediaSettingsRange: 1};
-  W.MediaSource.prototype = {$isMediaSource: 1};
-  W.MediaStream.prototype = {$isMediaStream: 1};
-  W.MediaStreamEvent.prototype = {$isMediaStreamEvent: 1};
-  W.MediaStreamTrack.prototype = {$isMediaStreamTrack: 1};
-  W.MediaStreamTrackEvent.prototype = {$isMediaStreamTrackEvent: 1};
-  W.MemoryInfo.prototype = {$isMemoryInfo: 1};
-  W.MenuElement.prototype = {$isMenuElement: 1};
-  W.MessageChannel.prototype = {$isMessageChannel: 1};
-  W.MessageEvent.prototype = {$isMessageEvent: 1};
-  W.MessagePort.prototype = {$isMessagePort: 1};
-  W.MetaElement.prototype = {$isMetaElement: 1};
-  W.Metadata.prototype = {$isMetadata: 1};
-  W.MeterElement.prototype = {$isMeterElement: 1};
-  W.MidiAccess.prototype = {$isMidiAccess: 1};
-  W.MidiConnectionEvent.prototype = {$isMidiConnectionEvent: 1};
-  W.MidiInput.prototype = {$isMidiInput: 1};
-  W.MidiInputMap.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    },
-    $isMidiInputMap: 1
-  };
-  W.MidiMessageEvent.prototype = {$isMidiMessageEvent: 1};
-  W.MidiOutput.prototype = {$isMidiOutput: 1};
-  W.MidiOutputMap.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    },
-    $isMidiOutputMap: 1
-  };
-  W.MidiPort.prototype = {$isMidiPort: 1};
-  W.MimeType.prototype = {$isMimeType: 1};
-  W.MimeTypeArray.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.MimeType];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.MimeType];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.MimeType];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.MimeType];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.MimeType];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.MimeType];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.MimeType];
-    },
-    $isMimeTypeArray: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.MimeType];
-    }
-  };
-  W.ModElement.prototype = {$isModElement: 1};
   W.MouseEvent.prototype = {$isMouseEvent: 1};
-  W.MutationEvent.prototype = {$isMutationEvent: 1};
-  W.MutationObserver.prototype = {$isMutationObserver: 1};
-  W.MutationRecord.prototype = {$isMutationRecord: 1};
-  W.NavigationPreloadManager.prototype = {$isNavigationPreloadManager: 1};
-  W.Navigator.prototype = {$isNavigator: 1, $isNavigatorAutomationInformation: 1, $isNavigatorCookies: 1, $isNavigatorID: 1, $isNavigatorLanguage: 1, $isNavigatorOnLine: 1};
-  W.NavigatorAutomationInformation.prototype = {$isNavigatorAutomationInformation: 1};
-  W.NavigatorConcurrentHardware.prototype = {$isNavigatorConcurrentHardware: 1};
-  W.NavigatorCookies.prototype = {$isNavigatorCookies: 1};
-  W.NavigatorID.prototype = {};
-  W.NavigatorLanguage.prototype = {};
-  W.NavigatorOnLine.prototype = {};
-  W.NavigatorUserMediaError.prototype = {$isNavigatorUserMediaError: 1};
-  W.NetworkInformation.prototype = {$isNetworkInformation: 1};
   W._ChildNodeListLazy.prototype = {
-    get$last: function(_) {
-      var result = this._this.lastChild;
-      if (result == null)
-        throw H.wrapException(P.StateError$("No elements"));
-      return result;
-    },
     get$single: function(_) {
-      var l = this.get$length(this);
+      var t1 = this._this,
+        l = t1.childNodes.length;
       if (l === 0)
         throw H.wrapException(P.StateError$("No elements"));
-      if (typeof l !== "number")
-        return l.$gt();
       if (l > 1)
         throw H.wrapException(P.StateError$("More than one element"));
-      return this._this.firstChild;
-    },
-    add$1: function(_, value) {
-      J.append$1$x(this._this, H.interceptedTypeCheck(value, "$isNode"));
+      return t1.firstChild;
     },
     addAll$1: function(_, iterable) {
-      var t1, t2, len, t3, i;
+      var t1, t2, len, i;
       H.assertSubtype(iterable, "$isIterable", [W.Node], "$asIterable");
-      t1 = J.getInterceptor$(iterable);
-      if (!!t1.$is_ChildNodeListLazy) {
-        t1 = iterable._this;
-        t2 = this._this;
-        if (t1 == null ? t2 != null : t1 !== t2) {
-          len = iterable.get$length(iterable);
-          if (typeof len !== "number")
-            return H.iae(len);
-          t3 = J.getInterceptor$x(t2);
-          i = 0;
-          for (; i < len; ++i)
-            t3.append$1(t2, t1.firstChild);
-        }
-        return;
-      }
-      for (t1 = t1.get$iterator(iterable), t2 = this._this, t3 = J.getInterceptor$x(t2); H.boolConversionCheck(t1.moveNext$0());)
-        t3.append$1(t2, t1.get$current());
-    },
-    removeLast$0: function(_) {
-      var result = this.get$last(this);
-      if (result != null)
-        J._removeChild$1$x(this._this, result);
-      return result;
-    },
-    _filter$2: function(_, test, removeMatching) {
-      var t1, child, t2, nextChild;
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [W.Node]});
-      H.boolTypeCheck(removeMatching);
-      t1 = this._this;
-      child = t1.firstChild;
-      for (t2 = J.getInterceptor$x(t1); child != null; child = nextChild) {
-        nextChild = child.nextSibling;
-        if (H.boolConversionCheck(J.$eq$(test.call$1(child), removeMatching)))
-          t2._removeChild$1(t1, child);
-      }
-    },
-    removeWhere$1: function(_, test) {
-      this._filter$2(0, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [W.Node]}), true);
-    },
-    $indexSet: function(_, index, value) {
-      H.intTypeCheck(index);
-      J._replaceChild$2$x(this._this, H.interceptedTypeCheck(value, "$isNode"), this.$index(0, index));
+      t1 = iterable._this;
+      t2 = this._this;
+      if (t1 !== t2)
+        for (len = t1.childNodes.length, i = 0; i < len; ++i)
+          t2.appendChild(t1.firstChild);
+      return;
     },
     get$iterator: function(_) {
-      return C.NodeList_methods.get$iterator(this._this.childNodes);
-    },
-    setRange$3: function(_, start, end, iterable) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      H.assertSubtype(iterable, "$isIterable", [W.Node], "$asIterable");
-      throw H.wrapException(P.UnsupportedError$("Cannot setRange on Node list"));
+      var t1 = this._this.childNodes;
+      return new W.FixedSizeListIterator(t1, t1.length, [H.getRuntimeTypeArgumentIntercepted(C.NodeList_methods, t1, "ImmutableListMixin", 0)]);
     },
     get$length: function(_) {
       return this._this.childNodes.length;
     },
-    set$length: function(_, value) {
-      H.intTypeCheck(value);
-      throw H.wrapException(P.UnsupportedError$("Cannot set length on immutable List."));
-    },
     $index: function(_, index) {
-      H.intTypeCheck(index);
-      return C.NodeList_methods.$index(this._this.childNodes, index);
+      var t1 = this._this.childNodes;
+      if (index < 0 || index >= t1.length)
+        return H.ioore(t1, index);
+      return t1[index];
     },
     $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $asListBase: function() {
       return [W.Node];
     },
     $asListMixin: function() {
@@ -13854,95 +5072,33 @@
     },
     $asList: function() {
       return [W.Node];
-    },
-    $isNodeListWrapper: 1,
-    $as_ListBase_Object_ListMixin: function() {
-      return [W.Node];
     }
   };
   W.Node.prototype = {
-    get$nodes: function(receiver) {
-      return W._ChildNodeListLazy$(receiver);
-    },
     remove$0: function(receiver) {
       var t1 = receiver.parentNode;
       if (t1 != null)
-        J._removeChild$1$x(t1, receiver);
-    },
-    replaceWith$1: function(receiver, otherNode) {
-      var $parent, exception;
-      H.interceptedTypeCheck(otherNode, "$isNode");
-      try {
-        $parent = receiver.parentNode;
-        J._replaceChild$2$x($parent, otherNode, receiver);
-      } catch (exception) {
-        H.unwrapException(exception);
-      }
-      return receiver;
+        t1.removeChild(receiver);
     },
     toString$0: function(receiver) {
       var value = receiver.nodeValue;
       return value == null ? this.super$Interceptor$toString(receiver) : value;
     },
-    append$1: function(receiver, node) {
-      return receiver.appendChild(H.interceptedTypeCheck(node, "$isNode"));
-    },
-    _removeChild$1: function(receiver, child) {
-      return receiver.removeChild(H.interceptedTypeCheck(child, "$isNode"));
-    },
-    _replaceChild$2: function(receiver, node, child) {
-      return receiver.replaceChild(H.interceptedTypeCheck(node, "$isNode"), H.interceptedTypeCheck(child, "$isNode"));
-    },
-    $isNode: 1,
-    get$nextNode: function(receiver) {
-      return receiver.nextSibling;
-    }
+    $isNode: 1
   };
-  W.NodeFilter.prototype = {$isNodeFilter: 1};
-  W.NodeIterator.prototype = {$isNodeIterator: 1};
   W.NodeList.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     },
     $index: function(receiver, index) {
-      H.intTypeCheck(index);
       if (index >>> 0 !== index || index >= receiver.length)
         throw H.wrapException(P.IndexError$(index, receiver, null, null, null));
       return receiver[index];
     },
-    $indexSet: function(receiver, index, value) {
-      H.intTypeCheck(index);
-      H.interceptedTypeCheck(value, "$isNode");
-      throw H.wrapException(P.UnsupportedError$("Cannot assign element of immutable List."));
-    },
-    set$length: function(receiver, value) {
-      H.intTypeCheck(value);
-      throw H.wrapException(P.UnsupportedError$("Cannot resize immutable List."));
-    },
-    get$last: function(receiver) {
-      var len = receiver.length;
-      if (len > 0)
-        return receiver[len - 1];
-      throw H.wrapException(P.StateError$("No elements"));
-    },
-    get$single: function(receiver) {
-      var len = receiver.length;
-      if (len === 1)
-        return receiver[0];
-      if (len === 0)
-        throw H.wrapException(P.StateError$("No elements"));
-      throw H.wrapException(P.StateError$("More than one element"));
-    },
     elementAt$1: function(receiver, index) {
-      return this.$index(receiver, H.intTypeCheck(index));
-    },
-    $isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Node];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Node];
+      if (index < 0 || index >= receiver.length)
+        return H.ioore(receiver, index);
+      return receiver[index];
     },
     $isEfficientLengthIterable: 1,
     $asEfficientLengthIterable: function() {
@@ -13952,7 +5108,6 @@
     $asJavaScriptIndexingBehavior: function() {
       return [W.Node];
     },
-    $isListMixin: 1,
     $asListMixin: function() {
       return [W.Node];
     },
@@ -13964,672 +5119,83 @@
     $asList: function() {
       return [W.Node];
     },
-    $isNodeList: 1,
-    $isImmutableListMixin: 1,
     $asImmutableListMixin: function() {
       return [W.Node];
     }
   };
-  W.NonDocumentTypeChildNode.prototype = {$isNonDocumentTypeChildNode: 1};
-  W.NonElementParentNode.prototype = {$isNonElementParentNode: 1};
-  W.NoncedElement.prototype = {$isNoncedElement: 1};
-  W.Notification.prototype = {$isNotification: 1};
-  W.NotificationEvent.prototype = {$isNotificationEvent: 1};
-  W.OListElement.prototype = {$isOListElement: 1};
-  W.ObjectElement.prototype = {$isObjectElement: 1};
-  W.OffscreenCanvas.prototype = {$isOffscreenCanvas: 1};
-  W.OffscreenCanvasRenderingContext2D.prototype = {$isOffscreenCanvasRenderingContext2D: 1, $is_CanvasPath: 1};
-  W.OptGroupElement.prototype = {$isOptGroupElement: 1};
-  W.OptionElement.prototype = {$isOptionElement: 1};
-  W.OrientationSensor.prototype = {$isOrientationSensor: 1};
-  W.OutputElement.prototype = {$isOutputElement: 1};
-  W.OverconstrainedError.prototype = {$isOverconstrainedError: 1};
-  W.PageTransitionEvent.prototype = {$isPageTransitionEvent: 1};
-  W.PaintRenderingContext2D.prototype = {$isPaintRenderingContext2D: 1, $is_CanvasPath: 1};
-  W.PaintSize.prototype = {$isPaintSize: 1};
-  W.PaintWorkletGlobalScope.prototype = {$isPaintWorkletGlobalScope: 1};
-  W.ParagraphElement.prototype = {$isParagraphElement: 1};
-  W.ParamElement.prototype = {$isParamElement: 1};
-  W.ParentNode.prototype = {};
-  W.PasswordCredential.prototype = {$isCredentialUserData: 1, $isPasswordCredential: 1};
-  W.Path2D.prototype = {$isPath2D: 1, $is_CanvasPath: 1};
-  W.PaymentAddress.prototype = {$isPaymentAddress: 1};
-  W.PaymentInstruments.prototype = {$isPaymentInstruments: 1};
-  W.PaymentManager.prototype = {$isPaymentManager: 1};
-  W.PaymentRequest.prototype = {$isPaymentRequest: 1};
-  W.PaymentRequestEvent.prototype = {$isPaymentRequestEvent: 1};
-  W.PaymentRequestUpdateEvent.prototype = {$isPaymentRequestUpdateEvent: 1};
-  W.PaymentResponse.prototype = {$isPaymentResponse: 1};
-  W.Performance.prototype = {$isPerformance: 1};
-  W.PerformanceEntry.prototype = {$isPerformanceEntry: 1};
-  W.PerformanceLongTaskTiming.prototype = {$isPerformanceLongTaskTiming: 1};
-  W.PerformanceMark.prototype = {$isPerformanceMark: 1};
-  W.PerformanceMeasure.prototype = {$isPerformanceMeasure: 1};
-  W.PerformanceNavigation.prototype = {$isPerformanceNavigation: 1};
-  W.PerformanceNavigationTiming.prototype = {$isPerformanceNavigationTiming: 1};
-  W.PerformanceObserver.prototype = {$isPerformanceObserver: 1};
-  W.PerformanceObserverEntryList.prototype = {$isPerformanceObserverEntryList: 1};
-  W.PerformancePaintTiming.prototype = {$isPerformancePaintTiming: 1};
-  W.PerformanceResourceTiming.prototype = {$isPerformanceResourceTiming: 1};
-  W.PerformanceServerTiming.prototype = {$isPerformanceServerTiming: 1};
-  W.PerformanceTiming.prototype = {$isPerformanceTiming: 1};
-  W.PermissionStatus.prototype = {$isPermissionStatus: 1};
-  W.Permissions.prototype = {$isPermissions: 1};
-  W.PhotoCapabilities.prototype = {$isPhotoCapabilities: 1};
-  W.PictureElement.prototype = {$isPictureElement: 1};
-  W.Plugin.prototype = {$isPlugin: 1};
-  W.PluginArray.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Plugin];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Plugin];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Plugin];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.Plugin];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Plugin];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Plugin];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Plugin];
-    },
-    $isPluginArray: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Plugin];
-    }
-  };
-  W.PointerEvent.prototype = {$isPointerEvent: 1};
-  W.PopStateEvent.prototype = {$isPopStateEvent: 1};
-  W.PositionError.prototype = {$isPositionError: 1};
-  W.PreElement.prototype = {$isPreElement: 1};
-  W.Presentation.prototype = {$isPresentation: 1};
-  W.PresentationAvailability.prototype = {$isPresentationAvailability: 1};
-  W.PresentationConnection.prototype = {$isPresentationConnection: 1};
-  W.PresentationConnectionAvailableEvent.prototype = {$isPresentationConnectionAvailableEvent: 1};
-  W.PresentationConnectionCloseEvent.prototype = {$isPresentationConnectionCloseEvent: 1};
-  W.PresentationConnectionList.prototype = {$isPresentationConnectionList: 1};
-  W.PresentationReceiver.prototype = {$isPresentationReceiver: 1};
-  W.PresentationRequest.prototype = {$isPresentationRequest: 1};
-  W.ProcessingInstruction.prototype = {$isProcessingInstruction: 1};
-  W.ProgressElement.prototype = {$isProgressElement: 1};
-  W.ProgressEvent.prototype = {$isProgressEvent: 1};
-  W.PromiseRejectionEvent.prototype = {$isPromiseRejectionEvent: 1};
-  W.PublicKeyCredential.prototype = {$isPublicKeyCredential: 1};
-  W.PushEvent.prototype = {$isPushEvent: 1};
-  W.PushManager.prototype = {$isPushManager: 1};
-  W.PushMessageData.prototype = {$isPushMessageData: 1};
-  W.PushSubscription.prototype = {$isPushSubscription: 1};
-  W.PushSubscriptionOptions.prototype = {$isPushSubscriptionOptions: 1};
-  W.QuoteElement.prototype = {$isQuoteElement: 1};
-  W.Range.prototype = {
-    createContextualFragment$1: function(receiver, fragment) {
-      return receiver.createContextualFragment(H.stringTypeCheck(fragment));
-    },
-    selectNodeContents$1: function(receiver, node) {
-      return receiver.selectNodeContents(H.interceptedTypeCheck(node, "$isNode"));
-    },
-    $isRange: 1
-  };
-  W.RelatedApplication.prototype = {$isRelatedApplication: 1};
-  W.RelativeOrientationSensor.prototype = {$isRelativeOrientationSensor: 1};
-  W.RemotePlayback.prototype = {$isRemotePlayback: 1};
-  W.ReportBody.prototype = {$isReportBody: 1};
-  W.ReportingObserver.prototype = {$isReportingObserver: 1};
-  W.ResizeObserver.prototype = {$isResizeObserver: 1};
-  W.ResizeObserverEntry.prototype = {$isResizeObserverEntry: 1};
-  W.RtcCertificate.prototype = {$isRtcCertificate: 1};
-  W.RtcDataChannel.prototype = {$isRtcDataChannel: 1};
-  W.RtcDataChannelEvent.prototype = {$isRtcDataChannelEvent: 1};
-  W.RtcDtmfSender.prototype = {$isRtcDtmfSender: 1};
-  W.RtcDtmfToneChangeEvent.prototype = {$isRtcDtmfToneChangeEvent: 1};
-  W.RtcIceCandidate.prototype = {$isRtcIceCandidate: 1};
-  W.RtcLegacyStatsReport.prototype = {$isRtcLegacyStatsReport: 1};
-  W.RtcPeerConnection.prototype = {$isRtcPeerConnection: 1};
-  W.RtcPeerConnectionIceEvent.prototype = {$isRtcPeerConnectionIceEvent: 1};
-  W.RtcRtpContributingSource.prototype = {$isRtcRtpContributingSource: 1};
-  W.RtcRtpReceiver.prototype = {$isRtcRtpReceiver: 1};
-  W.RtcRtpSender.prototype = {$isRtcRtpSender: 1};
-  W.RtcSessionDescription.prototype = {$isRtcSessionDescription: 1};
-  W.RtcStatsReport.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    },
-    $isRtcStatsReport: 1
-  };
-  W.RtcStatsResponse.prototype = {$isRtcStatsResponse: 1};
-  W.RtcTrackEvent.prototype = {$isRtcTrackEvent: 1};
-  W.Screen.prototype = {$isScreen: 1};
-  W.ScreenOrientation.prototype = {$isScreenOrientation: 1};
-  W.ScriptElement0.prototype = {$isScriptElement0: 1};
-  W.ScrollState.prototype = {$isScrollState: 1};
-  W.ScrollTimeline.prototype = {$isScrollTimeline: 1};
-  W.SecurityPolicyViolationEvent.prototype = {$isSecurityPolicyViolationEvent: 1};
-  W.SelectElement.prototype = {$isSelectElement: 1,
+  W.SelectElement.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     }
   };
-  W.Selection.prototype = {$isSelection: 1};
-  W.Sensor.prototype = {$isSensor: 1};
-  W.SensorErrorEvent.prototype = {$isSensorErrorEvent: 1};
-  W.ServiceWorker.prototype = {$isAbstractWorker: 1, $isServiceWorker: 1};
-  W.ServiceWorkerContainer.prototype = {$isServiceWorkerContainer: 1};
-  W.ServiceWorkerGlobalScope.prototype = {$isServiceWorkerGlobalScope: 1};
-  W.ServiceWorkerRegistration.prototype = {$isServiceWorkerRegistration: 1};
-  W.ShadowElement.prototype = {$isShadowElement: 1};
-  W.ShadowRoot.prototype = {$isDocumentOrShadowRoot: 1, $isShadowRoot: 1};
-  W.SharedArrayBuffer.prototype = {$isSharedArrayBuffer: 1};
-  W.SharedWorker.prototype = {$isAbstractWorker: 1, $isSharedWorker: 1};
-  W.SharedWorkerGlobalScope.prototype = {$isSharedWorkerGlobalScope: 1};
-  W.SlotElement.prototype = {$isSlotElement: 1};
-  W.SourceBuffer.prototype = {$isSourceBuffer: 1};
-  W.SourceBufferList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.SourceBuffer];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.SourceBuffer];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.SourceBuffer];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SourceBuffer];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SourceBuffer];
-    },
-    $isSourceBufferList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SourceBuffer];
-    }
-  };
-  W.SourceElement.prototype = {$isSourceElement: 1};
   W.SpanElement.prototype = {$isSpanElement: 1};
-  W.SpeechGrammar.prototype = {$isSpeechGrammar: 1};
-  W.SpeechGrammarList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.SpeechGrammar];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechGrammar];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechGrammar];
-    },
-    $isSpeechGrammarList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SpeechGrammar];
-    }
-  };
-  W.SpeechRecognition.prototype = {$isSpeechRecognition: 1};
-  W.SpeechRecognitionAlternative.prototype = {$isSpeechRecognitionAlternative: 1};
-  W.SpeechRecognitionError.prototype = {$isSpeechRecognitionError: 1};
-  W.SpeechRecognitionEvent.prototype = {$isSpeechRecognitionEvent: 1};
-  W.SpeechRecognitionResult.prototype = {$isSpeechRecognitionResult: 1};
-  W.SpeechSynthesis.prototype = {$isSpeechSynthesis: 1};
-  W.SpeechSynthesisEvent.prototype = {$isSpeechSynthesisEvent: 1};
-  W.SpeechSynthesisUtterance.prototype = {$isSpeechSynthesisUtterance: 1};
-  W.SpeechSynthesisVoice.prototype = {$isSpeechSynthesisVoice: 1};
-  W.StaticRange.prototype = {$isStaticRange: 1};
-  W.Storage.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, P.String];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, P.String];
-    },
-    $isStorage: 1
-  };
-  W.StorageEvent.prototype = {$isStorageEvent: 1};
-  W.StorageManager.prototype = {$isStorageManager: 1};
-  W.StyleElement.prototype = {$isStyleElement: 1};
-  W.StyleMedia.prototype = {$isStyleMedia: 1};
-  W.StylePropertyMap.prototype = {$isStylePropertyMap: 1};
-  W.StylePropertyMapReadonly.prototype = {$isStylePropertyMapReadonly: 1};
-  W.StyleSheet.prototype = {$isStyleSheet: 1};
-  W.SyncEvent.prototype = {$isSyncEvent: 1};
-  W.SyncManager.prototype = {$isSyncManager: 1};
-  W.TableCaptionElement.prototype = {$isTableCaptionElement: 1};
-  W.TableCellElement.prototype = {$isTableCellElement: 1};
-  W.TableColElement.prototype = {$isTableColElement: 1};
   W.TableElement.prototype = {
     createFragment$3$treeSanitizer$validator: function(receiver, html, treeSanitizer, validator) {
       var table, fragment;
-      H.stringTypeCheck(html);
-      H.interceptedTypeCheck(validator, "$isNodeValidator");
-      H.interceptedTypeCheck(treeSanitizer, "$isNodeTreeSanitizer");
-      if (H.boolConversionCheck(W.Range_supportsCreateContextualFragment()))
+      if ("createContextualFragment" in window.Range.prototype)
         return this.super$Element$createFragment(receiver, html, treeSanitizer, validator);
-      table = W.Element_Element$html("<table>" + H.S(html) + "</table>", treeSanitizer, validator);
-      fragment = W.DocumentFragment_DocumentFragment();
-      J.addAll$1$ax(J.get$nodes$x(fragment), J.get$nodes$x(table));
+      table = W.Element_Element$html("<table>" + html + "</table>", treeSanitizer, validator);
+      fragment = document.createDocumentFragment();
+      fragment.toString;
+      table.toString;
+      new W._ChildNodeListLazy(fragment).addAll$1(0, new W._ChildNodeListLazy(table));
       return fragment;
-    },
-    $isTableElement: 1
+    }
   };
   W.TableRowElement.prototype = {
     createFragment$3$treeSanitizer$validator: function(receiver, html, treeSanitizer, validator) {
-      var fragment, row;
-      H.stringTypeCheck(html);
-      H.interceptedTypeCheck(validator, "$isNodeValidator");
-      H.interceptedTypeCheck(treeSanitizer, "$isNodeTreeSanitizer");
-      if (H.boolConversionCheck(W.Range_supportsCreateContextualFragment()))
+      var t1, fragment, section, row;
+      if ("createContextualFragment" in window.Range.prototype)
         return this.super$Element$createFragment(receiver, html, treeSanitizer, validator);
-      fragment = W.DocumentFragment_DocumentFragment();
-      row = J.get$single$ax(J.get$nodes$x(J.get$single$ax(J.get$nodes$x(J.createFragment$3$treeSanitizer$validator$x(W.TableElement_TableElement(), html, treeSanitizer, validator)))));
-      J.addAll$1$ax(J.get$nodes$x(fragment), J.get$nodes$x(row));
+      t1 = document;
+      fragment = t1.createDocumentFragment();
+      t1 = C.TableElement_methods.createFragment$3$treeSanitizer$validator(t1.createElement("table"), html, treeSanitizer, validator);
+      t1.toString;
+      t1 = new W._ChildNodeListLazy(t1);
+      section = t1.get$single(t1);
+      section.toString;
+      t1 = new W._ChildNodeListLazy(section);
+      row = t1.get$single(t1);
+      fragment.toString;
+      row.toString;
+      new W._ChildNodeListLazy(fragment).addAll$1(0, new W._ChildNodeListLazy(row));
       return fragment;
-    },
-    $isTableRowElement: 1
+    }
   };
   W.TableSectionElement.prototype = {
     createFragment$3$treeSanitizer$validator: function(receiver, html, treeSanitizer, validator) {
-      var fragment, section;
-      H.stringTypeCheck(html);
-      H.interceptedTypeCheck(validator, "$isNodeValidator");
-      H.interceptedTypeCheck(treeSanitizer, "$isNodeTreeSanitizer");
-      if (H.boolConversionCheck(W.Range_supportsCreateContextualFragment()))
+      var t1, fragment, section;
+      if ("createContextualFragment" in window.Range.prototype)
         return this.super$Element$createFragment(receiver, html, treeSanitizer, validator);
-      fragment = W.DocumentFragment_DocumentFragment();
-      section = J.get$single$ax(J.get$nodes$x(J.createFragment$3$treeSanitizer$validator$x(W.TableElement_TableElement(), html, treeSanitizer, validator)));
-      J.addAll$1$ax(J.get$nodes$x(fragment), J.get$nodes$x(section));
+      t1 = document;
+      fragment = t1.createDocumentFragment();
+      t1 = C.TableElement_methods.createFragment$3$treeSanitizer$validator(t1.createElement("table"), html, treeSanitizer, validator);
+      t1.toString;
+      t1 = new W._ChildNodeListLazy(t1);
+      section = t1.get$single(t1);
+      fragment.toString;
+      section.toString;
+      new W._ChildNodeListLazy(fragment).addAll$1(0, new W._ChildNodeListLazy(section));
       return fragment;
-    },
-    $isTableSectionElement: 1
+    }
   };
-  W.TaskAttributionTiming.prototype = {$isTaskAttributionTiming: 1};
   W.TemplateElement.prototype = {$isTemplateElement: 1};
-  W.Text.prototype = {$isText: 1};
-  W.TextAreaElement.prototype = {$isTextAreaElement: 1};
-  W.TextDetector.prototype = {$isTextDetector: 1};
-  W.TextEvent.prototype = {$isTextEvent: 1};
-  W.TextMetrics.prototype = {$isTextMetrics: 1};
-  W.TextTrack.prototype = {$isTextTrack: 1};
-  W.TextTrackCue.prototype = {$isTextTrackCue: 1};
-  W.TextTrackCueList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.TextTrackCue];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.TextTrackCue];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.TextTrackCue];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrackCue];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrackCue];
-    },
-    $isTextTrackCueList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.TextTrackCue];
-    }
-  };
-  W.TextTrackList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.TextTrack];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.TextTrack];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrack];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.TextTrack];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrack];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrack];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrack];
-    },
-    $isTextTrackList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.TextTrack];
-    }
-  };
-  W.TimeElement.prototype = {$isTimeElement: 1};
-  W.TimeRanges.prototype = {$isTimeRanges: 1};
-  W.TitleElement.prototype = {$isTitleElement: 1};
-  W.Touch.prototype = {$isTouch: 1};
-  W.TouchEvent.prototype = {$isTouchEvent: 1};
-  W.TouchList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Touch];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Touch];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Touch];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.Touch];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Touch];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Touch];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Touch];
-    },
-    $isTouchList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Touch];
-    }
-  };
-  W.TrackDefault.prototype = {$isTrackDefault: 1};
-  W.TrackDefaultList.prototype = {$isTrackDefaultList: 1};
-  W.TrackElement.prototype = {$isTrackElement: 1};
-  W.TrackEvent.prototype = {$isTrackEvent: 1};
-  W.TransitionEvent.prototype = {$isTransitionEvent: 1};
-  W.TreeWalker.prototype = {$isTreeWalker: 1};
-  W.TrustedHtml.prototype = {$isTrustedHtml: 1};
-  W.TrustedScriptUrl.prototype = {$isTrustedScriptUrl: 1};
-  W.TrustedUrl.prototype = {$isTrustedUrl: 1};
-  W.UIEvent.prototype = {$isUIEvent: 1};
-  W.UListElement.prototype = {$isUListElement: 1};
-  W.UnderlyingSourceBase.prototype = {$isUnderlyingSourceBase: 1};
-  W.UnknownElement.prototype = {$isUnknownElement: 1};
-  W.Url.prototype = {$isUrl: 1};
-  W.UrlSearchParams.prototype = {$isUrlSearchParams: 1};
-  W.UrlUtilsReadOnly.prototype = {};
-  W.VR.prototype = {$isVR: 1};
-  W.VRCoordinateSystem.prototype = {$isVRCoordinateSystem: 1};
-  W.VRDevice.prototype = {$isVRDevice: 1};
-  W.VRDeviceEvent.prototype = {$isVRDeviceEvent: 1};
-  W.VRDisplay.prototype = {$isVRDisplay: 1};
-  W.VRDisplayCapabilities.prototype = {$isVRDisplayCapabilities: 1};
-  W.VRDisplayEvent.prototype = {$isVRDisplayEvent: 1};
-  W.VREyeParameters.prototype = {$isVREyeParameters: 1};
-  W.VRFrameData.prototype = {$isVRFrameData: 1};
-  W.VRFrameOfReference.prototype = {$isVRFrameOfReference: 1};
-  W.VRPose.prototype = {$isVRPose: 1};
-  W.VRSession.prototype = {$isVRSession: 1};
-  W.VRSessionEvent.prototype = {$isVRSessionEvent: 1};
-  W.VRStageBounds.prototype = {$isVRStageBounds: 1};
-  W.VRStageBoundsPoint.prototype = {$isVRStageBoundsPoint: 1};
-  W.VRStageParameters.prototype = {$isVRStageParameters: 1};
-  W.ValidityState.prototype = {$isValidityState: 1};
-  W.VideoElement.prototype = {$isVideoElement: 1, $isCanvasImageSource: 1};
-  W.VideoPlaybackQuality.prototype = {$isVideoPlaybackQuality: 1};
-  W.VideoTrack.prototype = {$isVideoTrack: 1};
-  W.VideoTrackList.prototype = {$isVideoTrackList: 1};
-  W.VisualViewport.prototype = {$isVisualViewport: 1};
-  W.VttCue.prototype = {$isVttCue: 1};
-  W.VttRegion.prototype = {$isVttRegion: 1};
-  W.WebSocket0.prototype = {$isWebSocket0: 1};
-  W.WheelEvent.prototype = {$isWheelEvent: 1};
-  W.Window.prototype = {
-    get$location: function(receiver) {
-      return H.interceptedTypeCheck(this.get$_location(receiver), "$isLocation");
-    },
-    get$_location: function(receiver) {
-      return receiver.location;
-    },
-    get$console: function(receiver) {
-      return C.C_Console;
-    },
-    $isGlobalEventHandlers: 1,
-    $isWindow: 1,
-    $isWindowBase64: 1,
-    $isWindowEventHandlers: 1,
-    $is_WindowTimers: 1,
-    $isWindowBase: 1
-  };
-  W._BeforeUnloadEvent.prototype = {$isBeforeUnloadEvent: 1};
-  W._BeforeUnloadEventStreamProvider.prototype = {$isEventStreamProvider: 1,
-    $asEventStreamProvider: function() {
-      return [W.BeforeUnloadEvent];
-    }
-  };
-  W.WindowBase64.prototype = {};
-  W.WindowClient.prototype = {$isWindowClient: 1};
-  W.WindowEventHandlers.prototype = {};
-  W.Worker.prototype = {$isAbstractWorker: 1, $isWorker: 1};
-  W.WorkerGlobalScope.prototype = {$isWindowBase64: 1, $isWorkerGlobalScope: 1, $is_WindowTimers: 1};
-  W.WorkerPerformance.prototype = {$isWorkerPerformance: 1};
-  W.WorkletAnimation.prototype = {$isWorkletAnimation: 1};
-  W.WorkletGlobalScope.prototype = {$isWorkletGlobalScope: 1};
-  W.XPathEvaluator.prototype = {$isXPathEvaluator: 1};
-  W.XPathExpression.prototype = {$isXPathExpression: 1};
-  W.XPathNSResolver.prototype = {$isXPathNSResolver: 1};
-  W.XPathResult.prototype = {$isXPathResult: 1};
-  W.XmlDocument.prototype = {$isXmlDocument: 1};
-  W.XmlSerializer.prototype = {$isXmlSerializer: 1};
-  W.XsltProcessor.prototype = {$isXsltProcessor: 1};
+  W.UIEvent.prototype = {};
+  W.Window.prototype = {$isWindowBase: 1};
   W._Attr.prototype = {$is_Attr: 1};
-  W._Bluetooth.prototype = {$is_Bluetooth: 1};
-  W._BluetoothCharacteristicProperties.prototype = {$is_BluetoothCharacteristicProperties: 1};
-  W._BluetoothDevice.prototype = {$is_BluetoothDevice: 1};
-  W._BluetoothRemoteGATTCharacteristic.prototype = {$is_BluetoothRemoteGATTCharacteristic: 1};
-  W._BluetoothRemoteGATTServer.prototype = {$is_BluetoothRemoteGATTServer: 1};
-  W._BluetoothRemoteGATTService.prototype = {$is_BluetoothRemoteGATTService: 1};
-  W._BluetoothUUID.prototype = {$is_BluetoothUUID: 1};
-  W._BudgetService.prototype = {$is_BudgetService: 1};
-  W._Cache.prototype = {$is_Cache: 1};
-  W._CanvasPath.prototype = {};
-  W._Clipboard.prototype = {$is_Clipboard: 1};
-  W._CssRuleList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.CssRule];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.CssRule];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.CssRule];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.CssRule];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.CssRule];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.CssRule];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.CssRule];
-    },
-    $is_CssRuleList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.CssRule];
-    }
-  };
-  W._DOMFileSystemSync.prototype = {$is_DOMFileSystemSync: 1};
-  W._DirectoryEntrySync.prototype = {$is_DirectoryEntrySync: 1};
-  W._DirectoryReaderSync.prototype = {$is_DirectoryReaderSync: 1};
-  W._DocumentType.prototype = {$isChildNode: 1, $is_DocumentType: 1};
-  W._DomRect.prototype = {$is_DomRect: 1};
-  W._JenkinsSmiHash.prototype = {};
-  W._EntrySync.prototype = {$is_EntrySync: 1};
-  W._FileEntrySync.prototype = {$is_FileEntrySync: 1};
-  W._FileReaderSync.prototype = {$is_FileReaderSync: 1};
-  W._FileWriterSync.prototype = {$is_FileWriterSync: 1};
-  W._GamepadList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Gamepad];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Gamepad];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Gamepad];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.Gamepad];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Gamepad];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Gamepad];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Gamepad];
-    },
-    $is_GamepadList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Gamepad];
-    }
-  };
-  W._HTMLAllCollection.prototype = {$is_HTMLAllCollection: 1};
-  W._HTMLDirectoryElement.prototype = {$is_HTMLDirectoryElement: 1};
-  W._HTMLFontElement.prototype = {$is_HTMLFontElement: 1};
-  W._HTMLFrameElement.prototype = {$is_HTMLFrameElement: 1};
-  W._HTMLFrameSetElement.prototype = {$isWindowEventHandlers: 1, $is_HTMLFrameSetElement: 1};
-  W._HTMLMarqueeElement.prototype = {$is_HTMLMarqueeElement: 1};
-  W._Mojo.prototype = {$is_Mojo: 1};
-  W._MojoHandle.prototype = {$is_MojoHandle: 1};
-  W._MojoInterfaceInterceptor.prototype = {$is_MojoInterfaceInterceptor: 1};
-  W._MojoInterfaceRequestEvent.prototype = {$is_MojoInterfaceRequestEvent: 1};
-  W._MojoWatcher.prototype = {$is_MojoWatcher: 1};
-  W._NFC.prototype = {$is_NFC: 1};
   W._NamedNodeMap.prototype = {
     get$length: function(receiver) {
       return receiver.length;
     },
     $index: function(receiver, index) {
-      H.intTypeCheck(index);
       if (index >>> 0 !== index || index >= receiver.length)
         throw H.wrapException(P.IndexError$(index, receiver, null, null, null));
       return receiver[index];
     },
-    $indexSet: function(receiver, index, value) {
-      H.intTypeCheck(index);
-      H.interceptedTypeCheck(value, "$isNode");
-      throw H.wrapException(P.UnsupportedError$("Cannot assign element of immutable List."));
-    },
-    set$length: function(receiver, value) {
-      H.intTypeCheck(value);
-      throw H.wrapException(P.UnsupportedError$("Cannot resize immutable List."));
-    },
-    get$last: function(receiver) {
-      var len = receiver.length;
-      if (len > 0)
-        return receiver[len - 1];
-      throw H.wrapException(P.StateError$("No elements"));
-    },
-    get$single: function(receiver) {
-      var len = receiver.length;
-      if (len === 1)
-        return receiver[0];
-      if (len === 0)
-        throw H.wrapException(P.StateError$("No elements"));
-      throw H.wrapException(P.StateError$("More than one element"));
-    },
     elementAt$1: function(receiver, index) {
-      return this.$index(receiver, H.intTypeCheck(index));
-    },
-    $isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.Node];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.Node];
+      if (index < 0 || index >= receiver.length)
+        return H.ioore(receiver, index);
+      return receiver[index];
     },
     $isEfficientLengthIterable: 1,
     $asEfficientLengthIterable: function() {
@@ -14639,7 +5205,6 @@
     $asJavaScriptIndexingBehavior: function() {
       return [W.Node];
     },
-    $isListMixin: 1,
     $asListMixin: function() {
       return [W.Node];
     },
@@ -14651,143 +5216,31 @@
     $asList: function() {
       return [W.Node];
     },
-    $is_NamedNodeMap: 1,
-    $isImmutableListMixin: 1,
     $asImmutableListMixin: function() {
       return [W.Node];
     }
   };
-  W._PagePopupController.prototype = {$is_PagePopupController: 1};
-  W._Report.prototype = {$is_Report: 1};
-  W._Request.prototype = {$is_Request: 1};
-  W._ResourceProgressEvent.prototype = {$is_ResourceProgressEvent: 1};
-  W._Response.prototype = {$is_Response: 1};
-  W._SpeechRecognitionResultList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $is_SpeechRecognitionResultList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SpeechRecognitionResult];
-    }
-  };
-  W._StyleSheetList.prototype = {$isJSIndexable: 1,
-    $asJSIndexable: function() {
-      return [W.StyleSheet];
-    },
-    $isJSMutableIndexable: 1,
-    $asJSMutableIndexable: function() {
-      return [W.StyleSheet];
-    },
-    $isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isJavaScriptIndexingBehavior: 1,
-    $asJavaScriptIndexingBehavior: function() {
-      return [W.StyleSheet];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.StyleSheet];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.StyleSheet];
-    },
-    $is_StyleSheetList: 1,
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.StyleSheet];
-    }
-  };
-  W._SubtleCrypto.prototype = {$is_SubtleCrypto: 1};
-  W._USB.prototype = {$is_USB: 1};
-  W._USBAlternateInterface.prototype = {$is_USBAlternateInterface: 1};
-  W._USBConfiguration.prototype = {$is_USBConfiguration: 1};
-  W._USBConnectionEvent.prototype = {$is_USBConnectionEvent: 1};
-  W._USBDevice.prototype = {$is_USBDevice: 1};
-  W._USBEndpoint.prototype = {$is_USBEndpoint: 1};
-  W._USBInTransferResult.prototype = {$is_USBInTransferResult: 1};
-  W._USBInterface.prototype = {$is_USBInterface: 1};
-  W._USBIsochronousInTransferPacket.prototype = {$is_USBIsochronousInTransferPacket: 1};
-  W._USBIsochronousInTransferResult.prototype = {$is_USBIsochronousInTransferResult: 1};
-  W._USBIsochronousOutTransferPacket.prototype = {$is_USBIsochronousOutTransferPacket: 1};
-  W._USBIsochronousOutTransferResult.prototype = {$is_USBIsochronousOutTransferResult: 1};
-  W._USBOutTransferResult.prototype = {$is_USBOutTransferResult: 1};
-  W._WindowTimers.prototype = {};
-  W._WorkerLocation.prototype = {$isUrlUtilsReadOnly: 1, $is_WorkerLocation: 1};
-  W._WorkerNavigator.prototype = {$isNavigatorID: 1, $isNavigatorOnLine: 1, $is_WorkerNavigator: 1};
-  W._Worklet.prototype = {$is_Worklet: 1};
   W._AttributeMap.prototype = {
     forEach$1: function(_, f) {
-      var t1, t2;
+      var t1, t2, t3, _i, key;
       H.functionTypeCheck(f, {func: 1, ret: -1, args: [P.String, P.String]});
-      for (t1 = J.get$iterator$ax(this.get$keys()); H.boolConversionCheck(t1.moveNext$0());) {
-        t2 = t1.get$current();
-        f.call$2(t2, this.$index(0, t2));
+      for (t1 = this.get$keys(), t2 = t1.length, t3 = this._element, _i = 0; _i < t1.length; t1.length === t2 || (0, H.throwConcurrentModificationError)(t1), ++_i) {
+        key = t1[_i];
+        f.call$2(key, t3.getAttribute(key));
       }
     },
     get$keys: function() {
       var len, i, attr,
-        attributes = this._html$_element.attributes,
+        attributes = this._element.attributes,
         keys = H.setRuntimeTypeInfo([], [P.String]);
       for (len = attributes.length, i = 0; i < len; ++i) {
         if (i >= attributes.length)
           return H.ioore(attributes, i);
         attr = H.interceptedTypeCheck(attributes[i], "$is_Attr");
-        if (H.boolConversionCheck(this._matches$1(attr)))
+        if (attr.namespaceURI == null)
           C.JSArray_methods.add$1(keys, attr.name);
       }
       return keys;
-    },
-    get$values: function(_) {
-      var len, i, attr,
-        attributes = this._html$_element.attributes,
-        values = H.setRuntimeTypeInfo([], [P.String]);
-      for (len = attributes.length, i = 0; i < len; ++i) {
-        if (i >= attributes.length)
-          return H.ioore(attributes, i);
-        attr = H.interceptedTypeCheck(attributes[i], "$is_Attr");
-        if (H.boolConversionCheck(this._matches$1(attr)))
-          C.JSArray_methods.add$1(values, attr.value);
-      }
-      return values;
-    },
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
-    $asMapBase: function() {
-      return [P.String, P.String];
     },
     $asMapMixin: function() {
       return [P.String, P.String];
@@ -14797,185 +5250,39 @@
     }
   };
   W._ElementAttributeMap.prototype = {
-    containsKey$1: function(key) {
-      return J._hasAttribute$1$x(this._html$_element, H.stringTypeCheck(key));
-    },
     $index: function(_, key) {
-      return J.getAttribute$1$x(this._html$_element, H.stringTypeCheck(key));
-    },
-    $indexSet: function(_, key, value) {
-      J.setAttribute$2$x(this._html$_element, H.stringTypeCheck(key), H.stringTypeCheck(value));
-    },
-    remove$1: function(_, key) {
-      return typeof key === "string" ? W._ElementAttributeMap__remove(this._html$_element, key) : null;
+      return this._element.getAttribute(H.stringTypeCheck(key));
     },
     get$length: function(_) {
-      return J.get$length$asx(this.get$keys());
-    },
-    _matches$1: function(node) {
-      return H.interceptedTypeCheck(node, "$is_Attr").namespaceURI == null;
+      return this.get$keys().length;
     }
   };
-  W._NamespacedAttributeMap.prototype = {};
-  W._DataAttributeMap.prototype = {
-    $asMapBase: function() {
-      return [P.String, P.String];
-    },
-    $asMapMixin: function() {
-      return [P.String, P.String];
-    },
-    $asMap: function() {
-      return [P.String, P.String];
-    }
-  };
-  W.CanvasImageSource.prototype = {};
-  W.WindowBase.prototype = {$isInterceptor: 1, $isEventTarget: 1};
-  W.LocationBase.prototype = {};
-  W.HistoryBase.prototype = {};
-  W.CssClassSet.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isSet: 1,
-    $asSet: function() {
-      return [P.String];
-    }
-  };
-  W._ContentCssRect.prototype = {};
-  W._ContentCssListRect.prototype = {};
-  W._PaddingCssRect.prototype = {};
-  W._BorderCssRect.prototype = {};
-  W._MarginCssRect.prototype = {};
-  W.CssRect.prototype = {$is_RectangleBase: 1,
-    $as_RectangleBase: function() {
-      return [P.num];
-    },
-    $isRectangle: 1,
-    $asRectangle: function() {
-      return [P.num];
-    }
-  };
-  W._MultiElementCssClassSet.prototype = {};
-  W._ElementCssClassSet.prototype = {
-    readClasses$0: function() {
-      var trimmed,
-        t1 = P.String,
-        s = P.LinkedHashSet_LinkedHashSet(t1);
-      for (t1 = C.JSArray_methods.get$iterator(H.setRuntimeTypeInfo(this._html$_element.className.split(" "), [t1])); H.boolConversionCheck(t1.moveNext$0());) {
-        trimmed = J.trim$0$s(t1.get$current());
-        if (!H.boolConversionCheck(J.get$isEmpty$asx(trimmed)))
-          s.add$1(0, trimmed);
-      }
-      return s;
-    },
-    writeClasses$1: function(s) {
-      this._html$_element.className = H.stringTypeCheck(H.assertSubtype(s, "$isSet", [P.String], "$asSet").join$1(0, " "));
-    },
-    get$length: function(_) {
-      return W._ElementCssClassSet__classListLength(W._ElementCssClassSet__classListOf(this._html$_element));
-    },
-    get$isEmpty: function(_) {
-      return J.$eq$(this.get$length(this), 0);
-    },
-    contains$1: function(_, value) {
-      return W._ElementCssClassSet__contains(this._html$_element, value);
-    },
-    add$1: function(_, value) {
-      return W._ElementCssClassSet__add(this._html$_element, H.stringTypeCheck(value));
-    },
-    addAll$1: function(_, iterable) {
-      W._ElementCssClassSet__addAll(this._html$_element, H.assertSubtype(iterable, "$isIterable", [P.String], "$asIterable"));
-    },
-    removeWhere$1: function(_, test) {
-      W._ElementCssClassSet__removeWhere(this._html$_element, H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [P.String]}), true);
-    }
-  };
-  W.Dimension.prototype = {};
-  W.EventStreamProvider.prototype = {
-    forElement$1: function(e) {
-      return W._ElementEventStreamImpl$(H.interceptedTypeCheck(e, "$isElement"), this._eventType, false, H.getTypeArgumentByIndex(this, 0));
-    }
-  };
-  W.ElementStream.prototype = {$isStream: 1};
-  W._EventStream.prototype = {
-    listen$4$cancelOnError$onDone$onError: function(onData, cancelOnError, onDone, onError) {
-      var _this = this,
-        t1 = H.getTypeArgumentByIndex(_this, 0);
-      H.functionTypeCheck(onData, {func: 1, ret: -1, args: [t1]});
-      H.interceptedTypeCheck(onError, "$isFunction");
-      H.functionTypeCheck(onDone, {func: 1, ret: -1});
-      H.boolTypeCheck(cancelOnError);
-      return W._EventStreamSubscription$(_this._html$_target, _this._eventType, onData, _this._useCapture, t1);
-    },
-    listen$1: function(onData) {
-      return this.listen$4$cancelOnError$onDone$onError(onData, null, null, null);
-    }
-  };
-  W._ElementEventStreamImpl.prototype = {$isElementStream: 1};
-  W._ElementListEventStreamImpl.prototype = {$isElementStream: 1};
-  W._EventStreamSubscription.prototype = {
-    _EventStreamSubscription$4: function(_target, _eventType, onData, _useCapture, $T) {
-      this._tryResume$0();
-    },
-    get$isPaused: function() {
-      return false;
-    },
-    _tryResume$0: function() {
-      var _this = this,
-        t1 = _this._onData;
-      if (t1 != null && !H.boolConversionCheck(_this.get$isPaused()))
-        J.addEventListener$3$x(_this._html$_target, _this._eventType, t1, _this._useCapture);
-    }
-  };
+  W._EventStream.prototype = {};
+  W._ElementEventStreamImpl.prototype = {};
+  W._EventStreamSubscription.prototype = {};
   W._EventStreamSubscription_closure.prototype = {
     call$1: function(e) {
       return this.onData.call$1(H.interceptedTypeCheck(e, "$isEvent"));
     },
-    $signature: 19
+    $signature: 20
   };
-  W.CustomStream.prototype = {$isStream: 1};
-  W._CustomEventStreamImpl.prototype = {$isCustomStream: 1};
-  W._CustomKeyEventStreamImpl.prototype = {
-    $asStream: function() {
-      return [W.KeyEvent];
-    },
-    $asCustomStream: function() {
-      return [W.KeyEvent];
-    },
-    $as_CustomEventStreamImpl: function() {
-      return [W.KeyEvent];
-    }
-  };
-  W._StreamPool.prototype = {};
-  W._CustomEventStreamProvider.prototype = {$isEventStreamProvider: 1};
   W._Html5NodeValidator.prototype = {
     _Html5NodeValidator$1$uriPolicy: function(uriPolicy) {
-      var t2,
-        t1 = J.getInterceptor$asx($._Html5NodeValidator__attributeValidators);
-      if (H.boolConversionCheck(t1.get$isEmpty($._Html5NodeValidator__attributeValidators))) {
-        for (t2 = C.JSArray_methods.get$iterator(C.List_2Zi); H.boolConversionCheck(t2.moveNext$0());)
-          t1.$indexSet($._Html5NodeValidator__attributeValidators, t2.get$current(), W.html__Html5NodeValidator__standardAttributeValidator$closure());
-        for (t2 = C.JSArray_methods.get$iterator(C.List_yrN); H.boolConversionCheck(t2.moveNext$0());)
-          t1.$indexSet($._Html5NodeValidator__attributeValidators, t2.get$current(), W.html__Html5NodeValidator__uriAttributeValidator$closure());
+      var _i;
+      if ($._Html5NodeValidator__attributeValidators.__js_helper$_length === 0) {
+        for (_i = 0; _i < 262; ++_i)
+          $._Html5NodeValidator__attributeValidators.$indexSet(0, C.List_2Zi[_i], W.html__Html5NodeValidator__standardAttributeValidator$closure());
+        for (_i = 0; _i < 12; ++_i)
+          $._Html5NodeValidator__attributeValidators.$indexSet(0, C.List_yrN[_i], W.html__Html5NodeValidator__uriAttributeValidator$closure());
       }
     },
     allowsElement$1: function(element) {
-      H.interceptedTypeCheck(element, "$isElement");
-      return J.contains$1$ax($.$get$_Html5NodeValidator__allowedElements(), W.Element__safeTagName(element));
+      return $.$get$_Html5NodeValidator__allowedElements().contains$1(0, W.Element__safeTagName(element));
     },
     allowsAttribute$3: function(element, attributeName, value) {
-      var t1, validator;
-      H.interceptedTypeCheck(element, "$isElement");
-      H.stringTypeCheck(attributeName);
-      H.stringTypeCheck(value);
-      t1 = J.getInterceptor$asx($._Html5NodeValidator__attributeValidators);
-      validator = t1.$index($._Html5NodeValidator__attributeValidators, H.S(W.Element__safeTagName(element)) + "::" + H.S(attributeName));
+      var validator = $._Html5NodeValidator__attributeValidators.$index(0, H.S(W.Element__safeTagName(element)) + "::" + attributeName);
       if (validator == null)
-        validator = t1.$index($._Html5NodeValidator__attributeValidators, "*::" + H.S(attributeName));
+        validator = $._Html5NodeValidator__attributeValidators.$index(0, "*::" + attributeName);
       if (validator == null)
         return false;
       return H.boolTypeCheck(validator.call$4(element, attributeName, value, this));
@@ -14984,64 +5291,15 @@
   };
   W.ImmutableListMixin.prototype = {
     get$iterator: function(receiver) {
-      return W.FixedSizeListIterator$(receiver, H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0));
-    },
-    add$1: function(receiver, value) {
-      H.assertSubtypeOfRuntimeType(value, H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0));
-      throw H.wrapException(P.UnsupportedError$("Cannot add to immutable List."));
-    },
-    addAll$1: function(receiver, iterable) {
-      H.assertSubtype(iterable, "$isIterable", [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0)], "$asIterable");
-      throw H.wrapException(P.UnsupportedError$("Cannot add to immutable List."));
-    },
-    removeLast$0: function(receiver) {
-      throw H.wrapException(P.UnsupportedError$("Cannot remove from immutable List."));
-    },
-    removeWhere$1: function(receiver, test) {
-      H.functionTypeCheck(test, {func: 1, ret: P.bool, args: [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0)]});
-      throw H.wrapException(P.UnsupportedError$("Cannot remove from immutable List."));
-    },
-    setRange$3: function(receiver, start, end, iterable) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      H.assertSubtype(iterable, "$isIterable", [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0)], "$asIterable");
-      throw H.wrapException(P.UnsupportedError$("Cannot setRange on immutable List."));
-    },
-    $isEfficientLengthIterable: 1,
-    $isIterable: 1,
-    $isList: 1
-  };
-  W.KeyCode.prototype = {};
-  W.KeyLocation.prototype = {};
-  W._KeyName.prototype = {};
-  W._KeyboardEventHandler.prototype = {
-    $asEventStreamProvider: function() {
-      return [W.KeyEvent];
+      return new W.FixedSizeListIterator(receiver, this.get$length(receiver), [H.getRuntimeTypeArgumentIntercepted(this, receiver, "ImmutableListMixin", 0)]);
     }
   };
-  W.KeyboardEventStream.prototype = {};
   W.NodeValidatorBuilder.prototype = {
-    NodeValidatorBuilder$common$0: function() {
-      this.allowHtml5$0();
-      this.allowTemplating$0();
-    },
-    allowHtml5$0: function() {
-      this.add$1(0, W._Html5NodeValidator$(null));
-    },
-    allowSvg$0: function() {
-      this.add$1(0, W._SvgNodeValidator$());
-    },
-    allowTemplating$0: function() {
-      this.add$1(0, W._TemplatingNodeValidator$());
-    },
-    add$1: function(_, validator) {
-      J.add$1$ax(this._validators, H.interceptedTypeCheck(validator, "$isNodeValidator"));
-    },
     allowsElement$1: function(element) {
-      return J.any$1$ax(this._validators, new W.NodeValidatorBuilder_allowsElement_closure(H.interceptedTypeCheck(element, "$isElement")));
+      return C.JSArray_methods.any$1(this._validators, new W.NodeValidatorBuilder_allowsElement_closure(element));
     },
     allowsAttribute$3: function(element, attributeName, value) {
-      return J.any$1$ax(this._validators, new W.NodeValidatorBuilder_allowsAttribute_closure(H.interceptedTypeCheck(element, "$isElement"), H.stringTypeCheck(attributeName), H.stringTypeCheck(value)));
+      return C.JSArray_methods.any$1(this._validators, new W.NodeValidatorBuilder_allowsAttribute_closure(element, attributeName, value));
     },
     $isNodeValidator: 1
   };
@@ -15049,57 +5307,45 @@
     call$1: function(v) {
       return H.interceptedTypeCheck(v, "$isNodeValidator").allowsElement$1(this.element);
     },
-    $signature: 13
+    $signature: 10
   };
   W.NodeValidatorBuilder_allowsAttribute_closure.prototype = {
     call$1: function(v) {
       return H.interceptedTypeCheck(v, "$isNodeValidator").allowsAttribute$3(this.element, this.attributeName, this.value);
     },
-    $signature: 13
+    $signature: 10
   };
   W._SimpleNodeValidator.prototype = {
     _SimpleNodeValidator$4$allowedAttributes$allowedElements$allowedUriAttributes: function(uriPolicy, allowedAttributes, allowedElements, allowedUriAttributes) {
-      var legalAttributes, extraUriAttributes, t2,
-        t1 = allowedElements == null ? C.List_empty : allowedElements;
-      J.addAll$1$ax(this.allowedElements, t1);
-      if (allowedAttributes == null)
-        allowedAttributes = C.List_empty;
-      if (allowedUriAttributes == null)
-        allowedUriAttributes = C.List_empty;
-      t1 = J.getInterceptor$ax(allowedAttributes);
-      legalAttributes = t1.where$1(allowedAttributes, new W._SimpleNodeValidator_closure());
-      extraUriAttributes = t1.where$1(allowedAttributes, new W._SimpleNodeValidator_closure0());
-      J.addAll$1$ax(this.allowedAttributes, legalAttributes);
+      var legalAttributes, extraUriAttributes, t1;
+      this.allowedElements.addAll$1(0, allowedElements);
+      legalAttributes = allowedAttributes.where$1(0, new W._SimpleNodeValidator_closure());
+      extraUriAttributes = allowedAttributes.where$1(0, new W._SimpleNodeValidator_closure0());
+      this.allowedAttributes.addAll$1(0, legalAttributes);
       t1 = this.allowedUriAttributes;
-      t2 = J.getInterceptor$ax(t1);
-      t2.addAll$1(t1, allowedUriAttributes);
-      t2.addAll$1(t1, extraUriAttributes);
+      t1.addAll$1(0, C.List_empty);
+      t1.addAll$1(0, extraUriAttributes);
     },
     allowsElement$1: function(element) {
-      return J.contains$1$ax(this.allowedElements, W.Element__safeTagName(H.interceptedTypeCheck(element, "$isElement")));
+      return this.allowedElements.contains$1(0, W.Element__safeTagName(element));
     },
     allowsAttribute$3: function(element, attributeName, value) {
-      var tagName, t1, t2, _this = this;
-      H.interceptedTypeCheck(element, "$isElement");
-      H.stringTypeCheck(attributeName);
-      H.stringTypeCheck(value);
-      tagName = W.Element__safeTagName(element);
-      t1 = _this.allowedUriAttributes;
-      t2 = J.getInterceptor$ax(t1);
-      if (H.boolConversionCheck(t2.contains$1(t1, H.S(tagName) + "::" + H.S(attributeName))))
+      var _this = this,
+        tagName = W.Element__safeTagName(element),
+        t1 = _this.allowedUriAttributes;
+      if (t1.contains$1(0, H.S(tagName) + "::" + attributeName))
         return _this.uriPolicy.allowsUri$1(value);
-      else if (H.boolConversionCheck(t2.contains$1(t1, "*::" + H.S(attributeName))))
+      else if (t1.contains$1(0, "*::" + attributeName))
         return _this.uriPolicy.allowsUri$1(value);
       else {
         t1 = _this.allowedAttributes;
-        t2 = J.getInterceptor$ax(t1);
-        if (H.boolConversionCheck(t2.contains$1(t1, H.S(tagName) + "::" + H.S(attributeName))))
+        if (t1.contains$1(0, H.S(tagName) + "::" + attributeName))
           return true;
-        else if (H.boolConversionCheck(t2.contains$1(t1, "*::" + H.S(attributeName))))
+        else if (t1.contains$1(0, "*::" + attributeName))
           return true;
-        else if (H.boolConversionCheck(t2.contains$1(t1, H.S(tagName) + "::*")))
+        else if (t1.contains$1(0, H.S(tagName) + "::*"))
           return true;
-        else if (H.boolConversionCheck(t2.contains$1(t1, "*::*")))
+        else if (t1.contains$1(0, "*::*"))
           return true;
       }
       return false;
@@ -15108,28 +5354,24 @@
   };
   W._SimpleNodeValidator_closure.prototype = {
     call$1: function(x) {
-      return !H.boolConversionCheck(C.JSArray_methods.contains$1(C.List_yrN, H.stringTypeCheck(x)));
+      return !C.JSArray_methods.contains$1(C.List_yrN, H.stringTypeCheck(x));
     },
-    $signature: 5
+    $signature: 4
   };
   W._SimpleNodeValidator_closure0.prototype = {
     call$1: function(x) {
       return C.JSArray_methods.contains$1(C.List_yrN, H.stringTypeCheck(x));
     },
-    $signature: 5
+    $signature: 4
   };
-  W._CustomElementNodeValidator.prototype = {};
   W._TemplatingNodeValidator.prototype = {
     allowsAttribute$3: function(element, attributeName, value) {
-      H.interceptedTypeCheck(element, "$isElement");
-      H.stringTypeCheck(attributeName);
-      H.stringTypeCheck(value);
-      if (H.boolConversionCheck(this.super$_SimpleNodeValidator$allowsAttribute(element, attributeName, value)))
+      if (this.super$_SimpleNodeValidator$allowsAttribute(element, attributeName, value))
         return true;
       if (attributeName === "template" && value === "")
         return true;
-      if (H.boolConversionCheck(J.$eq$(J.$index$asx(J.get$attributes$x(element), "template"), "")))
-        return J.contains$1$ax(this._templateAttrs, attributeName);
+      if (element.getAttribute("template") === "")
+        return this._templateAttrs.contains$1(0, attributeName);
       return false;
     }
   };
@@ -15137,53 +5379,39 @@
     call$1: function(attr) {
       return "TEMPLATE::" + H.S(H.stringTypeCheck(attr));
     },
-    $signature: 14
+    $signature: 21
   };
   W._SvgNodeValidator.prototype = {
     allowsElement$1: function(element) {
-      var t1;
-      H.interceptedTypeCheck(element, "$isElement");
-      t1 = J.getInterceptor$(element);
+      var t1 = J.getInterceptor$(element);
       if (!!t1.$isScriptElement)
         return false;
       t1 = !!t1.$isSvgElement;
-      if (t1 && H.boolConversionCheck(J.$eq$(W.Element__safeTagName(element), "foreignObject")))
+      if (t1 && W.Element__safeTagName(element) === "foreignObject")
         return false;
       if (t1)
         return true;
       return false;
     },
     allowsAttribute$3: function(element, attributeName, value) {
-      H.interceptedTypeCheck(element, "$isElement");
-      H.stringTypeCheck(attributeName);
-      H.stringTypeCheck(value);
-      if (attributeName === "is" || H.boolConversionCheck(J.startsWith$1$s(attributeName, "on")))
+      if (attributeName === "is" || C.JSString_methods.startsWith$1(attributeName, "on"))
         return false;
       return this.allowsElement$1(element);
     },
     $isNodeValidator: 1
   };
-  W.ReadyState.prototype = {};
-  W._WrappedList.prototype = {$isNodeListWrapper: 1};
-  W._WrappedIterator.prototype = {$isIterator: 1};
-  W._HttpRequestUtils.prototype = {};
   W.FixedSizeListIterator.prototype = {
     moveNext$0: function() {
-      var nextPosition, _this = this,
-        t1 = _this._position;
-      if (typeof t1 !== "number")
-        return t1.$add();
-      nextPosition = t1 + 1;
-      t1 = _this._html$_length;
-      if (typeof t1 !== "number")
-        return H.iae(t1);
+      var _this = this,
+        nextPosition = _this._position + 1,
+        t1 = _this._html$_length;
       if (nextPosition < t1) {
         _this.set$_html$_current(J.$index$asx(_this._array, nextPosition));
         _this._position = nextPosition;
         return true;
       }
       _this.set$_html$_current(null);
-      _this._position = H.intTypeCheck(t1);
+      _this._position = t1;
       return false;
     },
     get$current: function() {
@@ -15194,94 +5422,57 @@
     },
     $isIterator: 1
   };
-  W._VariableSizeListIterator.prototype = {$isIterator: 1};
-  W.Console.prototype = {
-    get$_isConsoleDefined: function() {
-      return typeof console != "undefined";
-    },
-    warn$1: function(arg) {
-      return H.boolConversionCheck(this.get$_isConsoleDefined()) ? window.console.warn(arg) : null;
-    }
-  };
-  W._JSElementUpgrader.prototype = {$isElementUpgrader: 1};
-  W._DOMWindowCrossFrame.prototype = {
-    addEventListener$3: function(_, type, listener, useCapture) {
-      H.stringTypeCheck(type);
-      H.functionTypeCheck(listener, {func: 1, args: [W.Event]});
-      H.boolTypeCheck(useCapture);
-      return H.throwExpression(P.UnsupportedError$("You can only attach EventListeners to your own window."));
-    },
-    $isInterceptor: 1,
-    $isEventTarget: 1,
-    $isWindowBase: 1
-  };
-  W._LocationCrossFrame.prototype = {$isLocationBase: 1};
-  W._HistoryCrossFrame.prototype = {$isHistoryBase: 1};
-  W.KeyEvent.prototype = {$isKeyboardEvent: 1, $isUIEvent: 1};
-  W.Platform.prototype = {};
-  W._WrappedEvent.prototype = {$isInterceptor: 1, $isEvent: 1};
-  W.ElementUpgrader.prototype = {};
+  W._DOMWindowCrossFrame.prototype = {$isEventTarget: 1, $isWindowBase: 1};
   W.NodeValidator.prototype = {};
-  W.NodeTreeSanitizer.prototype = {};
-  W._TrustedHtmlTreeSanitizer.prototype = {$isNodeTreeSanitizer: 1};
-  W.UriPolicy.prototype = {};
-  W._SameOriginUriPolicy.prototype = {
-    allowsUri$1: function(uri) {
-      var t2, t3,
-        t1 = this._hiddenAnchor;
-      t1.href = H.stringTypeCheck(uri);
-      t2 = t1.hostname;
-      t3 = this._loc;
-      if (!(t2 == t3.hostname && t1.port == t3.port && t1.protocol == t3.protocol))
-        if (t2 === "")
-          if (t1.port === "") {
-            t1 = t1.protocol;
-            t1 = t1 === ":" || t1 === "";
-          } else
-            t1 = false;
-        else
-          t1 = false;
-      else
-        t1 = true;
-      return t1;
-    },
-    $isUriPolicy: 1
-  };
-  W._ThrowsNodeValidator.prototype = {$isNodeValidator: 1};
+  W._SameOriginUriPolicy.prototype = {$isUriPolicy: 1};
   W._ValidatingTreeSanitizer.prototype = {
     sanitizeTree$1: function(node) {
-      var walk, _this = this;
-      H.interceptedTypeCheck(node, "$isNode");
-      walk = new W._ValidatingTreeSanitizer_sanitizeTree_walk(_this);
+      var _this = this,
+        walk = new W._ValidatingTreeSanitizer_sanitizeTree_walk(_this);
       _this.modifiedTree = false;
       walk.call$2(node, null);
-      for (; H.boolConversionCheck(_this.modifiedTree);) {
+      for (; _this.modifiedTree;) {
         _this.modifiedTree = false;
         walk.call$2(node, null);
       }
     },
     _removeNode$2: function(node, $parent) {
-      var t1;
-      H.interceptedTypeCheck(node, "$isNode");
-      H.interceptedTypeCheck($parent, "$isNode");
-      t1 = this.modifiedTree = true;
+      var t1 = this.modifiedTree = true;
       if ($parent != null ? $parent !== node.parentNode : t1)
         J.remove$0$x(node);
       else
-        J._removeChild$1$x($parent, node);
+        $parent.removeChild(node);
     },
     _sanitizeUntrustedElement$2: function(element, $parent) {
-      var corrupted, attrs, isAttr, corruptedTest1, elementText, elementTagName, exception;
-      H.interceptedTypeCheck($parent, "$isNode");
-      corrupted = true;
-      attrs = null;
-      isAttr = null;
+      var corruptedTest1, elementText, elementTagName, exception, t1,
+        corrupted = true,
+        attrs = null, isAttr = null;
       try {
         attrs = J.get$attributes$x(element);
-        isAttr = J.$index$asx(attrs, "is");
+        isAttr = attrs._element.getAttribute("is");
         H.interceptedTypeCheck(element, "$isElement");
-        corruptedTest1 = W.Element__hasCorruptedAttributes(element);
-        corrupted = H.boolConversionCheck(corruptedTest1) ? true : W.Element__hasCorruptedAttributesAdditionalCheck(element);
+        corruptedTest1 = function(element) {
+          if (!(element.attributes instanceof NamedNodeMap))
+            return true;
+          if (element.id == 'lastChild' || element.name == 'lastChild' || element.id == 'previousSibling' || element.name == 'previousSibling' || element.id == 'children' || element.name == 'children')
+            return true;
+          var childNodes = element.childNodes;
+          if (element.lastChild && element.lastChild !== childNodes[childNodes.length - 1])
+            return true;
+          if (element.children)
+            if (!(element.children instanceof HTMLCollection || element.children instanceof NodeList))
+              return true;
+          var length = 0;
+          if (element.children)
+            length = element.children.length;
+          for (var i = 0; i < length; i++) {
+            var child = element.children[i];
+            if (child.id == 'attributes' || child.name == 'attributes' || child.id == 'lastChild' || child.name == 'lastChild' || child.id == 'previousSibling' || child.name == 'previousSibling' || child.id == 'children' || child.name == 'children')
+              return true;
+          }
+          return false;
+        }(element);
+        corrupted = H.boolConversionCheck(corruptedTest1) ? true : !(element.attributes instanceof NamedNodeMap);
       } catch (exception) {
         H.unwrapException(exception);
       }
@@ -15298,58 +5489,70 @@
         if (H.unwrapException(exception) instanceof P.ArgumentError)
           throw exception;
         else {
-          this._removeNode$2(H.interceptedTypeCheck(element, "$isNode"), $parent);
-          J.get$console$x(W.window()).warn$1("Removing corrupted element " + H.S(elementText));
+          this._removeNode$2(element, $parent);
+          window;
+          t1 = "Removing corrupted element " + H.S(elementText);
+          if (typeof console != "undefined")
+            window.console.warn(t1);
         }
       }
     },
     _sanitizeElement$7: function(element, $parent, corrupted, text, tag, attrs, isAttr) {
-      var keys, t1, i, $name, _this = this;
-      H.interceptedTypeCheck(element, "$isElement");
-      H.interceptedTypeCheck($parent, "$isNode");
-      H.boolTypeCheck(corrupted);
-      H.stringTypeCheck(text);
-      H.stringTypeCheck(tag);
-      H.interceptedTypeCheck(attrs, "$isMap");
-      H.stringTypeCheck(isAttr);
-      if (false !== corrupted) {
+      var t1, keys, i, $name, t2, t3, _this = this;
+      if (corrupted) {
         _this._removeNode$2(element, $parent);
-        J.get$console$x(W.window()).warn$1("Removing element due to corrupted attributes on <" + H.S(text) + ">");
+        window;
+        t1 = "Removing element due to corrupted attributes on <" + text + ">";
+        if (typeof console != "undefined")
+          window.console.warn(t1);
         return;
       }
-      if (!H.boolConversionCheck(_this.validator.allowsElement$1(element))) {
+      if (!_this.validator.allowsElement$1(element)) {
         _this._removeNode$2(element, $parent);
-        J.get$console$x(W.window()).warn$1("Removing disallowed element <" + H.S(tag) + "> from " + H.S($parent));
+        window;
+        t1 = "Removing disallowed element <" + H.S(tag) + "> from " + H.S($parent);
+        if (typeof console != "undefined")
+          window.console.warn(t1);
         return;
       }
       if (isAttr != null)
-        if (!H.boolConversionCheck(_this.validator.allowsAttribute$3(element, "is", isAttr))) {
+        if (!_this.validator.allowsAttribute$3(element, "is", isAttr)) {
           _this._removeNode$2(element, $parent);
-          J.get$console$x(W.window()).warn$1("Removing disallowed type extension <" + H.S(tag) + ' is="' + isAttr + '">');
+          window;
+          t1 = "Removing disallowed type extension <" + H.S(tag) + ' is="' + isAttr + '">';
+          if (typeof console != "undefined")
+            window.console.warn(t1);
           return;
         }
-      keys = J.toList$0$ax(attrs.get$keys());
-      t1 = attrs.get$length(attrs);
-      if (typeof t1 !== "number")
-        return t1.$sub();
-      i = t1 - 1;
-      t1 = J.getInterceptor$asx(keys);
-      for (; i >= 0; --i) {
-        $name = t1.$index(keys, i);
-        if (!H.boolConversionCheck(_this.validator.allowsAttribute$3(element, H.stringTypeCheck(J.toLowerCase$0$s($name)), H.stringTypeCheck(attrs.$index(0, $name))))) {
-          J.get$console$x(W.window()).warn$1("Removing disallowed attribute <" + H.S(tag) + " " + H.S($name) + '="' + H.S(attrs.$index(0, $name)) + '">');
-          attrs.remove$1(0, $name);
+      t1 = attrs.get$keys();
+      keys = H.setRuntimeTypeInfo(t1.slice(0), [H.getTypeArgumentByIndex(t1, 0)]);
+      for (i = attrs.get$keys().length - 1, t1 = attrs._element; i >= 0; --i) {
+        if (i >= keys.length)
+          return H.ioore(keys, i);
+        $name = keys[i];
+        t2 = _this.validator;
+        t3 = J.toLowerCase$0$s($name);
+        H.stringTypeCheck($name);
+        if (!t2.allowsAttribute$3(element, t3, t1.getAttribute($name))) {
+          window;
+          t2 = "Removing disallowed attribute <" + H.S(tag) + " " + $name + '="' + H.S(t1.getAttribute($name)) + '">';
+          if (typeof console != "undefined")
+            window.console.warn(t2);
+          t1.removeAttribute($name);
         }
       }
       if (!!J.getInterceptor$(element).$isTemplateElement)
         _this.sanitizeTree$1(element.content);
     },
-    sanitizeNode$2: function(node, $parent) {
-      H.interceptedTypeCheck(node, "$isNode");
-      H.interceptedTypeCheck($parent, "$isNode");
+    $isNodeTreeSanitizer: 1
+  };
+  W._ValidatingTreeSanitizer_sanitizeTree_walk.prototype = {
+    call$2: function(node, $parent) {
+      var child, nextChild, t2, t3, t4, exception,
+        t1 = this.$this;
       switch (node.nodeType) {
         case 1:
-          this._sanitizeUntrustedElement$2(node, $parent);
+          t1._sanitizeUntrustedElement$2(node, $parent);
           break;
         case 8:
         case 11:
@@ -15357,29 +5560,34 @@
         case 4:
           break;
         default:
-          this._removeNode$2(node, $parent);
+          t1._removeNode$2(node, $parent);
       }
-    },
-    $isNodeTreeSanitizer: 1
-  };
-  W._ValidatingTreeSanitizer_sanitizeTree_walk.prototype = {
-    call$2: function(node, $parent) {
-      var child, nextChild, t1, t2, exception;
-      H.interceptedTypeCheck(node, "$isNode");
-      t1 = this.$this;
-      t1.sanitizeNode$2(node, H.interceptedTypeCheck($parent, "$isNode"));
       child = node.lastChild;
-      for (; null != child;) {
+      for (t2 = node != null; null != child;) {
         nextChild = null;
         try {
           nextChild = child.previousSibling;
-          if (nextChild != null && !H.boolConversionCheck(J.$eq$(J.get$nextNode$x(nextChild), child))) {
-            t2 = P.StateError$("Corrupt HTML");
-            throw H.wrapException(t2);
+          if (nextChild != null) {
+            t3 = nextChild.nextSibling;
+            t4 = child;
+            t4 = t3 == null ? t4 != null : t3 !== t4;
+            t3 = t4;
+          } else
+            t3 = false;
+          if (t3) {
+            t3 = P.StateError$("Corrupt HTML");
+            throw H.wrapException(t3);
           }
         } catch (exception) {
           H.unwrapException(exception);
-          t1._removeNode$2(child, node);
+          t3 = H.interceptedTypeCheck(child, "$isNode");
+          t1.modifiedTree = true;
+          if (!t2 || node !== t3.parentNode) {
+            t4 = t3.parentNode;
+            if (t4 != null)
+              t4.removeChild(t3);
+          } else
+            node.removeChild(t3);
           child = null;
           nextChild = node.lastChild;
         }
@@ -15388,2993 +5596,56 @@
         child = H.interceptedTypeCheck(nextChild, "$isNode");
       }
     },
-    $signature: 21
-  };
-  W._CssStyleDeclaration_Interceptor_CssStyleDeclarationBase.prototype = {$isCssStyleDeclarationBase: 1};
-  W._DomRectList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Rectangle, P.num]];
-    }
-  };
-  W._DomRectList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Rectangle, P.num]];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [[P.Rectangle, P.num]];
-    }
-  };
-  W._DomStringList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    }
-  };
-  W._DomStringList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.String];
-    }
-  };
-  W._FileList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.File];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.File];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.File];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.File];
-    }
-  };
-  W._FileList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.File];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.File];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.File];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.File];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.File];
-    }
-  };
-  W._HtmlCollection_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    }
-  };
-  W._HtmlCollection_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Node];
-    }
-  };
-  W._MidiInputMap_Interceptor_MapMixin.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    }
-  };
-  W._MidiOutputMap_Interceptor_MapMixin.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    }
-  };
-  W._MimeTypeArray_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.MimeType];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.MimeType];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.MimeType];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.MimeType];
-    }
-  };
-  W._MimeTypeArray_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.MimeType];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.MimeType];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.MimeType];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.MimeType];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.MimeType];
-    }
-  };
-  W._NodeList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    }
-  };
-  W._NodeList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Node];
-    }
-  };
-  W._PluginArray_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Plugin];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Plugin];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Plugin];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Plugin];
-    }
-  };
-  W._PluginArray_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Plugin];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Plugin];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Plugin];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Plugin];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Plugin];
-    }
-  };
-  W._RtcStatsReport_Interceptor_MapMixin.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    }
-  };
-  W._SourceBufferList_EventTarget_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SourceBuffer];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SourceBuffer];
-    }
-  };
-  W._SourceBufferList_EventTarget_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SourceBuffer];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SourceBuffer];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SourceBuffer];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SourceBuffer];
-    }
-  };
-  W._SpeechGrammarList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechGrammar];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechGrammar];
-    }
-  };
-  W._SpeechGrammarList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechGrammar];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechGrammar];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechGrammar];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SpeechGrammar];
-    }
-  };
-  W._Storage_Interceptor_MapMixin.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, P.String];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, P.String];
-    }
-  };
-  W._TextTrackCueList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrackCue];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrackCue];
-    }
-  };
-  W._TextTrackCueList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrackCue];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrackCue];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrackCue];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.TextTrackCue];
-    }
-  };
-  W._TextTrackList_EventTarget_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrack];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrack];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrack];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrack];
-    }
-  };
-  W._TextTrackList_EventTarget_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.TextTrack];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.TextTrack];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.TextTrack];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.TextTrack];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.TextTrack];
-    }
-  };
-  W._TouchList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Touch];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Touch];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Touch];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Touch];
-    }
-  };
-  W._TouchList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Touch];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Touch];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Touch];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Touch];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Touch];
-    }
-  };
-  W.__CssRuleList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.CssRule];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.CssRule];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.CssRule];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.CssRule];
-    }
-  };
-  W.__CssRuleList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.CssRule];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.CssRule];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.CssRule];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.CssRule];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.CssRule];
-    }
-  };
-  W.__CssStyleDeclarationSet_Object_CssStyleDeclarationBase.prototype = {$isCssStyleDeclarationBase: 1};
-  W.__GamepadList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Gamepad];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Gamepad];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Gamepad];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Gamepad];
-    }
-  };
-  W.__GamepadList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Gamepad];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Gamepad];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Gamepad];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Gamepad];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Gamepad];
-    }
-  };
-  W.__NamedNodeMap_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    }
-  };
-  W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.Node];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.Node];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.Node];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.Node];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.Node];
-    }
-  };
-  W.__SpeechRecognitionResultList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechRecognitionResult];
-    }
-  };
-  W.__SpeechRecognitionResultList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.SpeechRecognitionResult];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.SpeechRecognitionResult];
-    }
-  };
-  W.__StyleSheetList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.StyleSheet];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.StyleSheet];
-    }
-  };
-  W.__StyleSheetList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [W.StyleSheet];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [W.StyleSheet];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [W.StyleSheet];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [W.StyleSheet];
-    }
-  };
-  P._StructuredClone.prototype = {};
-  P._AcceptStructuredClone.prototype = {};
-  P.ContextAttributes.prototype = {};
-  P._TypedImageData.prototype = {$isInterceptor: 1, $isImageData: 1};
-  P._StructuredCloneDart2Js.prototype = {};
-  P._AcceptStructuredCloneDart2Js.prototype = {};
-  P.CssClassSetImpl.prototype = {
-    _validateToken$1: function(value) {
-      H.stringTypeCheck(value);
-      if (H.boolConversionCheck($.$get$CssClassSetImpl__validTokenRE().hasMatch$1(value)))
-        return value;
-      throw H.wrapException(P.ArgumentError$value(value, "value", "Not a valid class token"));
-    },
-    toString$0: function(_) {
-      return J.join$1$z(this.readClasses$0(), " ");
-    },
-    get$iterator: function(_) {
-      return J.get$iterator$ax(this.readClasses$0());
-    },
-    forEach$1: function(_, f) {
-      H.functionTypeCheck(f, {func: 1, ret: -1, args: [P.String]});
-      J.forEach$1$ax(this.readClasses$0(), f);
-    },
-    join$1: function(_, separator) {
-      H.stringTypeCheck(separator);
-      return J.join$1$z(this.readClasses$0(), separator);
-    },
-    map$1$1: function(_, f, $T) {
-      H.functionTypeCheck(f, {func: 1, ret: $T, args: [P.String]});
-      return J.map$1$1$ax(this.readClasses$0(), f, $T);
-    },
-    where$1: function(_, f) {
-      H.functionTypeCheck(f, {func: 1, ret: P.bool, args: [P.String]});
-      return J.where$1$ax(this.readClasses$0(), f);
-    },
-    get$isEmpty: function(_) {
-      return J.get$isEmpty$asx(this.readClasses$0());
-    },
-    get$length: function(_) {
-      return J.get$length$asx(this.readClasses$0());
-    },
-    contains$1: function(_, value) {
-      if (typeof value !== "string")
-        return false;
-      this._validateToken$1(value);
-      return J.contains$1$ax(this.readClasses$0(), value);
-    },
-    addAll$1: function(_, iterable) {
-      this.modify$1(new P.CssClassSetImpl_addAll_closure(this, H.assertSubtype(iterable, "$isIterable", [P.String], "$asIterable")));
-    },
-    get$last: function(_) {
-      return J.get$last$ax(this.readClasses$0());
-    },
-    get$single: function(_) {
-      return J.get$single$ax(this.readClasses$0());
-    },
-    toList$1$growable: function(_, growable) {
-      H.boolTypeCheck(growable);
-      return J.toList$1$growable$ax(this.readClasses$0(), growable);
-    },
-    toList$0: function($receiver) {
-      return this.toList$1$growable($receiver, true);
-    },
-    take$1: function(_, n) {
-      H.intTypeCheck(n);
-      return J.take$1$ax(this.readClasses$0(), n);
-    },
-    skip$1: function(_, n) {
-      H.intTypeCheck(n);
-      return J.skip$1$ax(this.readClasses$0(), n);
-    },
-    elementAt$1: function(_, index) {
-      H.intTypeCheck(index);
-      return J.elementAt$1$ax(this.readClasses$0(), index);
-    },
-    modify$1: function(f) {
-      var s, ret;
-      H.functionTypeCheck(f, {func: 1, args: [[P.Set, P.String]]});
-      s = this.readClasses$0();
-      ret = f.call$1(s);
-      this.writeClasses$1(s);
-      return ret;
-    },
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $asSetMixin: function() {
-      return [P.String];
-    },
-    $asSetBase: function() {
-      return [P.String];
-    },
-    $asIterable: function() {
-      return [P.String];
-    },
-    $asSet: function() {
-      return [P.String];
-    },
-    $isCssClassSet: 1,
-    $as_SetBase_Object_SetMixin: function() {
-      return [P.String];
-    }
-  };
-  P.CssClassSetImpl_add_closure.prototype = {$signature: 22};
-  P.CssClassSetImpl_addAll_closure.prototype = {
-    call$1: function(s) {
-      var t1 = P.String;
-      return H.assertSubtype(s, "$isSet", [t1], "$asSet").addAll$1(0, J.map$1$1$ax(this.iterable, this.$this.get$_validateToken(), t1));
-    },
-    $signature: 7
-  };
-  P.CssClassSetImpl_removeAll_closure.prototype = {$signature: 7};
-  P.CssClassSetImpl_removeWhere_closure.prototype = {$signature: 7};
-  P.Device.prototype = {};
-  P.FilteredElementList.prototype = {
-    get$_html_common$_iterable: function() {
-      return J.map$1$1$ax(J.where$1$ax(this._childNodes, new P.FilteredElementList__iterable_closure()), new P.FilteredElementList__iterable_closure0(), W.Element);
-    },
-    get$_filtered: function() {
-      return P.List_List$from(this.get$_html_common$_iterable(), false, W.Element);
-    },
-    forEach$1: function(_, f) {
-      H.functionTypeCheck(f, {func: 1, ret: -1, args: [W.Element]});
-      J.forEach$1$ax(this.get$_filtered(), f);
-    },
-    $indexSet: function(_, index, value) {
-      H.intTypeCheck(index);
-      H.interceptedTypeCheck(value, "$isElement");
-      J.replaceWith$1$x(this.$index(0, index), value);
-    },
-    set$length: function(_, newLength) {
-      var len;
-      H.intTypeCheck(newLength);
-      len = this.get$length(this);
-      if (typeof newLength !== "number")
-        return newLength.$ge();
-      if (typeof len !== "number")
-        return H.iae(len);
-      if (newLength >= len)
-        return;
-      else if (newLength < 0)
-        throw H.wrapException(P.ArgumentError$("Invalid list length"));
-      this.removeRange$2(0, newLength, len);
-    },
-    add$1: function(_, value) {
-      J.add$1$ax(this._childNodes, H.interceptedTypeCheck(value, "$isElement"));
-    },
-    addAll$1: function(_, iterable) {
-      var t1;
-      for (t1 = J.get$iterator$ax(H.assertSubtype(iterable, "$isIterable", [W.Element], "$asIterable")); H.boolConversionCheck(t1.moveNext$0());)
-        this.add$1(0, t1.get$current());
-    },
-    contains$1: function(_, needle) {
-      var t1, t2;
-      if (!J.getInterceptor$(needle).$isElement)
-        return false;
-      t1 = needle.parentNode;
-      t2 = this._node;
-      return t1 == null ? t2 == null : t1 === t2;
-    },
-    setRange$3: function(_, start, end, iterable) {
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      H.assertSubtype(iterable, "$isIterable", [W.Element], "$asIterable");
-      throw H.wrapException(P.UnsupportedError$("Cannot setRange on filtered list"));
-    },
-    removeRange$2: function(_, start, end) {
-      var t1;
-      H.intTypeCheck(start);
-      H.intTypeCheck(end);
-      t1 = J.skip$1$ax(this.get$_html_common$_iterable(), start);
-      if (typeof end !== "number")
-        return end.$sub();
-      if (typeof start !== "number")
-        return H.iae(start);
-      J.forEach$1$ax(P.List_List$from(J.take$1$ax(t1, end - start), true, null), new P.FilteredElementList_removeRange_closure());
-    },
-    removeLast$0: function(_) {
-      var result = J.get$last$ax(this.get$_html_common$_iterable());
-      if (result != null)
-        J.remove$0$x(result);
-      return result;
-    },
-    get$length: function(_) {
-      return J.get$length$asx(this.get$_html_common$_iterable());
-    },
-    $index: function(_, index) {
-      H.intTypeCheck(index);
-      return J.elementAt$1$ax(this.get$_html_common$_iterable(), index);
-    },
-    get$iterator: function(_) {
-      return J.get$iterator$ax(this.get$_filtered());
-    },
-    $asEfficientLengthIterable: function() {
-      return [W.Element];
-    },
-    $asListBase: function() {
-      return [W.Element];
-    },
-    $asListMixin: function() {
-      return [W.Element];
-    },
-    $asIterable: function() {
-      return [W.Element];
-    },
-    $asList: function() {
-      return [W.Element];
-    },
-    $isNodeListWrapper: 1,
-    $as_ListBase_Object_ListMixin: function() {
-      return [W.Element];
-    }
-  };
-  P.FilteredElementList__iterable_closure.prototype = {
-    call$1: function(n) {
-      return !!J.getInterceptor$(H.interceptedTypeCheck(n, "$isNode")).$isElement;
-    },
-    $signature: 12
-  };
-  P.FilteredElementList__iterable_closure0.prototype = {
-    call$1: function(n) {
-      return H.interceptedTypeCast(H.interceptedTypeCheck(n, "$isNode"), "$isElement");
-    },
-    $signature: 34
-  };
-  P.FilteredElementList_removeRange_closure.prototype = {
-    call$1: function(el) {
-      return J.remove$0$x(el);
-    },
-    $signature: 6
-  };
-  P.Lists.prototype = {};
-  P.NodeListWrapper.prototype = {};
-  P._KeyRangeFactoryProvider.prototype = {};
-  P.Cursor.prototype = {$isCursor: 1};
-  P.CursorWithValue.prototype = {$isCursorWithValue: 1};
-  P.Database.prototype = {$isDatabase: 1};
-  P.IdbFactory.prototype = {$isIdbFactory: 1};
-  P.Index.prototype = {$isIndex: 1};
-  P.KeyRange.prototype = {$isKeyRange: 1};
-  P.ObjectStore.prototype = {$isObjectStore: 1};
-  P.Observation.prototype = {$isObservation: 1};
-  P.Observer.prototype = {$isObserver: 1};
-  P.ObserverChanges.prototype = {$isObserverChanges: 1};
-  P.OpenDBRequest.prototype = {$isOpenDBRequest: 1};
-  P.Request.prototype = {$isRequest: 1};
-  P.Transaction.prototype = {$isTransaction: 1};
-  P.VersionChangeEvent.prototype = {$isVersionChangeEvent: 1};
-  P.BytesBuilder.prototype = {};
-  P._CopyingBytesBuilder0.prototype = {$isBytesBuilder: 1};
-  P._BytesBuilder.prototype = {$isBytesBuilder: 1};
-  P.IOException.prototype = {$isException: 1};
-  P.OSError.prototype = {};
-  P._BufferAndStart.prototype = {};
-  P._IOCrypto.prototype = {};
-  P.ZLibOption.prototype = {};
-  P.ZLibCodec.prototype = {
-    $asCodec: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    }
-  };
-  P.GZipCodec.prototype = {
-    $asCodec: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    }
-  };
-  P.ZLibEncoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    }
-  };
-  P.ZLibDecoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], [P.List, P.int]];
-    }
-  };
-  P.RawZLibFilter.prototype = {};
-  P._BufferSink.prototype = {};
-  P._ZLibEncoderSink.prototype = {};
-  P._ZLibDecoderSink.prototype = {};
-  P._FilterSink.prototype = {};
-  P.Directory.prototype = {$isFileSystemEntity: 1};
-  P._Directory.prototype = {$isDirectory: 1};
-  P._AsyncDirectoryListerOps.prototype = {};
-  P._AsyncDirectoryLister.prototype = {};
-  P._EmbedderConfig.prototype = {};
-  P._EventHandler.prototype = {};
-  P.FileMode.prototype = {};
-  P.FileLock.prototype = {};
-  P.File0.prototype = {$isFileSystemEntity: 1};
-  P.RandomAccessFile.prototype = {};
-  P.FileSystemException.prototype = {$isException: 1, $isIOException: 1};
-  P._FileStream.prototype = {
-    $asStream: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P._FileStreamConsumer.prototype = {
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P._File.prototype = {$isFile0: 1};
-  P._RandomAccessFileOps.prototype = {};
-  P._RandomAccessFile.prototype = {$isRandomAccessFile: 1};
-  P.FileSystemEntityType.prototype = {};
-  P.FileStat.prototype = {};
-  P.FileSystemEntity.prototype = {};
-  P.FileSystemEvent.prototype = {};
-  P.FileSystemCreateEvent.prototype = {};
-  P.FileSystemModifyEvent.prototype = {};
-  P.FileSystemDeleteEvent.prototype = {};
-  P.FileSystemMoveEvent.prototype = {};
-  P._FileSystemWatcher.prototype = {};
-  P._IOResourceInfo.prototype = {};
-  P._ReadWriteResourceInfo.prototype = {};
-  P._FileResourceInfo.prototype = {};
-  P._ProcessResourceInfo.prototype = {};
-  P._SocketResourceInfo.prototype = {};
-  P._IOService.prototype = {};
-  P.IOSink.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1
-  };
-  P._StreamSinkImpl0.prototype = {$isEventSink: 1, $isStreamConsumer: 1, $isStreamSink: 1, $isSink: 1};
-  P._IOSinkImpl0.prototype = {
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1,
-    $as_StreamSinkImpl0: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P.Link.prototype = {$isFileSystemEntity: 1};
-  P._Link.prototype = {$isLink: 1};
-  P._Namespace.prototype = {};
-  P._NetworkProfiling.prototype = {};
-  P._HttpProfile.prototype = {};
-  P._SocketProfile.prototype = {};
-  P.IOOverrides.prototype = {};
-  P._IOOverridesScope.prototype = {};
-  P.Platform0.prototype = {};
-  P._Platform.prototype = {};
-  P._CaseInsensitiveStringMap.prototype = {
-    $asMapBase: function($V) {
-      return [P.String, $V];
-    },
-    $asMapMixin: function($V) {
-      return [P.String, $V];
-    },
-    $asMap: function($V) {
-      return [P.String, $V];
-    }
-  };
-  P._ProcessUtils.prototype = {};
-  P.ProcessInfo.prototype = {};
-  P.ProcessStartMode.prototype = {};
-  P.Process.prototype = {};
-  P.ProcessResult.prototype = {};
-  P.ProcessSignal.prototype = {};
-  P.SignalException.prototype = {$isException: 1, $isIOException: 1};
-  P.ProcessException.prototype = {$isException: 1, $isIOException: 1};
-  P.SecureServerSocket.prototype = {
-    $asStream: function() {
-      return [P.SecureSocket];
-    }
-  };
-  P.RawSecureServerSocket.prototype = {
-    $asStream: function() {
-      return [P.RawSecureSocket];
-    }
-  };
-  P.SecureSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.Uint8List];
-    },
-    $isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1,
-    $isSocket: 1
-  };
-  P.RawSecureSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.RawSocketEvent];
-    },
-    $isRawSocket: 1
-  };
-  P.X509Certificate.prototype = {};
-  P._FilterStatus.prototype = {};
-  P._RawSecureSocket.prototype = {
-    $asStream: function() {
-      return [P.RawSocketEvent];
-    },
-    $isRawSecureSocket: 1,
-    $isRawSocket: 1
-  };
-  P._ExternalBuffer.prototype = {};
-  P._SecureFilter.prototype = {};
-  P.TlsException.prototype = {$isException: 1, $isIOException: 1};
-  P.HandshakeException.prototype = {};
-  P.CertificateException.prototype = {};
-  P.SecurityContext.prototype = {};
-  P._ServiceObject0.prototype = {};
-  P.InternetAddressType.prototype = {};
-  P.InternetAddress.prototype = {};
-  P.NetworkInterface.prototype = {};
-  P.RawServerSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.RawSocket];
-    }
-  };
-  P.ServerSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.Socket];
-    }
-  };
-  P.SocketDirection.prototype = {};
-  P.SocketOption.prototype = {};
-  P._RawSocketOptions.prototype = {};
-  P.RawSocketOption.prototype = {};
-  P.RawSocketEvent.prototype = {};
-  P.ConnectionTask.prototype = {};
-  P.RawSocket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.RawSocketEvent];
-    }
-  };
-  P.Socket.prototype = {$isStream: 1,
-    $asStream: function() {
-      return [P.Uint8List];
-    },
-    $isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1
-  };
-  P.Datagram.prototype = {};
-  P.RawDatagramSocket.prototype = {
-    $asStream: function() {
-      return [P.RawSocketEvent];
-    }
-  };
-  P.SocketException.prototype = {$isException: 1, $isIOException: 1};
-  P._StdStream.prototype = {
-    $asStream: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P.Stdin.prototype = {};
-  P.Stdout.prototype = {};
-  P.StdoutException.prototype = {$isException: 1, $isIOException: 1};
-  P.StdinException.prototype = {$isException: 1, $isIOException: 1};
-  P._StdConsumer.prototype = {$isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    }
-  };
-  P._StdSink.prototype = {$isEventSink: 1,
-    $asEventSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamConsumer: 1,
-    $asStreamConsumer: function() {
-      return [[P.List, P.int]];
-    },
-    $isStreamSink: 1,
-    $asStreamSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isSink: 1,
-    $asSink: function() {
-      return [[P.List, P.int]];
-    },
-    $isStringSink: 1,
-    $isIOSink: 1
-  };
-  P.StdioType.prototype = {};
-  P._StdIOUtils.prototype = {};
-  P.SystemEncoding.prototype = {};
-  P._WindowsCodePageEncoder.prototype = {
-    $asStreamTransformer: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asStreamTransformerBase: function() {
-      return [P.String, [P.List, P.int]];
-    },
-    $asConverter: function() {
-      return [P.String, [P.List, P.int]];
-    }
-  };
-  P._WindowsCodePageEncoderSink.prototype = {};
-  P._WindowsCodePageDecoder.prototype = {
-    $asStreamTransformer: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asStreamTransformerBase: function() {
-      return [[P.List, P.int], P.String];
-    },
-    $asConverter: function() {
-      return [[P.List, P.int], P.String];
-    }
-  };
-  P._WindowsCodePageDecoderSink.prototype = {};
-  P.RawSynchronousSocket.prototype = {};
-  P._ReceivePortImpl.prototype = {
-    $asStream: function() {
-    },
-    $isReceivePort: 1
-  };
-  P.Capability.prototype = {};
-  P.IsolateSpawnException.prototype = {$isException: 1};
-  P.Isolate.prototype = {};
-  P.SendPort.prototype = {$isCapability: 1};
-  P.ReceivePort.prototype = {$isStream: 1,
-    $asStream: function() {
-    }
-  };
-  P.RawReceivePort.prototype = {};
-  P.RemoteError.prototype = {$isError: 1};
-  P.TransferableTypedData.prototype = {};
-  P.JsObject.prototype = {};
-  P.JsFunction.prototype = {};
-  P.JsArray.prototype = {$isEfficientLengthIterable: 1, $isListMixin: 1, $isIterable: 1, $isList: 1};
-  P._JsArray_JsObject_ListMixin.prototype = {$isEfficientLengthIterable: 1, $isListMixin: 1, $isIterable: 1, $isList: 1};
-  P._JSRandom.prototype = {$isRandom: 1};
-  P._Random.prototype = {$isRandom: 1};
-  P._JSSecureRandom.prototype = {$isRandom: 1};
-  P._JenkinsSmiHash0.prototype = {};
-  P.Point.prototype = {};
-  P.Random.prototype = {};
-  P._RectangleBase.prototype = {};
-  P.Rectangle.prototype = {};
-  P.MutableRectangle.prototype = {$isRectangle: 1};
-  P.MirrorSystem.prototype = {};
-  P.Mirror.prototype = {};
-  P.IsolateMirror.prototype = {$isMirror: 1};
-  P.DeclarationMirror.prototype = {$isMirror: 1};
-  P.ObjectMirror.prototype = {$isMirror: 1};
-  P.InstanceMirror.prototype = {$isMirror: 1, $isObjectMirror: 1};
-  P.ClosureMirror.prototype = {$isMirror: 1, $isObjectMirror: 1, $isInstanceMirror: 1};
-  P.LibraryMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1, $isObjectMirror: 1};
-  P.LibraryDependencyMirror.prototype = {$isMirror: 1};
-  P.CombinatorMirror.prototype = {$isMirror: 1};
-  P.TypeMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1};
-  P.ClassMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1, $isObjectMirror: 1, $isTypeMirror: 1};
-  P.FunctionTypeMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1, $isObjectMirror: 1, $isTypeMirror: 1, $isClassMirror: 1};
-  P.TypeVariableMirror.prototype = {};
-  P.TypedefMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1, $isTypeMirror: 1};
-  P.MethodMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1};
-  P.VariableMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1};
-  P.ParameterMirror.prototype = {$isMirror: 1, $isDeclarationMirror: 1, $isVariableMirror: 1};
-  P.SourceLocation.prototype = {};
-  P.Comment0.prototype = {};
-  P.MirrorsUsed.prototype = {};
-  P._SvgElementFactoryProvider.prototype = {};
-  P.AElement.prototype = {$isAElement: 1, $isUriReference: 1};
-  P.Angle.prototype = {$isAngle: 1};
-  P.AnimateElement.prototype = {$isAnimateElement: 1};
-  P.AnimateMotionElement.prototype = {$isAnimateMotionElement: 1};
-  P.AnimateTransformElement.prototype = {$isAnimateTransformElement: 1};
-  P.AnimatedAngle.prototype = {$isAnimatedAngle: 1};
-  P.AnimatedBoolean.prototype = {$isAnimatedBoolean: 1};
-  P.AnimatedEnumeration.prototype = {$isAnimatedEnumeration: 1};
-  P.AnimatedInteger.prototype = {$isAnimatedInteger: 1};
-  P.AnimatedLength.prototype = {$isAnimatedLength: 1};
-  P.AnimatedLengthList.prototype = {$isAnimatedLengthList: 1};
-  P.AnimatedNumber.prototype = {$isAnimatedNumber: 1};
-  P.AnimatedNumberList.prototype = {$isAnimatedNumberList: 1};
-  P.AnimatedPreserveAspectRatio.prototype = {$isAnimatedPreserveAspectRatio: 1};
-  P.AnimatedRect.prototype = {$isAnimatedRect: 1};
-  P.AnimatedString.prototype = {$isAnimatedString: 1};
-  P.AnimatedTransformList.prototype = {$isAnimatedTransformList: 1};
-  P.AnimationElement.prototype = {$isAnimationElement: 1, $isTests: 1};
-  P.CircleElement.prototype = {$isCircleElement: 1};
-  P.ClipPathElement.prototype = {$isClipPathElement: 1};
-  P.DefsElement.prototype = {$isDefsElement: 1};
-  P.DescElement.prototype = {$isDescElement: 1};
-  P.DiscardElement.prototype = {$isDiscardElement: 1};
-  P.EllipseElement.prototype = {$isEllipseElement: 1};
-  P.FEBlendElement.prototype = {$isFEBlendElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEColorMatrixElement.prototype = {$isFEColorMatrixElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEComponentTransferElement.prototype = {$isFEComponentTransferElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FECompositeElement.prototype = {$isFECompositeElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEConvolveMatrixElement.prototype = {$isFEConvolveMatrixElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEDiffuseLightingElement.prototype = {$isFEDiffuseLightingElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEDisplacementMapElement.prototype = {$isFEDisplacementMapElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEDistantLightElement.prototype = {$isFEDistantLightElement: 1};
-  P.FEFloodElement.prototype = {$isFEFloodElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEFuncAElement.prototype = {$isFEFuncAElement: 1};
-  P.FEFuncBElement.prototype = {$isFEFuncBElement: 1};
-  P.FEFuncGElement.prototype = {$isFEFuncGElement: 1};
-  P.FEFuncRElement.prototype = {$isFEFuncRElement: 1};
-  P.FEGaussianBlurElement.prototype = {$isFEGaussianBlurElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEImageElement.prototype = {$isFEImageElement: 1, $isFilterPrimitiveStandardAttributes: 1, $isUriReference: 1};
-  P.FEMergeElement.prototype = {$isFEMergeElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEMergeNodeElement.prototype = {$isFEMergeNodeElement: 1};
-  P.FEMorphologyElement.prototype = {$isFEMorphologyElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEOffsetElement.prototype = {$isFEOffsetElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FEPointLightElement.prototype = {$isFEPointLightElement: 1};
-  P.FESpecularLightingElement.prototype = {$isFESpecularLightingElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FESpotLightElement.prototype = {$isFESpotLightElement: 1};
-  P.FETileElement.prototype = {$isFETileElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FETurbulenceElement.prototype = {$isFETurbulenceElement: 1, $isFilterPrimitiveStandardAttributes: 1};
-  P.FilterElement.prototype = {$isFilterElement: 1, $isUriReference: 1};
-  P.FilterPrimitiveStandardAttributes.prototype = {};
-  P.FitToViewBox.prototype = {};
-  P.ForeignObjectElement.prototype = {$isForeignObjectElement: 1};
-  P.GElement.prototype = {$isGElement: 1};
-  P.GeometryElement.prototype = {$isGeometryElement: 1};
-  P.GraphicsElement.prototype = {$isGraphicsElement: 1, $isTests: 1};
-  P.ImageElement0.prototype = {$isImageElement0: 1, $isUriReference: 1};
-  P.Length.prototype = {$isLength: 1};
-  P.LengthList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Length];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Length];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Length];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Length];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Length];
-    },
-    $isLengthList: 1
-  };
-  P.LineElement.prototype = {$isLineElement: 1};
-  P.LinearGradientElement.prototype = {$isLinearGradientElement: 1};
-  P.MarkerElement.prototype = {$isFitToViewBox: 1, $isMarkerElement: 1};
-  P.MaskElement.prototype = {$isMaskElement: 1, $isTests: 1};
-  P.Matrix.prototype = {$isMatrix: 1};
-  P.MetadataElement.prototype = {$isMetadataElement: 1};
-  P.Number.prototype = {$isNumber: 1};
-  P.NumberList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Number];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Number];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Number];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Number];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Number];
-    },
-    $isNumberList: 1
-  };
-  P.PathElement.prototype = {$isPathElement: 1};
-  P.PatternElement.prototype = {$isFitToViewBox: 1, $isPatternElement: 1, $isTests: 1, $isUriReference: 1};
-  P.Point0.prototype = {$isPoint0: 1};
-  P.PointList.prototype = {$isPointList: 1};
-  P.PolygonElement.prototype = {$isPolygonElement: 1};
-  P.PolylineElement.prototype = {$isPolylineElement: 1};
-  P.PreserveAspectRatio.prototype = {$isPreserveAspectRatio: 1};
-  P.RadialGradientElement.prototype = {$isRadialGradientElement: 1};
-  P.Rect.prototype = {$isRect: 1};
-  P.RectElement.prototype = {$isRectElement: 1};
-  P.ScriptElement.prototype = {$isScriptElement: 1, $isUriReference: 1};
-  P.SetElement.prototype = {$isSetElement: 1};
-  P.StopElement.prototype = {$isStopElement: 1};
-  P.StringList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.String];
-    },
-    $isStringList: 1
-  };
-  P.StyleElement0.prototype = {$isStyleElement0: 1};
-  P.AttributeClassSet.prototype = {};
+    $signature: 22
+  };
+  W._HtmlCollection_Interceptor_ListMixin.prototype = {};
+  W._HtmlCollection_Interceptor_ListMixin_ImmutableListMixin.prototype = {};
+  W._NodeList_Interceptor_ListMixin.prototype = {};
+  W._NodeList_Interceptor_ListMixin_ImmutableListMixin.prototype = {};
+  W.__NamedNodeMap_Interceptor_ListMixin.prototype = {};
+  W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin.prototype = {};
+  P.ScriptElement.prototype = {$isScriptElement: 1};
   P.SvgElement.prototype = {
-    get$children: function(receiver) {
-      return P.FilteredElementList$(receiver);
-    },
     createFragment$3$treeSanitizer$validator: function(receiver, svg, treeSanitizer, validator) {
-      var html, t1, fragment, svgFragment, root, t2;
-      H.stringTypeCheck(svg);
-      H.interceptedTypeCheck(validator, "$isNodeValidator");
-      H.interceptedTypeCheck(treeSanitizer, "$isNodeTreeSanitizer");
-      if (treeSanitizer == null) {
-        if (validator == null) {
-          validator = W.NodeValidatorBuilder$common();
-          validator.allowSvg$0();
-        }
-        treeSanitizer = W.NodeTreeSanitizer_NodeTreeSanitizer(validator);
-      }
-      html = '<svg version="1.1">' + H.S(svg) + "</svg>";
-      t1 = W.document().body;
-      fragment = (t1 && C.BodyElement_methods).createFragment$2$treeSanitizer(t1, html, treeSanitizer);
-      svgFragment = W.DocumentFragment_DocumentFragment();
-      root = J.get$single$ax(J.get$nodes$x(fragment));
-      for (t1 = J.getInterceptor$x(svgFragment); t2 = root.firstChild, t2 != null;)
-        t1.append$1(svgFragment, t2);
+      var html, t2, fragment, svgFragment, root,
+        t1 = H.setRuntimeTypeInfo([], [W.NodeValidator]);
+      C.JSArray_methods.add$1(t1, W._Html5NodeValidator$(null));
+      C.JSArray_methods.add$1(t1, W._TemplatingNodeValidator$());
+      C.JSArray_methods.add$1(t1, new W._SvgNodeValidator());
+      treeSanitizer = new W._ValidatingTreeSanitizer(new W.NodeValidatorBuilder(t1));
+      html = '<svg version="1.1">' + svg + "</svg>";
+      t1 = document;
+      t2 = t1.body;
+      fragment = (t2 && C.BodyElement_methods).createFragment$2$treeSanitizer(t2, html, treeSanitizer);
+      svgFragment = t1.createDocumentFragment();
+      fragment.toString;
+      t1 = new W._ChildNodeListLazy(fragment);
+      root = t1.get$single(t1);
+      for (; t1 = root.firstChild, t1 != null;)
+        svgFragment.appendChild(t1);
       return svgFragment;
     },
-    $isNoncedElement: 1,
     $isSvgElement: 1
-  };
-  P.SvgSvgElement.prototype = {$isFitToViewBox: 1, $isSvgSvgElement: 1, $isZoomAndPan: 1};
-  P.SwitchElement.prototype = {$isSwitchElement: 1};
-  P.SymbolElement.prototype = {$isFitToViewBox: 1, $isSymbolElement: 1};
-  P.TSpanElement.prototype = {$isTSpanElement: 1};
-  P.Tests.prototype = {};
-  P.TextContentElement.prototype = {$isTextContentElement: 1};
-  P.TextElement.prototype = {$isTextElement: 1};
-  P.TextPathElement.prototype = {$isTextPathElement: 1, $isUriReference: 1};
-  P.TextPositioningElement.prototype = {$isTextPositioningElement: 1};
-  P.TitleElement0.prototype = {$isTitleElement0: 1};
-  P.Transform.prototype = {$isTransform: 1};
-  P.TransformList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Transform];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Transform];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Transform];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Transform];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Transform];
-    },
-    $isTransformList: 1
-  };
-  P.UnitTypes.prototype = {$isUnitTypes: 1};
-  P.UriReference.prototype = {};
-  P.UseElement.prototype = {$isUriReference: 1, $isUseElement: 1};
-  P.ViewElement.prototype = {$isFitToViewBox: 1, $isViewElement: 1, $isZoomAndPan: 1};
-  P.ZoomAndPan.prototype = {};
-  P._GradientElement.prototype = {$isUriReference: 1, $is_GradientElement: 1};
-  P._SVGComponentTransferFunctionElement.prototype = {$is_SVGComponentTransferFunctionElement: 1};
-  P._SVGFEDropShadowElement.prototype = {$isFilterPrimitiveStandardAttributes: 1, $is_SVGFEDropShadowElement: 1};
-  P._SVGMPathElement.prototype = {$isUriReference: 1, $is_SVGMPathElement: 1};
-  P._LengthList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Length];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Length];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Length];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Length];
-    }
-  };
-  P._LengthList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Length];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Length];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Length];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Length];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Length];
-    }
-  };
-  P._NumberList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Number];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Number];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Number];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Number];
-    }
-  };
-  P._NumberList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Number];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Number];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Number];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Number];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Number];
-    }
-  };
-  P._StringList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    }
-  };
-  P._StringList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.String];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.String];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.String];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.String];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.String];
-    }
-  };
-  P._TransformList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Transform];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Transform];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Transform];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Transform];
-    }
-  };
-  P._TransformList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Transform];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [P.Transform];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Transform];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Transform];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [P.Transform];
-    }
-  };
-  P.ByteBuffer.prototype = {};
-  P.TypedData.prototype = {};
-  P._TypedIntList.prototype = {};
-  P._TypedFloatList.prototype = {};
-  P.Endian.prototype = {};
-  P.ByteData.prototype = {$isTypedData: 1};
-  P.Int8List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Uint8List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Uint8ClampedList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Int16List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Uint16List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Int32List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Uint32List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Int64List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Uint64List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.int];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1
-  };
-  P.Float32List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.double];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.double];
-    },
-    $isTypedData: 1,
-    $is_TypedFloatList: 1
-  };
-  P.Float64List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.double];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.double];
-    },
-    $isTypedData: 1,
-    $is_TypedFloatList: 1
-  };
-  P.Float32x4List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float32x4];
-    },
-    $isTypedData: 1
-  };
-  P.Int32x4List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Int32x4];
-    },
-    $isTypedData: 1
-  };
-  P.Float64x2List.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [P.Float64x2];
-    },
-    $isTypedData: 1
-  };
-  P.Float32x4.prototype = {};
-  P.Int32x4.prototype = {};
-  P.Float64x2.prototype = {};
-  P.UnmodifiableByteBufferView.prototype = {$isByteBuffer: 1};
-  P.UnmodifiableByteDataView.prototype = {$isTypedData: 1, $isByteData: 1};
-  P._UnmodifiableListMixin.prototype = {};
-  P.UnmodifiableUint8ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isUint8List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint8List, P.Uint8List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableInt8ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isInt8List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int8List, P.Int8List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableUint8ClampedListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isUint8ClampedList: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint8ClampedList, P.Uint8ClampedList];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableUint16ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isUint16List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint16List, P.Uint16List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableInt16ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isInt16List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int16List, P.Int16List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableUint32ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isUint32List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint32List, P.Uint32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableInt32ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isInt32List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int32List, P.Int32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableUint64ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isUint64List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint64List, P.Uint64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableInt64ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $isTypedData: 1,
-    $is_TypedIntList: 1,
-    $isInt64List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int64List, P.Int64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.UnmodifiableInt32x4ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Int32x4];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Int32x4];
-    },
-    $asListBase: function() {
-      return [P.Int32x4];
-    },
-    $asListMixin: function() {
-      return [P.Int32x4];
-    },
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $asList: function() {
-      return [P.Int32x4];
-    },
-    $isTypedData: 1,
-    $isInt32x4List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Int32x4, P.Int32x4List, P.Int32x4List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Int32x4];
-    }
-  };
-  P.UnmodifiableFloat32x4ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Float32x4];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Float32x4];
-    },
-    $asListBase: function() {
-      return [P.Float32x4];
-    },
-    $asListMixin: function() {
-      return [P.Float32x4];
-    },
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $asList: function() {
-      return [P.Float32x4];
-    },
-    $isTypedData: 1,
-    $isFloat32x4List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Float32x4, P.Float32x4List, P.Float32x4List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Float32x4];
-    }
-  };
-  P.UnmodifiableFloat64x2ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Float64x2];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Float64x2];
-    },
-    $asListBase: function() {
-      return [P.Float64x2];
-    },
-    $asListMixin: function() {
-      return [P.Float64x2];
-    },
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $asList: function() {
-      return [P.Float64x2];
-    },
-    $isTypedData: 1,
-    $isFloat64x2List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Float64x2, P.Float64x2List, P.Float64x2List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Float64x2];
-    }
-  };
-  P.UnmodifiableFloat32ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.double];
-    },
-    $asListBase: function() {
-      return [P.double];
-    },
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $asIterable: function() {
-      return [P.double];
-    },
-    $asList: function() {
-      return [P.double];
-    },
-    $isTypedData: 1,
-    $is_TypedFloatList: 1,
-    $isFloat32List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.double, P.Float32List, P.Float32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.double];
-    }
-  };
-  P.UnmodifiableFloat64ListView.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.double];
-    },
-    $asListBase: function() {
-      return [P.double];
-    },
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $asIterable: function() {
-      return [P.double];
-    },
-    $asList: function() {
-      return [P.double];
-    },
-    $isTypedData: 1,
-    $is_TypedFloatList: 1,
-    $isFloat64List: 1,
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.double, P.Float64List, P.Float64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.double];
-    }
-  };
-  P._UnmodifiableFloat32ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.double];
-    },
-    $asListBase: function() {
-      return [P.double];
-    },
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $asIterable: function() {
-      return [P.double];
-    },
-    $asList: function() {
-      return [P.double];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.double, P.Float32List, P.Float32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.double];
-    }
-  };
-  P._UnmodifiableFloat32x4ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Float32x4];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Float32x4];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Float32x4];
-    },
-    $asListBase: function() {
-      return [P.Float32x4];
-    },
-    $asListMixin: function() {
-      return [P.Float32x4];
-    },
-    $asIterable: function() {
-      return [P.Float32x4];
-    },
-    $asList: function() {
-      return [P.Float32x4];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Float32x4, P.Float32x4List, P.Float32x4List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Float32x4];
-    }
-  };
-  P._UnmodifiableFloat64ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.double];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.double];
-    },
-    $asListBase: function() {
-      return [P.double];
-    },
-    $asListMixin: function() {
-      return [P.double];
-    },
-    $asIterable: function() {
-      return [P.double];
-    },
-    $asList: function() {
-      return [P.double];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.double, P.Float64List, P.Float64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.double];
-    }
-  };
-  P._UnmodifiableFloat64x2ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Float64x2];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Float64x2];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Float64x2];
-    },
-    $asListBase: function() {
-      return [P.Float64x2];
-    },
-    $asListMixin: function() {
-      return [P.Float64x2];
-    },
-    $asIterable: function() {
-      return [P.Float64x2];
-    },
-    $asList: function() {
-      return [P.Float64x2];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Float64x2, P.Float64x2List, P.Float64x2List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Float64x2];
-    }
-  };
-  P._UnmodifiableInt16ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int16List, P.Int16List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableInt32ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int32List, P.Int32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableInt32x4ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.Int32x4];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.Int32x4];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.Int32x4];
-    },
-    $asListBase: function() {
-      return [P.Int32x4];
-    },
-    $asListMixin: function() {
-      return [P.Int32x4];
-    },
-    $asIterable: function() {
-      return [P.Int32x4];
-    },
-    $asList: function() {
-      return [P.Int32x4];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.Int32x4, P.Int32x4List, P.Int32x4List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.Int32x4];
-    }
-  };
-  P._UnmodifiableInt64ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int64List, P.Int64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableInt8ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Int8List, P.Int8List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableUint16ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint16List, P.Uint16List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableUint32ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint32List, P.Uint32List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableUint64ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint64List, P.Uint64List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableUint8ClampedListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint8ClampedList, P.Uint8ClampedList];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P._UnmodifiableUint8ListView_UnmodifiableListBase__UnmodifiableListMixin.prototype = {
-    $asEfficientLengthIterable: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListMixin: function() {
-      return [P.int];
-    },
-    $asUnmodifiableListBase: function() {
-      return [P.int];
-    },
-    $asListBase: function() {
-      return [P.int];
-    },
-    $asListMixin: function() {
-      return [P.int];
-    },
-    $asIterable: function() {
-      return [P.int];
-    },
-    $asList: function() {
-      return [P.int];
-    },
-    $is_UnmodifiableListMixin: 1,
-    $as_UnmodifiableListMixin: function() {
-      return [P.int, P.Uint8List, P.Uint8List];
-    },
-    $as_ListBase_Object_ListMixin: function() {
-      return [P.int];
-    }
-  };
-  P.AnalyserNode.prototype = {$isAnalyserNode: 1};
-  P.AudioBuffer.prototype = {$isAudioBuffer: 1};
-  P.AudioBufferSourceNode.prototype = {$isAudioBufferSourceNode: 1};
-  P.AudioContext.prototype = {$isAudioContext: 1};
-  P.AudioDestinationNode.prototype = {$isAudioDestinationNode: 1};
-  P.AudioListener.prototype = {$isAudioListener: 1};
-  P.AudioNode.prototype = {$isAudioNode: 1};
-  P.AudioParam.prototype = {$isAudioParam: 1};
-  P.AudioParamMap.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    },
-    $isAudioParamMap: 1
-  };
-  P.AudioProcessingEvent.prototype = {$isAudioProcessingEvent: 1};
-  P.AudioScheduledSourceNode.prototype = {$isAudioScheduledSourceNode: 1};
-  P.AudioTrack.prototype = {$isAudioTrack: 1};
-  P.AudioTrackList.prototype = {$isAudioTrackList: 1};
-  P.AudioWorkletGlobalScope.prototype = {$isAudioWorkletGlobalScope: 1};
-  P.AudioWorkletNode.prototype = {$isAudioWorkletNode: 1};
-  P.AudioWorkletProcessor.prototype = {$isAudioWorkletProcessor: 1};
-  P.BaseAudioContext.prototype = {$isBaseAudioContext: 1};
-  P.BiquadFilterNode.prototype = {$isBiquadFilterNode: 1};
-  P.ChannelMergerNode.prototype = {$isChannelMergerNode: 1};
-  P.ChannelSplitterNode.prototype = {$isChannelSplitterNode: 1};
-  P.ConstantSourceNode.prototype = {$isConstantSourceNode: 1};
-  P.ConvolverNode.prototype = {$isConvolverNode: 1};
-  P.DelayNode.prototype = {$isDelayNode: 1};
-  P.DynamicsCompressorNode.prototype = {$isDynamicsCompressorNode: 1};
-  P.GainNode.prototype = {$isGainNode: 1};
-  P.IirFilterNode.prototype = {$isIirFilterNode: 1};
-  P.MediaElementAudioSourceNode.prototype = {$isMediaElementAudioSourceNode: 1};
-  P.MediaStreamAudioDestinationNode.prototype = {$isMediaStreamAudioDestinationNode: 1};
-  P.MediaStreamAudioSourceNode.prototype = {$isMediaStreamAudioSourceNode: 1};
-  P.OfflineAudioCompletionEvent.prototype = {$isOfflineAudioCompletionEvent: 1};
-  P.OfflineAudioContext.prototype = {$isOfflineAudioContext: 1};
-  P.OscillatorNode.prototype = {$isOscillatorNode: 1};
-  P.PannerNode.prototype = {$isPannerNode: 1};
-  P.PeriodicWave.prototype = {$isPeriodicWave: 1};
-  P.ScriptProcessorNode.prototype = {$isScriptProcessorNode: 1};
-  P.StereoPannerNode.prototype = {$isStereoPannerNode: 1};
-  P.WaveShaperNode.prototype = {$isWaveShaperNode: 1};
-  P._AudioParamMap_Interceptor_MapMixin.prototype = {$isMapMixin: 1,
-    $asMapMixin: function() {
-      return [P.String, null];
-    },
-    $isMap: 1,
-    $asMap: function() {
-      return [P.String, null];
-    }
-  };
-  P.ActiveInfo.prototype = {$isActiveInfo: 1};
-  P.AngleInstancedArrays.prototype = {$isAngleInstancedArrays: 1};
-  P.Buffer.prototype = {$isBuffer: 1};
-  P.Canvas.prototype = {$isCanvas: 1};
-  P.ColorBufferFloat.prototype = {$isColorBufferFloat: 1};
-  P.CompressedTextureAstc.prototype = {$isCompressedTextureAstc: 1};
-  P.CompressedTextureAtc.prototype = {$isCompressedTextureAtc: 1};
-  P.CompressedTextureETC1.prototype = {$isCompressedTextureETC1: 1};
-  P.CompressedTextureEtc.prototype = {$isCompressedTextureEtc: 1};
-  P.CompressedTexturePvrtc.prototype = {$isCompressedTexturePvrtc: 1};
-  P.CompressedTextureS3TC.prototype = {$isCompressedTextureS3TC: 1};
-  P.CompressedTextureS3TCsRgb.prototype = {$isCompressedTextureS3TCsRgb: 1};
-  P.ContextEvent.prototype = {$isContextEvent: 1};
-  P.DebugRendererInfo.prototype = {$isDebugRendererInfo: 1};
-  P.DebugShaders.prototype = {$isDebugShaders: 1};
-  P.DepthTexture.prototype = {$isDepthTexture: 1};
-  P.DrawBuffers.prototype = {$isDrawBuffers: 1};
-  P.EXTsRgb.prototype = {$isEXTsRgb: 1};
-  P.ExtBlendMinMax.prototype = {$isExtBlendMinMax: 1};
-  P.ExtColorBufferFloat.prototype = {$isExtColorBufferFloat: 1};
-  P.ExtColorBufferHalfFloat.prototype = {$isExtColorBufferHalfFloat: 1};
-  P.ExtDisjointTimerQuery.prototype = {$isExtDisjointTimerQuery: 1};
-  P.ExtDisjointTimerQueryWebGL2.prototype = {$isExtDisjointTimerQueryWebGL2: 1};
-  P.ExtFragDepth.prototype = {$isExtFragDepth: 1};
-  P.ExtShaderTextureLod.prototype = {$isExtShaderTextureLod: 1};
-  P.ExtTextureFilterAnisotropic.prototype = {$isExtTextureFilterAnisotropic: 1};
-  P.Framebuffer.prototype = {$isFramebuffer: 1};
-  P.GetBufferSubDataAsync.prototype = {$isGetBufferSubDataAsync: 1};
-  P.LoseContext.prototype = {$isLoseContext: 1};
-  P.OesElementIndexUint.prototype = {$isOesElementIndexUint: 1};
-  P.OesStandardDerivatives.prototype = {$isOesStandardDerivatives: 1};
-  P.OesTextureFloat.prototype = {$isOesTextureFloat: 1};
-  P.OesTextureFloatLinear.prototype = {$isOesTextureFloatLinear: 1};
-  P.OesTextureHalfFloat.prototype = {$isOesTextureHalfFloat: 1};
-  P.OesTextureHalfFloatLinear.prototype = {$isOesTextureHalfFloatLinear: 1};
-  P.OesVertexArrayObject.prototype = {$isOesVertexArrayObject: 1};
-  P.Program.prototype = {$isProgram: 1};
-  P.Query.prototype = {$isQuery: 1};
-  P.Renderbuffer.prototype = {$isRenderbuffer: 1};
-  P.RenderingContext.prototype = {$isCanvasRenderingContext: 1, $isRenderingContext: 1};
-  P.RenderingContext2.prototype = {$isRenderingContext2: 1, $is_WebGL2RenderingContextBase: 1, $is_WebGLRenderingContextBase: 1};
-  P.Sampler.prototype = {$isSampler: 1};
-  P.Shader.prototype = {$isShader: 1};
-  P.ShaderPrecisionFormat.prototype = {$isShaderPrecisionFormat: 1};
-  P.Sync.prototype = {$isSync: 1};
-  P.Texture.prototype = {$isTexture: 1};
-  P.TimerQueryExt.prototype = {$isTimerQueryExt: 1};
-  P.TransformFeedback.prototype = {$isTransformFeedback: 1};
-  P.UniformLocation.prototype = {$isUniformLocation: 1};
-  P.VertexArrayObject.prototype = {$isVertexArrayObject: 1};
-  P.VertexArrayObjectOes.prototype = {$isVertexArrayObjectOes: 1};
-  P.WebGL.prototype = {$isWebGL: 1};
-  P._WebGL2RenderingContextBase.prototype = {$is_WebGL2RenderingContextBase: 1, $is_WebGLRenderingContextBase: 1};
-  P._WebGLRenderingContextBase.prototype = {};
-  P.SqlDatabase.prototype = {$isSqlDatabase: 1};
-  P.SqlError.prototype = {$isSqlError: 1};
-  P.SqlResultSet.prototype = {$isSqlResultSet: 1};
-  P.SqlResultSetRowList.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Map,,,]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Map,,,]];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [[P.Map,,,]];
-    },
-    $isSqlResultSetRowList: 1
-  };
-  P.SqlTransaction.prototype = {$isSqlTransaction: 1};
-  P._SqlResultSetRowList_Interceptor_ListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Map,,,]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Map,,,]];
-    }
-  };
-  P._SqlResultSetRowList_Interceptor_ListMixin_ImmutableListMixin.prototype = {$isEfficientLengthIterable: 1,
-    $asEfficientLengthIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isListMixin: 1,
-    $asListMixin: function() {
-      return [[P.Map,,,]];
-    },
-    $isIterable: 1,
-    $asIterable: function() {
-      return [[P.Map,,,]];
-    },
-    $isList: 1,
-    $asList: function() {
-      return [[P.Map,,,]];
-    },
-    $isImmutableListMixin: 1,
-    $asImmutableListMixin: function() {
-      return [[P.Map,,,]];
-    }
   };
   D.BoardModel.prototype = {
     BoardModel$0: function() {
       C.JSArray_methods.forEach$1(C.List_TKA, new D.BoardModel_closure(this));
-    },
-    addToDoNote$1: function(note) {
-      H.interceptedTypeCheck(note, "$isNoteModel");
-      J.$index$asx(this.board, C.Status_0).addNote$1(note);
-      this.emit$2("addToDoNote", [note]);
-    },
-    updateNoteStatus$3: function(noteId, oldStatus, newStatus) {
-      var t1, t2, oldColumnModel, note;
-      H.intTypeCheck(noteId);
-      H.interceptedTypeCheck(oldStatus, "$isStatus");
-      H.interceptedTypeCheck(newStatus, "$isStatus");
-      if (oldStatus != newStatus) {
-        t1 = this.board;
-        t2 = J.getInterceptor$asx(t1);
-        oldColumnModel = t2.$index(t1, oldStatus);
-        note = oldColumnModel.getNoteById$1(noteId);
-        oldColumnModel.removeNoteById$1(noteId);
-        t2.$index(t1, newStatus).addNote$1(note);
-        this.emit$2("updateNoteStatus", [oldStatus, newStatus, note]);
-      }
     }
   };
   D.BoardModel_closure.prototype = {
     call$1: function(s) {
       H.interceptedTypeCheck(s, "$isStatus");
-      J.$indexSet$ax(this.$this.board, s, M.ColumnModel$(s));
+      this.$this.board.$indexSet(0, s, new M.ColumnModel(s, H.setRuntimeTypeInfo([], [F.NoteModel]), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function])));
     },
-    $signature: 8
+    $signature: 5
   };
   D.BoardView.prototype = {
     html$0: function() {
-      var t1 = {};
+      var t2, t1 = {};
       t1.innerHtml = "";
-      J.forEach$1$ax(this._board.board.get$keys(), new D.BoardView_html_closure(t1));
-      return '<div class="board">' + H.S(t1.innerHtml) + "</div>";
-    },
-    update$0: function() {
-      var dnotes = H.interceptedTypeCheck(W.querySelector(this._parentSelector), "$isDivElement");
-      (dnotes && C.DivElement_methods).setInnerHtml$1(dnotes, this.html$0());
+      t2 = this._board.board;
+      new H.LinkedHashMapKeyIterable(t2, [H.getTypeArgumentByIndex(t2, 0)]).forEach$1(0, new D.BoardView_html_closure(t1));
+      return '<div class="board">' + t1.innerHtml + "</div>";
     }
   };
   D.BoardView_html_closure.prototype = {
@@ -18383,33 +5654,35 @@
       H.interceptedTypeCheck(s, "$isStatus");
       optionalHtml = s === C.Status_0 ? '        <div class="form-new-note">\n          <input type="text" class="form-new-note__header" placeholder="Header">\n          <input type="text" class="form-new-note__text" placeholder="Text">\n          <button class="form-new-note__btn">Create</button>\n          <div class="form-new-note__errors"></div>\n        </div>' : "";
       t1 = this._box_0;
-      t1.innerHtml = J.$add$ansx(t1.innerHtml, '      <div class="column-wrapper">\n        <div class="' + H.S(C.Map_TKr5a.$index(0, s)) + '-box"></div>\n        ' + optionalHtml + "\n      </div>");
+      t1.innerHtml = t1.innerHtml + ('      <div class="column-wrapper">\n        <div class="' + H.S(C.Map_TKr5a.$index(0, s)) + '-box"></div>\n        ' + optionalHtml + "\n      </div>");
     },
-    $signature: 8
+    $signature: 5
   };
   D.BoardController.prototype = {
     BoardController$2: function(_model, parentSelector) {
-      var t1, t2, _this = this;
+      var t1, _this = this;
       C.JSArray_methods.forEach$1(C.List_TKA, new D.BoardController_closure(_this));
       t1 = _this._model;
-      t2 = J.getInterceptor$z(t1);
-      t2.on$2(t1, "addToDoNote", new D.BoardController_closure0(_this));
-      t2.on$2(t1, "updateNoteStatus", new D.BoardController_closure1(_this));
+      t1.on$2(0, "addToDoNote", new D.BoardController_closure0(_this));
+      t1.on$2(0, "updateNoteStatus", new D.BoardController_closure1(_this));
     },
     updateView$0: function() {
-      this._view.update$0();
-      J.forEach$1$ax(J.get$values$z(this._columnControllers), new D.BoardController_updateView_closure());
+      var t1 = this._view,
+        dnotes = H.interceptedTypeCheck(document.querySelector(t1._parentSelector), "$isDivElement");
+      (dnotes && C.DivElement_methods).setInnerHtml$1(dnotes, t1.html$0());
+      t1 = this._columnControllers;
+      t1.get$values(t1).forEach$1(0, new D.BoardController_updateView_closure());
       this.initButton$0();
     },
     initButton$0: function() {
-      var headerInput = H.interceptedTypeCheck(W.querySelector(".form-new-note__header"), "$isInputElement"),
-        textInput = H.interceptedTypeCheck(W.querySelector(".form-new-note__text"), "$isInputElement"),
-        createBtn = H.interceptedTypeCheck(W.querySelector(".form-new-note__btn"), "$isButtonElement"),
-        errorsDiv = H.interceptedTypeCheck(W.querySelector(".form-new-note__errors"), "$isDivElement");
-      (createBtn && C.ButtonElement_methods).get$onClick(createBtn).listen$1(new D.BoardController_initButton_closure(this, errorsDiv, headerInput, textInput));
-    },
-    addToDoNote$2: function(header, text) {
-      this._model.addToDoNote$1(F.NoteModel$(H.stringTypeCheck(header), H.stringTypeCheck(text), C.Status_0));
+      var t1 = document,
+        headerInput = H.interceptedTypeCheck(t1.querySelector(".form-new-note__header"), "$isInputElement"),
+        textInput = H.interceptedTypeCheck(t1.querySelector(".form-new-note__text"), "$isInputElement"),
+        createBtn = H.interceptedTypeCheck(t1.querySelector(".form-new-note__btn"), "$isButtonElement"),
+        errorsDiv = H.interceptedTypeCheck(t1.querySelector(".form-new-note__errors"), "$isDivElement");
+      createBtn.toString;
+      t1 = W.MouseEvent;
+      W._EventStreamSubscription$(createBtn, "click", H.functionTypeCheck(new D.BoardController_initButton_closure(this, errorsDiv, headerInput, textInput), {func: 1, ret: -1, args: [t1]}), false, t1);
     }
   };
   D.BoardController_closure.prototype = {
@@ -18418,17 +5691,17 @@
       H.interceptedTypeCheck(s, "$isStatus");
       t1 = this.$this;
       t2 = t1._model.board;
-      if (H.boolConversionCheck(t2.containsKey$1(s))) {
-        columnController = M.ColumnController$(J.$index$asx(t2, s), "." + H.S(C.Map_TKr5a.$index(0, s)) + "-box");
+      if (t2.containsKey$1(s)) {
+        columnController = M.ColumnController$(t2.$index(0, s), "." + H.S(C.Map_TKr5a.$index(0, s)) + "-box");
         columnController.on$2(0, "dragStart", new D.BoardController__closure(t1));
         columnController.on$2(0, "dragStop", new D.BoardController__closure0(t1));
         columnController.on$2(0, "dragEnd", new D.BoardController__closure1(t1));
         columnController.on$2(0, "dragEnter", new D.BoardController__closure2(t1));
         columnController.on$2(0, "dragLeave", new D.BoardController__closure3(t1));
-        J.$indexSet$ax(t1._columnControllers, s, columnController);
+        t1._columnControllers.$indexSet(0, s, columnController);
       }
     },
-    $signature: 8
+    $signature: 5
   };
   D.BoardController__closure.prototype = {
     call$1: function(args) {
@@ -18439,51 +5712,63 @@
       t3 = J.getInterceptor$asx(args);
       t2.dragNoteId = H.intTypeCast(t3.$index(args, 0));
       t2.dragNoteFrom = H.interceptedTypeCast(t3.$index(args, 1), "$isStatus");
-      J.forEach$1$ax(J.get$values$z(t1._columnControllers), new D.BoardController___closure0());
+      t1 = t1._columnControllers;
+      t1.get$values(t1).forEach$1(0, new D.BoardController___closure0());
     },
     $signature: 0
   };
   D.BoardController___closure0.prototype = {
     call$1: function(ctrl) {
-      return H.interceptedTypeCheck(ctrl, "$isColumnController").select$0(0);
+      H.interceptedTypeCheck(ctrl, "$isColumnController")._column$_view.select$1$status(0, null);
+      return;
     },
-    $signature: 9
+    $signature: 6
   };
   D.BoardController__closure0.prototype = {
     call$1: function(args) {
-      var t1, t2;
-      H.listTypeCheck(args);
-      t1 = this.$this._model;
-      t2 = H.interceptedTypeCast(J.$index$asx(args, 0), "$isStatus");
+      var t3, t4, t5, oldColumnModel, note,
+        t1 = this.$this._model,
+        t2 = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus");
       t1.dragNoteTo = t2;
-      t1.updateNoteStatus$3(t1.dragNoteId, t1.dragNoteFrom, t2);
+      t3 = t1.dragNoteId;
+      t4 = t1.dragNoteFrom;
+      if (t4 != t2) {
+        t5 = t1.board;
+        oldColumnModel = t5.$index(0, t4);
+        note = oldColumnModel.getNoteById$1(t3);
+        oldColumnModel.removeNoteById$1(t3);
+        t5.$index(0, t2).addNote$1(note);
+        t1.emit$2("updateNoteStatus", [t4, t2, note]);
+      }
     },
     $signature: 0
   };
   D.BoardController__closure1.prototype = {
     call$1: function(args) {
+      var t1;
       H.listTypeCheck(args);
-      J.forEach$1$ax(J.get$values$z(this.$this._columnControllers), new D.BoardController___closure());
+      t1 = this.$this._columnControllers;
+      t1.get$values(t1).forEach$1(0, new D.BoardController___closure());
     },
     $signature: 0
   };
   D.BoardController___closure.prototype = {
     call$1: function(ctrl) {
-      return H.interceptedTypeCheck(ctrl, "$isColumnController").deselect$0();
+      H.interceptedTypeCheck(ctrl, "$isColumnController")._column$_view.deselectAll$0(0);
+      return;
     },
-    $signature: 9
+    $signature: 6
   };
   D.BoardController__closure2.prototype = {
     call$1: function(args) {
       var s = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus");
-      J.select$1$status$z(J.$index$asx(this.$this._columnControllers, s), s);
+      this.$this._columnControllers.$index(0, s)._column$_view.select$1$status(0, s);
     },
     $signature: 0
   };
   D.BoardController__closure3.prototype = {
     call$1: function(args) {
-      var s = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus");
-      J.select$0$z(J.$index$asx(this.$this._columnControllers, s));
+      this.$this._columnControllers.$index(0, H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isStatus"))._column$_view.select$1$status(0, null);
     },
     $signature: 0
   };
@@ -18492,18 +5777,16 @@
       var t1;
       H.listTypeCheck(args);
       t1 = this.$this._columnControllers;
-      if (H.boolConversionCheck(t1.containsKey$1(C.Status_0)))
-        J.$index$asx(t1, C.Status_0).updateView$0();
+      if (t1.containsKey$1(C.Status_0))
+        t1.$index(0, C.Status_0).updateView$0();
     },
     $signature: 0
   };
   D.BoardController_closure1.prototype = {
     call$1: function(args) {
-      var t1, t2, p;
-      for (t1 = J.get$iterator$ax(J.getRange$2$ax(H.listTypeCheck(args), 0, 2)), t2 = this.$this; H.boolConversionCheck(t1.moveNext$0());) {
-        p = H.interceptedTypeCast(t1.get$current(), "$isStatus");
-        J.$index$asx(t2._columnControllers, p).updateView$0();
-      }
+      var t1, t2;
+      for (t1 = J.getRange$2$ax(H.listTypeCheck(args), 0, 2), t1 = new H.ListIterator(t1, t1.get$length(t1), [H.getTypeArgumentByIndex(t1, 0)]), t2 = this.$this._columnControllers; t1.moveNext$0();)
+        t2.$index(0, H.interceptedTypeCast(t1.__internal$_current, "$isStatus")).updateView$0();
     },
     $signature: 0
   };
@@ -18511,129 +5794,126 @@
     call$1: function(ctrl) {
       return H.interceptedTypeCheck(ctrl, "$isColumnController").updateView$0();
     },
-    $signature: 9
+    $signature: 6
   };
   D.BoardController_initButton_closure.prototype = {
     call$1: function(e) {
-      var t1, t2, _this = this;
+      var t1, t2, t3, t4, t5, t6, _this = this;
       H.interceptedTypeCheck(e, "$isMouseEvent");
       t1 = _this.errorsDiv;
       t1.innerText = "";
       t2 = _this.headerInput;
-      if (H.boolConversionCheck(J.get$isEmpty$asx(t2.value))) {
-        t1.innerText = H.stringTypeCheck(J.$add$ansx(t1.innerText, "Header is empty.\n"));
+      t3 = t2.value;
+      if (t3.length === 0) {
+        t1.innerText = J.$add$ansx(t1.innerText, "Header is empty.\n");
         return;
       }
       t1 = _this.textInput;
-      _this.$this.addToDoNote$2(t2.value, t1.value);
+      t4 = t1.value;
+      t5 = _this.$this._model;
+      t6 = $._id;
+      $._id = t6 + 1;
+      t4 = new F.NoteModel(t6, t3, t4, P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
+      t5.board.$index(0, C.Status_0).addNote$1(t4);
+      t5.emit$2("addToDoNote", [t4]);
       t1.value = t2.value = "";
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnModel.prototype = {
-    get$status: function(_) {
-      return this._status;
-    },
     addNote$1: function(n) {
-      H.interceptedTypeCheck(n, "$isNoteModel");
-      J.add$1$ax(this._notes, n);
+      C.JSArray_methods.add$1(this._notes, n);
       this.emit$2("addNote", [n]);
     },
     getNoteById$1: function(id) {
-      return J.firstWhere$1$ax(this._notes, new M.ColumnModel_getNoteById_closure(H.intTypeCheck(id)));
+      return C.JSArray_methods.firstWhere$1(this._notes, new M.ColumnModel_getNoteById_closure(id));
     },
     removeNoteById$1: function(id) {
-      var note;
-      H.intTypeCheck(id);
-      note = this.getNoteById$1(id);
-      J.removeWhere$1$ax(this._notes, new M.ColumnModel_removeNoteById_closure(id));
+      var note = this.getNoteById$1(id),
+        t1 = this._notes,
+        t2 = H.functionTypeCheck(new M.ColumnModel_removeNoteById_closure(id), {func: 1, ret: P.bool, args: [H.getTypeArgumentByIndex(t1, 0)]});
+      if (!!t1.fixed$length)
+        H.throwExpression(P.UnsupportedError$("removeWhere"));
+      C.JSArray_methods._removeWhere$2(t1, t2, true);
       this.emit$2("removeNoteById", [note]);
     }
   };
   M.ColumnModel_getNoteById_closure.prototype = {
     call$1: function(n) {
-      return J.$eq$(H.interceptedTypeCheck(n, "$isNoteModel").id, this.id);
+      return H.interceptedTypeCheck(n, "$isNoteModel").id === this.id;
     },
-    $signature: 16
+    $signature: 11
   };
   M.ColumnModel_removeNoteById_closure.prototype = {
     call$1: function(n) {
-      return J.$eq$(H.interceptedTypeCheck(n, "$isNoteModel").id, this.id);
+      return H.interceptedTypeCheck(n, "$isNoteModel").id === this.id;
     },
-    $signature: 16
+    $signature: 11
   };
   M.ColumnView.prototype = {
-    html$0: function() {
-      var t1 = this._column,
-        t2 = J.getInterceptor$z(t1);
-      return '    <div id="' + H.S(C.Map_TKr5a.$index(0, t2.get$status(t1))) + '" class="column">\n      <div class="column__name">' + H.S(J.get$last$ax(J.split$1$s(J.toString$0$(t2.get$status(t1)), "."))) + '</div>\n      <div class="column__notes"></div>\n    </div>';
-    },
-    update$0: function() {
-      var column = H.interceptedTypeCheck(W.querySelector(this._column$_parentSelector), "$isDivElement");
-      (column && C.DivElement_methods).setInnerHtml$1(column, this.html$0());
-    },
     select$1$status: function(_, $status) {
-      var column;
-      H.interceptedTypeCheck($status, "$isStatus");
+      var t1, column;
       this.deselectAll$0(0);
-      column = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(this._column)))), "$isDivElement");
+      t1 = "#" + H.S(C.Map_TKr5a.$index(0, this._column._status));
+      column = H.interceptedTypeCheck(document.querySelector(t1), "$isDivElement");
       if ($status == null) {
-        J.add$1$ax((column && C.DivElement_methods).get$classes(column), "column-select-yellow");
+        column.classList.add("column-select-yellow");
         return;
       }
-      J.add$1$ax((column && C.DivElement_methods).get$classes(column), C.Map_TKRZY.$index(0, $status));
+      column.toString;
+      t1 = C.Map_TKRZY.$index(0, $status);
+      column.classList.add(t1);
     },
     deselectAll$0: function(_) {
-      var column = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(this._column)))), "$isDivElement");
-      J.removeWhere$1$ax((column && C.DivElement_methods).get$classes(column), new M.ColumnView_deselectAll_closure());
+      var t1 = "#" + H.S(C.Map_TKr5a.$index(0, this._column._status)),
+        column = H.interceptedTypeCheck(document.querySelector(t1), "$isDivElement");
+      column.toString;
+      W._ElementCssClassSet__removeWhere(column, H.functionTypeCheck(new M.ColumnView_deselectAll_closure(), {func: 1, ret: P.bool, args: [P.String]}), true);
     }
   };
   M.ColumnView_deselectAll_closure.prototype = {
     call$1: function(cls) {
-      return J.startsWith$1$s(H.stringTypeCheck(cls), "column-select");
+      return J.startsWith$1$s(cls, "column-select");
     },
-    $signature: 5
+    $signature: 4
   };
   M.ColumnController.prototype = {
     ColumnController$2: function(_model, parentSelector) {
-      var t1 = this._column$_model,
-        t2 = J.getInterceptor$z(t1);
-      t2.on$2(t1, "addNote", new M.ColumnController_closure(this));
-      t2.on$2(t1, "removeNoteById", new M.ColumnController_closure0(this));
+      var t1 = this._column$_model;
+      t1.on$2(0, "addNote", new M.ColumnController_closure(this));
+      t1.on$2(0, "removeNoteById", new M.ColumnController_closure0(this));
     },
     updateView$0: function() {
-      this._column$_view.update$0();
-      J.forEach$1$ax(this._notesControllers, new M.ColumnController_updateView_closure());
+      var t1 = this._column$_view,
+        column = H.interceptedTypeCheck(document.querySelector(t1._column$_parentSelector), "$isDivElement");
+      t1 = t1._column._status;
+      (column && C.DivElement_methods).setInnerHtml$1(column, '    <div id="' + H.S(C.Map_TKr5a.$index(0, t1)) + '" class="column">\n      <div class="column__name">' + H.S(C.JSArray_methods.get$last(J.toString$0$(t1).split("."))) + '</div>\n      <div class="column__notes"></div>\n    </div>');
+      C.JSArray_methods.forEach$1(this._notesControllers, new M.ColumnController_updateView_closure());
       this.initColumns$0();
     },
-    select$1$status: function(_, $status) {
-      J.select$1$status$z(this._column$_view, H.interceptedTypeCheck($status, "$isStatus"));
-    },
-    select$0: function($receiver) {
-      return this.select$1$status($receiver, null);
-    },
-    deselect$0: function() {
-      J.deselectAll$0$z(this._column$_view);
-    },
     initColumns$0: function() {
-      var _this = this, t1 = {},
-        statDiv = H.interceptedTypeCheck(W.querySelector("#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(_this._column$_model)))), "$isDivElement");
-      (statDiv && C.DivElement_methods).get$onDragStart(statDiv).listen$1(new M.ColumnController_initColumns_closure(_this));
-      C.DivElement_methods.get$onDragEnd(statDiv).listen$1(new M.ColumnController_initColumns_closure0(_this));
+      var t3, _this = this, t1 = {},
+        t2 = "#" + H.S(C.Map_TKr5a.$index(0, _this._column$_model._status)),
+        statDiv = H.interceptedTypeCheck(document.querySelector(t2), "$isDivElement");
+      statDiv.toString;
+      t2 = W.MouseEvent;
+      t3 = {func: 1, ret: -1, args: [t2]};
+      W._EventStreamSubscription$(statDiv, "dragstart", H.functionTypeCheck(new M.ColumnController_initColumns_closure(_this), t3), false, t2);
+      W._EventStreamSubscription$(statDiv, "dragend", H.functionTypeCheck(new M.ColumnController_initColumns_closure0(_this), t3), false, t2);
       t1.dragEnterLeaveCounter = 0;
-      C.DivElement_methods.get$onDragEnter(statDiv).listen$1(new M.ColumnController_initColumns_closure1(t1, _this));
-      C.DivElement_methods.get$onDragLeave(statDiv).listen$1(new M.ColumnController_initColumns_closure2(t1, _this));
-      C.DivElement_methods.get$onDragOver(statDiv).listen$1(new M.ColumnController_initColumns_closure3());
-      C.DivElement_methods.get$onDrop(statDiv).listen$1(new M.ColumnController_initColumns_closure4(t1, _this));
+      W._EventStreamSubscription$(statDiv, "dragenter", H.functionTypeCheck(new M.ColumnController_initColumns_closure1(t1, _this), t3), false, t2);
+      W._EventStreamSubscription$(statDiv, "dragleave", H.functionTypeCheck(new M.ColumnController_initColumns_closure2(t1, _this), t3), false, t2);
+      W._EventStreamSubscription$(statDiv, "dragover", H.functionTypeCheck(new M.ColumnController_initColumns_closure3(), t3), false, t2);
+      W._EventStreamSubscription$(statDiv, "drop", H.functionTypeCheck(new M.ColumnController_initColumns_closure4(t1, _this), t3), false, t2);
     }
   };
   M.ColumnController_closure.prototype = {
     call$1: function(args) {
       var note = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel"),
         t1 = this.$this,
-        noteController = F.NoteController$(note, "#" + H.S(C.Map_TKr5a.$index(0, J.get$status$z(t1._column$_model))) + " .column__notes");
+        noteController = new F.NoteController(note, new F.NoteView(note, "#" + H.S(C.Map_TKr5a.$index(0, t1._column$_model._status)) + " .column__notes"), P.LinkedHashMap_LinkedHashMap$_empty(P.String, [P.List, P.Function]));
       noteController.on$2(0, "pressDeleteControl", new M.ColumnController__closure0(t1, note));
-      J.add$1$ax(t1._notesControllers, noteController);
+      C.JSArray_methods.add$1(t1._notesControllers, noteController);
     },
     $signature: 0
   };
@@ -18642,147 +5922,127 @@
       H.listTypeCheck(args);
       return this.$this._column$_model.removeNoteById$1(this.note.id);
     },
-    $signature: 28
+    $signature: 23
   };
   M.ColumnController_closure0.prototype = {
     call$1: function(args) {
-      var note = H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel"),
-        t1 = this.$this;
-      J.removeWhere$1$ax(t1._notesControllers, new M.ColumnController__closure(note));
+      var t1 = this.$this,
+        t2 = t1._notesControllers,
+        t3 = H.functionTypeCheck(new M.ColumnController__closure(H.interceptedTypeCast(J.$index$asx(H.listTypeCheck(args), 0), "$isNoteModel")), {func: 1, ret: P.bool, args: [H.getTypeArgumentByIndex(t2, 0)]});
+      if (!!t2.fixed$length)
+        H.throwExpression(P.UnsupportedError$("removeWhere"));
+      C.JSArray_methods._removeWhere$2(t2, t3, true);
       t1.updateView$0();
     },
     $signature: 0
   };
   M.ColumnController__closure.prototype = {
     call$1: function(ctrl) {
-      H.interceptedTypeCheck(ctrl, "$isNoteController");
-      return J.$eq$(ctrl.get$id(ctrl), this.note.id);
+      return H.interceptedTypeCheck(ctrl, "$isNoteController")._note$_model.id === this.note.id;
     },
-    $signature: 29
+    $signature: 24
   };
   M.ColumnController_updateView_closure.prototype = {
     call$1: function(ctrl) {
-      return H.interceptedTypeCheck(ctrl, "$isNoteController").updateView$0();
+      var t1, notes;
+      H.interceptedTypeCheck(ctrl, "$isNoteController");
+      t1 = ctrl._note$_view;
+      notes = H.interceptedTypeCheck(document.querySelector(t1._note$_parentSelector), "$isDivElement");
+      notes.children;
+      t1 = t1._note;
+      notes.appendChild(W.Element_Element$html('        <div class="note" draggable="true" id="note-' + t1.id + '">\n            <div class="note__controls">\n                <span class="note__control note__control-delete">Delete</span>\n            </div>\n            <div class="note__header">' + H.S(t1.header) + '</div>\n            <div class="note__body">' + H.S(t1.body) + "</div>\n        </div>", null, null));
+      ctrl.initControls$0();
+      return;
     },
-    $signature: 30
+    $signature: 25
   };
   M.ColumnController_initColumns_closure.prototype = {
     call$1: function(e) {
-      var t1, note, id, column, columnId;
+      var id, columnId;
       H.interceptedTypeCheck(e, "$isMouseEvent");
-      t1 = J.getInterceptor$x(e);
-      note = H.interceptedTypeCheck(t1.get$target(e), "$isDivElement");
-      id = P.int_parse(J.get$last$ax(J.split$1$s((note && C.DivElement_methods).getAttribute$1(note, "id"), "-")));
-      column = H.interceptedTypeCheck(t1.get$currentTarget(e), "$isDivElement");
-      columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
-      this.$this.emit$2("dragStart", [id, J.$index$asx($.$get$classToStatus(), columnId)]);
+      id = P.int_parse(C.JSArray_methods.get$last(H.interceptedTypeCheck(W._convertNativeToDart_EventTarget(e.target), "$isDivElement").getAttribute("id").split("-")));
+      columnId = H.interceptedTypeCheck(W._convertNativeToDart_EventTarget(e.currentTarget), "$isDivElement").getAttribute("id");
+      this.$this.emit$2("dragStart", [id, $.$get$classToStatus().$index(0, columnId)]);
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnController_initColumns_closure0.prototype = {
     call$1: function(e) {
       H.interceptedTypeCheck(e, "$isMouseEvent");
       this.$this.emit$2("dragEnd", []);
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnController_initColumns_closure1.prototype = {
     call$1: function(e) {
-      var t1, t2;
+      var t1;
       H.interceptedTypeCheck(e, "$isMouseEvent");
-      t1 = this._box_0;
-      t2 = t1.dragEnterLeaveCounter;
-      if (typeof t2 !== "number")
-        return t2.$add();
-      t1.dragEnterLeaveCounter = t2 + 1;
-      t2 = this.$this;
-      t2.emit$2("dragEnter", [J.get$status$z(t2._column$_model)]);
+      ++this._box_0.dragEnterLeaveCounter;
+      t1 = this.$this;
+      t1.emit$2("dragEnter", [t1._column$_model._status]);
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnController_initColumns_closure2.prototype = {
     call$1: function(e) {
-      var t1, t2, dragEnterLeaveCounter;
+      var t1;
       H.interceptedTypeCheck(e, "$isMouseEvent");
-      t1 = this._box_0;
-      t2 = t1.dragEnterLeaveCounter;
-      if (typeof t2 !== "number")
-        return t2.$sub();
-      dragEnterLeaveCounter = t2 - 1;
-      t1.dragEnterLeaveCounter = dragEnterLeaveCounter;
-      if (dragEnterLeaveCounter === 0) {
+      if (--this._box_0.dragEnterLeaveCounter === 0) {
         t1 = this.$this;
-        t1.emit$2("dragLeave", [J.get$status$z(t1._column$_model)]);
+        t1.emit$2("dragLeave", [t1._column$_model._status]);
       }
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnController_initColumns_closure3.prototype = {
     call$1: function(e) {
-      J.preventDefault$0$x(H.interceptedTypeCheck(e, "$isMouseEvent"));
+      H.interceptedTypeCheck(e, "$isMouseEvent").preventDefault();
     },
-    $signature: 2
+    $signature: 1
   };
   M.ColumnController_initColumns_closure4.prototype = {
     call$1: function(e) {
-      var column, columnId;
+      var columnId;
       H.interceptedTypeCheck(e, "$isMouseEvent");
       this._box_0.dragEnterLeaveCounter = 0;
-      column = H.interceptedTypeCheck(J.get$currentTarget$x(e), "$isDivElement");
-      columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
-      this.$this.emit$2("dragStop", [J.$index$asx($.$get$classToStatus(), columnId)]);
+      columnId = H.interceptedTypeCheck(W._convertNativeToDart_EventTarget(e.currentTarget), "$isDivElement").getAttribute("id");
+      this.$this.emit$2("dragStop", [$.$get$classToStatus().$index(0, columnId)]);
     },
-    $signature: 2
+    $signature: 1
   };
   E.EventEmitter.prototype = {
     on$2: function(_, evt, listener) {
-      var t1, t2;
-      H.stringTypeCheck(evt);
-      H.interceptedTypeCheck(listener, "$isFunction");
-      t1 = this._events;
-      t2 = J.getInterceptor$asx(t1);
-      if (!H.boolConversionCheck(t1.containsKey$1(evt)))
-        t2.$indexSet(t1, evt, H.setRuntimeTypeInfo([listener], [P.Function]));
-      else
-        J.add$1$ax(t2.$index(t1, evt), listener);
+      var t1 = this._events;
+      if (!t1.containsKey$1(evt))
+        t1.$indexSet(0, evt, H.setRuntimeTypeInfo([listener], [P.Function]));
+      else {
+        t1 = t1.$index(0, evt);
+        (t1 && C.JSArray_methods).add$1(t1, listener);
+      }
     },
     emit$2: function(evt, args) {
-      var t1;
-      H.stringTypeCheck(evt);
-      H.listTypeCheck(args);
-      t1 = this._events;
-      if (H.boolConversionCheck(t1.containsKey$1(evt)))
-        J.forEach$1$ax(J.$index$asx(t1, evt), new E.EventEmitter_emit_closure(args));
+      var t1 = this._events;
+      if (t1.containsKey$1(evt)) {
+        t1 = t1.$index(0, evt);
+        (t1 && C.JSArray_methods).forEach$1(t1, new E.EventEmitter_emit_closure(args));
+      }
     }
   };
   E.EventEmitter_emit_closure.prototype = {
     call$1: function($function) {
       return H.interceptedTypeCheck($function, "$isFunction").call$1(this.args);
     },
-    $signature: 31
+    $signature: 26
   };
   F.NoteModel.prototype = {};
-  F.NoteView.prototype = {
-    html$0: function() {
-      var t1 = this._note;
-      return '        <div class="note" draggable="true" id="note-' + H.S(t1.id) + '">\n            <div class="note__controls">\n                <span class="note__control note__control-delete">Delete</span>\n            </div>\n            <div class="note__header">' + H.S(t1.header) + '</div>\n            <div class="note__body">' + H.S(t1.body) + "</div>\n        </div>";
-    },
-    update$0: function() {
-      var notes = H.interceptedTypeCheck(W.querySelector(this._note$_parentSelector), "$isDivElement");
-      J.add$1$ax((notes && C.DivElement_methods).get$children(notes), W.Element_Element$html(this.html$0(), null, null));
-    }
-  };
+  F.NoteView.prototype = {};
   F.NoteController.prototype = {
-    get$id: function(_) {
-      return this._note$_model.id;
-    },
-    updateView$0: function() {
-      this._note$_view.update$0();
-      this.initControls$0();
-    },
     initControls$0: function() {
-      var deleteControl = H.interceptedTypeCheck(W.querySelector("#note-" + H.S(this._note$_model.id) + " .note__control-delete"), "$isSpanElement");
-      (deleteControl && C.SpanElement_methods).get$onClick(deleteControl).listen$1(new F.NoteController_initControls_closure(this));
+      var t1 = "#note-" + this._note$_model.id + " .note__control-delete",
+        deleteControl = H.interceptedTypeCheck(document.querySelector(t1), "$isSpanElement");
+      deleteControl.toString;
+      t1 = W.MouseEvent;
+      W._EventStreamSubscription$(deleteControl, "click", H.functionTypeCheck(new F.NoteController_initControls_closure(this), {func: 1, ret: -1, args: [t1]}), false, t1);
     }
   };
   F.NoteController_initControls_closure.prototype = {
@@ -18792,7 +6052,7 @@
       t1 = this.$this;
       t1.emit$2("pressDeleteControl", [t1._note$_model]);
     },
-    $signature: 2
+    $signature: 1
   };
   E.Status.prototype = {
     toString$0: function(_) {
@@ -18814,319 +6074,63 @@
   (function installTearOffs() {
     var _static_1 = hunkHelpers._static_1,
       _static_0 = hunkHelpers._static_0,
-      _static = hunkHelpers.installStaticTearOff,
-      _instance = hunkHelpers.installInstanceTearOff,
-      _instance_1_u = hunkHelpers._instance_1u;
-    _static_1(P, "async__AsyncRun__scheduleImmediateJsOverride$closure", "_AsyncRun__scheduleImmediateJsOverride", 4);
-    _static_1(P, "async__AsyncRun__scheduleImmediateWithSetImmediate$closure", "_AsyncRun__scheduleImmediateWithSetImmediate", 4);
-    _static_1(P, "async__AsyncRun__scheduleImmediateWithTimer$closure", "_AsyncRun__scheduleImmediateWithTimer", 4);
+      _static = hunkHelpers.installStaticTearOff;
+    _static_1(P, "async__AsyncRun__scheduleImmediateJsOverride$closure", "_AsyncRun__scheduleImmediateJsOverride", 7);
+    _static_1(P, "async__AsyncRun__scheduleImmediateWithSetImmediate$closure", "_AsyncRun__scheduleImmediateWithSetImmediate", 7);
+    _static_1(P, "async__AsyncRun__scheduleImmediateWithTimer$closure", "_AsyncRun__scheduleImmediateWithTimer", 7);
     _static_0(P, "async___startMicrotaskLoop$closure", "_startMicrotaskLoop", 3);
-    _static(P, "async___rootScheduleMicrotask$closure", 4, null, ["call$4"], ["_rootScheduleMicrotask"], 33, 0);
-    _instance(P._Future.prototype, "get$_completeError", 0, 1, null, ["call$2", "call$1"], ["_completeError$2", "_completeError$1"], 25, 0);
-    _static(W, "html__Html5NodeValidator__standardAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__standardAttributeValidator"], 15, 0);
-    _static(W, "html__Html5NodeValidator__uriAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__uriAttributeValidator"], 15, 0);
-    _instance_1_u(P.CssClassSetImpl.prototype, "get$_validateToken", "_validateToken$1", 14);
+    _static(W, "html__Html5NodeValidator__standardAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__standardAttributeValidator"], 12, 0);
+    _static(W, "html__Html5NodeValidator__uriAttributeValidator$closure", 4, null, ["call$4"], ["_Html5NodeValidator__uriAttributeValidator"], 12, 0);
   })();
   (function inheritance() {
     var _mixin = hunkHelpers.mixin,
       _inherit = hunkHelpers.inherit,
       _inheritMany = hunkHelpers.inheritMany;
     _inherit(P.Object, null);
-    _inheritMany(P.Object, [H.JS_CONST, H._CryptoUtils, H._HashBase, H.HttpServer, H.HttpConnectionsInfo, H.HttpHeaders, H.HeaderValue, H.HttpSession, H.ContentType, H.Cookie, H.HttpRequest, H.HttpResponse, H.HttpClient, H.HttpClientRequest, H.HttpClientResponse, H.HttpClientResponseCompressionState, H.HttpClientCredentials, H.HttpConnectionInfo, H.RedirectInfo, H.DetachedSocket, H.HttpException, H.RedirectException, H.HttpDate, H._HttpHeaders, H._HeaderValue, H._Cookie, H._ServiceObject, H._CopyingBytesBuilder, P.Stream, P.StreamTransformerBase, H._Uint8ListConversionSink, H._StreamSinkImpl, P.ChunkedConversionSink, H._HttpOutgoing, H._HttpClientConnection, H._ConnectionInfo, H._ConnectionTarget, H._HttpClient, P.LinkedListEntry, H._ProxyConfiguration, H._Proxy, H._HttpConnectionInfo, H._AuthenticationScheme, H._Credentials, H._HttpClientCredentials, H._RedirectInfo, H._Const, H._CharCode, H._State, H._HttpVersion, H._MessageType, H._HttpDetachedStreamSubscription, H._HttpSession, H._HttpSessionManager, H.HttpOverrides, H.WebSocketStatus, H.CompressionOptions, H.WebSocketTransformer, H.WebSocket, H.WebSocketException, H._WebSocketMessageType, H._WebSocketOpcode, H._EncodedString, H._CompressionMaxWindowBits, H._WebSocketPing, H._WebSocketPong, H._WebSocketPerMessageDeflate, H._WebSocketConsumer, J.Interceptor, J.JSIndexable, J.JSObject, J._Growable, J.ArrayIterator, H.CastStreamSubscription, P.Iterable, H.CastIterator, P.MapMixin, P._ListBase_Object_ListMixin, H.ExternalName, H.Since, H.HttpStatus, H.ListIterator, P.Iterator, H.ExpandIterator, H.EmptyIterator, H.FollowedByIterator, H.WhereTypeIterator, H.IterableElementError, H.LinkedListEntry0, H._LinkedListIterator, H.FixedLengthListMixin, H.UnmodifiableListMixin, H.UnmodifiableListError, H.NonGrowableListError, H.Sort, H.Symbol0, H.JsGetName, H.JsBuiltin, H.RtiUniverseFieldNames, H.Native, H._Patch, P.MapView, H.ConstantMap, H.Closure, H.InternalMap, H.JSInvocationMirror, H.Primitives, H.JsCache, H.TypeErrorDecoder, P.Error, H.ExceptionAndStackTrace, H._StackTrace, H.Creates, H.Returns, H.JSName, H.TypeImpl, H.TypeVariable, H.LinkedHashMapCell, H.LinkedHashMapKeyIterator, H.JSSyntaxRegExp, H._MatchImplementation, H._AllMatchesIterator, H.StringMatch, H._StringAllMatchesIterator, H._LazyMangledNamesMap, H._LazyReflectiveNamesMap, H.SupportedBrowser, H.Experimental, H.DomName, H.DocsEditable, H.Unstable, H._NativeFloat32x4List_Object_ListMixin, H._NativeInt32x4List_Object_ListMixin, H._NativeFloat64x2List_Object_ListMixin, H.NativeFloat32x4, H.NativeInt32x4, H.NativeFloat64x2, H.Recipe, H.Rti, H._FunctionParameters, H._Type, H._Universe, H._Parser, H.TypeRule, H._Utils, P._TimerImpl, P._AsyncAwaitCompleter, P._AsyncStarStreamController, P._IterationMarker, P._SyncStarIterator, P._BufferingStreamSubscription, P._BroadcastStreamController, P.DeferredLibrary, P.DeferredLoadException, P.FutureOr, P.Future, P.TimeoutException, P.Completer, P._Completer, P._FutureListener, P._Future, P._AsyncCallbackEntry, P._AsyncRun, P.StreamSubscription, P.EventSink, P.StreamConsumer, P.StreamSink, P.StreamTransformer, P.StreamIterator, P._ControllerEventSinkWrapper, P.StreamController, P.SynchronousStreamController, P._StreamControllerLifecycle, P._StreamControllerBase, P._StreamController, P._SyncStreamControllerDispatch, P._AsyncStreamControllerDispatch, P._StreamSinkWrapper, P._AddStreamState, P._EventSink, P._EventDispatch, P._PendingEvents, P._DelayedEvent, P._DelayedDone, P._DoneStreamSubscription, P._BroadcastSubscriptionWrapper, P._StreamIterator, P._EventSinkWrapper, P._HandlerEventSink, P.Timer, P.AsyncError, P._ZoneFunction, P.ZoneSpecification, P._ZoneSpecification, P.ZoneDelegate, P.Zone, P._ZoneDelegate, P._Zone, P._HashMapKeyIterator, P._Es6MapIterator, P._SetBase, P._HashSetIterator, P._LinkedHashSetCell, P._LinkedHashSetIterator, P.HashMap, P.HashSet, P.IterableMixin, P.HasNextIterator, P.LinkedHashMap, P.LinkedHashSet, P._LinkedListIterator0, P.ListMixin, P._MapBaseValueIterator, P._UnmodifiableMapMixin, P.Queue, P._DoubleLink, P._DoubleLinkedQueueIterator, P._ListQueueIterator, P.SetMixin, P._SetBase_Object_SetMixin, P._SplayTreeNode, P._SplayTree, P._TypeTest, P._SplayTreeIterator, P.StringConversionSinkMixin, P.Codec, P._Base64Encoder, P._Base64Decoder, P._ConverterStreamEventSink, P.HtmlEscapeMode, P._JsonStringifier, P._JsonPrettyPrintMixin, P.StringSink, P._ClosableStringSink, P._StringConversionSinkAsStringSinkAdapter, P._Utf8Encoder, P._Utf8Decoder, P._BigIntImpl, P._BigIntReduction, P._BigIntClassic, P.Deprecated, P._Override, P.Provisional, P._Proxy0, P.pragma, P.BigInt, P.bool, P.Comparable, P.DateTime, P.num, P.Duration, P.OutOfMemoryError, P.StackOverflowError, P.Exception, P._Exception, P.FormatException, P.IntegerDivisionByZeroException, P.Expando, P.Function, P.Invocation, P._Invocation, P.BidirectionalIterator, P.List, P.Map, P.MapEntry, P.Null, P.Pattern, P.Match, P.RegExp, P.RegExpMatch, P.Sink, P.StackTrace, P._StringStackTrace, P.Stopwatch, P.String, P.RuneIterator, P.StringBuffer, P.Symbol, P.Type, P.Uri, P._Uri, P.UriData, P._SimpleUri, P._FakeUserTag, P.ServiceExtensionResponse, P.UserTag, P.Metric, P.Metrics, P.ServiceProtocolInfo, P.Service, P.Flow, P.Timeline, P.TimelineTask, P._AsyncBlock, P._SyncBlock, W.CanvasRenderingContext, W.__CssStyleDeclarationSet_Object_CssStyleDeclarationBase, W.CssStyleDeclarationBase, W._ElementFactoryProvider, W.ScrollAlignment, W.Events, W._GeopositionWrapper, W.GlobalEventHandlers, W.InputElementBase, W.HiddenInputElement, W.TextInputElementBase, W.SearchInputElement, W.TextInputElement, W.UrlInputElement, W.TelephoneInputElement, W.EmailInputElement, W.PasswordInputElement, W.RangeInputElementBase, W.DateInputElement, W.MonthInputElement, W.WeekInputElement, W.TimeInputElement, W.LocalDateTimeInputElement, W.NumberInputElement, W.RangeInputElement, W.CheckboxInputElement, W.RadioButtonInputElement, W.FileUploadInputElement, W.SubmitButtonInputElement, W.ImageButtonInputElement, W.ResetButtonInputElement, W.ButtonInputElement, W._WrappedEvent, W._BeforeUnloadEventStreamProvider, W._JenkinsSmiHash, W.CanvasImageSource, W.WindowBase, W.LocationBase, W.HistoryBase, W.CssClassSet, W.CssRect, W.Dimension, W.EventStreamProvider, W.ElementStream, W.CustomStream, W._StreamPool, W._CustomEventStreamProvider, W._Html5NodeValidator, W.ImmutableListMixin, W.KeyCode, W.KeyLocation, W._KeyName, W.KeyboardEventStream, W.NodeValidatorBuilder, W._SimpleNodeValidator, W._SvgNodeValidator, W.ReadyState, W._WrappedIterator, W._HttpRequestUtils, W.FixedSizeListIterator, W._VariableSizeListIterator, W.Console, W._JSElementUpgrader, W._DOMWindowCrossFrame, W._LocationCrossFrame, W._HistoryCrossFrame, W.Platform, W.ElementUpgrader, W.NodeValidator, W.NodeTreeSanitizer, W._TrustedHtmlTreeSanitizer, W.UriPolicy, W._SameOriginUriPolicy, W._ThrowsNodeValidator, W._ValidatingTreeSanitizer, P._StructuredClone, P._AcceptStructuredClone, P.ContextAttributes, P._TypedImageData, P.Device, P.Lists, P.NodeListWrapper, P._KeyRangeFactoryProvider, P.BytesBuilder, P._CopyingBytesBuilder0, P._BytesBuilder, P.IOException, P.OSError, P._BufferAndStart, P._IOCrypto, P.ZLibOption, P.RawZLibFilter, P.Directory, P.FileSystemEntity, P._AsyncDirectoryListerOps, P._AsyncDirectoryLister, P._EmbedderConfig, P._EventHandler, P.FileMode, P.FileLock, P.File0, P.RandomAccessFile, P.FileSystemException, P._RandomAccessFileOps, P._RandomAccessFile, P.FileSystemEntityType, P.FileStat, P.FileSystemEvent, P._FileSystemWatcher, P._IOResourceInfo, P._IOService, P.IOSink, P._StreamSinkImpl0, P.Link, P._Namespace, P._NetworkProfiling, P._HttpProfile, P._SocketProfile, P.IOOverrides, P.Platform0, P._Platform, P._ProcessUtils, P.ProcessInfo, P.ProcessStartMode, P.Process, P.ProcessResult, P.ProcessSignal, P.SignalException, P.ProcessException, P.SecureSocket, P.RawSecureSocket, P.X509Certificate, P._FilterStatus, P._ExternalBuffer, P._SecureFilter, P.TlsException, P.SecurityContext, P._ServiceObject0, P.InternetAddressType, P.InternetAddress, P.NetworkInterface, P.RawServerSocket, P.ServerSocket, P.SocketDirection, P.SocketOption, P._RawSocketOptions, P.RawSocketOption, P.RawSocketEvent, P.ConnectionTask, P.RawSocket, P.Socket, P.Datagram, P.SocketException, P._StdSink, P.StdoutException, P.StdinException, P._StdConsumer, P.StdioType, P._StdIOUtils, P.RawSynchronousSocket, P.Capability, P.IsolateSpawnException, P.Isolate, P.SendPort, P.ReceivePort, P.RawReceivePort, P.RemoteError, P.TransferableTypedData, P.JsObject, P._JSRandom, P._Random, P._JSSecureRandom, P._JenkinsSmiHash0, P.Point, P.Random, P._RectangleBase, P.MirrorSystem, P.Mirror, P.IsolateMirror, P.DeclarationMirror, P.ObjectMirror, P.InstanceMirror, P.ClosureMirror, P.LibraryMirror, P.LibraryDependencyMirror, P.CombinatorMirror, P.TypeMirror, P.ClassMirror, P.FunctionTypeMirror, P.TypedefMirror, P.MethodMirror, P.VariableMirror, P.ParameterMirror, P.SourceLocation, P.Comment0, P.MirrorsUsed, P._SvgElementFactoryProvider, P.ByteBuffer, P.TypedData, P.Endian, P.ByteData, P.Int8List, P.Uint8List, P.Uint8ClampedList, P.Int16List, P.Uint16List, P.Int32List, P.Uint32List, P.Int64List, P.Uint64List, P.Float32List, P.Float64List, P.Float32x4List, P.Int32x4List, P.Float64x2List, P.Float32x4, P.Int32x4, P.Float64x2, P.UnmodifiableByteBufferView, P.UnmodifiableByteDataView, P._UnmodifiableListMixin, E.EventEmitter, D.BoardView, M.ColumnView, F.NoteView, E.Status]);
-    _inheritMany(H._HashBase, [H._MD5, H._SHA1]);
-    _inheritMany(H.HttpClientCredentials, [H.HttpClientBasicCredentials, H.HttpClientDigestCredentials]);
-    _inherit(H._ContentType, H._HeaderValue);
-    _inheritMany(P.Stream, [H._HttpIncoming, H._HttpInboundMessageListInt, H._HttpInboundMessage, H.__HttpServer_Stream__ServiceObject, H._DetachedSocket, H._HttpDetachedIncoming, H._HttpParser, H.__WebSocketImpl_Stream__ServiceObject, H.CastStream, P._StreamImpl, P.StreamView, P._AsBroadcastStream, P._EmptyStream, P._ForwardingStream, P._BoundSinkStream, P._BoundSubscriptionStream, W._EventStream, W._ElementListEventStreamImpl, W._CustomEventStreamImpl, P._FileStream, P.SecureServerSocket, P.RawSecureServerSocket, P._RawSecureSocket, P.RawDatagramSocket, P._StdStream, P._ReceivePortImpl]);
-    _inherit(H._HttpRequest, H._HttpInboundMessage);
-    _inherit(H._HttpClientResponse, H._HttpInboundMessageListInt);
-    _inheritMany(P.StreamTransformerBase, [P.Converter, H._WebSocketProtocolTransformer, H._WebSocketTransformerImpl, H._WebSocketOutgoingTransformer, H.CastStreamTransformer, P._StreamSinkTransformer, P._StreamBindTransformer, P._StreamSubscriptionTransformer, P.LineSplitter]);
-    _inheritMany(P.Converter, [H._ToUint8List, H.CastConverter, P._UnicodeSubsetEncoder, P._UnicodeSubsetDecoder, P.Base64Encoder, P.Base64Decoder, P._FusedConverter, P.HtmlEscape, P.JsonEncoder, P.JsonUtf8Encoder, P.JsonDecoder, P.Utf8Encoder, P.Utf8Decoder, P.ZLibEncoder, P.ZLibDecoder, P._WindowsCodePageEncoder, P._WindowsCodePageDecoder]);
-    _inherit(H._IOSinkImpl, H._StreamSinkImpl);
-    _inherit(H._HttpOutboundMessage, H._IOSinkImpl);
-    _inheritMany(H._HttpOutboundMessage, [H._HttpResponse, H._HttpClientRequest]);
-    _inheritMany(P.ChunkedConversionSink, [P.ByteConversionSink, P._SimpleCallbackSink, P._JsonEncoderSink, P._JsonUtf8EncoderSink, P.StringConversionSink]);
-    _inheritMany(P.ByteConversionSink, [H._HttpGZipSink, P.ByteConversionSinkBase, P._Utf8StringSinkAdapter, P._Utf8ConversionSink, P._BufferSink, P._FilterSink]);
-    _inherit(H.__HttpConnection_LinkedListEntry__ServiceObject, P.LinkedListEntry);
-    _inherit(H._HttpConnection, H.__HttpConnection_LinkedListEntry__ServiceObject);
-    _inherit(H._HttpServer, H.__HttpServer_Stream__ServiceObject);
-    _inheritMany(H._Credentials, [H._SiteCredentials, H._ProxyCredentials]);
-    _inheritMany(H._HttpClientCredentials, [H._HttpClientBasicCredentials, H._HttpClientDigestCredentials]);
-    _inherit(H._HttpOverridesScope, H.HttpOverrides);
-    _inherit(H._WebSocketImpl, H.__WebSocketImpl_Stream__ServiceObject);
-    _inheritMany(J.Interceptor, [J.JSBool, J.JSNull, J.JavaScriptObject, J.JSArray, J.JSNumber, J.JSString, H.NativeByteBuffer, H.NativeTypedData, W.EventTarget, W.Event, W.AbstractWorker, W.AccessibleNodeList, W.AnimationEffectReadOnly, W.AnimationEffectTimingReadOnly, W.AnimationTimeline, W.WorkletGlobalScope, W.AuthenticatorResponse, W.BackgroundFetchFetch, W.BackgroundFetchManager, W.BarProp, W.BarcodeDetector, W.Blob, W.BluetoothRemoteGattDescriptor, W.Body, W.BudgetState, W.CacheStorage, W.CanvasGradient, W.CanvasPattern, W.CanvasRenderingContext2D, W.ChildNode, W.Client, W.Clients, W.CookieStore, W.Coordinates, W.Credential, W.CredentialUserData, W.CredentialsContainer, W.Crypto, W.CryptoKey, W.Css, W.CssRule, W.CssStyleValue, W.CssTransformComponent, W._CssStyleDeclaration_Interceptor_CssStyleDeclarationBase, W.StyleSheet, W.CssVariableReferenceValue, W.CustomElementRegistry, W.DataTransfer, W.DataTransferItem, W.DataTransferItemList, W.DeprecatedStorageInfo, W.DeprecatedStorageQuota, W.ReportBody, W.DetectedBarcode, W.DetectedFace, W.DetectedText, W.DeviceAcceleration, W.DeviceRotationRate, W.Entry, W.DirectoryReader, W.DocumentOrShadowRoot, W.DomError, W.DomException, W.DomImplementation, W.DomIterator, W.DomMatrixReadOnly, W.DomParser, W.DomPointReadOnly, W.DomQuad, W._DomRectList_Interceptor_ListMixin, W.DomRectReadOnly, W._DomStringList_Interceptor_ListMixin, W.DomStringMap, W.DomTokenList, W.External, W.FaceDetector, W._FileList_Interceptor_ListMixin, W.FileSystem, W.FontFace, W.FontFaceSource, W.FormData, W.Gamepad, W.GamepadButton, W.GamepadPose, W.Geolocation, W.Geoposition, W.Headers, W.History, W._HtmlCollection_Interceptor_ListMixin, W.HtmlHyperlinkElementUtils, W.IdleDeadline, W.ImageBitmap, W.ImageBitmapRenderingContext, W.ImageCapture, W.ImageData, W.InputDeviceCapabilities, W.IntersectionObserver, W.IntersectionObserverEntry, W.Location, W.MediaCapabilities, W.MediaCapabilitiesInfo, W.MediaDeviceInfo, W.MediaError, W.MediaKeyStatusMap, W.MediaKeySystemAccess, W.MediaKeys, W.MediaKeysPolicy, W.MediaList, W.MediaMetadata, W.MediaSession, W.MediaSettingsRange, W.MemoryInfo, W.MessageChannel, W.Metadata, W._MidiInputMap_Interceptor_MapMixin, W._MidiOutputMap_Interceptor_MapMixin, W.MimeType, W._MimeTypeArray_Interceptor_ListMixin, W.MutationObserver, W.MutationRecord, W.NavigationPreloadManager, W.NavigatorConcurrentHardware, W.NavigatorAutomationInformation, W.NavigatorCookies, W.NavigatorID, W.NavigatorLanguage, W.NavigatorOnLine, W.NavigatorUserMediaError, W.NodeFilter, W.NodeIterator, W._NodeList_Interceptor_ListMixin, W.NonDocumentTypeChildNode, W.NonElementParentNode, W.NoncedElement, W.OffscreenCanvasRenderingContext2D, W.OverconstrainedError, W.PaintRenderingContext2D, W.PaintSize, W.ParentNode, W.Path2D, W.PaymentAddress, W.PaymentInstruments, W.PaymentManager, W.PaymentResponse, W.PerformanceEntry, W.PerformanceNavigation, W.PerformanceObserver, W.PerformanceObserverEntryList, W.PerformanceServerTiming, W.PerformanceTiming, W.Permissions, W.PhotoCapabilities, W.Plugin, W._PluginArray_Interceptor_ListMixin, W.PositionError, W.Presentation, W.PresentationReceiver, W.PushManager, W.PushMessageData, W.PushSubscription, W.PushSubscriptionOptions, W.Range, W.RelatedApplication, W.ReportingObserver, W.ResizeObserver, W.ResizeObserverEntry, W.RtcCertificate, W.RtcIceCandidate, W.RtcLegacyStatsReport, W.RtcRtpContributingSource, W.RtcRtpReceiver, W.RtcRtpSender, W.RtcSessionDescription, W._RtcStatsReport_Interceptor_MapMixin, W.RtcStatsResponse, W.Screen, W.ScrollState, W.Selection, W.SharedArrayBuffer, W.SpeechGrammar, W._SpeechGrammarList_Interceptor_ListMixin, W.SpeechRecognitionAlternative, W.SpeechRecognitionResult, W.SpeechSynthesisVoice, W.StaticRange, W._Storage_Interceptor_MapMixin, W.StorageManager, W.StyleMedia, W.StylePropertyMapReadonly, W.SyncManager, W.TextDetector, W.TextMetrics, W._TextTrackCueList_Interceptor_ListMixin, W.TimeRanges, W.Touch, W._TouchList_Interceptor_ListMixin, W.TrackDefault, W.TrackDefaultList, W.TreeWalker, W.TrustedHtml, W.TrustedScriptUrl, W.TrustedUrl, W.UnderlyingSourceBase, W.Url, W.UrlSearchParams, W.UrlUtilsReadOnly, W.VRCoordinateSystem, W.VRDisplayCapabilities, W.VREyeParameters, W.VRFrameData, W.VRPose, W.VRStageBounds, W.VRStageBoundsPoint, W.VRStageParameters, W.ValidityState, W.VideoPlaybackQuality, W.VideoTrack, W.VttRegion, W.WindowBase64, W.WorkletAnimation, W.XPathEvaluator, W.XPathExpression, W.XPathNSResolver, W.XPathResult, W.XmlSerializer, W.XsltProcessor, W._Bluetooth, W._BluetoothCharacteristicProperties, W._BluetoothRemoteGATTServer, W._BluetoothRemoteGATTService, W._BluetoothUUID, W._BudgetService, W._Cache, W._CanvasPath, W.__CssRuleList_Interceptor_ListMixin, W._DOMFileSystemSync, W._EntrySync, W._DirectoryReaderSync, W._FileReaderSync, W._FileWriterSync, W.__GamepadList_Interceptor_ListMixin, W._HTMLAllCollection, W._Mojo, W._MojoHandle, W._MojoWatcher, W._NFC, W.__NamedNodeMap_Interceptor_ListMixin, W._PagePopupController, W._Report, W.__SpeechRecognitionResultList_Interceptor_ListMixin, W.__StyleSheetList_Interceptor_ListMixin, W._SubtleCrypto, W._USBAlternateInterface, W._USBConfiguration, W._USBDevice, W._USBEndpoint, W._USBInTransferResult, W._USBInterface, W._USBIsochronousInTransferPacket, W._USBIsochronousInTransferResult, W._USBIsochronousOutTransferPacket, W._USBIsochronousOutTransferResult, W._USBOutTransferResult, W._WindowTimers, W._WorkerLocation, W._Worklet, P.Cursor, P.IdbFactory, P.Index, P.KeyRange, P.ObjectStore, P.Observation, P.Observer, P.ObserverChanges, P.Angle, P.AnimatedAngle, P.AnimatedBoolean, P.AnimatedEnumeration, P.AnimatedInteger, P.AnimatedLength, P.AnimatedLengthList, P.AnimatedNumber, P.AnimatedNumberList, P.AnimatedPreserveAspectRatio, P.AnimatedRect, P.AnimatedString, P.AnimatedTransformList, P.FilterPrimitiveStandardAttributes, P.FitToViewBox, P.Length, P._LengthList_Interceptor_ListMixin, P.Matrix, P.Number, P._NumberList_Interceptor_ListMixin, P.Point0, P.PointList, P.PreserveAspectRatio, P.Rect, P._StringList_Interceptor_ListMixin, P.Tests, P.Transform, P._TransformList_Interceptor_ListMixin, P.UnitTypes, P.UriReference, P.ZoomAndPan, P.AudioBuffer, P.AudioListener, P.AudioParam, P._AudioParamMap_Interceptor_MapMixin, P.AudioTrack, P.AudioWorkletProcessor, P.PeriodicWave, P.ActiveInfo, P.AngleInstancedArrays, P.Buffer, P.Canvas, P.ColorBufferFloat, P.CompressedTextureAstc, P.CompressedTextureAtc, P.CompressedTextureETC1, P.CompressedTextureEtc, P.CompressedTexturePvrtc, P.CompressedTextureS3TC, P.CompressedTextureS3TCsRgb, P.DebugRendererInfo, P.DebugShaders, P.DepthTexture, P.DrawBuffers, P.EXTsRgb, P.ExtBlendMinMax, P.ExtColorBufferFloat, P.ExtColorBufferHalfFloat, P.ExtDisjointTimerQuery, P.ExtDisjointTimerQueryWebGL2, P.ExtFragDepth, P.ExtShaderTextureLod, P.ExtTextureFilterAnisotropic, P.Framebuffer, P.GetBufferSubDataAsync, P.LoseContext, P.OesElementIndexUint, P.OesStandardDerivatives, P.OesTextureFloat, P.OesTextureFloatLinear, P.OesTextureHalfFloat, P.OesTextureHalfFloatLinear, P.OesVertexArrayObject, P.Program, P.Query, P.Renderbuffer, P.RenderingContext, P.RenderingContext2, P.Sampler, P.Shader, P.ShaderPrecisionFormat, P.Sync, P.Texture, P.TimerQueryExt, P.TransformFeedback, P.UniformLocation, P.VertexArrayObject, P.VertexArrayObjectOes, P.WebGL, P._WebGL2RenderingContextBase, P._WebGLRenderingContextBase, P.SqlDatabase, P.SqlError, P.SqlResultSet, P._SqlResultSetRowList_Interceptor_ListMixin, P.SqlTransaction]);
-    _inherit(J.JSMutableIndexable, J.JSIndexable);
+    _inheritMany(P.Object, [H.JS_CONST, J.Interceptor, J.ArrayIterator, P.Iterable, H.ListIterator, P.Iterator, H.ConstantMap, H.TypeErrorDecoder, P.Error, H.Closure, H._StackTrace, P.MapMixin, H.LinkedHashMapCell, H.LinkedHashMapKeyIterator, P._TimerImpl, P._IterationMarker, P._SyncStarIterator, P._FutureListener, P._Future, P._AsyncCallbackEntry, P.Stream, P.StreamSubscription, P.AsyncError, P._Zone, P._SetBase, P._LinkedHashSetCell, P._LinkedHashSetIterator, P._ListBase_Object_ListMixin, P.ListMixin, P.bool, P.num, P.StackOverflowError, P._Exception, P.FormatException, P.Function, P.List, P.MapEntry, P.Null, P.StackTrace, P.String, P.StringBuffer, W._Html5NodeValidator, W.ImmutableListMixin, W.NodeValidatorBuilder, W._SimpleNodeValidator, W._SvgNodeValidator, W.FixedSizeListIterator, W._DOMWindowCrossFrame, W.NodeValidator, W._SameOriginUriPolicy, W._ValidatingTreeSanitizer, E.EventEmitter, D.BoardView, M.ColumnView, F.NoteView, E.Status]);
+    _inheritMany(J.Interceptor, [J.JSBool, J.JSNull, J.JavaScriptObject, J.JSArray, J.JSNumber, J.JSString, W.EventTarget, W.DomException, W.DomTokenList, W.Event, W._HtmlCollection_Interceptor_ListMixin, W.Location, W._NodeList_Interceptor_ListMixin, W.__NamedNodeMap_Interceptor_ListMixin]);
     _inheritMany(J.JavaScriptObject, [J.PlainJavaScriptObject, J.UnknownJavaScriptObject, J.JavaScriptFunction]);
     _inherit(J.JSUnmodifiableArray, J.JSArray);
     _inheritMany(J.JSNumber, [J.JSInt, J.JSDouble]);
-    _inheritMany(P.Iterable, [H._CastIterableBase, H.EfficientLengthIterable, H.MappedIterable, H.WhereIterable, H.ExpandIterable, H.TakeIterable, H.TakeWhileIterable, H.SkipIterable, H.SkipWhileIterable, H.FollowedByIterable, H.WhereTypeIterable, P.IterableBase, H._ConstantMapKeyIterable, H._StringAllMatchesIterable, P.LinkedList0, P.DoubleLinkedQueue, P.Runes]);
-    _inheritMany(H._CastIterableBase, [H.CastIterable, H.__CastListBase__CastIterableBase_ListMixin, H.CastSet, H.CastQueue]);
-    _inherit(H._EfficientLengthCastIterable, H.CastIterable);
-    _inherit(H._CastListBase, H.__CastListBase__CastIterableBase_ListMixin);
-    _inherit(H.CastList, H._CastListBase);
-    _inherit(P.MapBase, P.MapMixin);
-    _inheritMany(P.MapBase, [H.CastMap, P.UnmodifiableMapBase, H.JsLinkedHashMap, P._HashMap, P._JsonMap, W._AttributeMap, W._DataAttributeMap, P._CaseInsensitiveStringMap]);
-    _inherit(P.ListBase, P._ListBase_Object_ListMixin);
-    _inheritMany(P.ListBase, [H.UnmodifiableListBase, H.FixedLengthListBase, W._ChildrenElementList, W.ElementList, W._FrozenElementList, W._ChildNodeListLazy, W._WrappedList, P.FilteredElementList]);
-    _inheritMany(H.UnmodifiableListBase, [H.CodeUnits, P.UnmodifiableListView, P._UnmodifiableUint8ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableInt8ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableUint8ClampedListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableUint16ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableInt16ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableUint32ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableInt32ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableUint64ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableInt64ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableInt32x4ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableFloat32x4ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableFloat64x2ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableFloat32ListView_UnmodifiableListBase__UnmodifiableListMixin, P._UnmodifiableFloat64ListView_UnmodifiableListBase__UnmodifiableListMixin]);
-    _inheritMany(H.EfficientLengthIterable, [H.ListIterable, H.EmptyIterable, H.LinkedHashMapKeyIterable, P._HashMapKeyIterable, P._Es6MapIterable, P._MapBaseValueIterable, P._SplayTreeKeyIterable, P._SplayTreeValueIterable, P.Set]);
-    _inheritMany(H.ListIterable, [H.SubListIterable, H.MappedListIterable, H._ListIndicesIterable, H.ReversedListIterable, P.ListQueue, P._JsonMapKeyIterable, P._GeneratorIterable]);
+    _inheritMany(P.Iterable, [H.EfficientLengthIterable, H.MappedIterable, H.WhereIterable, P.IterableBase]);
+    _inheritMany(H.EfficientLengthIterable, [H.ListIterable, H.LinkedHashMapKeyIterable]);
+    _inheritMany(H.ListIterable, [H.SubListIterable, H.MappedListIterable]);
     _inherit(H.EfficientLengthMappedIterable, H.MappedIterable);
-    _inheritMany(P.Iterator, [H.MappedIterator, H.WhereIterator, H.TakeIterator, H.TakeWhileIterator, H.SkipIterator, H.SkipWhileIterator]);
-    _inherit(H.EfficientLengthTakeIterable, H.TakeIterable);
-    _inherit(H.EfficientLengthSkipIterable, H.SkipIterable);
-    _inherit(H.EfficientLengthFollowedByIterable, H.FollowedByIterable);
-    _inheritMany(P.IterableBase, [H.LinkedList, H._AllMatchesIterable, P._SyncStarIterable]);
-    _inherit(H.ListMapView, P.UnmodifiableMapBase);
-    _inherit(P._UnmodifiableMapView_MapView__UnmodifiableMapMixin, P.MapView);
-    _inherit(P.UnmodifiableMapView, P._UnmodifiableMapView_MapView__UnmodifiableMapMixin);
-    _inherit(H.ConstantMapView, P.UnmodifiableMapView);
-    _inheritMany(H.ConstantMap, [H.ConstantStringMap, H.GeneralConstantMap]);
-    _inheritMany(H.Closure, [H.ConstantStringMap_values_closure, H.Instantiation, H.unwrapException_saveStackTrace, H.Closure_fromTearOff_closure, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P._LinkedCustomHashSet_closure, P.MapBase_mapToString_closure, P.MapMixin_entries_closure, P.Duration_toString_sixDigits, P.Duration_toString_twoDigits, W._ChildrenElementList__filter_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, P.CssClassSetImpl_add_closure, P.CssClassSetImpl_addAll_closure, P.CssClassSetImpl_removeAll_closure, P.CssClassSetImpl_removeWhere_closure, P.FilteredElementList__iterable_closure, P.FilteredElementList__iterable_closure0, P.FilteredElementList_removeRange_closure, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController__closure2, D.BoardController__closure3, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnView_deselectAll_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, M.ColumnController_initColumns_closure3, M.ColumnController_initColumns_closure4, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
-    _inherit(H.ConstantProtoMap, H.ConstantStringMap);
-    _inheritMany(H.Instantiation, [H.Instantiation1, H.Instantiation2, H.Instantiation3, H.Instantiation4, H.Instantiation5, H.Instantiation6, H.Instantiation7, H.Instantiation8, H.Instantiation9, H.Instantiation10, H.Instantiation11, H.Instantiation12, H.Instantiation13, H.Instantiation14, H.Instantiation15, H.Instantiation16, H.Instantiation17, H.Instantiation18, H.Instantiation19, H.Instantiation20]);
-    _inheritMany(P.Error, [H.NullError, H.JsNoSuchMethodError, H.UnknownJsTypeError, H.TypeErrorImplementation, H.CastErrorImplementation, P.FallThroughError, H.RuntimeError, H.DeferredNotLoadedError, H.UnimplementedNoSuchMethodError, H.MainError, P.AssertionError, H._Error, P.JsonUnsupportedObjectError, P._CompileTimeError, P._DuplicatedFieldInitializerError, P.CastError, P.NullThrownError, P.ArgumentError, P.AbstractClassInstantiationError, P.NoSuchMethodError, P.UnsupportedError, P.UnimplementedError, P.StateError, P.ConcurrentModificationError, P.CyclicInitializationError, P.LateInitializationError]);
+    _inheritMany(P.Iterator, [H.MappedIterator, H.WhereIterator]);
+    _inherit(H.GeneralConstantMap, H.ConstantMap);
+    _inheritMany(P.Error, [H.NullError, H.JsNoSuchMethodError, H.UnknownJsTypeError, H.TypeErrorImplementation, H.CastErrorImplementation, H.RuntimeError, P.AssertionError, P.NullThrownError, P.ArgumentError, P.UnsupportedError, P.UnimplementedError, P.StateError, P.ConcurrentModificationError, P.CyclicInitializationError]);
+    _inheritMany(H.Closure, [H.unwrapException_saveStackTrace, H.TearOffClosure, H.JsLinkedHashMap_values_closure, H.initHooks_closure, H.initHooks_closure0, H.initHooks_closure1, P._AsyncRun__initializeScheduleImmediate_internalCallback, P._AsyncRun__initializeScheduleImmediate_closure, P._AsyncRun__scheduleImmediateJsOverride_internalCallback, P._AsyncRun__scheduleImmediateWithSetImmediate_internalCallback, P._TimerImpl_internalCallback, P._Future__addListener_closure, P._Future__prependListeners_closure, P._Future__chainForeignFuture_closure, P._Future__chainForeignFuture_closure0, P._Future__chainForeignFuture_closure1, P._Future__propagateToListeners_handleWhenCompleteCallback, P._Future__propagateToListeners_handleWhenCompleteCallback_closure, P._Future__propagateToListeners_handleValueCallback, P._Future__propagateToListeners_handleError, P.Stream_length_closure, P.Stream_length_closure0, P._rootHandleUncaughtError_closure, P._RootZone_bindCallback_closure, P._RootZone_bindCallbackGuarded_closure, P._RootZone_bindUnaryCallbackGuarded_closure, P.MapBase_mapToString_closure, W.Element_Element$html_closure, W._EventStreamSubscription_closure, W.NodeValidatorBuilder_allowsElement_closure, W.NodeValidatorBuilder_allowsAttribute_closure, W._SimpleNodeValidator_closure, W._SimpleNodeValidator_closure0, W._TemplatingNodeValidator_closure, W._ValidatingTreeSanitizer_sanitizeTree_walk, D.BoardModel_closure, D.BoardView_html_closure, D.BoardController_closure, D.BoardController__closure, D.BoardController___closure0, D.BoardController__closure0, D.BoardController__closure1, D.BoardController___closure, D.BoardController__closure2, D.BoardController__closure3, D.BoardController_closure0, D.BoardController_closure1, D.BoardController_updateView_closure, D.BoardController_initButton_closure, M.ColumnModel_getNoteById_closure, M.ColumnModel_removeNoteById_closure, M.ColumnView_deselectAll_closure, M.ColumnController_closure, M.ColumnController__closure0, M.ColumnController_closure0, M.ColumnController__closure, M.ColumnController_updateView_closure, M.ColumnController_initColumns_closure, M.ColumnController_initColumns_closure0, M.ColumnController_initColumns_closure1, M.ColumnController_initColumns_closure2, M.ColumnController_initColumns_closure3, M.ColumnController_initColumns_closure4, E.EventEmitter_emit_closure, F.NoteController_initControls_closure]);
     _inheritMany(H.TearOffClosure, [H.StaticClosure, H.BoundClosure]);
-    _inherit(H.JavaScriptIndexingBehavior, J.JSMutableIndexable);
-    _inherit(H.FallThroughErrorImplementation, P.FallThroughError);
-    _inheritMany(P.AssertionError, [H._AssertionError, H._UnreachableError, P.TypeError]);
-    _inheritMany(H.JsLinkedHashMap, [H.Es6LinkedHashMap, P._LinkedIdentityHashMap, P._LinkedCustomHashMap]);
-    _inherit(H._LazyMangledInstanceNamesMap, H._LazyMangledNamesMap);
-    _inherit(H._NativeFloat32x4List_Object_ListMixin_FixedLengthListMixin, H._NativeFloat32x4List_Object_ListMixin);
-    _inherit(H.NativeFloat32x4List, H._NativeFloat32x4List_Object_ListMixin_FixedLengthListMixin);
-    _inherit(H._NativeInt32x4List_Object_ListMixin_FixedLengthListMixin, H._NativeInt32x4List_Object_ListMixin);
-    _inherit(H.NativeInt32x4List, H._NativeInt32x4List_Object_ListMixin_FixedLengthListMixin);
-    _inherit(H._NativeFloat64x2List_Object_ListMixin_FixedLengthListMixin, H._NativeFloat64x2List_Object_ListMixin);
-    _inherit(H.NativeFloat64x2List, H._NativeFloat64x2List_Object_ListMixin_FixedLengthListMixin);
-    _inheritMany(H.NativeTypedData, [H.NativeByteData, H.NativeTypedArray]);
-    _inheritMany(H.NativeTypedArray, [H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin, H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin]);
-    _inherit(H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin_FixedLengthListMixin, H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin);
-    _inherit(H.NativeTypedArrayOfDouble, H._NativeTypedArrayOfDouble_NativeTypedArray_ListMixin_FixedLengthListMixin);
-    _inherit(H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin_FixedLengthListMixin, H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin);
-    _inherit(H.NativeTypedArrayOfInt, H._NativeTypedArrayOfInt_NativeTypedArray_ListMixin_FixedLengthListMixin);
-    _inheritMany(H.NativeTypedArrayOfDouble, [H.NativeFloat32List, H.NativeFloat64List]);
-    _inheritMany(H.NativeTypedArrayOfInt, [H.NativeInt16List, H.NativeInt32List, H.NativeInt8List, H.NativeUint16List, H.NativeUint32List, H.NativeUint8ClampedList, H.NativeUint8List]);
-    _inheritMany(H._Error, [H._CastError, H._TypeError]);
-    _inheritMany(P._StreamImpl, [P._ControllerStream, P._GeneratedStreamImpl]);
-    _inherit(P._BroadcastStream, P._ControllerStream);
-    _inheritMany(P._BufferingStreamSubscription, [P._ControllerSubscription, P._ForwardingStreamSubscription, P._SinkTransformerStreamSubscription]);
-    _inherit(P._BroadcastSubscription, P._ControllerSubscription);
-    _inheritMany(P._BroadcastStreamController, [P._SyncBroadcastStreamController, P._AsyncBroadcastStreamController]);
-    _inherit(P._AsBroadcastStreamController, P._SyncBroadcastStreamController);
-    _inheritMany(P._Completer, [P._AsyncCompleter, P._SyncCompleter]);
-    _inheritMany(P._StreamController, [P._AsyncStreamController, P._SyncStreamController]);
-    _inherit(P._StreamControllerAddStreamState, P._AddStreamState);
-    _inheritMany(P._PendingEvents, [P._IterablePendingEvents, P._StreamImplEvents]);
-    _inheritMany(P._DelayedEvent, [P._DelayedData, P._DelayedError]);
-    _inheritMany(P._ForwardingStream, [P._WhereStream, P._MapStream, P._ExpandStream, P._HandleErrorStream, P._TakeStream, P._TakeWhileStream, P._SkipStream, P._SkipWhileStream, P._DistinctStream]);
-    _inherit(P._StateStreamSubscription, P._ForwardingStreamSubscription);
-    _inherit(P._StreamHandlerTransformer, P._StreamSinkTransformer);
-    _inheritMany(P._Zone, [P._CustomZone, P._RootZone]);
-    _inheritMany(P._HashMap, [P._IdentityHashMap, P._CustomHashMap]);
-    _inherit(P._Es6LinkedIdentityHashMap, P._LinkedIdentityHashMap);
-    _inheritMany(P._SetBase, [P._HashSet, P._LinkedHashSet, P._UnmodifiableSet]);
-    _inheritMany(P._HashSet, [P._IdentityHashSet, P._CustomHashSet]);
-    _inheritMany(P._LinkedHashSet, [P._LinkedIdentityHashSet, P._LinkedCustomHashSet]);
-    _inherit(P.DoubleLinkedQueueEntry, P._DoubleLink);
-    _inherit(P._DoubleLinkedQueueEntry, P.DoubleLinkedQueueEntry);
-    _inheritMany(P._DoubleLinkedQueueEntry, [P._DoubleLinkedQueueElement, P._DoubleLinkedQueueSentinel]);
-    _inherit(P.SetBase, P._SetBase_Object_SetMixin);
-    _inherit(P._SplayTreeMapNode, P._SplayTreeNode);
-    _inheritMany(P._SplayTree, [P._SplayTreeMap__SplayTree_MapMixin, P._SplayTreeSet__SplayTree_IterableMixin]);
-    _inherit(P.SplayTreeMap, P._SplayTreeMap__SplayTree_MapMixin);
-    _inheritMany(P._SplayTreeIterator, [P._SplayTreeKeyIterator, P._SplayTreeValueIterator, P._SplayTreeNodeIterator]);
-    _inherit(P._SplayTreeSet__SplayTree_IterableMixin_SetMixin, P._SplayTreeSet__SplayTree_IterableMixin);
-    _inherit(P.SplayTreeSet, P._SplayTreeSet__SplayTree_IterableMixin_SetMixin);
-    _inherit(P.StringConversionSinkBase, P.StringConversionSinkMixin);
-    _inheritMany(P.StringConversionSinkBase, [P._StringSinkConversionSink, P._UnicodeSubsetEncoderSink, P._Base64DecoderSink, P._HtmlEscapeSink, P._LineSplitterSink, P._StringAdapterSink, P._WindowsCodePageEncoderSink]);
-    _inheritMany(P._StringSinkConversionSink, [P._JsonDecoderSink, P._StringCallbackSink]);
-    _inheritMany(P.Codec, [P.Encoding, P.Base64Codec, P._FusedCodec, P._InvertedCodec, P.JsonCodec, P.ZLibCodec, P.GZipCodec]);
-    _inheritMany(P.Encoding, [P.AsciiCodec, P.Latin1Codec, P.Utf8Codec, P.SystemEncoding]);
-    _inheritMany(P._UnicodeSubsetEncoder, [P.AsciiEncoder, P.Latin1Encoder]);
-    _inheritMany(P._UnicodeSubsetDecoder, [P.AsciiDecoder, P.Latin1Decoder]);
-    _inheritMany(P.ByteConversionSinkBase, [P._ErrorHandlingAsciiDecoderSink, P._SimpleAsciiDecoderSink, P._Base64EncoderSink, P._ByteAdapterSink, P._ByteCallbackSink, P._Latin1DecoderSink, P._WindowsCodePageDecoderSink]);
-    _inherit(P._BufferCachingBase64Encoder, P._Base64Encoder);
-    _inheritMany(P._Base64EncoderSink, [P._AsciiBase64EncoderSink, P._Utf8Base64EncoderSink]);
-    _inherit(P.JsonCyclicError, P.JsonUnsupportedObjectError);
-    _inheritMany(P._JsonStringifier, [P._JsonStringStringifier, P._JsonUtf8Stringifier]);
-    _inherit(P.__JsonStringStringifierPretty__JsonStringStringifier__JsonPrettyPrintMixin, P._JsonStringStringifier);
-    _inherit(P._JsonStringStringifierPretty, P.__JsonStringStringifierPretty__JsonStringStringifier__JsonPrettyPrintMixin);
-    _inherit(P.__JsonUtf8StringifierPretty__JsonUtf8Stringifier__JsonPrettyPrintMixin, P._JsonUtf8Stringifier);
-    _inherit(P._JsonUtf8StringifierPretty, P.__JsonUtf8StringifierPretty__JsonUtf8Stringifier__JsonPrettyPrintMixin);
-    _inherit(P._Latin1AllowInvalidDecoderSink, P._Latin1DecoderSink);
-    _inherit(P._LineSplitterEventSink, P._LineSplitterSink);
-    _inherit(P.ClosableStringSink, P.StringSink);
-    _inherit(P.__Utf8EncoderSink__Utf8Encoder_StringConversionSinkMixin, P._Utf8Encoder);
-    _inherit(P._Utf8EncoderSink, P.__Utf8EncoderSink__Utf8Encoder_StringConversionSinkMixin);
+    _inherit(H._AssertionError, P.AssertionError);
+    _inherit(P.MapBase, P.MapMixin);
+    _inheritMany(P.MapBase, [H.JsLinkedHashMap, W._AttributeMap]);
+    _inherit(P._SyncStarIterable, P.IterableBase);
+    _inherit(P._RootZone, P._Zone);
+    _inherit(P._LinkedHashSet, P._SetBase);
+    _inherit(P.ListBase, P._ListBase_Object_ListMixin);
     _inheritMany(P.num, [P.double, P.int]);
     _inheritMany(P.ArgumentError, [P.RangeError, P.IndexError]);
-    _inherit(P._DataUri, P._Uri);
-    _inheritMany(P.Metric, [P.Gauge, P.Counter]);
-    _inheritMany(W.EventTarget, [W.Node, W.Sensor, W.AccessibleNode, W.Animation, W.ApplicationCache, W.BackgroundFetchRegistration, W.BatteryManager, W.BroadcastChannel, W.MediaStreamTrack, W.WorkerGlobalScope, W.EventSource, W.FileReader, W.FileWriter, W.FontFaceSet, W.HttpRequestEventTarget, W.MediaDevices, W.MediaKeySession, W.MediaQueryList, W.MediaRecorder, W.MediaSource, W.MediaStream, W.MessagePort, W.MidiAccess, W.MidiPort, W.NetworkInformation, W.Notification, W.OffscreenCanvas, W.PaymentRequest, W.Performance, W.PermissionStatus, W.PresentationAvailability, W.PresentationConnection, W.PresentationConnectionList, W.PresentationRequest, W.RemotePlayback, W.RtcDataChannel, W.RtcDtmfSender, W.RtcPeerConnection, W.ScreenOrientation, W.ServiceWorker, W.ServiceWorkerContainer, W.ServiceWorkerRegistration, W.SharedWorker, W.SourceBuffer, W._SourceBufferList_EventTarget_ListMixin, W.SpeechRecognition, W.SpeechSynthesis, W.SpeechSynthesisUtterance, W.TextTrack, W.TextTrackCue, W._TextTrackList_EventTarget_ListMixin, W.VR, W.VRDevice, W.VRDisplay, W.VRSession, W.VideoTrackList, W.VisualViewport, W.WebSocket0, W.Window, W.WindowEventHandlers, W.Worker, W.WorkerPerformance, W._BluetoothDevice, W._BluetoothRemoteGATTCharacteristic, W._Clipboard, W._MojoInterfaceInterceptor, W._USB, P.Database, P.Request, P.Transaction, P.AudioNode, P.BaseAudioContext, P.AudioTrackList]);
-    _inheritMany(W.Node, [W.Element, W.CharacterData, W.Document, W.DocumentFragment, W._Attr, W._DocumentType]);
+    _inheritMany(W.EventTarget, [W.Node, W.Window]);
+    _inheritMany(W.Node, [W.Element, W.CharacterData, W._Attr]);
     _inheritMany(W.Element, [W.HtmlElement, P.SvgElement]);
-    _inheritMany(W.Event, [W.ExtendableEvent, W.AnimationEvent, W.AnimationPlaybackEvent, W.ApplicationCacheErrorEvent, W.BeforeInstallPromptEvent, W.BeforeUnloadEvent, W.BlobEvent, W.ClipboardEvent, W.CloseEvent, W.UIEvent, W.CustomEvent, W.DeviceMotionEvent, W.DeviceOrientationEvent, W.ErrorEvent, W.FontFaceSetLoadEvent, W.GamepadEvent, W.HashChangeEvent, W.MediaEncryptedEvent, W.MediaKeyMessageEvent, W.MediaQueryListEvent, W.MediaStreamEvent, W.MediaStreamTrackEvent, W.MessageEvent, W.MidiConnectionEvent, W.MidiMessageEvent, W.MutationEvent, W.PageTransitionEvent, W.PaymentRequestUpdateEvent, W.PopStateEvent, W.PresentationConnectionAvailableEvent, W.PresentationConnectionCloseEvent, W.ProgressEvent, W.PromiseRejectionEvent, W.RtcDataChannelEvent, W.RtcDtmfToneChangeEvent, W.RtcPeerConnectionIceEvent, W.RtcTrackEvent, W.SecurityPolicyViolationEvent, W.SensorErrorEvent, W.SpeechRecognitionError, W.SpeechRecognitionEvent, W.SpeechSynthesisEvent, W.StorageEvent, W.TrackEvent, W.TransitionEvent, W.VRDeviceEvent, W.VRDisplayEvent, W.VRSessionEvent, W._MojoInterfaceRequestEvent, W._USBConnectionEvent, P.VersionChangeEvent, P.AudioProcessingEvent, P.OfflineAudioCompletionEvent, P.ContextEvent]);
-    _inheritMany(W.ExtendableEvent, [W.AbortPaymentEvent, W.BackgroundFetchEvent, W.CanMakePaymentEvent, W.ExtendableMessageEvent, W.FetchEvent, W.ForeignFetchEvent, W.InstallEvent, W.NotificationEvent, W.PaymentRequestEvent, W.PushEvent, W.SyncEvent]);
-    _inheritMany(W.Sensor, [W.OrientationSensor, W.Accelerometer, W.AmbientLightSensor, W.Gyroscope, W.Magnetometer]);
-    _inheritMany(W.OrientationSensor, [W.AbsoluteOrientationSensor, W.RelativeOrientationSensor]);
-    _inheritMany(W.HtmlElement, [W.AnchorElement, W.AreaElement, W.MediaElement, W.BRElement, W.BaseElement, W.BodyElement, W.ButtonElement, W.CanvasElement, W.ContentElement, W.DListElement, W.DataElement, W.DataListElement, W.DetailsElement, W.DialogElement, W.DivElement, W.EmbedElement, W.FieldSetElement, W.FormElement, W.HRElement, W.HeadElement, W.HeadingElement, W.HtmlHtmlElement, W.IFrameElement, W.ImageElement, W.InputElement, W.LIElement, W.LabelElement, W.LegendElement, W.LinkElement, W.MapElement, W.MenuElement, W.MetaElement, W.MeterElement, W.ModElement, W.OListElement, W.ObjectElement, W.OptGroupElement, W.OptionElement, W.OutputElement, W.ParagraphElement, W.ParamElement, W.PictureElement, W.PreElement, W.ProgressElement, W.QuoteElement, W.ScriptElement0, W.SelectElement, W.ShadowElement, W.SlotElement, W.SourceElement, W.SpanElement, W.StyleElement, W.TableCaptionElement, W.TableCellElement, W.TableColElement, W.TableElement, W.TableRowElement, W.TableSectionElement, W.TemplateElement, W.TextAreaElement, W.TimeElement, W.TitleElement, W.TrackElement, W.UListElement, W.UnknownElement, W._HTMLDirectoryElement, W._HTMLFontElement, W._HTMLFrameElement, W._HTMLFrameSetElement, W._HTMLMarqueeElement]);
-    _inherit(W.AnimationEffectTiming, W.AnimationEffectTimingReadOnly);
-    _inheritMany(W.WorkletGlobalScope, [W.AnimationWorkletGlobalScope, W.PaintWorkletGlobalScope, P.AudioWorkletGlobalScope]);
-    _inheritMany(W.MediaElement, [W.AudioElement, W.VideoElement]);
-    _inheritMany(W.AuthenticatorResponse, [W.AuthenticatorAssertionResponse, W.AuthenticatorAttestationResponse]);
-    _inheritMany(W.BackgroundFetchEvent, [W.BackgroundFetchClickEvent, W.BackgroundFetchFailEvent, W.BackgroundFetchedEvent]);
-    _inherit(W.BackgroundFetchSettledFetch, W.BackgroundFetchFetch);
-    _inheritMany(W.CharacterData, [W.Text, W.Comment, W.ProcessingInstruction]);
-    _inherit(W.CDataSection, W.Text);
-    _inherit(W.CanvasCaptureMediaStreamTrack, W.MediaStreamTrack);
-    _inheritMany(W.UIEvent, [W.CompositionEvent, W.FocusEvent, W.KeyboardEvent, W.MouseEvent, W.TextEvent, W.TouchEvent]);
-    _inheritMany(W.CssRule, [W.CssCharsetRule, W.CssGroupingRule, W.CssFontFaceRule, W.CssImportRule, W.CssKeyframeRule, W.CssKeyframesRule, W.CssNamespaceRule, W.CssPageRule, W.CssStyleRule, W.CssViewportRule]);
-    _inherit(W.CssConditionRule, W.CssGroupingRule);
-    _inheritMany(W.CssStyleValue, [W.CssResourceValue, W.CssKeywordValue, W.CssNumericValue, W.CssPositionValue, W.CssTransformValue, W.CssUnparsedValue]);
-    _inherit(W.CssImageValue, W.CssResourceValue);
-    _inheritMany(W.CssTransformComponent, [W.CssMatrixComponent, W.CssPerspective, W.CssRotation, W.CssScale, W.CssSkew, W.CssTranslation]);
-    _inheritMany(W.CssConditionRule, [W.CssMediaRule, W.CssSupportsRule]);
-    _inherit(W.CssStyleDeclaration, W._CssStyleDeclaration_Interceptor_CssStyleDeclarationBase);
-    _inherit(W._CssStyleDeclarationSet, W.__CssStyleDeclarationSet_Object_CssStyleDeclarationBase);
-    _inherit(W.CssStyleSheet, W.StyleSheet);
-    _inherit(W.CssUnitValue, W.CssNumericValue);
-    _inherit(W.CssurlImageValue, W.CssImageValue);
-    _inheritMany(W.WorkerGlobalScope, [W.DedicatedWorkerGlobalScope, W.ServiceWorkerGlobalScope, W.SharedWorkerGlobalScope]);
-    _inheritMany(W.ReportBody, [W.DeprecationReport, W.InterventionReport]);
-    _inheritMany(W.Entry, [W.DirectoryEntry, W.FileEntry]);
-    _inheritMany(W.AnimationTimeline, [W.DocumentTimeline, W.ScrollTimeline]);
-    _inherit(W.DomMatrix, W.DomMatrixReadOnly);
-    _inherit(W.DomPoint, W.DomPointReadOnly);
-    _inherit(W._DomRectList_Interceptor_ListMixin_ImmutableListMixin, W._DomRectList_Interceptor_ListMixin);
-    _inherit(W.DomRectList, W._DomRectList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W._DomStringList_Interceptor_ListMixin_ImmutableListMixin, W._DomStringList_Interceptor_ListMixin);
-    _inherit(W.DomStringList, W._DomStringList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W.ElementEvents, W.Events);
-    _inheritMany(W.Credential, [W.FederatedCredential, W.PasswordCredential, W.PublicKeyCredential]);
-    _inherit(W.File, W.Blob);
-    _inherit(W._FileList_Interceptor_ListMixin_ImmutableListMixin, W._FileList_Interceptor_ListMixin);
-    _inherit(W.FileList, W._FileList_Interceptor_ListMixin_ImmutableListMixin);
+    _inheritMany(W.HtmlElement, [W.AnchorElement, W.AreaElement, W.BaseElement, W.BodyElement, W.ButtonElement, W.DivElement, W.FormElement, W.InputElement, W.SelectElement, W.SpanElement, W.TableElement, W.TableRowElement, W.TableSectionElement, W.TemplateElement]);
     _inherit(W._HtmlCollection_Interceptor_ListMixin_ImmutableListMixin, W._HtmlCollection_Interceptor_ListMixin);
     _inherit(W.HtmlCollection, W._HtmlCollection_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W.Document, [W.HtmlDocument, W.XmlDocument]);
-    _inheritMany(W.HtmlCollection, [W.HtmlFormControlsCollection, W.HtmlOptionsCollection]);
-    _inheritMany(W.HttpRequestEventTarget, [W.HttpRequest0, W.HttpRequestUpload]);
-    _inherit(W.KeyframeEffectReadOnly, W.AnimationEffectReadOnly);
-    _inherit(W.KeyframeEffect, W.KeyframeEffectReadOnly);
-    _inherit(W.LinearAccelerationSensor, W.Accelerometer);
-    _inheritMany(W.MidiPort, [W.MidiInput, W.MidiOutput]);
-    _inherit(W.MidiInputMap, W._MidiInputMap_Interceptor_MapMixin);
-    _inherit(W.MidiOutputMap, W._MidiOutputMap_Interceptor_MapMixin);
-    _inherit(W._MimeTypeArray_Interceptor_ListMixin_ImmutableListMixin, W._MimeTypeArray_Interceptor_ListMixin);
-    _inherit(W.MimeTypeArray, W._MimeTypeArray_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W.NavigatorConcurrentHardware, [W.Navigator, W._WorkerNavigator]);
+    _inherit(W.UIEvent, W.Event);
+    _inherit(W.MouseEvent, W.UIEvent);
+    _inherit(W._ChildNodeListLazy, P.ListBase);
     _inherit(W._NodeList_Interceptor_ListMixin_ImmutableListMixin, W._NodeList_Interceptor_ListMixin);
     _inherit(W.NodeList, W._NodeList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W.PerformanceEntry, [W.PerformanceLongTaskTiming, W.PerformanceMark, W.PerformanceMeasure, W.PerformanceResourceTiming, W.PerformancePaintTiming, W.TaskAttributionTiming]);
-    _inherit(W.PerformanceNavigationTiming, W.PerformanceResourceTiming);
-    _inherit(W._PluginArray_Interceptor_ListMixin_ImmutableListMixin, W._PluginArray_Interceptor_ListMixin);
-    _inherit(W.PluginArray, W._PluginArray_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W.MouseEvent, [W.PointerEvent, W.WheelEvent]);
-    _inherit(W.RtcStatsReport, W._RtcStatsReport_Interceptor_MapMixin);
-    _inherit(W.ShadowRoot, W.DocumentFragment);
-    _inherit(W._SourceBufferList_EventTarget_ListMixin_ImmutableListMixin, W._SourceBufferList_EventTarget_ListMixin);
-    _inherit(W.SourceBufferList, W._SourceBufferList_EventTarget_ListMixin_ImmutableListMixin);
-    _inherit(W._SpeechGrammarList_Interceptor_ListMixin_ImmutableListMixin, W._SpeechGrammarList_Interceptor_ListMixin);
-    _inherit(W.SpeechGrammarList, W._SpeechGrammarList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W.Storage, W._Storage_Interceptor_MapMixin);
-    _inherit(W.StylePropertyMap, W.StylePropertyMapReadonly);
-    _inherit(W._TextTrackCueList_Interceptor_ListMixin_ImmutableListMixin, W._TextTrackCueList_Interceptor_ListMixin);
-    _inherit(W.TextTrackCueList, W._TextTrackCueList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W._TextTrackList_EventTarget_ListMixin_ImmutableListMixin, W._TextTrackList_EventTarget_ListMixin);
-    _inherit(W.TextTrackList, W._TextTrackList_EventTarget_ListMixin_ImmutableListMixin);
-    _inherit(W._TouchList_Interceptor_ListMixin_ImmutableListMixin, W._TouchList_Interceptor_ListMixin);
-    _inherit(W.TouchList, W._TouchList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W.VRFrameOfReference, W.VRCoordinateSystem);
-    _inherit(W.VttCue, W.TextTrackCue);
-    _inheritMany(W._WrappedEvent, [W._BeforeUnloadEvent, W.KeyEvent]);
-    _inherit(W.WindowClient, W.Client);
-    _inherit(W.__CssRuleList_Interceptor_ListMixin_ImmutableListMixin, W.__CssRuleList_Interceptor_ListMixin);
-    _inherit(W._CssRuleList, W.__CssRuleList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W._EntrySync, [W._DirectoryEntrySync, W._FileEntrySync]);
-    _inherit(W._DomRect, W.DomRectReadOnly);
-    _inherit(W.__GamepadList_Interceptor_ListMixin_ImmutableListMixin, W.__GamepadList_Interceptor_ListMixin);
-    _inherit(W._GamepadList, W.__GamepadList_Interceptor_ListMixin_ImmutableListMixin);
     _inherit(W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin, W.__NamedNodeMap_Interceptor_ListMixin);
     _inherit(W._NamedNodeMap, W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W.Body, [W._Request, W._Response]);
-    _inherit(W._ResourceProgressEvent, W.ProgressEvent);
-    _inherit(W.__SpeechRecognitionResultList_Interceptor_ListMixin_ImmutableListMixin, W.__SpeechRecognitionResultList_Interceptor_ListMixin);
-    _inherit(W._SpeechRecognitionResultList, W.__SpeechRecognitionResultList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(W.__StyleSheetList_Interceptor_ListMixin_ImmutableListMixin, W.__StyleSheetList_Interceptor_ListMixin);
-    _inherit(W._StyleSheetList, W.__StyleSheetList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(W._AttributeMap, [W._ElementAttributeMap, W._NamespacedAttributeMap]);
-    _inheritMany(W.CssRect, [W._ContentCssRect, W._PaddingCssRect, W._BorderCssRect, W._MarginCssRect]);
-    _inherit(W._ContentCssListRect, W._ContentCssRect);
-    _inherit(P.CssClassSetImpl, P.SetBase);
-    _inheritMany(P.CssClassSetImpl, [W._MultiElementCssClassSet, W._ElementCssClassSet, P.AttributeClassSet]);
+    _inherit(W._ElementAttributeMap, W._AttributeMap);
+    _inherit(W._EventStream, P.Stream);
     _inherit(W._ElementEventStreamImpl, W._EventStream);
     _inherit(W._EventStreamSubscription, P.StreamSubscription);
-    _inherit(W._CustomKeyEventStreamImpl, W._CustomEventStreamImpl);
-    _inherit(W._KeyboardEventHandler, W.EventStreamProvider);
-    _inheritMany(W._SimpleNodeValidator, [W._CustomElementNodeValidator, W._TemplatingNodeValidator]);
-    _inherit(P._StructuredCloneDart2Js, P._StructuredClone);
-    _inherit(P._AcceptStructuredCloneDart2Js, P._AcceptStructuredClone);
-    _inherit(P.CursorWithValue, P.Cursor);
-    _inherit(P.OpenDBRequest, P.Request);
-    _inheritMany(P._FilterSink, [P._ZLibEncoderSink, P._ZLibDecoderSink]);
-    _inheritMany(P.FileSystemEntity, [P._Directory, P._File, P._Link]);
-    _inherit(P._FileStreamConsumer, P.StreamConsumer);
-    _inheritMany(P.FileSystemEvent, [P.FileSystemCreateEvent, P.FileSystemModifyEvent, P.FileSystemDeleteEvent, P.FileSystemMoveEvent]);
-    _inheritMany(P._IOResourceInfo, [P._ReadWriteResourceInfo, P._ProcessResourceInfo]);
-    _inheritMany(P._ReadWriteResourceInfo, [P._FileResourceInfo, P._SocketResourceInfo]);
-    _inherit(P._IOSinkImpl0, P._StreamSinkImpl0);
-    _inherit(P._IOOverridesScope, P.IOOverrides);
-    _inheritMany(P.TlsException, [P.HandshakeException, P.CertificateException]);
-    _inherit(P.Stdin, P._StdStream);
-    _inherit(P.Stdout, P._StdSink);
-    _inheritMany(P.JsObject, [P.JsFunction, P._JsArray_JsObject_ListMixin]);
-    _inherit(P.JsArray, P._JsArray_JsObject_ListMixin);
-    _inheritMany(P._RectangleBase, [P.Rectangle, P.MutableRectangle]);
-    _inherit(P.TypeVariableMirror, P.TypeMirror);
-    _inheritMany(P.SvgElement, [P.GraphicsElement, P.AnimationElement, P.DescElement, P.DiscardElement, P.FEBlendElement, P.FEColorMatrixElement, P.FEComponentTransferElement, P.FECompositeElement, P.FEConvolveMatrixElement, P.FEDiffuseLightingElement, P.FEDisplacementMapElement, P.FEDistantLightElement, P.FEFloodElement, P._SVGComponentTransferFunctionElement, P.FEGaussianBlurElement, P.FEImageElement, P.FEMergeElement, P.FEMergeNodeElement, P.FEMorphologyElement, P.FEOffsetElement, P.FEPointLightElement, P.FESpecularLightingElement, P.FESpotLightElement, P.FETileElement, P.FETurbulenceElement, P.FilterElement, P._GradientElement, P.MarkerElement, P.MaskElement, P.MetadataElement, P.PatternElement, P.ScriptElement, P.StopElement, P.StyleElement0, P.SymbolElement, P.TitleElement0, P.ViewElement, P._SVGFEDropShadowElement, P._SVGMPathElement]);
-    _inheritMany(P.GraphicsElement, [P.AElement, P.GeometryElement, P.ClipPathElement, P.DefsElement, P.ForeignObjectElement, P.GElement, P.ImageElement0, P.SvgSvgElement, P.SwitchElement, P.TextContentElement, P.UseElement]);
-    _inheritMany(P.AnimationElement, [P.AnimateElement, P.AnimateMotionElement, P.AnimateTransformElement, P.SetElement]);
-    _inheritMany(P.GeometryElement, [P.CircleElement, P.EllipseElement, P.LineElement, P.PathElement, P.PolygonElement, P.PolylineElement, P.RectElement]);
-    _inheritMany(P._SVGComponentTransferFunctionElement, [P.FEFuncAElement, P.FEFuncBElement, P.FEFuncGElement, P.FEFuncRElement]);
-    _inherit(P._LengthList_Interceptor_ListMixin_ImmutableListMixin, P._LengthList_Interceptor_ListMixin);
-    _inherit(P.LengthList, P._LengthList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(P._GradientElement, [P.LinearGradientElement, P.RadialGradientElement]);
-    _inherit(P._NumberList_Interceptor_ListMixin_ImmutableListMixin, P._NumberList_Interceptor_ListMixin);
-    _inherit(P.NumberList, P._NumberList_Interceptor_ListMixin_ImmutableListMixin);
-    _inherit(P._StringList_Interceptor_ListMixin_ImmutableListMixin, P._StringList_Interceptor_ListMixin);
-    _inherit(P.StringList, P._StringList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(P.TextContentElement, [P.TextPositioningElement, P.TextPathElement]);
-    _inheritMany(P.TextPositioningElement, [P.TSpanElement, P.TextElement]);
-    _inherit(P._TransformList_Interceptor_ListMixin_ImmutableListMixin, P._TransformList_Interceptor_ListMixin);
-    _inherit(P.TransformList, P._TransformList_Interceptor_ListMixin_ImmutableListMixin);
-    _inheritMany(P.TypedData, [P._TypedIntList, P._TypedFloatList]);
-    _inherit(P.UnmodifiableUint8ListView, P._UnmodifiableUint8ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableInt8ListView, P._UnmodifiableInt8ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableUint8ClampedListView, P._UnmodifiableUint8ClampedListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableUint16ListView, P._UnmodifiableUint16ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableInt16ListView, P._UnmodifiableInt16ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableUint32ListView, P._UnmodifiableUint32ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableInt32ListView, P._UnmodifiableInt32ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableUint64ListView, P._UnmodifiableUint64ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableInt64ListView, P._UnmodifiableInt64ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableInt32x4ListView, P._UnmodifiableInt32x4ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableFloat32x4ListView, P._UnmodifiableFloat32x4ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableFloat64x2ListView, P._UnmodifiableFloat64x2ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableFloat32ListView, P._UnmodifiableFloat32ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inherit(P.UnmodifiableFloat64ListView, P._UnmodifiableFloat64ListView_UnmodifiableListBase__UnmodifiableListMixin);
-    _inheritMany(P.AudioNode, [P.AnalyserNode, P.AudioScheduledSourceNode, P.AudioDestinationNode, P.AudioWorkletNode, P.BiquadFilterNode, P.ChannelMergerNode, P.ChannelSplitterNode, P.ConvolverNode, P.DelayNode, P.DynamicsCompressorNode, P.GainNode, P.IirFilterNode, P.MediaElementAudioSourceNode, P.MediaStreamAudioDestinationNode, P.MediaStreamAudioSourceNode, P.PannerNode, P.ScriptProcessorNode, P.StereoPannerNode, P.WaveShaperNode]);
-    _inheritMany(P.AudioScheduledSourceNode, [P.AudioBufferSourceNode, P.ConstantSourceNode, P.OscillatorNode]);
-    _inheritMany(P.BaseAudioContext, [P.AudioContext, P.OfflineAudioContext]);
-    _inherit(P.AudioParamMap, P._AudioParamMap_Interceptor_MapMixin);
-    _inherit(P._SqlResultSetRowList_Interceptor_ListMixin_ImmutableListMixin, P._SqlResultSetRowList_Interceptor_ListMixin);
-    _inherit(P.SqlResultSetRowList, P._SqlResultSetRowList_Interceptor_ListMixin_ImmutableListMixin);
+    _inherit(W._TemplatingNodeValidator, W._SimpleNodeValidator);
+    _inherit(P.ScriptElement, P.SvgElement);
     _inheritMany(E.EventEmitter, [D.BoardModel, D.BoardController, M.ColumnModel, M.ColumnController, F.NoteModel, F.NoteController]);
     _mixin(P._ListBase_Object_ListMixin, P.ListMixin);
-    _mixin(P._SetBase_Object_SetMixin, P.SetMixin);
     _mixin(W._HtmlCollection_Interceptor_ListMixin, P.ListMixin);
     _mixin(W._HtmlCollection_Interceptor_ListMixin_ImmutableListMixin, W.ImmutableListMixin);
     _mixin(W._NodeList_Interceptor_ListMixin, P.ListMixin);
@@ -19134,27 +6138,20 @@
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin, P.ListMixin);
     _mixin(W.__NamedNodeMap_Interceptor_ListMixin_ImmutableListMixin, W.ImmutableListMixin);
   })();
-  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: P.Null}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: -1}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, args: [,]}, {func: 1, ret: -1, args: [[P.Set, P.String]]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: P.String, args: [P.int]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, ret: P.bool, args: [W.Element]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: P.bool, args: [[P.Set, P.String]]}, {func: 1, args: [, P.String]}, {func: 1, args: [P.String]}, {func: 1, ret: -1, args: [P.Object], opt: [P.StackTrace]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}, {func: 1, ret: P.bool, args: [,]}, {func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}, {func: 1, ret: W.Element, args: [W.Node]}], interceptorsByTag: null, leafTags: null};
+  var init = {mangledGlobalNames: {int: "int", double: "double", num: "num", String: "String", bool: "bool", Null: "Null", List: "List"}, mangledNames: {}, getTypeFromName: getGlobalFromName, metadata: [], types: [{func: 1, ret: P.Null, args: [[P.List,,]]}, {func: 1, ret: P.Null, args: [W.MouseEvent]}, {func: 1, ret: P.Null}, {func: 1, ret: -1}, {func: 1, ret: P.bool, args: [P.String]}, {func: 1, ret: P.Null, args: [E.Status]}, {func: 1, ret: -1, args: [M.ColumnController]}, {func: 1, ret: -1, args: [{func: 1, ret: -1}]}, {func: 1, args: [,]}, {func: 1, ret: P.Null, args: [,]}, {func: 1, ret: P.bool, args: [W.NodeValidator]}, {func: 1, ret: P.bool, args: [F.NoteModel]}, {func: 1, ret: P.bool, args: [W.Element, P.String, P.String, W._Html5NodeValidator]}, {func: 1, args: [, P.String]}, {func: 1, args: [P.String]}, {func: 1, ret: P.Null, args: [{func: 1, ret: -1}]}, {func: 1, ret: P.Null, args: [,], opt: [P.StackTrace]}, {func: 1, ret: [P._Future,,], args: [,]}, {func: 1, ret: P.Null, args: [,,]}, {func: 1, ret: P.bool, args: [W.Node]}, {func: 1, args: [W.Event]}, {func: 1, ret: P.String, args: [P.String]}, {func: 1, ret: -1, args: [W.Node, W.Node]}, {func: 1, ret: -1, args: [[P.List,,]]}, {func: 1, ret: P.bool, args: [F.NoteController]}, {func: 1, ret: -1, args: [F.NoteController]}, {func: 1, args: [P.Function]}], interceptorsByTag: null, leafTags: null};
   (function constants() {
     var makeConstList = hunkHelpers.makeConstList;
     C.BodyElement_methods = W.BodyElement.prototype;
-    C.ButtonElement_methods = W.ButtonElement.prototype;
     C.DivElement_methods = W.DivElement.prototype;
-    C.DomImplementation_methods = W.DomImplementation.prototype;
-    C.DomTokenList_methods = W.DomTokenList.prototype;
-    C.HtmlDocument_methods = W.HtmlDocument.prototype;
     C.Interceptor_methods = J.Interceptor.prototype;
     C.JSArray_methods = J.JSArray.prototype;
     C.JSInt_methods = J.JSInt.prototype;
-    C.JSNumber_methods = J.JSNumber.prototype;
     C.JSString_methods = J.JSString.prototype;
     C.JavaScriptFunction_methods = J.JavaScriptFunction.prototype;
     C.NodeList_methods = W.NodeList.prototype;
     C.PlainJavaScriptObject_methods = J.PlainJavaScriptObject.prototype;
-    C.SpanElement_methods = W.SpanElement.prototype;
+    C.TableElement_methods = W.TableElement.prototype;
     C.UnknownJavaScriptObject_methods = J.UnknownJavaScriptObject.prototype;
-    C.C_Console = new W.Console();
-    C.C_EmptyIterator = new H.EmptyIterator([P.Null]);
     C.C_JS_CONST = function getTagFallback(o) {
   var s = Object.prototype.toString.call(o);
   return s.substring(8, s.length - 1);
@@ -19276,15 +6273,6 @@
     C.C_JS_CONST3 = function(hooks) { return hooks; }
 ;
     C.C__RootZone = new P._RootZone();
-    C.C__ZoneFunction = new P._ZoneFunction([{func: 1, ret: -1, args: [P.Zone, P.ZoneDelegate, P.Zone, {func: 1, ret: -1}]}]);
-    C.Duration_0 = new P.Duration(0);
-    C.EventStreamProvider_click = new W.EventStreamProvider("click", [W.MouseEvent]);
-    C.EventStreamProvider_dragend = new W.EventStreamProvider("dragend", [W.MouseEvent]);
-    C.EventStreamProvider_dragenter = new W.EventStreamProvider("dragenter", [W.MouseEvent]);
-    C.EventStreamProvider_dragleave = new W.EventStreamProvider("dragleave", [W.MouseEvent]);
-    C.EventStreamProvider_dragover = new W.EventStreamProvider("dragover", [W.MouseEvent]);
-    C.EventStreamProvider_dragstart = new W.EventStreamProvider("dragstart", [W.MouseEvent]);
-    C.EventStreamProvider_drop = new W.EventStreamProvider("drop", [W.MouseEvent]);
     C.List_2Zi = H.setRuntimeTypeInfo(makeConstList(["*::class", "*::dir", "*::draggable", "*::hidden", "*::id", "*::inert", "*::itemprop", "*::itemref", "*::itemscope", "*::lang", "*::spellcheck", "*::title", "*::translate", "A::accesskey", "A::coords", "A::hreflang", "A::name", "A::shape", "A::tabindex", "A::target", "A::type", "AREA::accesskey", "AREA::alt", "AREA::coords", "AREA::nohref", "AREA::shape", "AREA::tabindex", "AREA::target", "AUDIO::controls", "AUDIO::loop", "AUDIO::mediagroup", "AUDIO::muted", "AUDIO::preload", "BDO::dir", "BODY::alink", "BODY::bgcolor", "BODY::link", "BODY::text", "BODY::vlink", "BR::clear", "BUTTON::accesskey", "BUTTON::disabled", "BUTTON::name", "BUTTON::tabindex", "BUTTON::type", "BUTTON::value", "CANVAS::height", "CANVAS::width", "CAPTION::align", "COL::align", "COL::char", "COL::charoff", "COL::span", "COL::valign", "COL::width", "COLGROUP::align", "COLGROUP::char", "COLGROUP::charoff", "COLGROUP::span", "COLGROUP::valign", "COLGROUP::width", "COMMAND::checked", "COMMAND::command", "COMMAND::disabled", "COMMAND::label", "COMMAND::radiogroup", "COMMAND::type", "DATA::value", "DEL::datetime", "DETAILS::open", "DIR::compact", "DIV::align", "DL::compact", "FIELDSET::disabled", "FONT::color", "FONT::face", "FONT::size", "FORM::accept", "FORM::autocomplete", "FORM::enctype", "FORM::method", "FORM::name", "FORM::novalidate", "FORM::target", "FRAME::name", "H1::align", "H2::align", "H3::align", "H4::align", "H5::align", "H6::align", "HR::align", "HR::noshade", "HR::size", "HR::width", "HTML::version", "IFRAME::align", "IFRAME::frameborder", "IFRAME::height", "IFRAME::marginheight", "IFRAME::marginwidth", "IFRAME::width", "IMG::align", "IMG::alt", "IMG::border", "IMG::height", "IMG::hspace", "IMG::ismap", "IMG::name", "IMG::usemap", "IMG::vspace", "IMG::width", "INPUT::accept", "INPUT::accesskey", "INPUT::align", "INPUT::alt", "INPUT::autocomplete", "INPUT::autofocus", "INPUT::checked", "INPUT::disabled", "INPUT::inputmode", "INPUT::ismap", "INPUT::list", "INPUT::max", "INPUT::maxlength", "INPUT::min", "INPUT::multiple", "INPUT::name", "INPUT::placeholder", "INPUT::readonly", "INPUT::required", "INPUT::size", "INPUT::step", "INPUT::tabindex", "INPUT::type", "INPUT::usemap", "INPUT::value", "INS::datetime", "KEYGEN::disabled", "KEYGEN::keytype", "KEYGEN::name", "LABEL::accesskey", "LABEL::for", "LEGEND::accesskey", "LEGEND::align", "LI::type", "LI::value", "LINK::sizes", "MAP::name", "MENU::compact", "MENU::label", "MENU::type", "METER::high", "METER::low", "METER::max", "METER::min", "METER::value", "OBJECT::typemustmatch", "OL::compact", "OL::reversed", "OL::start", "OL::type", "OPTGROUP::disabled", "OPTGROUP::label", "OPTION::disabled", "OPTION::label", "OPTION::selected", "OPTION::value", "OUTPUT::for", "OUTPUT::name", "P::align", "PRE::width", "PROGRESS::max", "PROGRESS::min", "PROGRESS::value", "SELECT::autocomplete", "SELECT::disabled", "SELECT::multiple", "SELECT::name", "SELECT::required", "SELECT::size", "SELECT::tabindex", "SOURCE::type", "TABLE::align", "TABLE::bgcolor", "TABLE::border", "TABLE::cellpadding", "TABLE::cellspacing", "TABLE::frame", "TABLE::rules", "TABLE::summary", "TABLE::width", "TBODY::align", "TBODY::char", "TBODY::charoff", "TBODY::valign", "TD::abbr", "TD::align", "TD::axis", "TD::bgcolor", "TD::char", "TD::charoff", "TD::colspan", "TD::headers", "TD::height", "TD::nowrap", "TD::rowspan", "TD::scope", "TD::valign", "TD::width", "TEXTAREA::accesskey", "TEXTAREA::autocomplete", "TEXTAREA::cols", "TEXTAREA::disabled", "TEXTAREA::inputmode", "TEXTAREA::name", "TEXTAREA::placeholder", "TEXTAREA::readonly", "TEXTAREA::required", "TEXTAREA::rows", "TEXTAREA::tabindex", "TEXTAREA::wrap", "TFOOT::align", "TFOOT::char", "TFOOT::charoff", "TFOOT::valign", "TH::abbr", "TH::align", "TH::axis", "TH::bgcolor", "TH::char", "TH::charoff", "TH::colspan", "TH::headers", "TH::height", "TH::nowrap", "TH::rowspan", "TH::scope", "TH::valign", "TH::width", "THEAD::align", "THEAD::char", "THEAD::charoff", "THEAD::valign", "TR::align", "TR::bgcolor", "TR::char", "TR::charoff", "TR::valign", "TRACK::default", "TRACK::kind", "TRACK::label", "TRACK::srclang", "UL::compact", "UL::type", "VIDEO::controls", "VIDEO::height", "VIDEO::loop", "VIDEO::mediagroup", "VIDEO::muted", "VIDEO::preload", "VIDEO::width"]), [P.String]);
     C.Status_0 = new E.Status("Status.ToDo");
     C.Status_1 = new E.Status("Status.Doing");
@@ -19331,34 +6319,68 @@
       return H.getIsolateAffinityTag("_$dart_js");
     });
     _lazy($, "TypeErrorDecoder_noSuchMethodPattern", "$get$TypeErrorDecoder_noSuchMethodPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(H.TypeErrorDecoder_buildJavaScriptObject())), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn({
+        toString: function() {
+          return "$receiver$";
+        }
+      }));
     });
     _lazy($, "TypeErrorDecoder_notClosurePattern", "$get$TypeErrorDecoder_notClosurePattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(H.TypeErrorDecoder_buildJavaScriptObjectWithNonClosure())), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn({$method$: null,
+        toString: function() {
+          return "$receiver$";
+        }
+      }));
     });
     _lazy($, "TypeErrorDecoder_nullCallPattern", "$get$TypeErrorDecoder_nullCallPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(null)), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(null));
     });
     _lazy($, "TypeErrorDecoder_nullLiteralCallPattern", "$get$TypeErrorDecoder_nullLiteralCallPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOnNull()), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(function() {
+        var $argumentsExpr$ = '$arguments$';
+        try {
+          null.$method$($argumentsExpr$);
+        } catch (e) {
+          return e.message;
+        }
+      }());
     });
     _lazy($, "TypeErrorDecoder_undefinedCallPattern", "$get$TypeErrorDecoder_undefinedCallPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(void 0)), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOn(void 0));
     });
     _lazy($, "TypeErrorDecoder_undefinedLiteralCallPattern", "$get$TypeErrorDecoder_undefinedLiteralCallPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokeCallErrorOnUndefined()), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(function() {
+        var $argumentsExpr$ = '$arguments$';
+        try {
+          (void 0).$method$($argumentsExpr$);
+        } catch (e) {
+          return e.message;
+        }
+      }());
     });
     _lazy($, "TypeErrorDecoder_nullPropertyPattern", "$get$TypeErrorDecoder_nullPropertyPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOn(null)), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOn(null));
     });
     _lazy($, "TypeErrorDecoder_nullLiteralPropertyPattern", "$get$TypeErrorDecoder_nullLiteralPropertyPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOnNull()), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(function() {
+        try {
+          null.$method$;
+        } catch (e) {
+          return e.message;
+        }
+      }());
     });
     _lazy($, "TypeErrorDecoder_undefinedPropertyPattern", "$get$TypeErrorDecoder_undefinedPropertyPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOn(void 0)), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOn(void 0));
     });
     _lazy($, "TypeErrorDecoder_undefinedLiteralPropertyPattern", "$get$TypeErrorDecoder_undefinedLiteralPropertyPattern", function() {
-      return H.interceptedTypeCheck(H.TypeErrorDecoder_extractPattern(H.TypeErrorDecoder_provokePropertyErrorOnUndefined()), "$isTypeErrorDecoder");
+      return H.TypeErrorDecoder_extractPattern(function() {
+        try {
+          (void 0).$method$;
+        } catch (e) {
+          return e.message;
+        }
+      }());
     });
     _lazy($, "_AsyncRun__scheduleImmediateClosure", "$get$_AsyncRun__scheduleImmediateClosure", function() {
       return P._AsyncRun__initializeScheduleImmediate();
@@ -19366,13 +6388,10 @@
     _lazy($, "_Html5NodeValidator__allowedElements", "$get$_Html5NodeValidator__allowedElements", function() {
       return P.LinkedHashSet_LinkedHashSet$from(["A", "ABBR", "ACRONYM", "ADDRESS", "AREA", "ARTICLE", "ASIDE", "AUDIO", "B", "BDI", "BDO", "BIG", "BLOCKQUOTE", "BR", "BUTTON", "CANVAS", "CAPTION", "CENTER", "CITE", "CODE", "COL", "COLGROUP", "COMMAND", "DATA", "DATALIST", "DD", "DEL", "DETAILS", "DFN", "DIR", "DIV", "DL", "DT", "EM", "FIELDSET", "FIGCAPTION", "FIGURE", "FONT", "FOOTER", "FORM", "H1", "H2", "H3", "H4", "H5", "H6", "HEADER", "HGROUP", "HR", "I", "IFRAME", "IMG", "INPUT", "INS", "KBD", "LABEL", "LEGEND", "LI", "MAP", "MARK", "MENU", "METER", "NAV", "NOBR", "OL", "OPTGROUP", "OPTION", "OUTPUT", "P", "PRE", "PROGRESS", "Q", "S", "SAMP", "SECTION", "SELECT", "SMALL", "SOURCE", "SPAN", "STRIKE", "STRONG", "SUB", "SUMMARY", "SUP", "TABLE", "TBODY", "TD", "TEXTAREA", "TFOOT", "TH", "THEAD", "TIME", "TR", "TRACK", "TT", "U", "UL", "VAR", "VIDEO", "WBR"], P.String);
     });
-    _lazy($, "CssClassSetImpl__validTokenRE", "$get$CssClassSetImpl__validTokenRE", function() {
-      return P.RegExp_RegExp("^\\S+$");
-    });
     _lazy($, "classToStatus", "$get$classToStatus", function() {
       var t2, t3,
         t1 = P.LinkedHashMap_LinkedHashMap$_empty(P.String, E.Status);
-      for (t2 = J.get$iterator$ax(C.Map_TKr5a.get$entries(C.Map_TKr5a)); H.boolConversionCheck(t2.moveNext$0());) {
+      for (t2 = C.Map_TKr5a.get$entries(C.Map_TKr5a), t2 = t2.get$iterator(t2); t2.moveNext$0();) {
         t3 = t2.get$current();
         t1.$indexSet(0, t3.value, t3.key);
       }
@@ -19402,8 +6421,8 @@
       }
       init.dispatchPropertyName = init.getIsolateTag("dispatch_record");
     }();
-    hunkHelpers.setOrUpdateInterceptorsByTag({HTMLElement: W.HtmlElement, AbortPaymentEvent: W.AbortPaymentEvent, HTMLAnchorElement: W.AnchorElement, AnimationEvent: W.AnimationEvent, AnimationPlaybackEvent: W.AnimationPlaybackEvent, ApplicationCacheErrorEvent: W.ApplicationCacheErrorEvent, HTMLAreaElement: W.AreaElement, HTMLAudioElement: W.AudioElement, HTMLBRElement: W.BRElement, BackgroundFetchClickEvent: W.BackgroundFetchClickEvent, BackgroundFetchEvent: W.BackgroundFetchEvent, BackgroundFetchFailEvent: W.BackgroundFetchFailEvent, BackgroundFetchedEvent: W.BackgroundFetchedEvent, HTMLBaseElement: W.BaseElement, BeforeInstallPromptEvent: W.BeforeInstallPromptEvent, BeforeUnloadEvent: W.BeforeUnloadEvent, BlobEvent: W.BlobEvent, HTMLBodyElement: W.BodyElement, HTMLButtonElement: W.ButtonElement, CDATASection: W.CDataSection, CanMakePaymentEvent: W.CanMakePaymentEvent, HTMLCanvasElement: W.CanvasElement, CharacterData: W.CharacterData, ClipboardEvent: W.ClipboardEvent, CloseEvent: W.CloseEvent, Comment: W.Comment, CompositionEvent: W.CompositionEvent, HTMLContentElement: W.ContentElement, CustomEvent: W.CustomEvent, HTMLDListElement: W.DListElement, HTMLDataElement: W.DataElement, HTMLDataListElement: W.DataListElement, HTMLDetailsElement: W.DetailsElement, DeviceMotionEvent: W.DeviceMotionEvent, DeviceOrientationEvent: W.DeviceOrientationEvent, HTMLDialogElement: W.DialogElement, HTMLDivElement: W.DivElement, Document: W.Document, DocumentFragment: W.DocumentFragment, DOMError: W.DomError, DOMException: W.DomException, DOMImplementation: W.DomImplementation, DOMTokenList: W.DomTokenList, Element: W.Element, HTMLEmbedElement: W.EmbedElement, ErrorEvent: W.ErrorEvent, Event: W.Event, InputEvent: W.Event, EventTarget: W.EventTarget, ExtendableEvent: W.ExtendableEvent, ExtendableMessageEvent: W.ExtendableMessageEvent, FetchEvent: W.FetchEvent, HTMLFieldSetElement: W.FieldSetElement, FocusEvent: W.FocusEvent, FontFaceSetLoadEvent: W.FontFaceSetLoadEvent, ForeignFetchEvent: W.ForeignFetchEvent, HTMLFormElement: W.FormElement, GamepadEvent: W.GamepadEvent, HTMLHRElement: W.HRElement, HashChangeEvent: W.HashChangeEvent, HTMLHeadElement: W.HeadElement, HTMLHeadingElement: W.HeadingElement, HTMLCollection: W.HtmlCollection, HTMLDocument: W.HtmlDocument, HTMLFormControlsCollection: W.HtmlFormControlsCollection, HTMLHtmlElement: W.HtmlHtmlElement, HTMLOptionsCollection: W.HtmlOptionsCollection, HTMLIFrameElement: W.IFrameElement, HTMLImageElement: W.ImageElement, HTMLInputElement: W.InputElement, InstallEvent: W.InstallEvent, KeyboardEvent: W.KeyboardEvent, HTMLLIElement: W.LIElement, HTMLLabelElement: W.LabelElement, HTMLLegendElement: W.LegendElement, HTMLLinkElement: W.LinkElement, Location: W.Location, HTMLMapElement: W.MapElement, HTMLMediaElement: W.MediaElement, MediaEncryptedEvent: W.MediaEncryptedEvent, MediaError: W.MediaError, MediaKeyMessageEvent: W.MediaKeyMessageEvent, MediaQueryListEvent: W.MediaQueryListEvent, MediaStreamEvent: W.MediaStreamEvent, MediaStreamTrackEvent: W.MediaStreamTrackEvent, HTMLMenuElement: W.MenuElement, MessageEvent: W.MessageEvent, HTMLMetaElement: W.MetaElement, HTMLMeterElement: W.MeterElement, MIDIConnectionEvent: W.MidiConnectionEvent, MIDIMessageEvent: W.MidiMessageEvent, HTMLModElement: W.ModElement, MouseEvent: W.MouseEvent, DragEvent: W.MouseEvent, MutationEvent: W.MutationEvent, NavigatorUserMediaError: W.NavigatorUserMediaError, Node: W.Node, NodeList: W.NodeList, RadioNodeList: W.NodeList, NotificationEvent: W.NotificationEvent, HTMLOListElement: W.OListElement, HTMLObjectElement: W.ObjectElement, HTMLOptGroupElement: W.OptGroupElement, HTMLOptionElement: W.OptionElement, HTMLOutputElement: W.OutputElement, OverconstrainedError: W.OverconstrainedError, PageTransitionEvent: W.PageTransitionEvent, HTMLParagraphElement: W.ParagraphElement, HTMLParamElement: W.ParamElement, PaymentRequestEvent: W.PaymentRequestEvent, PaymentRequestUpdateEvent: W.PaymentRequestUpdateEvent, HTMLPictureElement: W.PictureElement, PointerEvent: W.PointerEvent, PopStateEvent: W.PopStateEvent, PositionError: W.PositionError, HTMLPreElement: W.PreElement, PresentationConnectionAvailableEvent: W.PresentationConnectionAvailableEvent, PresentationConnectionCloseEvent: W.PresentationConnectionCloseEvent, ProcessingInstruction: W.ProcessingInstruction, HTMLProgressElement: W.ProgressElement, ProgressEvent: W.ProgressEvent, PromiseRejectionEvent: W.PromiseRejectionEvent, PushEvent: W.PushEvent, HTMLQuoteElement: W.QuoteElement, Range: W.Range, RTCDataChannelEvent: W.RtcDataChannelEvent, RTCDTMFToneChangeEvent: W.RtcDtmfToneChangeEvent, RTCPeerConnectionIceEvent: W.RtcPeerConnectionIceEvent, RTCTrackEvent: W.RtcTrackEvent, HTMLScriptElement: W.ScriptElement0, SecurityPolicyViolationEvent: W.SecurityPolicyViolationEvent, HTMLSelectElement: W.SelectElement, SensorErrorEvent: W.SensorErrorEvent, HTMLShadowElement: W.ShadowElement, ShadowRoot: W.ShadowRoot, HTMLSlotElement: W.SlotElement, HTMLSourceElement: W.SourceElement, HTMLSpanElement: W.SpanElement, SpeechRecognitionError: W.SpeechRecognitionError, SpeechRecognitionEvent: W.SpeechRecognitionEvent, SpeechSynthesisEvent: W.SpeechSynthesisEvent, StorageEvent: W.StorageEvent, HTMLStyleElement: W.StyleElement, SyncEvent: W.SyncEvent, HTMLTableCaptionElement: W.TableCaptionElement, HTMLTableCellElement: W.TableCellElement, HTMLTableDataCellElement: W.TableCellElement, HTMLTableHeaderCellElement: W.TableCellElement, HTMLTableColElement: W.TableColElement, HTMLTableElement: W.TableElement, HTMLTableRowElement: W.TableRowElement, HTMLTableSectionElement: W.TableSectionElement, HTMLTemplateElement: W.TemplateElement, Text: W.Text, HTMLTextAreaElement: W.TextAreaElement, TextEvent: W.TextEvent, HTMLTimeElement: W.TimeElement, HTMLTitleElement: W.TitleElement, TouchEvent: W.TouchEvent, HTMLTrackElement: W.TrackElement, TrackEvent: W.TrackEvent, TransitionEvent: W.TransitionEvent, WebKitTransitionEvent: W.TransitionEvent, UIEvent: W.UIEvent, HTMLUListElement: W.UListElement, HTMLUnknownElement: W.UnknownElement, VRDeviceEvent: W.VRDeviceEvent, VRDisplayEvent: W.VRDisplayEvent, VRSessionEvent: W.VRSessionEvent, HTMLVideoElement: W.VideoElement, WheelEvent: W.WheelEvent, Window: W.Window, DOMWindow: W.Window, XMLDocument: W.XmlDocument, Attr: W._Attr, DocumentType: W._DocumentType, HTMLDirectoryElement: W._HTMLDirectoryElement, HTMLFontElement: W._HTMLFontElement, HTMLFrameElement: W._HTMLFrameElement, HTMLFrameSetElement: W._HTMLFrameSetElement, HTMLMarqueeElement: W._HTMLMarqueeElement, MojoInterfaceRequestEvent: W._MojoInterfaceRequestEvent, NamedNodeMap: W._NamedNodeMap, MozNamedAttrMap: W._NamedNodeMap, ResourceProgressEvent: W._ResourceProgressEvent, USBConnectionEvent: W._USBConnectionEvent, IDBVersionChangeEvent: P.VersionChangeEvent, SVGAElement: P.AElement, SVGAnimateElement: P.AnimateElement, SVGAnimateMotionElement: P.AnimateMotionElement, SVGAnimateTransformElement: P.AnimateTransformElement, SVGAnimationElement: P.AnimationElement, SVGCircleElement: P.CircleElement, SVGClipPathElement: P.ClipPathElement, SVGDefsElement: P.DefsElement, SVGDescElement: P.DescElement, SVGDiscardElement: P.DiscardElement, SVGEllipseElement: P.EllipseElement, SVGFEBlendElement: P.FEBlendElement, SVGFEColorMatrixElement: P.FEColorMatrixElement, SVGFEComponentTransferElement: P.FEComponentTransferElement, SVGFECompositeElement: P.FECompositeElement, SVGFEConvolveMatrixElement: P.FEConvolveMatrixElement, SVGFEDiffuseLightingElement: P.FEDiffuseLightingElement, SVGFEDisplacementMapElement: P.FEDisplacementMapElement, SVGFEDistantLightElement: P.FEDistantLightElement, SVGFEFloodElement: P.FEFloodElement, SVGFEFuncAElement: P.FEFuncAElement, SVGFEFuncBElement: P.FEFuncBElement, SVGFEFuncGElement: P.FEFuncGElement, SVGFEFuncRElement: P.FEFuncRElement, SVGFEGaussianBlurElement: P.FEGaussianBlurElement, SVGFEImageElement: P.FEImageElement, SVGFEMergeElement: P.FEMergeElement, SVGFEMergeNodeElement: P.FEMergeNodeElement, SVGFEMorphologyElement: P.FEMorphologyElement, SVGFEOffsetElement: P.FEOffsetElement, SVGFEPointLightElement: P.FEPointLightElement, SVGFESpecularLightingElement: P.FESpecularLightingElement, SVGFESpotLightElement: P.FESpotLightElement, SVGFETileElement: P.FETileElement, SVGFETurbulenceElement: P.FETurbulenceElement, SVGFilterElement: P.FilterElement, SVGForeignObjectElement: P.ForeignObjectElement, SVGGElement: P.GElement, SVGGeometryElement: P.GeometryElement, SVGGraphicsElement: P.GraphicsElement, SVGImageElement: P.ImageElement0, SVGLineElement: P.LineElement, SVGLinearGradientElement: P.LinearGradientElement, SVGMarkerElement: P.MarkerElement, SVGMaskElement: P.MaskElement, SVGMetadataElement: P.MetadataElement, SVGPathElement: P.PathElement, SVGPatternElement: P.PatternElement, SVGPolygonElement: P.PolygonElement, SVGPolylineElement: P.PolylineElement, SVGRadialGradientElement: P.RadialGradientElement, SVGRectElement: P.RectElement, SVGScriptElement: P.ScriptElement, SVGSetElement: P.SetElement, SVGStopElement: P.StopElement, SVGStyleElement: P.StyleElement0, SVGElement: P.SvgElement, SVGSVGElement: P.SvgSvgElement, SVGSwitchElement: P.SwitchElement, SVGSymbolElement: P.SymbolElement, SVGTSpanElement: P.TSpanElement, SVGTextContentElement: P.TextContentElement, SVGTextElement: P.TextElement, SVGTextPathElement: P.TextPathElement, SVGTextPositioningElement: P.TextPositioningElement, SVGTitleElement: P.TitleElement0, SVGUseElement: P.UseElement, SVGViewElement: P.ViewElement, SVGGradientElement: P._GradientElement, SVGComponentTransferFunctionElement: P._SVGComponentTransferFunctionElement, SVGFEDropShadowElement: P._SVGFEDropShadowElement, SVGMPathElement: P._SVGMPathElement, AudioProcessingEvent: P.AudioProcessingEvent, OfflineAudioCompletionEvent: P.OfflineAudioCompletionEvent, WebGLContextEvent: P.ContextEvent, SQLError: P.SqlError});
-    hunkHelpers.setOrUpdateLeafTags({HTMLElement: false, AbortPaymentEvent: true, HTMLAnchorElement: true, AnimationEvent: true, AnimationPlaybackEvent: true, ApplicationCacheErrorEvent: true, HTMLAreaElement: true, HTMLAudioElement: true, HTMLBRElement: true, BackgroundFetchClickEvent: true, BackgroundFetchEvent: false, BackgroundFetchFailEvent: true, BackgroundFetchedEvent: true, HTMLBaseElement: true, BeforeInstallPromptEvent: true, BeforeUnloadEvent: true, BlobEvent: true, HTMLBodyElement: true, HTMLButtonElement: true, CDATASection: true, CanMakePaymentEvent: true, HTMLCanvasElement: true, CharacterData: false, ClipboardEvent: true, CloseEvent: true, Comment: true, CompositionEvent: true, HTMLContentElement: true, CustomEvent: true, HTMLDListElement: true, HTMLDataElement: true, HTMLDataListElement: true, HTMLDetailsElement: true, DeviceMotionEvent: true, DeviceOrientationEvent: true, HTMLDialogElement: true, HTMLDivElement: true, Document: false, DocumentFragment: false, DOMError: true, DOMException: true, DOMImplementation: true, DOMTokenList: true, Element: false, HTMLEmbedElement: true, ErrorEvent: true, Event: false, InputEvent: false, EventTarget: false, ExtendableEvent: false, ExtendableMessageEvent: true, FetchEvent: true, HTMLFieldSetElement: true, FocusEvent: true, FontFaceSetLoadEvent: true, ForeignFetchEvent: true, HTMLFormElement: true, GamepadEvent: true, HTMLHRElement: true, HashChangeEvent: true, HTMLHeadElement: true, HTMLHeadingElement: true, HTMLCollection: false, HTMLDocument: true, HTMLFormControlsCollection: true, HTMLHtmlElement: true, HTMLOptionsCollection: true, HTMLIFrameElement: true, HTMLImageElement: true, HTMLInputElement: true, InstallEvent: true, KeyboardEvent: true, HTMLLIElement: true, HTMLLabelElement: true, HTMLLegendElement: true, HTMLLinkElement: true, Location: true, HTMLMapElement: true, HTMLMediaElement: false, MediaEncryptedEvent: true, MediaError: true, MediaKeyMessageEvent: true, MediaQueryListEvent: true, MediaStreamEvent: true, MediaStreamTrackEvent: true, HTMLMenuElement: true, MessageEvent: true, HTMLMetaElement: true, HTMLMeterElement: true, MIDIConnectionEvent: true, MIDIMessageEvent: true, HTMLModElement: true, MouseEvent: false, DragEvent: false, MutationEvent: true, NavigatorUserMediaError: true, Node: false, NodeList: true, RadioNodeList: true, NotificationEvent: true, HTMLOListElement: true, HTMLObjectElement: true, HTMLOptGroupElement: true, HTMLOptionElement: true, HTMLOutputElement: true, OverconstrainedError: true, PageTransitionEvent: true, HTMLParagraphElement: true, HTMLParamElement: true, PaymentRequestEvent: true, PaymentRequestUpdateEvent: true, HTMLPictureElement: true, PointerEvent: true, PopStateEvent: true, PositionError: true, HTMLPreElement: true, PresentationConnectionAvailableEvent: true, PresentationConnectionCloseEvent: true, ProcessingInstruction: true, HTMLProgressElement: true, ProgressEvent: false, PromiseRejectionEvent: true, PushEvent: true, HTMLQuoteElement: true, Range: true, RTCDataChannelEvent: true, RTCDTMFToneChangeEvent: true, RTCPeerConnectionIceEvent: true, RTCTrackEvent: true, HTMLScriptElement: true, SecurityPolicyViolationEvent: true, HTMLSelectElement: true, SensorErrorEvent: true, HTMLShadowElement: true, ShadowRoot: true, HTMLSlotElement: true, HTMLSourceElement: true, HTMLSpanElement: true, SpeechRecognitionError: true, SpeechRecognitionEvent: true, SpeechSynthesisEvent: true, StorageEvent: true, HTMLStyleElement: true, SyncEvent: true, HTMLTableCaptionElement: true, HTMLTableCellElement: true, HTMLTableDataCellElement: true, HTMLTableHeaderCellElement: true, HTMLTableColElement: true, HTMLTableElement: true, HTMLTableRowElement: true, HTMLTableSectionElement: true, HTMLTemplateElement: true, Text: false, HTMLTextAreaElement: true, TextEvent: true, HTMLTimeElement: true, HTMLTitleElement: true, TouchEvent: true, HTMLTrackElement: true, TrackEvent: true, TransitionEvent: true, WebKitTransitionEvent: true, UIEvent: false, HTMLUListElement: true, HTMLUnknownElement: true, VRDeviceEvent: true, VRDisplayEvent: true, VRSessionEvent: true, HTMLVideoElement: true, WheelEvent: true, Window: true, DOMWindow: true, XMLDocument: true, Attr: true, DocumentType: true, HTMLDirectoryElement: true, HTMLFontElement: true, HTMLFrameElement: true, HTMLFrameSetElement: true, HTMLMarqueeElement: true, MojoInterfaceRequestEvent: true, NamedNodeMap: true, MozNamedAttrMap: true, ResourceProgressEvent: true, USBConnectionEvent: true, IDBVersionChangeEvent: true, SVGAElement: true, SVGAnimateElement: true, SVGAnimateMotionElement: true, SVGAnimateTransformElement: true, SVGAnimationElement: false, SVGCircleElement: true, SVGClipPathElement: true, SVGDefsElement: true, SVGDescElement: true, SVGDiscardElement: true, SVGEllipseElement: true, SVGFEBlendElement: true, SVGFEColorMatrixElement: true, SVGFEComponentTransferElement: true, SVGFECompositeElement: true, SVGFEConvolveMatrixElement: true, SVGFEDiffuseLightingElement: true, SVGFEDisplacementMapElement: true, SVGFEDistantLightElement: true, SVGFEFloodElement: true, SVGFEFuncAElement: true, SVGFEFuncBElement: true, SVGFEFuncGElement: true, SVGFEFuncRElement: true, SVGFEGaussianBlurElement: true, SVGFEImageElement: true, SVGFEMergeElement: true, SVGFEMergeNodeElement: true, SVGFEMorphologyElement: true, SVGFEOffsetElement: true, SVGFEPointLightElement: true, SVGFESpecularLightingElement: true, SVGFESpotLightElement: true, SVGFETileElement: true, SVGFETurbulenceElement: true, SVGFilterElement: true, SVGForeignObjectElement: true, SVGGElement: true, SVGGeometryElement: false, SVGGraphicsElement: false, SVGImageElement: true, SVGLineElement: true, SVGLinearGradientElement: true, SVGMarkerElement: true, SVGMaskElement: true, SVGMetadataElement: true, SVGPathElement: true, SVGPatternElement: true, SVGPolygonElement: true, SVGPolylineElement: true, SVGRadialGradientElement: true, SVGRectElement: true, SVGScriptElement: true, SVGSetElement: true, SVGStopElement: true, SVGStyleElement: true, SVGElement: false, SVGSVGElement: true, SVGSwitchElement: true, SVGSymbolElement: true, SVGTSpanElement: true, SVGTextContentElement: false, SVGTextElement: true, SVGTextPathElement: true, SVGTextPositioningElement: false, SVGTitleElement: true, SVGUseElement: true, SVGViewElement: true, SVGGradientElement: false, SVGComponentTransferFunctionElement: false, SVGFEDropShadowElement: true, SVGMPathElement: true, AudioProcessingEvent: true, OfflineAudioCompletionEvent: true, WebGLContextEvent: true, SQLError: true});
+    hunkHelpers.setOrUpdateInterceptorsByTag({DOMError: J.Interceptor, DOMImplementation: J.Interceptor, MediaError: J.Interceptor, NavigatorUserMediaError: J.Interceptor, OverconstrainedError: J.Interceptor, PositionError: J.Interceptor, Range: J.Interceptor, SQLError: J.Interceptor, HTMLAudioElement: W.HtmlElement, HTMLBRElement: W.HtmlElement, HTMLCanvasElement: W.HtmlElement, HTMLContentElement: W.HtmlElement, HTMLDListElement: W.HtmlElement, HTMLDataElement: W.HtmlElement, HTMLDataListElement: W.HtmlElement, HTMLDetailsElement: W.HtmlElement, HTMLDialogElement: W.HtmlElement, HTMLEmbedElement: W.HtmlElement, HTMLFieldSetElement: W.HtmlElement, HTMLHRElement: W.HtmlElement, HTMLHeadElement: W.HtmlElement, HTMLHeadingElement: W.HtmlElement, HTMLHtmlElement: W.HtmlElement, HTMLIFrameElement: W.HtmlElement, HTMLImageElement: W.HtmlElement, HTMLLIElement: W.HtmlElement, HTMLLabelElement: W.HtmlElement, HTMLLegendElement: W.HtmlElement, HTMLLinkElement: W.HtmlElement, HTMLMapElement: W.HtmlElement, HTMLMediaElement: W.HtmlElement, HTMLMenuElement: W.HtmlElement, HTMLMetaElement: W.HtmlElement, HTMLMeterElement: W.HtmlElement, HTMLModElement: W.HtmlElement, HTMLOListElement: W.HtmlElement, HTMLObjectElement: W.HtmlElement, HTMLOptGroupElement: W.HtmlElement, HTMLOptionElement: W.HtmlElement, HTMLOutputElement: W.HtmlElement, HTMLParagraphElement: W.HtmlElement, HTMLParamElement: W.HtmlElement, HTMLPictureElement: W.HtmlElement, HTMLPreElement: W.HtmlElement, HTMLProgressElement: W.HtmlElement, HTMLQuoteElement: W.HtmlElement, HTMLScriptElement: W.HtmlElement, HTMLShadowElement: W.HtmlElement, HTMLSlotElement: W.HtmlElement, HTMLSourceElement: W.HtmlElement, HTMLStyleElement: W.HtmlElement, HTMLTableCaptionElement: W.HtmlElement, HTMLTableCellElement: W.HtmlElement, HTMLTableDataCellElement: W.HtmlElement, HTMLTableHeaderCellElement: W.HtmlElement, HTMLTableColElement: W.HtmlElement, HTMLTextAreaElement: W.HtmlElement, HTMLTimeElement: W.HtmlElement, HTMLTitleElement: W.HtmlElement, HTMLTrackElement: W.HtmlElement, HTMLUListElement: W.HtmlElement, HTMLUnknownElement: W.HtmlElement, HTMLVideoElement: W.HtmlElement, HTMLDirectoryElement: W.HtmlElement, HTMLFontElement: W.HtmlElement, HTMLFrameElement: W.HtmlElement, HTMLFrameSetElement: W.HtmlElement, HTMLMarqueeElement: W.HtmlElement, HTMLElement: W.HtmlElement, HTMLAnchorElement: W.AnchorElement, HTMLAreaElement: W.AreaElement, HTMLBaseElement: W.BaseElement, HTMLBodyElement: W.BodyElement, HTMLButtonElement: W.ButtonElement, CDATASection: W.CharacterData, CharacterData: W.CharacterData, Comment: W.CharacterData, ProcessingInstruction: W.CharacterData, Text: W.CharacterData, HTMLDivElement: W.DivElement, DOMException: W.DomException, DOMTokenList: W.DomTokenList, Element: W.Element, AbortPaymentEvent: W.Event, AnimationEvent: W.Event, AnimationPlaybackEvent: W.Event, ApplicationCacheErrorEvent: W.Event, BackgroundFetchClickEvent: W.Event, BackgroundFetchEvent: W.Event, BackgroundFetchFailEvent: W.Event, BackgroundFetchedEvent: W.Event, BeforeInstallPromptEvent: W.Event, BeforeUnloadEvent: W.Event, BlobEvent: W.Event, CanMakePaymentEvent: W.Event, ClipboardEvent: W.Event, CloseEvent: W.Event, CustomEvent: W.Event, DeviceMotionEvent: W.Event, DeviceOrientationEvent: W.Event, ErrorEvent: W.Event, ExtendableEvent: W.Event, ExtendableMessageEvent: W.Event, FetchEvent: W.Event, FontFaceSetLoadEvent: W.Event, ForeignFetchEvent: W.Event, GamepadEvent: W.Event, HashChangeEvent: W.Event, InstallEvent: W.Event, MediaEncryptedEvent: W.Event, MediaKeyMessageEvent: W.Event, MediaQueryListEvent: W.Event, MediaStreamEvent: W.Event, MediaStreamTrackEvent: W.Event, MessageEvent: W.Event, MIDIConnectionEvent: W.Event, MIDIMessageEvent: W.Event, MutationEvent: W.Event, NotificationEvent: W.Event, PageTransitionEvent: W.Event, PaymentRequestEvent: W.Event, PaymentRequestUpdateEvent: W.Event, PopStateEvent: W.Event, PresentationConnectionAvailableEvent: W.Event, PresentationConnectionCloseEvent: W.Event, ProgressEvent: W.Event, PromiseRejectionEvent: W.Event, PushEvent: W.Event, RTCDataChannelEvent: W.Event, RTCDTMFToneChangeEvent: W.Event, RTCPeerConnectionIceEvent: W.Event, RTCTrackEvent: W.Event, SecurityPolicyViolationEvent: W.Event, SensorErrorEvent: W.Event, SpeechRecognitionError: W.Event, SpeechRecognitionEvent: W.Event, SpeechSynthesisEvent: W.Event, StorageEvent: W.Event, SyncEvent: W.Event, TrackEvent: W.Event, TransitionEvent: W.Event, WebKitTransitionEvent: W.Event, VRDeviceEvent: W.Event, VRDisplayEvent: W.Event, VRSessionEvent: W.Event, MojoInterfaceRequestEvent: W.Event, ResourceProgressEvent: W.Event, USBConnectionEvent: W.Event, IDBVersionChangeEvent: W.Event, AudioProcessingEvent: W.Event, OfflineAudioCompletionEvent: W.Event, WebGLContextEvent: W.Event, Event: W.Event, InputEvent: W.Event, EventTarget: W.EventTarget, HTMLFormElement: W.FormElement, HTMLCollection: W.HtmlCollection, HTMLFormControlsCollection: W.HtmlCollection, HTMLOptionsCollection: W.HtmlCollection, HTMLInputElement: W.InputElement, Location: W.Location, MouseEvent: W.MouseEvent, DragEvent: W.MouseEvent, PointerEvent: W.MouseEvent, WheelEvent: W.MouseEvent, Document: W.Node, DocumentFragment: W.Node, HTMLDocument: W.Node, ShadowRoot: W.Node, XMLDocument: W.Node, DocumentType: W.Node, Node: W.Node, NodeList: W.NodeList, RadioNodeList: W.NodeList, HTMLSelectElement: W.SelectElement, HTMLSpanElement: W.SpanElement, HTMLTableElement: W.TableElement, HTMLTableRowElement: W.TableRowElement, HTMLTableSectionElement: W.TableSectionElement, HTMLTemplateElement: W.TemplateElement, CompositionEvent: W.UIEvent, FocusEvent: W.UIEvent, KeyboardEvent: W.UIEvent, TextEvent: W.UIEvent, TouchEvent: W.UIEvent, UIEvent: W.UIEvent, Window: W.Window, DOMWindow: W.Window, Attr: W._Attr, NamedNodeMap: W._NamedNodeMap, MozNamedAttrMap: W._NamedNodeMap, SVGScriptElement: P.ScriptElement, SVGAElement: P.SvgElement, SVGAnimateElement: P.SvgElement, SVGAnimateMotionElement: P.SvgElement, SVGAnimateTransformElement: P.SvgElement, SVGAnimationElement: P.SvgElement, SVGCircleElement: P.SvgElement, SVGClipPathElement: P.SvgElement, SVGDefsElement: P.SvgElement, SVGDescElement: P.SvgElement, SVGDiscardElement: P.SvgElement, SVGEllipseElement: P.SvgElement, SVGFEBlendElement: P.SvgElement, SVGFEColorMatrixElement: P.SvgElement, SVGFEComponentTransferElement: P.SvgElement, SVGFECompositeElement: P.SvgElement, SVGFEConvolveMatrixElement: P.SvgElement, SVGFEDiffuseLightingElement: P.SvgElement, SVGFEDisplacementMapElement: P.SvgElement, SVGFEDistantLightElement: P.SvgElement, SVGFEFloodElement: P.SvgElement, SVGFEFuncAElement: P.SvgElement, SVGFEFuncBElement: P.SvgElement, SVGFEFuncGElement: P.SvgElement, SVGFEFuncRElement: P.SvgElement, SVGFEGaussianBlurElement: P.SvgElement, SVGFEImageElement: P.SvgElement, SVGFEMergeElement: P.SvgElement, SVGFEMergeNodeElement: P.SvgElement, SVGFEMorphologyElement: P.SvgElement, SVGFEOffsetElement: P.SvgElement, SVGFEPointLightElement: P.SvgElement, SVGFESpecularLightingElement: P.SvgElement, SVGFESpotLightElement: P.SvgElement, SVGFETileElement: P.SvgElement, SVGFETurbulenceElement: P.SvgElement, SVGFilterElement: P.SvgElement, SVGForeignObjectElement: P.SvgElement, SVGGElement: P.SvgElement, SVGGeometryElement: P.SvgElement, SVGGraphicsElement: P.SvgElement, SVGImageElement: P.SvgElement, SVGLineElement: P.SvgElement, SVGLinearGradientElement: P.SvgElement, SVGMarkerElement: P.SvgElement, SVGMaskElement: P.SvgElement, SVGMetadataElement: P.SvgElement, SVGPathElement: P.SvgElement, SVGPatternElement: P.SvgElement, SVGPolygonElement: P.SvgElement, SVGPolylineElement: P.SvgElement, SVGRadialGradientElement: P.SvgElement, SVGRectElement: P.SvgElement, SVGSetElement: P.SvgElement, SVGStopElement: P.SvgElement, SVGStyleElement: P.SvgElement, SVGSVGElement: P.SvgElement, SVGSwitchElement: P.SvgElement, SVGSymbolElement: P.SvgElement, SVGTSpanElement: P.SvgElement, SVGTextContentElement: P.SvgElement, SVGTextElement: P.SvgElement, SVGTextPathElement: P.SvgElement, SVGTextPositioningElement: P.SvgElement, SVGTitleElement: P.SvgElement, SVGUseElement: P.SvgElement, SVGViewElement: P.SvgElement, SVGGradientElement: P.SvgElement, SVGComponentTransferFunctionElement: P.SvgElement, SVGFEDropShadowElement: P.SvgElement, SVGMPathElement: P.SvgElement, SVGElement: P.SvgElement});
+    hunkHelpers.setOrUpdateLeafTags({DOMError: true, DOMImplementation: true, MediaError: true, NavigatorUserMediaError: true, OverconstrainedError: true, PositionError: true, Range: true, SQLError: true, HTMLAudioElement: true, HTMLBRElement: true, HTMLCanvasElement: true, HTMLContentElement: true, HTMLDListElement: true, HTMLDataElement: true, HTMLDataListElement: true, HTMLDetailsElement: true, HTMLDialogElement: true, HTMLEmbedElement: true, HTMLFieldSetElement: true, HTMLHRElement: true, HTMLHeadElement: true, HTMLHeadingElement: true, HTMLHtmlElement: true, HTMLIFrameElement: true, HTMLImageElement: true, HTMLLIElement: true, HTMLLabelElement: true, HTMLLegendElement: true, HTMLLinkElement: true, HTMLMapElement: true, HTMLMediaElement: true, HTMLMenuElement: true, HTMLMetaElement: true, HTMLMeterElement: true, HTMLModElement: true, HTMLOListElement: true, HTMLObjectElement: true, HTMLOptGroupElement: true, HTMLOptionElement: true, HTMLOutputElement: true, HTMLParagraphElement: true, HTMLParamElement: true, HTMLPictureElement: true, HTMLPreElement: true, HTMLProgressElement: true, HTMLQuoteElement: true, HTMLScriptElement: true, HTMLShadowElement: true, HTMLSlotElement: true, HTMLSourceElement: true, HTMLStyleElement: true, HTMLTableCaptionElement: true, HTMLTableCellElement: true, HTMLTableDataCellElement: true, HTMLTableHeaderCellElement: true, HTMLTableColElement: true, HTMLTextAreaElement: true, HTMLTimeElement: true, HTMLTitleElement: true, HTMLTrackElement: true, HTMLUListElement: true, HTMLUnknownElement: true, HTMLVideoElement: true, HTMLDirectoryElement: true, HTMLFontElement: true, HTMLFrameElement: true, HTMLFrameSetElement: true, HTMLMarqueeElement: true, HTMLElement: false, HTMLAnchorElement: true, HTMLAreaElement: true, HTMLBaseElement: true, HTMLBodyElement: true, HTMLButtonElement: true, CDATASection: true, CharacterData: true, Comment: true, ProcessingInstruction: true, Text: true, HTMLDivElement: true, DOMException: true, DOMTokenList: true, Element: false, AbortPaymentEvent: true, AnimationEvent: true, AnimationPlaybackEvent: true, ApplicationCacheErrorEvent: true, BackgroundFetchClickEvent: true, BackgroundFetchEvent: true, BackgroundFetchFailEvent: true, BackgroundFetchedEvent: true, BeforeInstallPromptEvent: true, BeforeUnloadEvent: true, BlobEvent: true, CanMakePaymentEvent: true, ClipboardEvent: true, CloseEvent: true, CustomEvent: true, DeviceMotionEvent: true, DeviceOrientationEvent: true, ErrorEvent: true, ExtendableEvent: true, ExtendableMessageEvent: true, FetchEvent: true, FontFaceSetLoadEvent: true, ForeignFetchEvent: true, GamepadEvent: true, HashChangeEvent: true, InstallEvent: true, MediaEncryptedEvent: true, MediaKeyMessageEvent: true, MediaQueryListEvent: true, MediaStreamEvent: true, MediaStreamTrackEvent: true, MessageEvent: true, MIDIConnectionEvent: true, MIDIMessageEvent: true, MutationEvent: true, NotificationEvent: true, PageTransitionEvent: true, PaymentRequestEvent: true, PaymentRequestUpdateEvent: true, PopStateEvent: true, PresentationConnectionAvailableEvent: true, PresentationConnectionCloseEvent: true, ProgressEvent: true, PromiseRejectionEvent: true, PushEvent: true, RTCDataChannelEvent: true, RTCDTMFToneChangeEvent: true, RTCPeerConnectionIceEvent: true, RTCTrackEvent: true, SecurityPolicyViolationEvent: true, SensorErrorEvent: true, SpeechRecognitionError: true, SpeechRecognitionEvent: true, SpeechSynthesisEvent: true, StorageEvent: true, SyncEvent: true, TrackEvent: true, TransitionEvent: true, WebKitTransitionEvent: true, VRDeviceEvent: true, VRDisplayEvent: true, VRSessionEvent: true, MojoInterfaceRequestEvent: true, ResourceProgressEvent: true, USBConnectionEvent: true, IDBVersionChangeEvent: true, AudioProcessingEvent: true, OfflineAudioCompletionEvent: true, WebGLContextEvent: true, Event: false, InputEvent: false, EventTarget: false, HTMLFormElement: true, HTMLCollection: true, HTMLFormControlsCollection: true, HTMLOptionsCollection: true, HTMLInputElement: true, Location: true, MouseEvent: true, DragEvent: true, PointerEvent: true, WheelEvent: true, Document: true, DocumentFragment: true, HTMLDocument: true, ShadowRoot: true, XMLDocument: true, DocumentType: true, Node: false, NodeList: true, RadioNodeList: true, HTMLSelectElement: true, HTMLSpanElement: true, HTMLTableElement: true, HTMLTableRowElement: true, HTMLTableSectionElement: true, HTMLTemplateElement: true, CompositionEvent: true, FocusEvent: true, KeyboardEvent: true, TextEvent: true, TouchEvent: true, UIEvent: false, Window: true, DOMWindow: true, Attr: true, NamedNodeMap: true, MozNamedAttrMap: true, SVGScriptElement: true, SVGAElement: true, SVGAnimateElement: true, SVGAnimateMotionElement: true, SVGAnimateTransformElement: true, SVGAnimationElement: true, SVGCircleElement: true, SVGClipPathElement: true, SVGDefsElement: true, SVGDescElement: true, SVGDiscardElement: true, SVGEllipseElement: true, SVGFEBlendElement: true, SVGFEColorMatrixElement: true, SVGFEComponentTransferElement: true, SVGFECompositeElement: true, SVGFEConvolveMatrixElement: true, SVGFEDiffuseLightingElement: true, SVGFEDisplacementMapElement: true, SVGFEDistantLightElement: true, SVGFEFloodElement: true, SVGFEFuncAElement: true, SVGFEFuncBElement: true, SVGFEFuncGElement: true, SVGFEFuncRElement: true, SVGFEGaussianBlurElement: true, SVGFEImageElement: true, SVGFEMergeElement: true, SVGFEMergeNodeElement: true, SVGFEMorphologyElement: true, SVGFEOffsetElement: true, SVGFEPointLightElement: true, SVGFESpecularLightingElement: true, SVGFESpotLightElement: true, SVGFETileElement: true, SVGFETurbulenceElement: true, SVGFilterElement: true, SVGForeignObjectElement: true, SVGGElement: true, SVGGeometryElement: true, SVGGraphicsElement: true, SVGImageElement: true, SVGLineElement: true, SVGLinearGradientElement: true, SVGMarkerElement: true, SVGMaskElement: true, SVGMetadataElement: true, SVGPathElement: true, SVGPatternElement: true, SVGPolygonElement: true, SVGPolylineElement: true, SVGRadialGradientElement: true, SVGRectElement: true, SVGSetElement: true, SVGStopElement: true, SVGStyleElement: true, SVGSVGElement: true, SVGSwitchElement: true, SVGSymbolElement: true, SVGTSpanElement: true, SVGTextContentElement: true, SVGTextElement: true, SVGTextPathElement: true, SVGTextPositioningElement: true, SVGTitleElement: true, SVGUseElement: true, SVGViewElement: true, SVGGradientElement: true, SVGComponentTransferFunctionElement: true, SVGFEDropShadowElement: true, SVGMPathElement: true, SVGElement: false});
   })();
   convertAllToFastObject(holders);
   convertToFastObject($);
