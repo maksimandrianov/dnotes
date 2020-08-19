@@ -7373,8 +7373,9 @@
     },
     ColumnController_initColumns_closure3: function ColumnController_initColumns_closure3() {
     },
-    ColumnController_initColumns_closure4: function ColumnController_initColumns_closure4(t0) {
-      this.$this = t0;
+    ColumnController_initColumns_closure4: function ColumnController_initColumns_closure4(t0, t1) {
+      this._box_0 = t0;
+      this.$this = t1;
     }
   },
   E = {EventEmitter: function EventEmitter() {
@@ -18623,7 +18624,7 @@
       C.DivElement_methods.get$onDragEnter(statDiv).listen$1(new M.ColumnController_initColumns_closure1(t1, _this));
       C.DivElement_methods.get$onDragLeave(statDiv).listen$1(new M.ColumnController_initColumns_closure2(t1, _this));
       C.DivElement_methods.get$onDragOver(statDiv).listen$1(new M.ColumnController_initColumns_closure3());
-      C.DivElement_methods.get$onDrop(statDiv).listen$1(new M.ColumnController_initColumns_closure4(_this));
+      C.DivElement_methods.get$onDrop(statDiv).listen$1(new M.ColumnController_initColumns_closure4(t1, _this));
     }
   };
   M.ColumnController_closure.prototype = {
@@ -18689,13 +18690,13 @@
     call$1: function(e) {
       var t1, t2;
       H.interceptedTypeCheck(e, "$isMouseEvent");
-      t1 = this.$this;
-      t1.emit$2("dragEnter", [J.get$status$z(t1._column$_model)]);
       t1 = this._box_0;
       t2 = t1.dragEnterLeaveCounter;
       if (typeof t2 !== "number")
         return t2.$add();
       t1.dragEnterLeaveCounter = t2 + 1;
+      t2 = this.$this;
+      t2.emit$2("dragEnter", [J.get$status$z(t2._column$_model)]);
     },
     $signature: 2
   };
@@ -18724,8 +18725,11 @@
   };
   M.ColumnController_initColumns_closure4.prototype = {
     call$1: function(e) {
-      var column = H.interceptedTypeCheck(J.get$currentTarget$x(H.interceptedTypeCheck(e, "$isMouseEvent")), "$isDivElement"),
-        columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
+      var column, columnId;
+      H.interceptedTypeCheck(e, "$isMouseEvent");
+      this._box_0.dragEnterLeaveCounter = 0;
+      column = H.interceptedTypeCheck(J.get$currentTarget$x(e), "$isDivElement");
+      columnId = (column && C.DivElement_methods).getAttribute$1(column, "id");
       this.$this.emit$2("dragStop", [J.$index$asx($.$get$classToStatus(), columnId)]);
     },
     $signature: 2

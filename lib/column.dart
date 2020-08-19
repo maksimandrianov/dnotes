@@ -193,6 +193,7 @@ class ColumnController extends EventEmitter {
     });
 
     statDiv.onDrop.listen((MouseEvent e) {
+      dragEnterLeaveCounter = 0;
       final DivElement column = e.currentTarget;
       final String columnId = column.getAttribute("id");
       final Status to = classToStatus[columnId];
