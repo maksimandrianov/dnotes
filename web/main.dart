@@ -19,10 +19,34 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import "../lib/board.dart";
+import "dart:async";
+import "dart:convert";
+import "dart:html";
+
+import "package:dnotes/board.dart";
 
 void main() {
-  BoardModel model = BoardModel();
+  final String boardModelStorageKey = "boardModel";
+  Storage storage = window.localStorage;
+
+  BoardModel model = storage.containsKey(boardModelStorageKey)
+      ? BoardModel.fromJson(jsonDecode(storage[boardModelStorageKey]))
+      : BoardModel.Empty();
+
+  bool updateData = false;
+  model.on("updateData", (List<dynamic> args) {
+    updateData = true;
+    print("Data was updated.");
+  });
+
+  Timer.periodic(Duration(seconds: 5), (Timer t) {
+    if (updateData) {
+      storage[boardModelStorageKey] = jsonEncode(model);
+      print("Data was saved automatically.");
+      updateData = false;
+    }
+  });
+
   BoardController ctrl = BoardController(model, ".dnotes");
   ctrl.updateView();
 }

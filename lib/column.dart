@@ -19,11 +19,15 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import "./event_emitter.dart";
-import "./note.dart";
-import "./status.dart";
-
 import "dart:html";
+
+import 'package:json_annotation/json_annotation.dart';
+
+import "event_emitter.dart";
+import "note.dart";
+import "status.dart";
+
+part "column.g.dart";
 
 const Map<Status, String> statusToClass = {
   Status.ToDo: "todo",
@@ -35,13 +39,25 @@ final Map<String, Status> classToStatus = {
   for (final e in statusToClass.entries) e.value: e.key
 };
 
-class ColumnModel extends EventEmitter {
+@JsonSerializable()
+class ColumnModel with EventEmitter {
   final Status _status;
-  List<NoteModel> _notes = [];
+  List<NoteModel> _notes;
 
-  ColumnModel(this._status);
+  ColumnModel(Status status, List<NoteModel> notes)
+      : _status = status,
+        _notes = notes;
+
+  factory ColumnModel.Empty(Status status) => ColumnModel(status, []);
+
+  factory ColumnModel.fromJson(Map<String, dynamic> json) =>
+      _$ColumnModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ColumnModelToJson(this);
 
   Status get status => _status;
+
+  List<NoteModel> get notes => _notes;
 
   void forEachNote(Function f) {
     _notes.forEach(f);
@@ -85,13 +101,11 @@ class ColumnView {
 
   ColumnView(this._column, this._parentSelector);
 
-  String html() {
-    return """
+  String html() => """
     <div id="${statusToClass[_column.status]}" class="column">
       <div class="column__name">${_column.status.toString().split(".").last}</div>
       <div class="column__notes"></div>
     </div>""";
-  }
 
   void update() {
     DivElement column = querySelector(_parentSelector);
@@ -115,21 +129,19 @@ class ColumnView {
   }
 }
 
-class ColumnController extends EventEmitter {
+class ColumnController with EventEmitter {
   ColumnModel _model;
   ColumnView _view;
-  List<NoteController> _notesControllers = [];
+  List<NoteController> _notesControllers;
 
   ColumnController(this._model, String parentSelector)
       : _view = ColumnView(_model, parentSelector) {
+    _notesControllers = List<NoteController>.from(
+        _model.notes.map(createAndInitNoteController));
+
     _model.on("addNote", (List<dynamic> args) {
       NoteModel note = args[0] as NoteModel;
-      NoteController noteController = NoteController(
-          note, "#${statusToClass[_model.status]} .column__notes");
-      noteController.on("pressDeleteControl",
-          (List<dynamic> args) => _model.removeNoteById(note.id));
-
-      _notesControllers.add(noteController);
+      _notesControllers.add(createAndInitNoteController(note));
     });
 
     _model.on("removeNoteById", (List<dynamic> args) {
@@ -138,6 +150,14 @@ class ColumnController extends EventEmitter {
           .removeWhere((NoteController ctrl) => ctrl.id == note.id);
       updateView();
     });
+  }
+
+  NoteController createAndInitNoteController(NoteModel note) {
+    NoteController noteController =
+        NoteController(note, "#${statusToClass[_model.status]} .column__notes");
+    noteController.on("pressDeleteControl",
+        (List<dynamic> args) => _model.removeNoteById(note.id));
+    return noteController;
   }
 
   void updateView() {

@@ -19,8 +19,10 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-class EventEmitter {
+abstract class EventEmitter {
   Map<String, List<Function>> _events = {};
+
+  factory EventEmitter._() => null;
 
   void on(String evt, Function listener) {
     if (!_events.containsKey(evt)) {

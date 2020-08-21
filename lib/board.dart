@@ -19,44 +19,61 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import "./event_emitter.dart";
-import "./column.dart";
-import "./note.dart";
-import "./status.dart";
-
 import "dart:html";
 
-class BoardModel extends EventEmitter {
-  Map<Status, ColumnModel> board = {};
-  int dragNoteId;
-  Status dragNoteFrom;
-  Status dragNoteTo;
+import 'package:json_annotation/json_annotation.dart';
 
-  BoardModel() {
-    Status.values.forEach((Status s) {
-      board[s] = ColumnModel(s);
+import "column.dart";
+import "event_emitter.dart";
+import "note.dart";
+import "status.dart";
+
+part "board.g.dart";
+
+@JsonSerializable()
+class BoardModel with EventEmitter {
+  Map<Status, ColumnModel> _board;
+
+  BoardModel(Map<Status, ColumnModel> board) : _board = board {
+    _board.values.forEach((ColumnModel model) {
+      model.on("removeNoteById", (List<dynamic> args) {
+        emit("updateData", []);
+      });
     });
   }
 
+  factory BoardModel.Empty() =>
+      BoardModel(Map<Status, ColumnModel>.fromIterable(Status.values,
+          key: (s) => s, value: (s) => ColumnModel.Empty(s)));
+
+  factory BoardModel.fromJson(Map<String, dynamic> json) =>
+      _$BoardModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BoardModelToJson(this);
+
+  Map<Status, ColumnModel> get board => _board;
+
   void addToDoNote(NoteModel note) {
-    board[Status.ToDo].addNote(note);
+    _board[Status.ToDo].addNote(note);
     emit("addToDoNote", [
       note,
     ]);
+    emit("updateData", []);
   }
 
   void updateNoteStatus(int noteId, Status oldStatus, Status newStatus) {
     if (oldStatus != newStatus) {
-      ColumnModel oldColumnModel = board[oldStatus];
+      ColumnModel oldColumnModel = _board[oldStatus];
       NoteModel note = oldColumnModel.getNoteById(noteId);
       oldColumnModel.removeNoteById(noteId);
       note.status = newStatus;
-      board[newStatus].addNote(note);
+      _board[newStatus].addNote(note);
       emit("updateNoteStatus", [
         oldStatus,
         newStatus,
         note,
       ]);
+      emit("updateData", []);
     }
   }
 }
@@ -64,6 +81,9 @@ class BoardModel extends EventEmitter {
 class BoardView {
   BoardModel _board;
   String _parentSelector;
+  int dragNoteId;
+  Status dragNoteFrom;
+  Status dragNoteTo;
 
   BoardView(this._board, this._parentSelector);
 
@@ -95,7 +115,7 @@ class BoardView {
   }
 }
 
-class BoardController extends EventEmitter {
+class BoardController with EventEmitter {
   BoardModel _model;
   BoardView _view;
   Map<Status, ColumnController> _columnControllers = {};
@@ -107,17 +127,17 @@ class BoardController extends EventEmitter {
         ColumnController columnController =
             ColumnController(_model.board[s], ".${statusToClass[s]}-box");
         columnController.on("dragStart", (List<dynamic> args) {
-          _model.dragNoteId = args[0] as int;
-          _model.dragNoteFrom = args[1] as Status;
+          _view.dragNoteId = args[0] as int;
+          _view.dragNoteFrom = args[1] as Status;
 
           _columnControllers.values
               .forEach((ColumnController ctrl) => ctrl.select());
         });
 
         columnController.on("dragStop", (List<dynamic> args) {
-          _model.dragNoteTo = args[0] as Status;
+          _view.dragNoteTo = args[0] as Status;
           _model.updateNoteStatus(
-              _model.dragNoteId, _model.dragNoteFrom, _model.dragNoteTo);
+              _view.dragNoteId, _view.dragNoteFrom, _view.dragNoteTo);
         });
 
         columnController.on("dragEnd", (List<dynamic> args) {

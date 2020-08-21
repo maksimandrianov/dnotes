@@ -19,20 +19,30 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-import "./event_emitter.dart";
-import "./status.dart";
-
 import "dart:html";
+
+import 'package:json_annotation/json_annotation.dart';
+
+import "event_emitter.dart";
+import "status.dart";
+
+part "note.g.dart";
 
 int _id = 0;
 
-class NoteModel extends EventEmitter {
+@JsonSerializable()
+class NoteModel with EventEmitter {
   final int id;
   String header;
   String body;
   Status status;
 
   NoteModel(this.header, this.body, this.status) : id = _id++ {}
+
+  factory NoteModel.fromJson(Map<String, dynamic> json) =>
+      _$NoteModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NoteModelToJson(this);
 }
 
 class NoteView {
@@ -41,16 +51,13 @@ class NoteView {
 
   NoteView(this._note, this._parentSelector);
 
-  String html() {
-    return """
-        <div class="note" draggable="true" id="note-${_note.id}">
+  String html() => """<div class="note" draggable="true" id="note-${_note.id}">
             <div class="note__controls">
                 <span class="note__control note__control-delete">Delete</span>
             </div>
             <div class="note__header">${_note.header}</div>
             <div class="note__body">${_note.body}</div>
         </div>""";
-  }
 
   void update() {
     DivElement notes = querySelector(_parentSelector);
@@ -58,7 +65,7 @@ class NoteView {
   }
 }
 
-class NoteController extends EventEmitter {
+class NoteController with EventEmitter {
   NoteModel _model;
   NoteView _view;
 
